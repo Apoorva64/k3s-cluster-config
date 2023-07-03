@@ -68,4 +68,3 @@ spec:
   path: ./infrastructure/devops
   prune: true
   wait: true
----
