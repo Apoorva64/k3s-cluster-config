@@ -26,7 +26,7 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: oci://registry-1.docker.io/bitnamicharts/keycloak
+      chart: keycloak
       version: "18.x"
       interval: 12h
       sourceRef:
