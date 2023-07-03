@@ -26,7 +26,7 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: keycloak
+      chart: keycloakx
       version: "*"
       interval: 12h
       sourceRef:
