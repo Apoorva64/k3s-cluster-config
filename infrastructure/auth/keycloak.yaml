@@ -31,7 +31,7 @@ spec:
       interval: 12h
       sourceRef:
         kind: HelmRepository
-        name: bitnami
+        name: codecentric
         namespace: flux-system
   values:
     ingress:
