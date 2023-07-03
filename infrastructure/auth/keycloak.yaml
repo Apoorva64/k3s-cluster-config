@@ -9,11 +9,11 @@ metadata:
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: bitnami
+  name: codecentric
   namespace: flux-system
 spec:
   interval: 24h
-  url: https://charts.bitnami.com/bitnami
+  url: https://codecentric.github.io/helm-charts
 
 
 ---
