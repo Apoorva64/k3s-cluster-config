@@ -30,11 +30,11 @@ spec:
         traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
 
       hosts:
-        - host: podinfo.apoorva64.com
+        - host: pod-info.apoorva64.com
           paths:
             - path: /
               pathType: Prefix
       tls:
         - secretName: podinfo-tls
           hosts:
-            - podinfo.apoorva64.com
+            - pod-info.apoorva64.com
