@@ -27,7 +27,7 @@ spec:
   chart:
     spec:
       chart: keycloak
-      version: "18.x"
+      version: "*"
       interval: 12h
       sourceRef:
         kind: HelmRepository
