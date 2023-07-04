@@ -9,7 +9,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
 spec:
   rules:
-    - host: weave-gitops.apoorva64.com
+    - host: weave-gitops.devops-tools.apoorva64.com
       http:
         paths:
           - path: /
@@ -21,5 +21,5 @@ spec:
                   number: 9001
   tls:
     - hosts:
-        - weave-gitops.apoorva64.com
+        - weave-gitops.devops-tools.apoorva64.com
       secretName: weave-gitops-tls-ingress

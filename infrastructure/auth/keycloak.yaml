@@ -46,7 +46,7 @@ spec:
       rules:
         -
           # Ingress host
-          host: 'keycloak.apoorva64.com'
+          host: 'keycloak.auth.apoorva64.com'
           # Paths for the host
           paths:
             - path: '{{ tpl .Values.http.relativePath $ | trimSuffix "/" }}/'
@@ -70,4 +70,3 @@ spec:
       - name: JAVA_OPTS_APPEND
         value: >-
           -Djgroups.dns.query={{ include "keycloak.fullname" . }}-headless
-
