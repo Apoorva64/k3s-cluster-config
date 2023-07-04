@@ -33,6 +33,9 @@ spec:
         kind: HelmRepository
         name: codecentric
         namespace: flux-system
+  install:
+    remediation:
+      retries: 2
   values:
     ingress:
       enabled: true
