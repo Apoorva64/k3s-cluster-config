@@ -53,7 +53,7 @@ spec:
               pathType: Prefix
       tls:
         - hosts:
-            - keycloak.apoorva64.com
+            - keycloak.auth.apoorva64.com
           secretName: keycloak-tls
     command:
       - "/opt/keycloak/bin/kc.sh"
