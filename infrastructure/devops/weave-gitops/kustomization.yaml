@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - helm-repository.yaml
+  - oidc-auth-secret-sealed.yaml
   - helm-release.yaml
   - rbac.yaml
   - ingress.yaml
