@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - letsencrypt-issuer-production.yaml
   - letsencrypt-issuer-staging.yaml
+  - traefik-https-redirect-middleware.yaml
