@@ -43,7 +43,7 @@ spec:
         server:
           root_url: https://grafana.monitoring.apoorva64.com
         auth.generic_oauth:
-          enabled: false
+          enabled: true
           name: "Keycloak-OAuth"
           allow_sign_up: false
           client_id: $__file{/etc/secrets/auth_generic_oauth/client_id}
@@ -74,9 +74,9 @@ spec:
       ingress:
         enabled: false
         annotations:
-        kubernetes.io/ingress.class: traefik
-        cert-manager.io/cluster-issuer: letsencrypt-prod
-        traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
+          kubernetes.io/ingress.class: traefik
+          cert-manager.io/cluster-issuer: letsencrypt-prod
+          traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
         hosts:
           - prometheus.monitoring.apoorva64.com
         tls:
