@@ -55,7 +55,7 @@ spec:
           auth_url: "https://keycloak.auth.apoorva64.com/auth/realms/lab/protocol/openid-connect/auth"
           token_url: "https://keycloak.auth.apoorva64.com/auth/realms/lab/protocol/openid-connect/token"
           api_url: "https://keycloak.auth.apoorva64.com/auth/realms/lab/protocol/openid-connect/userinfo"
-          role_attribute_path: "contains(roles[*], 'admin') && 'Admin' || contains(roles[*], 'editor') && 'Editor' || 'Viewer'"
+          role_attribute_path: "contains(resource_access.grafana-oauth.roles[*], 'admin') && 'Admin' || contains(resource_access.grafana-oauth.roles[*], 'editor') && 'Editor' || 'Viewer'"
       ingress:
         enabled: true
         annotations:
