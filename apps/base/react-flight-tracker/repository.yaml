@@ -1,0 +1,36 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: react-flight-tracker
+  namespace: react-flight-tracker
+spec:
+  interval: 5m
+  url: https://gitlab.com/dev6645326/react-flight-tracker
+  ref:
+    branch: master
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: react-flight-tracker
+  namespace: react-flight-tracker
+spec:
+  interval: 5m
+  path: ./manifests/react-flight-tracker/prod
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: react-flight-tracker
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: react-flight-tracker-dev
+  namespace: react-flight-tracker
+spec:
+  interval: 5m
+  path: ./manifests/react-flight-tracker/dev
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: react-flight-tracker
