@@ -39,14 +39,9 @@ spec:
     gitlabUrl: https://gitlab.com
     concurrent: 4
     runners:
-      privileged: true
       config: |
         log_level = "debug"
         [[runners]]
           [runners.kubernetes]
             image = "ubuntu:latest"
             helper_image = "gitlab/gitlab-runner-helper:arm64-1278d3da"
-            privileged = true
-    securityContext:
-      allowPrivilegeEscalation: true
-      privileged: true
