@@ -36,3 +36,11 @@ spec:
         - apiGroups: [ "" ]
           resources: [ "pods/exec" ]
           verbs: [ "create", "patch", "delete" ]
+    securityContext:
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: false
+      runAsNonRoot: true
+      privileged: true
+      capabilities:
+        drop: [ "ALL" ]
+
