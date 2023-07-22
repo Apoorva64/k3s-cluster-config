@@ -28,3 +28,11 @@ spec:
             namespace = "{{.Release.Namespace}}"
             image = "ubuntu:16.04"
       privileged: true
+    rbac:
+      create: true
+      rules:
+        - resources: [ "configmaps", "pods", "pods/attach", "secrets", "services" ]
+          verbs: [ "get", "list", "watch", "create", "patch", "update", "delete" ]
+        - apiGroups: [ "" ]
+          resources: [ "pods/exec" ]
+          verbs: [ "create", "patch", "delete" ]
