@@ -16,31 +16,27 @@ spec:
       interval: 12h
   values:
     gitlabUrl: https://gitlab.com
-    runners:
-      # runner configuration, where the multi line strings is evaluated as
-      # template so you can specify helm values inside of it.
-      #
-      # tpl: https://helm.sh/docs/howto/charts_tips_and_tricks/#using-the-tpl-function
-      # runner configuration: https://docs.gitlab.com/runner/configuration/advanced-configuration.html
-      config: |
-        [[runners]]
-          [runners.kubernetes]
-            namespace = "{{.Release.Namespace}}"
-            image = "ubuntu:16.04"
-      privileged: true
     rbac:
       create: true
       rules:
-        - resources: [ "configmaps", "pods", "pods/attach", "secrets", "services" ]
-          verbs: [ "get", "list", "watch", "create", "patch", "update", "delete" ]
+        - apiGroups: [ "" ]
+          resources: [ "pods" ]
+          verbs: [ "list", "get", "watch", "create", "delete" ]
         - apiGroups: [ "" ]
           resources: [ "pods/exec" ]
-          verbs: [ "create", "patch", "delete" ]
-    securityContext:
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: false
-      runAsNonRoot: true
-      privileged: true
-      capabilities:
-        drop: [ "ALL" ]
+          verbs: [ "create" ]
+        - apiGroups: [ "" ]
+          resources: [ "pods/log" ]
+          verbs: [ "get" ]
+        - apiGroups: [ "" ]
+          resources: [ "pods/attach" ]
+          verbs: [ "list", "get", "create", "delete", "update" ]
+        - apiGroups: [ "" ]
+          resources: [ "secrets" ]
+          verbs: [ "list", "get", "create", "delete", "update" ]
+        - apiGroups: [ "" ]
+          resources: [ "configmaps" ]
+          verbs: [ "list", "get", "create", "delete", "update" ]
 
+    runners:
+      privileged: true
