@@ -47,8 +47,9 @@ spec:
             image = "ubuntu:latest"
             helper_image = "gitlab/gitlab-runner-helper:arm64-1278d3da"
             privileged = true
-            [[runners.kubernetes.volumes.host_path]]
-              name = "docker"
-              mount_path = "/var/run/docker.sock"
-              host_path = "/var/run/docker.sock"
+          [[runners.kubernetes.volumes.empty_dir]]
+            name = "docker-certs"
+            mount_path = "/certs/client"
+            medium = "Memory"
+
 
