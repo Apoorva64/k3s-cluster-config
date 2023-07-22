@@ -14,3 +14,5 @@ spec:
         name: gitlab
         namespace: flux-system
       interval: 12h
+  values:
+    gitlabUrl: https://gitlab.com
