@@ -15,7 +15,6 @@ spec:
         namespace: flux-system
       interval: 12h
   values:
-    gitlabUrl: https://gitlab.com
     rbac:
       create: true
       rules:
@@ -37,7 +36,7 @@ spec:
         - apiGroups: [ "" ]
           resources: [ "configmaps" ]
           verbs: [ "list", "get", "create", "delete", "update" ]
-
+    gitlabUrl: https://gitlab.com
     runners:
       privileged: true
       config: |
