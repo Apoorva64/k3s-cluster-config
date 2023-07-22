@@ -65,7 +65,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/devops
+  path: ./infrastructure/devops/
   prune: true
   wait: true
 ---
