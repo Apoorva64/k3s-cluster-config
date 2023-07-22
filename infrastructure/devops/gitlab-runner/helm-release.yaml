@@ -39,9 +39,7 @@ spec:
     gitlabUrl: https://gitlab.com
     concurrent: 4
     runners:
-      privileged: true
       config: |
-        log_level = "debug"
         [[runners]]
           [runners.kubernetes]
             image = "ubuntu:latest"
