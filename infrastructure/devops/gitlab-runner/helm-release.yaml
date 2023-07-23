@@ -57,5 +57,5 @@ spec:
               Insecure = false
               AuthenticationType = "access-key"
       cache:
-        secretName: s3access
+        secretName: runners-s3-access
 
