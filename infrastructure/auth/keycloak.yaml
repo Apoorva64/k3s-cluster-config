@@ -122,16 +122,8 @@ spec:
 
     database:
       vendor: postgres
-      hostname: keycloak-db-postgresql
+      hostname: postgres-postgresql
       port: 5432
       username: dbusername
       password: dbpassword
       database: keycloak
-
-    secrets:
-      admin-creds:
-        annotations:
-          my-test-annotation: Test secret for {{ include "keycloak.fullname" . }}
-        stringData:
-          user: admin
-          password: password
