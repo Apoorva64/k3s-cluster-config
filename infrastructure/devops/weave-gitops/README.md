@@ -1,0 +1,75 @@
+### kubeseal
+```bash
+kubeseal --format=yaml  < oidc-auth-secret.yaml > oidc-auth-secret-sealed.yaml
+```
+
+### keycloak steps
+
+- create client scope groups
+This scope maps the groups of a user to the token in "groups" token Claim.
+
+
+- create client with
+```json
+{
+  "clientId": "weave-gitops",
+  "name": "",
+  "description": "",
+  "rootUrl": "https://weave-gitops.devops-tools.apoorva64.com",
+  "adminUrl": "",
+  "baseUrl": "/applications",
+  "surrogateAuthRequired": false,
+  "enabled": true,
+  "alwaysDisplayInConsole": false,
+  "clientAuthenticatorType": "client-secret",
+  "secret": "<redacted>",
+  "redirectUris": [
+    "/*"
+  ],
+  "webOrigins": [
+    "/*"
+  ],
+  "notBefore": 0,
+  "bearerOnly": false,
+  "consentRequired": false,
+  "standardFlowEnabled": true,
+  "implicitFlowEnabled": false,
+  "directAccessGrantsEnabled": true,
+  "serviceAccountsEnabled": false,
+  "publicClient": false,
+  "frontchannelLogout": true,
+  "protocol": "openid-connect",
+  "attributes": {
+    "oidc.ciba.grant.enabled": "false",
+    "client.secret.creation.time": "1690115248",
+    "backchannel.logout.session.required": "true",
+    "post.logout.redirect.uris": "/*",
+    "display.on.consent.screen": "false",
+    "oauth2.device.authorization.grant.enabled": "false",
+    "backchannel.logout.revoke.offline.tokens": "false"
+  },
+  "authenticationFlowBindingOverrides": {},
+  "fullScopeAllowed": true,
+  "nodeReRegistrationTimeout": -1,
+  "defaultClientScopes": [
+    "web-origins",
+    "acr",
+    "roles",
+    "profile",
+    "groups",
+    "email"
+  ],
+  "optionalClientScopes": [
+    "address",
+    "phone",
+    "offline_access",
+    "microprofile-jwt"
+  ],
+  "access": {
+    "view": true,
+    "configure": true,
+    "manage": true
+  }
+}
+```
+
