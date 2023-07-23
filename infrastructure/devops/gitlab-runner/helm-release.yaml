@@ -39,6 +39,8 @@ spec:
     gitlabUrl: https://gitlab.com
     concurrent: 4
     runners:
+      cache:
+        secretName: gitlab-runner-s3-access
       config: |
         log_level = "debug"
         [[runners]]
@@ -54,6 +56,4 @@ spec:
               BucketName = "gitlab-runners-cache"
               BucketLocation = "eu-centeral-1"
               Insecure = false
-    cache:
-      secretName: s3access
-
+              AuthenticationType = "access-key"
