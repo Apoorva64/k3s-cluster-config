@@ -51,7 +51,7 @@ spec:
             Path = "runner"
             Shared = true
             [runners.cache.s3]
-              ServerAddress = "minio.storage.apoorva64.com"
+              ServerAddress = "api.minio.storage.apoorva64.com"
               BucketName = "gitlab-runners-cache"
               BucketLocation = "eu-centeral-1"
               Insecure = false

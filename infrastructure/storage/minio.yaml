@@ -37,6 +37,19 @@ spec:
         - hosts:
             - minio.storage.apoorva64.com
           secretName: minio-tls
+    apiIngress:
+      enabled: true
+      className: traefik
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
+      hostname: 'api.minio.storage.apoorva64.com'
+      path: /
+      tls:
+        - hosts:
+            - api.minio.storage.apoorva64.com
+          secretName: api-minio-tls
+
     podAnnotations:
       prometheus.io/scrape: "true"
       prometheus.io/path: "/minio/v2/metrics/cluster"
