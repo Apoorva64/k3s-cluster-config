@@ -48,14 +48,14 @@ spec:
             privileged = true
           [runners.cache]
             Type = "s3"
-            Path = "runner"
             Shared = true
             [runners.cache.s3]
               ServerAddress = "api.minio.storage.apoorva64.com"
               BucketName = "gitlab-runners-cache"
               BucketLocation = "eu-centeral-1"
               Insecure = false
-              AuthenticationType = "access-key"
-      cache:
-        secretName: runners-s3-access
+              AccessKey = "XGYcE00gONo4S2jMHZbC"
+              SecretKey = "KwsTie2kqLWnbuqIGdpzbW0YNTyu1bb9ekZyewnP"
+#      cache:
+#        secretName: runners-s3-access
 
