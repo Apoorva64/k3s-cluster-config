@@ -54,6 +54,6 @@ spec:
               BucketName = "gitlab-runners-cache"
               BucketLocation = "eu-centeral-1"
               Insecure = false
-      cache:
-        secretName: s3access
+    cache:
+      secretName: s3access
 
