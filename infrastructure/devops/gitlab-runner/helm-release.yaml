@@ -46,4 +46,16 @@ spec:
             image = "ubuntu:latest"
             helper_image = "gitlab/gitlab-runner-helper:arm64-1278d3da"
             privileged = true
+          [runners.cache]
+            Type = "s3"
+            Path = "runner"
+            Shared = true
+            [runners.cache.s3]
+              ServerAddress = "minio.storage.apoorva64.com"
+              BucketName = "gitlab-runners-cache"
+              BucketLocation = "eu-centeral-1"
+              Insecure = false
+              AuthenticationType = "access-key"
+      cache:
+        secretName: s3access
 
