@@ -33,7 +33,7 @@ spec:
             Type = "s3"
             Shared = true
             [runners.cache.s3]
-              ServerAddress = "api.minio.storage.apoorva64.com"
+              ServerAddress = "minio.storage.svc.cluster.local:9000"
               BucketName = "gitlab-runners-cache"
               BucketLocation = "eu-centeral-1"
               Insecure = false
