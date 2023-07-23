@@ -21,7 +21,7 @@ spec:
     concurrent: 4
     runners:
       cache:
-        secretName: gitlab-runner-s3-access
+        - secretName: gitlab-runner-s3-access
       config: |
         log_level = "debug"
         [[runners]]
