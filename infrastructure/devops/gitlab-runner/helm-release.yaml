@@ -36,5 +36,5 @@ spec:
               ServerAddress = "minio.storage.svc.cluster.local:9000"
               BucketName = "gitlab-runners-cache"
               BucketLocation = "eu-centeral-1"
-              Insecure = false
+              Insecure = true
               AuthenticationType = "access-key"
