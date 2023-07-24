@@ -4,3 +4,4 @@ resources:
   - namespace.yaml
   - weave-gitops
   - gitlab-runner
+  - sonarqube
