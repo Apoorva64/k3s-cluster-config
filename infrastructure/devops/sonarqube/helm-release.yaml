@@ -1,0 +1,30 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: sonarqube
+  namespace: devops-tools
+spec:
+  interval: 60m
+  chart:
+    spec:
+      chart: sonarqube
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: sonarqube
+        namespace: flux-system
+      interval: 12h
+  values:
+    ingress:
+      ingressClassName: traefik
+      enabled: true
+      hosts:
+        - name: sonarqube.devops-tools.apoorva64.com
+          path: "/"
+      tls:
+        - hosts:
+            - sonarqube.devops-tools.apoorva64.com
+          secretName: sonarqube-tls
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
