@@ -28,7 +28,7 @@ spec:
           [runners.kubernetes]
             image = "ubuntu:20.04"
             helper_image = "gitlab/gitlab-runner-helper:arm64-1278d3da"
-            privileged = false
+            privileged = true
           [[runners.kubernetes.volumes.empty_dir]]
             name = "docker-certs"
             mount_path = "/certs/client"
