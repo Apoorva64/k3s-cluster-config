@@ -32,6 +32,6 @@ spec:
       enabled: false
     jdbcOverwrite:
       enable: true
-      jdbcUrl: jdbc:postgresql://postgres-postgresql:5432/sonarqube?currentSchema=sonarqube
+      jdbcUrl: jdbc:postgresql://postgres-postgresql:5432/sonarqube
       jdbcUsername: dbusername
       jdbcPassword: dbpassword
