@@ -9,4 +9,4 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: react-flight-tracker
+    name: react-flight-tracker-dev
