@@ -21,6 +21,9 @@ rules:
   - apiGroups: [""]
     resources: ["events"]
     verbs: ["get", "watch", "list"]
+  - apiGroups: [ "image.toolkit.fluxcd.io" ]
+    resources: [ "imagerepositories", "imagepolicies", "imageupdateautomations" ]
+
 ---
 # Read only cluster role
 apiVersion: rbac.authorization.k8s.io/v1
