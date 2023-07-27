@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: react-flight-tracker
+  name: react-flight-tracker-prod
   namespace: react-flight-tracker
 spec:
   interval: 5m
