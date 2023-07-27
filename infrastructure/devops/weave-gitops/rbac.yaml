@@ -23,6 +23,7 @@ rules:
     verbs: ["get", "watch", "list"]
   - apiGroups: [ "image.toolkit.fluxcd.io" ]
     resources: [ "imagerepositories", "imagepolicies", "imageupdateautomations" ]
+    verbs: [ "get", "list", "patch" ]
 
 ---
 # Read only cluster role
