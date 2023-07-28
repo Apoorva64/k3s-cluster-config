@@ -8,3 +8,5 @@ spec:
   url: https://gitlab.com/dev6645326/react-flight-tracker
   ref:
     branch: develop
+  secretRef:
+    name: gitlab-auth
