@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: gitlab-auth
+  namespace: flux-system
 type: Opaque
 data:
   password: <base64 encoded password>
