@@ -7,3 +7,4 @@ resources:
   - repository-dev.yaml
   - prod.yaml
   - dev.yaml
+  - gitlab-auth-sealed.yaml

@@ -1,0 +1,18 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: gitlab-auth
+  namespace: default
+spec:
+  encryptedData:
+    password: AgCs7qToUNeIeaQdDhZmo1pIpmJyWlSQOdh/J+ByXYMs1ej1v+Eo6vkV1Xg4r9Brm5J4Ff1SNuSNUf3KgY/Kw41lDuCP6bcezVj1upfZCwqUkT0euSih9I5R+zxOXh+t1aHHp/4ePnOFoPSuD4RPow/mq/hz+8rzVuTqg8L9EKhDpGY7mV6tc29vbbntPAH3FRFfbfU3JstfDNYXmCI1rDZ5GkZDJaC0G3tFJknjkRsYaHPWZq8GhPVGPiRCkJPkXrXsYFbCpUIHEu9gIRc7yqWPj62zrMqf9ww+yV4t8imguuoNm+KQ7ahDNl3Ga0HfwwY5nTLgAr/8ZFf8ODIKCwJtL3IeBlkKTY5pvOM79BASFFZRka7npYRX1AGM3+DoT4eNr90wPeaFY+WChH3oriO9h4fE0OTVSfXiUqgpdf3uTFJIOIBpyJSf85j5sRuVhcXb5sUNjFJ8HfBZmkG7vKGSnC+K574rrmlaKMWlfZk6P2wG99LaF6XE+w18Q0J58NshjrSYnOWkvGVJP849MhZy4wtIjy02lONxWYjTr97Run+NsxCzKy+djrwyt2KaFIQ2fwW96j+YeRqbplMBI2d9++TGOOuLxbNwId7yw1QUyOME7AuPCCsXeTdh7qYGtYi/wqkApjaAz5aE4LlQVFX86ywcRTPPyPXzE0Ag0Js7Po5IvqgmoFUS+wzfFoKvdp/Mm3AnzN6/f8/JA+V5j9gck8fVg0cHVR7kzQ==
+    username: AgApjc0oRM/nqBZAJ9OfAJguVR6svd9vksAZZ1H0V8r4cEks7d5vvwh8P9dWITwXgwXn/VfXifsFnbunOBFf2jnYgpoE6TBJjounn/eRjZrZ6ya5IxfnqfgpagnPK6WFpS6Ih6qPf2+tq2CgeUx0o+aSHmLZAGrvhZhre9EmEQNyYbZtwhKYkoKKGAWBUVfjA48iJhQBdrvhwudjQ5zqL+R+Q5PUkt6FR5rBmvXq54Soiz6TiPuEgnDuCeYm9EXvuiQvVNLkIwIFnoEZ9cF/Hmg1yi/z4zczJkZHYIcoNdG4XIasMbW1Wx6ZJu57seKkI2v8wsCdh7VL7SDwMXz2v3iTz+4oI3JVtsZoXeCqQnbYeRsHZ6xMHWGaw2zzd0i96fNLAuPAgOoVI9m3I5KP/7EvFsGB+pEOJy8buHKAkM8+nyCaSH2V2fCdN3dBo2bQmwJHuh7VAlSxuAQOg69mjAZDSXCHPfBsbOOVtb0b+FNSKz03ajincXRZO0dkmFjr/TA7ILKiadL+AZb9RFru/d2ttMvX7bXfkBFOoudnCbHxBkfxmNgVmQQSVMle6/pGdOOW/k+tCosyeoe/TcwlW5+E/tx3+Jq2QsjophkLZgu4Jnau8yTgfIMG59tAaKP7JtPto1wzSk4J4LnlK8QFvRWHlZmkYD4mQld31CeZgqfjoeEjHPirEjVgPqHyuviOfNmo870HfSItx70=
+  template:
+    data: null
+    metadata:
+      creationTimestamp: null
+      name: gitlab-auth
+      namespace: default
+    type: Opaque
+
