@@ -39,6 +39,6 @@ spec:
             [runners.cache.s3]
               ServerAddress = "minio.storage.svc.cluster.local:9000"
               BucketName = "gitlab-runners-cache"
-              BucketLocation = "eu-centeral-1"
+              BucketLocation = "eu-central-1"
               Insecure = true
               AuthenticationType = "access-key"
