@@ -3,4 +3,4 @@ kind: Kustomization
 namePrefix: promtail-
 resources:
   - helm-release.yaml
-  - daemonset.yaml
+#  - daemonset.yaml
