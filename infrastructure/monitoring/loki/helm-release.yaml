@@ -23,6 +23,8 @@ spec:
         s3:
           region: eu-central-1
           endpoint: "minio.storage.svc.cluster.local:9000"
+          insecure: true
+          s3ForcePathStyle: true
         bucketNames:
           chunks: loki-chunks
           ruler: loki-ruler
