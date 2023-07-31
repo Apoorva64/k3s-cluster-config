@@ -54,7 +54,7 @@ data:
       grpc_listen_port: 0
 
     clients:
-      - url: https://loki-gateway.monitoring.svc.cluster.local/loki/api/v1/push
+      - url: http://loki-gateway.monitoring.svc.cluster.local/loki/api/v1/push
         tenant_id: admins
         
     positions:
