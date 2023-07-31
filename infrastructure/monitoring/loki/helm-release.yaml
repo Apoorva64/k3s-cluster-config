@@ -18,4 +18,16 @@ spec:
       interval: 12h
   values:
     loki:
-      existingSecretForConfig: "loki-config"
+      storage:
+        type: "s3"
+        s3:
+          region: eu-central-1
+          endpoint: "minio.storage.svc.cluster.local:9000"
+        bucketNames:
+          chunks: loki-chunks
+          ruler: loki-ruler
+          admin: loki-admin
+  valuesFrom:
+    - kind: Secret
+      name: loki-s3-access
+      valuesKey: loki-s3-values.yaml
