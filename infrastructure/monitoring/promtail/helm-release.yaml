@@ -20,5 +20,5 @@ spec:
     config:
       log_level: info
       clients:
-        url: http://loki-gateway.monitoring.svc.cluster.local/loki/api/v1/push
-        tenant_id: admins
+        - url: http://loki-gateway.monitoring.svc.cluster.local/loki/api/v1/push
+          tenant_id: admins
