@@ -55,8 +55,9 @@ data:
       grpc_listen_port: 0
 
     clients:
-      - url: https://loki-gateway.monitoring.svc.cluster.local
-
+      - url: https://loki-gateway.monitoring.svc.cluster.local/loki/api/v1/push
+        tenant_id: admins
+        
     positions:
       filename: /tmp/positions.yaml
     target_config:
@@ -98,8 +99,8 @@ data:
               - __meta_kubernetes_pod_uid
               - __meta_kubernetes_pod_container_name
             target_label: __path__
-
---- # Clusterrole.yaml
+            
+            --- # Clusterrole.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
