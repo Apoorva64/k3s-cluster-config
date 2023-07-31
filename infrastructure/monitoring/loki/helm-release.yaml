@@ -29,6 +29,9 @@ spec:
           chunks: loki-chunks
           ruler: loki-ruler
           admin: loki-admin
+      commonConfig:
+        replication_factor: 2
+
   valuesFrom:
     - kind: Secret
       name: loki-s3-access
