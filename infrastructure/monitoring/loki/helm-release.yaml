@@ -29,8 +29,12 @@ spec:
           chunks: loki-chunks
           ruler: loki-ruler
           admin: loki-admin
-      commonConfig:
-        replication_factor: 2
+    backend:
+      replicas: 2
+    read:
+      replicas: 2
+    write:
+      replicas: 2
 
   valuesFrom:
     - kind: Secret
