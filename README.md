@@ -1,6 +1,8 @@
-<div style="text-align: center;">
+<div style="text-align: center;
+   align-content: center;
+   align-items: center;">
     <h1><b>Flux Config</b></h1>
-    <img src='readme-assets/flux-logo.png' height='250'  alt="flux-logo"/>
+    <img src='readme-assets/flux-logo.png' width='250'  alt="flux-logo"/>
     <p> GitOps for Kubernetes </p>
 </div>
 
