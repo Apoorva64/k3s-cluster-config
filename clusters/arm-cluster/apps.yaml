@@ -8,13 +8,10 @@ spec:
   interval: 10m0s
   dependsOn:
     - name: devops-tools
-    - name: monitoring
-    - name: storage
-    - name: auth-apps
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./apps
+  path: ./apps/base
   prune: true
   wait: true
   timeout: 5m0s
