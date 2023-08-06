@@ -8,6 +8,32 @@
 
 ## Getting started
 
+### What is GitOps?
+
+GitOps is an operational framework that takes DevOps best practices used for application development such as version
+control, collaboration, compliance, and CI/CD, and applies them to infrastructure automation.GitOps is an operational
+framework that takes DevOps best practices used for application development such as version control, collaboration,
+compliance, and CI/CD, and applies them to infrastructure automation.
+
+### What is Flux?
+
+Flux CD is a Continuous Delivery tool to help keep Kubernetes clusters in sync with configuration sources such as Git
+repositories and automate configuration updates when available
+
+### Repository Structure
+
+[//]: #TODO: Add repository structure
+
+### What is this repository?
+
+This repository contains the configuration for the flux cluster. It contains the configuration for the infrastructure
+components and links to the repositories for the applications deployed in the cluster.
+
+### How does it work?
+
+The flux operator is installed in the cluster. The flux operator monitors the git repository for changes. When a change
+is detected, the flux operator updates the cluster state to match the git repository.
+
 ### Prerequisites
 
 1. Get a Kubernetes cluster
@@ -46,12 +72,29 @@
 
 ## Infrastructure
 
-### Cert Manager
+### [Cert Manager](./infrastructure/controllers/cert-manager.yaml)
 
 Cert manager is used to manage certificates in the cluster. It is deployed in the cert-manager namespace.
 It is deployed using the helm chart [cert-manager](https://cert-manager.io/docs/installation/helm/).
 
-### Monitoring
+#### [Cluster Issuers](./infrastructure/configs)
+
+There are two cluster issuers deployed in the cluster. One for the staging environment and one for the production.
+The staging issuer is used to issue certificates for the staging environment and the production issuer is used to issue
+certificates for the production environment.
+
+### [Sealed Secrets](./infrastructure/controllers/sealed-secrets.yaml)
+
+The sealed secrets controller is used to manage secrets in the cluster. It is deployed in the sealed-secrets namespace.
+It is deployed using the helm chart [sealed-secrets](https://bitnami-labs.github.io/sealed-secrets)
+
+### [Auth](./infrastructure/auth)
+
+The auth folder contains the configuration for the auth provider. The auth provider used is keycloak. The auth provider
+is deployed in the auth namespace. It is deployed using the helm
+chart [keycloak](https://github.com/codecentric/helm-charts/tree/master/charts/keycloakx).
+
+### [Monitoring](./infrastructure/monitoring)
 
 1. [Prometheus+Grafana](./infrastructure/monitoring/kube-prometheus-stack)
    The kube prometheus stack is used for monitoring metrics in the cluster. It is deployed in the monitoring namespace.
