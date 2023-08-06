@@ -4,3 +4,4 @@ resources:
   - letsencrypt-issuer-production.yaml
   - letsencrypt-issuer-staging.yaml
   - traefik-https-redirect-middleware.yaml
+  - gitlab-auth-sealed.yaml
