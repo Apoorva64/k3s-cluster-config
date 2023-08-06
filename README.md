@@ -20,14 +20,31 @@ compliance, and CI/CD, and applies them to infrastructure automation.
 Flux CD is a Continuous Delivery tool to help keep Kubernetes clusters in sync with configuration sources such as Git
 repositories and automate configuration updates when available
 
-### Repository Structure
+### Repositories Structure
 
-[//]: #TODO: Add repository structure
-
-### What is this repository?
+#### Infrastructure Repository
 
 This repository contains the configuration for the flux cluster. It contains the configuration for the infrastructure
 components and links to the repositories for the applications deployed in the cluster.
+
+#### Application Repositories
+
+The application repositories contain the configuration for the applications deployed in the cluster.
+Each application repository contains a manifests folder which contains the yaml configuration resources for the
+application.
+
+#### Linking Application Repositories
+
+The application repositories are linked to the infrastructure repository by adding a folder in the [apps folder](./apps)
+containing the following files:
+
+- kustomization.yaml - This file contains the configuration for aggregating the
+  manifests
+- namespace.yaml - This file contains the configuration for the namespace in which the application is deployed.
+- repository.yaml - This file contains the configuration for the repository containing the application configuration.
+- kustomize.yaml - This file contains the configuration for the kustomize version used to aggregate the manifests in
+  the
+  application repository.
 
 ### How does it work?
 
