@@ -1,0 +1,6 @@
+- op: replace
+  path: /spec/ref/branch
+  value: master
+- op: replace
+  path: /spec/secretRef/name
+  value: dev-gitlab-auth

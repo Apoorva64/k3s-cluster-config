@@ -3,8 +3,5 @@ kind: Kustomization
 namespace: flux-system
 resources:
   - gitlab-auth-sealed.yaml
-  - namespace.yaml
-  - repository-prod.yaml
-  - repository-dev.yaml
-  - prod.yaml
-  - dev.yaml
+  - repository.yaml
+  - kustomize.yaml
