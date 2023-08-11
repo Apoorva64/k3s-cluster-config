@@ -1,0 +1,6 @@
+- op: replace
+  path: /spec/path
+  value: ./manifests/react-flight-tracker/overlays/dev
+- op: replace
+  path: /spec/sourceRef/name
+  value: dev-react-flight-tracker

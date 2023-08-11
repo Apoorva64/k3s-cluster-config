@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: flux-system
+resources:
+  - ../../base/react-flight-tracker
+namePrefix: prod-
+patches:
+  - target:
+      kind: GitRepository
+      name: react-flight-tracker
+    path: repository-patch.yaml
+  - target:
+      kind: Kustomization
+      name: react-flight-tracker
+    path: kustomize-patch.yaml
