@@ -17,21 +17,6 @@ spec:
         namespace: monitoring
       interval: 12h
   values:
-    alertmanager:
-      ingress:
-        enabled: false
-        annotations:
-          kubernetes.io/ingress.class: traefik
-          cert-manager.io/cluster-issuer: letsencrypt-prod
-          traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
-        hosts:
-          - alertmanager.monitoring.apoorva64.com
-        tls:
-          - secretName: alertmanager-tls
-            hosts:
-              - alertmanager.monitoring.apoorva64.com
-        paths:
-          - /
     grafana:
       extraSecretMounts:
         - name: auth-generic-oauth-secret-mount
@@ -72,18 +57,48 @@ spec:
               - grafana.monitoring.apoorva64.com
         paths:
           - /
+    kubelet:
+      serviceMonitor:
+        cAdvisorRelabelings:
+          - action: replace
+            replacement: <CLUSTER_NAME>
+            targetLabel: cluster
+          - targetLabel: metrics_path
+            sourceLabels:
+              - "__metrics_path__"
+          - targetLabel: "instance"
+            sourceLabels:
+              - "node"
+
+    defaultRules:
+      additionalRuleLabels:
+        cluster: arm-cluster
+
+    "kube-state-metrics":
+      prometheus:
+        monitor:
+          relabelings:
+            - action: replace
+              replacement: arm-cluster
+              targetLabel: cluster
+            - targetLabel: "instance"
+              sourceLabels:
+                - "__meta_kubernetes_pod_node_name"
+
+    "prometheus-node-exporter":
+      prometheus:
+        monitor:
+          relabelings:
+            - action: replace
+              replacement: arm-cluster
+              targetLabel: cluster
+            - targetLabel: "instance"
+              sourceLabels:
+                - "__meta_kubernetes_pod_node_name"
+
     prometheus:
-      ingress:
-        enabled: false
-        annotations:
-          kubernetes.io/ingress.class: traefik
-          cert-manager.io/cluster-issuer: letsencrypt-prod
-          traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
-        hosts:
-          - prometheus.monitoring.apoorva64.com
-        tls:
-          - secretName: prometheus-tls
-            hosts:
-              - prometheus.monitoring.apoorva64.com
-        paths:
-          - /
+      monitor:
+        relabelings:
+          - action: replace
+            replacement: arm-cluster
+            targetLabel: cluster
