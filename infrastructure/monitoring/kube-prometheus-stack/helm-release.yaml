@@ -61,7 +61,7 @@ spec:
       serviceMonitor:
         cAdvisorRelabelings:
           - action: replace
-            replacement: <CLUSTER_NAME>
+            replacement: arm-cluster
             targetLabel: cluster
           - targetLabel: metrics_path
             sourceLabels:
