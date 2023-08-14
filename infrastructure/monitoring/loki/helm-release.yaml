@@ -35,6 +35,10 @@ spec:
       replicas: 2
     write:
       replicas: 2
+    monitoring:
+      serviceMonitor:
+        labels:
+          release: kube-prometheus-stack
 
 
   valuesFrom:
