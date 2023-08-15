@@ -71,3 +71,11 @@
   }
 }
 ```
+
+
+## Creating ServiceMonitor
+
+Don't forget to add the label `release: kube-prometheus-stack` to the namespace where you want to monitor the services.
+
+and to the ServiceMonitor add the label `release: kube-prometheus-stack`
+
