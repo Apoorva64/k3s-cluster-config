@@ -13,6 +13,6 @@ spec:
     - port: minio-api
       interval: 30s
       path: /minio/v2/metrics/cluster
-      scheme: http
+      scheme: https
       tlsConfig:
         insecureSkipVerify: true
