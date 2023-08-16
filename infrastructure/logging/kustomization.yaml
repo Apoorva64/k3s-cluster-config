@@ -5,3 +5,4 @@ resources:
   - elastic-operator
   - elastic-search.yaml
   - kibana.yaml
+  - fluentd.yaml
