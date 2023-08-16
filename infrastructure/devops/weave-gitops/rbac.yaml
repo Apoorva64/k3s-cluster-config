@@ -4,10 +4,10 @@ metadata:
   name: wego-admin-cluster-role
 rules:
   - apiGroups: [ "" ]
-    resources: [ "secrets", "pods" ]
+    resources: [ "secrets", "pods" , "namespaces" ]
     verbs: [ "get", "list" ]
   - apiGroups: [ "apps" ]
-    resources: [ "deployments", "replicasets" ]
+    resources: [ "deployments", "replicasets" , "statefulsets" , "daemonsets" ]
     verbs: [ "get", "list" ]
   - apiGroups: [ "kustomize.toolkit.fluxcd.io" ]
     resources: [ "kustomizations" ]
