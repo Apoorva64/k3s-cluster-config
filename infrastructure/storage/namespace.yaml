@@ -4,3 +4,4 @@ metadata:
   name: storage
   labels:
     toolkit.fluxcd.io/tenant: sre-team
+    release: kube-prometheus-stack
