@@ -1,97 +1,179 @@
-# flux-config
-
-
+<div style="text-align: center;
+   align-content: center;
+   align-items: center;">
+    <h1><b>Flux Config</b></h1>
+    <img src='readme-assets/flux-logo.png' width='250'  alt="flux-logo"/>
+    <p> GitOps for Kubernetes </p>
+</div>
 
 ## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+### What is GitOps?
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+GitOps is an operational framework that takes DevOps best practices used for application development such as version
+control, collaboration, compliance, and CI/CD, and applies them to infrastructure automation.GitOps is an operational
+framework that takes DevOps best practices used for application development such as version control, collaboration,
+compliance, and CI/CD, and applies them to infrastructure automation.
 
-## Add your files
+### What is Flux?
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+Flux CD is a Continuous Delivery tool to help keep Kubernetes clusters in sync with configuration sources such as Git
+repositories and automate configuration updates when available
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/devops573026/flux-gitops/flux-config.git
-git branch -M main
-git push -uf origin main
-```
+### Repositories Structure
 
-## Integrate with your tools
+#### Infrastructure Repository (This repository)
 
-- [ ] [Set up project integrations](https://gitlab.com/devops573026/flux-gitops/flux-config/-/settings/integrations)
+This repository contains the configuration for the flux cluster. It contains the configuration for the infrastructure
+components and links to the repositories for the applications deployed in the cluster.
 
-## Collaborate with your team
+#### Application Repositories
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+The application repositories contain the configuration for the applications deployed in the cluster.
+Each application repository contains a manifests folder which contains the yaml configuration resources for the
+application.
 
-## Test and Deploy
+#### Linking Application Repositories
 
-Use the built-in continuous integration in GitLab.
+The application repositories are linked to the infrastructure repository by adding a folder in
+the [apps/base folder](./apps/base)
+containing the following files:
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+- kustomization.yaml - This file contains the configuration for aggregating the
+  manifests
+- repository.yaml - This file contains the configuration for the repository containing the application configuration.(
+  This is used by flux to sync the cluster state with the git repository)
+- kustomize.yaml - This file contains the configuration to deploy the application manifests in the cluster using
+  kustomize(kustomization.yaml).
 
-***
+Those files can then be `kuztomize`d in the [dev overlay](./apps/dev) or [prod overlay](./apps/prod).
+This setup can be used to create different environments for the application.
 
-# Editing this README
+For example, you can create a dev
+environment and a prod environment for the application. The dev environment can be used for testing and the prod
+environment can be used for production.
+The dev will for example be at [https://dev.example.com](https://dev.example.com) and the prod will be at
+[https://example.com](https://example.com).
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### How does it work?
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+The flux operator is installed in the cluster. The flux operator monitors the git repository for changes. When a change
+is detected, the flux operator updates the cluster state to match the git repository.
+Using this setup, you can use git as a single source of truth for the cluster state.
 
-## Name
-Choose a self-explaining name for your project.
+### Prerequisites
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+1. Get a Kubernetes cluster
+   You can use any Kubernetes cluster you have access to. If you don't have one, you can create a cluster locally
+   using [kind](https://kind.sigs.k8s.io/).
+2. Install flux cli
+   see [flux cli](https://fluxcd.io/flux/installation/) for installation instructions.
+3. Bootstrap flux
+   see [flux bootstrap](https://fluxcd.io/docs/get-started/#bootstrapping-flux) for instructions.
+   Bootstrapping flux will install flux in your cluster and sync the cluster state with the git repository.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+   Before you bootstrap flux, you need to create PAT(Personal Access Token), which will be used by flux to access the
+   git
+   repository.
+   You can create a PAT by following the
+   instructions [here](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html#creating-a-personal-access-token).
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+   Then, you need to export the PAT as an environment variable.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+    ```shell
+    export GITLAB_TOKEN=<your-gitlab-token>
+    export GITLAB_USER=<your-gitlab-username>
+    ```
+   You also need to set the KUBECONFIG environment variable to point to the kubeconfig file for the cluster.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+    ```shell
+    export KUBECONFIG=<path-to-kubeconfig-file>
+    ```
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+And then bootstrap flux using the following command.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+    ```shell
+    flux bootstrap gitlab \
+      --owner=$GITLAB_USER \
+      --repository=flux-config \  
+      --branch=main \
+      --path=clusters/arm-cluster \
+      --deploy-token-auth \
+      --components-extra=image-reflector-controller,image-automation-controller 
+    ```
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+## Infrastructure
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+### [Cert Manager](./infrastructure/controllers/cert-manager.yaml)
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+Cert manager is used to manage certificates in the cluster. It is deployed in the cert-manager namespace.
+It is deployed using the helm chart [cert-manager](https://cert-manager.io/docs/installation/helm/).
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+#### [Cluster Issuers](./infrastructure/configs)
 
-## License
-For open source projects, say how it is licensed.
+There are two cluster issuers deployed in the cluster. One for the staging environment and one for the production.
+The staging issuer is used to issue certificates for the staging environment and the production issuer is used to issue
+certificates for the production environment.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+### [Sealed Secrets](./infrastructure/controllers/sealed-secrets.yaml)
+
+The sealed secrets controller is used to manage secrets in the cluster. It is deployed in the sealed-secrets namespace.
+It is deployed using the helm chart [sealed-secrets](https://bitnami-labs.github.io/sealed-secrets)
+
+### [Auth](./infrastructure/auth)
+
+The auth folder contains the configuration for the auth provider. The auth provider used is keycloak. The auth provider
+is deployed in the auth namespace. It is deployed using the helm
+chart [keycloak](https://github.com/codecentric/helm-charts/tree/master/charts/keycloakx).
+
+### [Monitoring](./infrastructure/monitoring)
+
+1. [Prometheus+Grafana](./infrastructure/monitoring/kube-prometheus-stack)
+   The kube prometheus stack is used for monitoring metrics in the cluster. It is deployed in the monitoring namespace.
+   It is
+   deployed
+   using the helm chart [kube-prometheus-stack](https://prometheus-community.github.io/helm-charts).
+
+2. [Loki](./infrastructure/monitoring/loki)
+   Loki is used for log aggregation. Loki is deployed in the monitoring
+   namespace.
+   It is deployed using the helm chart [loki-stack](https://grafana.github.io/loki/charts).
+3. [Promtail](./infrastructure/monitoring/promtail)
+   Promtail is used to scrape logs from the cluster and send them to Loki. Promtail is deployed in the monitoring
+   namespace.
+   It is deployed using the helm chart [promtail](https://grafana.github.io/loki/charts).
+
+### [Storage](./infrastructure/storage)
+
+Minio is used for object storage. It is deployed in the storage namespace. It is deployed using the helm chart
+[minio](./infrastructure/storage/minio.yaml).
+
+### [Sealed Secrets](./infrastructure/controllers/sealed-secrets.yaml)
+
+Sealed secrets is used to manage secrets in the cluster.
+It is used to encrypt the secrets and store them in the git repository.
+They are then decrypted and stored in the cluster as secrets.
+You need to set the environment variable SEALED_SECRETS_CONTROLLER_NAMESPACE to the namespace where the sealed secrets
+controller is deployed.
+You also need to set the environment variable KUBECONFIG to point to the kubeconfig file for the cluster.
 
 ```shell
-export KUBECONFIG=/mnt/c/Users/appad/AppData/Roaming/Lens/kubeconfigs/18382e06-288c-425c-bd91-5538878b9924
 export SEALED_SECRETS_CONTROLLER_NAMESPACE=flux-system
 ```
+
+#### Encryption workflow
+
+- Create a secret and then export it to a yaml file.
+  ```shell
+   kubectl create secret generic <secret_name> --from-literal=<key>=<value> --dry-run=client -o yaml > <secret_name>.yaml
+  ```
+
+- Encrypt the secret using kubeseal don't forget to load the environment variables (SEALED_SECRETS_CONTROLLER_NAMESPACE,
+  KUBECONFIG).
+
+  ```shell
+  kubeseal --format=yaml < <secret_name>.yaml > <secret_name>-sealed.yaml
+  ```
+
+- add an example of the secret.
+- Commit the sealed secret to the git repository.
