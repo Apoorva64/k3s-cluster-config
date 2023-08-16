@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="KubernetesApiSettings">
+    <option name="configPaths">
+      <list>
+        <option value="$USER_HOME$/AppData/Roaming/Lens/kubeconfigs/7365e2ed-33db-4538-a2b9-03e6f56a1d44" />
+      </list>
+    </option>
+  </component>
   <component name="KubernetesSettings">
-    <specSources>
-      <SpecSource>
-        <option name="pathOrUrl" value="C:\Users\appad\IdeaProjects\flux-config\clusters\arm-cluster\flux-system\gotk-components.yaml" />
-      </SpecSource>
-      <SpecSource>
-        <option name="pathOrUrl" value="https://github.com/cert-manager/cert-manager/releases/download/v1.12.0/cert-manager.crds.yaml" />
-      </SpecSource>
-    </specSources>
+    <option name="contextName" value="default" />
+    <option name="getSpecFromCluster" value="true" />
   </component>
 </project>

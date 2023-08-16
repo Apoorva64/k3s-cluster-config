@@ -4,3 +4,4 @@ resources:
   - namespace.yaml
   - elastic-operator
   - elastic-search.yaml
+  - kibana.yaml
