@@ -6,3 +6,11 @@ kubectl create secret generic loki-s3-access --from-file=loki-s3-values.yaml --d
 # seal secret
 kubeseal --format=yaml  < loki-s3-access.yaml > loki-s3-access-sealed.yaml
 ```
+
+### grafana
+
+# add datasource
+
+http://loki-read:3100
+
+X-Org-Id: admins

@@ -22,3 +22,5 @@ spec:
       clients:
         - url: http://loki-gateway.monitoring.svc.cluster.local/loki/api/v1/push
           tenant_id: admins
+      external_labels:
+        cluster: loki
