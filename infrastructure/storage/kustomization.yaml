@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - minio.yaml
   - namespace.yaml
+  - service-monitor.yaml
