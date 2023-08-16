@@ -20,6 +20,4 @@ spec:
       scheme: http
       tlsConfig:
         insecureSkipVerify: true
-      followRedirects: false
-      scrapeTimeout: 30s
   jobLabel: minio
