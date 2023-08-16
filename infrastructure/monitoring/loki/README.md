@@ -13,4 +13,4 @@ kubeseal --format=yaml  < loki-s3-access.yaml > loki-s3-access-sealed.yaml
 
 http://loki-read:3100
 
-X-Org-Id: admins
+X-Scope-OrgID: admins
