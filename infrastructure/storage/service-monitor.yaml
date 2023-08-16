@@ -10,10 +10,10 @@ spec:
     matchLabels:
       app: minio
   endpoints:
-    - port: minio-api
-      interval: 30s
+    - targetPort: 9000
+      interval: 15s
       path: /minio/v2/metrics/cluster
-      scheme: https
+      scheme: http
       tlsConfig:
         insecureSkipVerify: true
   jobLabel: minio
