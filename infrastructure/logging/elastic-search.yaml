@@ -1,7 +1,8 @@
 apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
 metadata:
-  name: quickstart
+  name: elasticsearch
+  namespace: logging
 spec:
   version: 8.9.0
   nodeSets:
