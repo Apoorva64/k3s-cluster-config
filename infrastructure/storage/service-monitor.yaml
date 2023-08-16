@@ -9,6 +9,9 @@ spec:
   selector:
     matchLabels:
       app: minio
+  namespaceSelector:
+    matchNames:
+      - storage
   endpoints:
     - targetPort: 9000
       interval: 15s
