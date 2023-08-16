@@ -22,7 +22,7 @@ repositories and automate configuration updates when available
 
 ### Repositories Structure
 
-#### Infrastructure Repository
+#### Infrastructure Repository (This repository)
 
 This repository contains the configuration for the flux cluster. It contains the configuration for the infrastructure
 components and links to the repositories for the applications deployed in the cluster.
@@ -35,21 +35,31 @@ application.
 
 #### Linking Application Repositories
 
-The application repositories are linked to the infrastructure repository by adding a folder in the [apps folder](./apps)
+The application repositories are linked to the infrastructure repository by adding a folder in
+the [apps/base folder](./apps/base)
 containing the following files:
 
 - kustomization.yaml - This file contains the configuration for aggregating the
   manifests
-- namespace.yaml - This file contains the configuration for the namespace in which the application is deployed.
-- repository.yaml - This file contains the configuration for the repository containing the application configuration.
-- kustomize.yaml - This file contains the configuration for the kustomize version used to aggregate the manifests in
-  the
-  application repository.
+- repository.yaml - This file contains the configuration for the repository containing the application configuration.(
+  This is used by flux to sync the cluster state with the git repository)
+- kustomize.yaml - This file contains the configuration to deploy the application manifests in the cluster using
+  kustomize(kustomization.yaml).
+
+Those files can then be `kuztomize`d in the [dev overlay](./apps/dev) or [prod overlay](./apps/prod).
+This setup can be used to create different environments for the application.
+
+For example, you can create a dev
+environment and a prod environment for the application. The dev environment can be used for testing and the prod
+environment can be used for production.
+The dev will for example be at [https://dev.example.com](https://dev.example.com) and the prod will be at
+[https://example.com](https://example.com).
 
 ### How does it work?
 
 The flux operator is installed in the cluster. The flux operator monitors the git repository for changes. When a change
 is detected, the flux operator updates the cluster state to match the git repository.
+Using this setup, you can use git as a single source of truth for the cluster state.
 
 ### Prerequisites
 
@@ -74,8 +84,13 @@ is detected, the flux operator updates the cluster state to match the git reposi
     export GITLAB_TOKEN=<your-gitlab-token>
     export GITLAB_USER=<your-gitlab-username>
     ```
+   You also need to set the KUBECONFIG environment variable to point to the kubeconfig file for the cluster.
 
-   And then bootstrap flux using the following command.
+    ```shell
+    export KUBECONFIG=<path-to-kubeconfig-file>
+    ```
+
+And then bootstrap flux using the following command.
 
     ```shell
     flux bootstrap gitlab \
@@ -128,48 +143,37 @@ chart [keycloak](https://github.com/codecentric/helm-charts/tree/master/charts/k
    namespace.
    It is deployed using the helm chart [promtail](https://grafana.github.io/loki/charts).
 
-## Usage
+### [Storage](./infrastructure/storage)
 
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of
-usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably
-include in the README.
+Minio is used for object storage. It is deployed in the storage namespace. It is deployed using the helm chart
+[minio](./infrastructure/storage/minio.yaml).
 
-## Support
+### [Sealed Secrets](./infrastructure/controllers/sealed-secrets.yaml)
 
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address,
-etc.
-
-## Roadmap
-
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started.
-Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps
-explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce
-the likelihood that the changes inadvertently break something. Having instructions for running tests is especially
-helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-
-Show your appreciation to those who have contributed to the project.
-
-## License
-
-For open source projects, say how it is licensed.
-
-## Project status
-
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has
-slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or
-owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Sealed secrets is used to manage secrets in the cluster.
+It is used to encrypt the secrets and store them in the git repository.
+They are then decrypted and stored in the cluster as secrets.
+You need to set the environment variable SEALED_SECRETS_CONTROLLER_NAMESPACE to the namespace where the sealed secrets
+controller is deployed.
+You also need to set the environment variable KUBECONFIG to point to the kubeconfig file for the cluster.
 
 ```shell
-export KUBECONFIG=/mnt/c/Users/appad/AppData/Roaming/Lens/kubeconfigs/18382e06-288c-425c-bd91-5538878b9924
 export SEALED_SECRETS_CONTROLLER_NAMESPACE=flux-system
 ```
+
+#### Encryption workflow
+
+- Create a secret and then export it to a yaml file.
+  ```shell
+   kubectl create secret generic <secret_name> --from-literal=<key>=<value> --dry-run=client -o yaml > <secret_name>.yaml
+  ```
+
+- Encrypt the secret using kubeseal don't forget to load the environment variables (SEALED_SECRETS_CONTROLLER_NAMESPACE,
+  KUBECONFIG).
+
+  ```shell
+  kubeseal --format=yaml < <secret_name>.yaml > <secret_name>-sealed.yaml
+  ```
+
+- add an example of the secret.
+- Commit the sealed secret to the git repository.
