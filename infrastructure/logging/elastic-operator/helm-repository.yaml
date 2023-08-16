@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: elastic
+  namespace: logging
+  labels:
+    toolkit.fluxcd.io/tenant: sre-team
+spec:
+  interval: 60m0s
+  url: https://helm.elastic.co
