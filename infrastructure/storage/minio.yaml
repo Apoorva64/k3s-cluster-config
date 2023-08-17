@@ -61,11 +61,7 @@ spec:
       - name: MINIO_IDENTITY_OPENID_CLIENT_ID_KEYCLOAK_PRIMARY
         value: "minio"
       - name: MINIO_IDENTITY_OPENID_DISPLAY_NAME_KEYCLOAK_PRIMARY
-        value: "keycloak primary"
-      - name: MINIO_IDENTITY_OPENID_SCOPES_KEYCLOAK_PRIMARY
-        value: "openid,email,preferred_username"
-      - name: MINIO_IDENTITY_OPENID_REDIRECT_URI_DYNAMIC_KEYCLOAK_PRIMARY
-        value: "on"
+        value: "Keycloak"
       - name: MINIO_IDENTITY_OPENID_CLAIM_NAME_KEYCLOAK_PRIMARY
         value: "minio-roles"
     extraEnvVarsSecret: minio-env
