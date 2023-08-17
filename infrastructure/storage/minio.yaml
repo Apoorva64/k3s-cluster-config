@@ -62,6 +62,12 @@ spec:
         value: "minio"
       - name: MINIO_IDENTITY_OPENID_DISPLAY_NAME_KEYCLOAK_PRIMARY
         value: "Keycloak"
+      - name: MINIO_IDENTITY_OPENID_SCOPES_KEYCLOAK_PRIMARY
+        value: "openid,email,profile"
+      - name: MINIO_IDENTITY_OPENID_REDIRECT_URI_DYNAMIC_KEYCLOAK_PRIMARY
+        value: "on"
       - name: MINIO_IDENTITY_OPENID_CLAIM_NAME_KEYCLOAK_PRIMARY
         value: "minio-roles"
+      - name: MINIO_BROWSER_REDIRECT_URL_KEYCLOAK_PRIMARY
+        value: "https://minio.storage.apoorva64.com/"
     extraEnvVarsSecret: minio-env
