@@ -17,4 +17,5 @@ spec:
         namespace: kube-ray
       interval: 12h
   values:
-    image.tag: nightly-aarch64
+    image:
+      tag: latest-aarch
