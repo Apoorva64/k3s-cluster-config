@@ -10,9 +10,14 @@ spec:
   chart:
     spec:
       chart: kuberay-operator
-      version: "*"
+      version: "0.6.0"
       sourceRef:
         kind: HelmRepository
         name: kuberay
         namespace: kube-ray
       interval: 12h
+  values:
+    image:
+      repository: apoorva64/kuberay-operator
+      tag: latest-arm64
+      pullPolicy: IfNotPresent
