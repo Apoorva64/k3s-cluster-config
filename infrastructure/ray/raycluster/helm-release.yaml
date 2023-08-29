@@ -20,3 +20,19 @@ spec:
     image:
       repository: apoorva64/ray-w-deps
       tag: latest
+    worker:
+      resources:
+        limits:
+          cpu: "4"
+          memory: "12G"
+        requests:
+          cpu: "4"
+          memory: "12G"
+    head:
+      resources:
+        limits:
+          cpu: "4"
+          memory: "12G"
+        requests:
+          cpu: "4"
+          memory: "12G"
