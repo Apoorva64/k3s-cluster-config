@@ -27,7 +27,7 @@ spec:
           memory: "12G"
         requests:
           cpu: "1"
-          memory: "12G"
+          memory: "8G"
     head:
       resources:
         limits:
@@ -35,4 +35,4 @@ spec:
           memory: "12G"
         requests:
           cpu: "1"
-          memory: "12G"
+          memory: "8G"
