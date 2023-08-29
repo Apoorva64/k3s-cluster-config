@@ -21,6 +21,7 @@ spec:
       repository: apoorva64/ray-w-deps
       tag: latest
     worker:
+      replicas: 2
       resources:
         limits:
           cpu: "4"
