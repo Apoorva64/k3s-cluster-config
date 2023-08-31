@@ -140,3 +140,21 @@ spec:
   path: ./infrastructure/ray
   prune: true
   wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: games
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: storage
+  interval: 1h
+  retryInterval: 1m
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./games
+  prune: true
+  wait: true
