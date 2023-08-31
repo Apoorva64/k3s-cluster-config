@@ -142,7 +142,9 @@ spec:
                   name: curseforge-api-key
                   key: api-key
             - name : CURSEFORGE_FILES
-              value: https://www.curseforge.com/minecraft/mc-mods/easyauth
+              value: |
+                https://www.curseforge.com/minecraft/mc-mods/fabric-api
+                https://www.curseforge.com/minecraft/mc-mods/easyauth
 
           ports:
             - containerPort: 25565
