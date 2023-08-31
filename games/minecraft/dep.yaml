@@ -136,17 +136,17 @@ spec:
               value: "FALSE"
             - name: SERVER_NAME
               value: "Apoorva's Minecraft Server"
-            - name: CF_API_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: curseforge-api-key
-                  key: api-key
-            - name: TYPE
-              value: FORGE
-            - name : CURSEFORGE_FILES
-              value: |
-                https://www.curseforge.com/minecraft/mc-mods/fabric-api
-                https://www.curseforge.com/minecraft/mc-mods/easyauth
+#            - name: CF_API_KEY
+#              valueFrom:
+#                secretKeyRef:
+#                  name: curseforge-api-key
+#                  key: api-key
+#            - name: TYPE
+#              value: FORGE
+#            - name : CURSEFORGE_FILES
+#              value: |
+#                https://www.curseforge.com/minecraft/mc-mods/fabric-api
+#                https://www.curseforge.com/minecraft/mc-mods/easyauth
 
           ports:
             - containerPort: 25565
