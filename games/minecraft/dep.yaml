@@ -132,6 +132,11 @@ spec:
           env:
             - name: EULA
               value: "TRUE"
+            - name: ONLINE_MODE
+              value: "FALSE"
+            - name: SERVER_NAME
+              value: "Apoorva's Minecraft Server"
+
           ports:
             - containerPort: 25565
           volumeMounts:
