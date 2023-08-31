@@ -141,8 +141,6 @@ spec:
                 secretKeyRef:
                   name: curseforge-api-key
                   key: api-key
-            - name: TYPE
-              value: "AUTO_CURSEFORGE"
             - name : CURSEFORGE_FILES
               value: https://www.curseforge.com/minecraft/mc-mods/easyauth
 
