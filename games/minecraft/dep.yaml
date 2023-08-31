@@ -143,8 +143,10 @@ spec:
                   key: api-key
             - name: TYPE
               value: "AUTO_CURSEFORGE"
-            - name: CF_PAGE_URL
-              value: "https://www.curseforge.com/minecraft/mc-mods/easyauth"
+            - name : CURSEFORGE_FILES
+              value: |
+                https://www.curseforge.com/minecraft/mc-mods/easyauth
+
           ports:
             - containerPort: 25565
           volumeMounts:
