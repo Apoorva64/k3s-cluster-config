@@ -144,8 +144,7 @@ spec:
             - name: TYPE
               value: "AUTO_CURSEFORGE"
             - name : CURSEFORGE_FILES
-              value: |
-                https://www.curseforge.com/minecraft/mc-mods/easyauth
+              value: https://www.curseforge.com/minecraft/mc-mods/easyauth
 
           ports:
             - containerPort: 25565
