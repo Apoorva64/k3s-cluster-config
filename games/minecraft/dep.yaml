@@ -38,7 +38,7 @@ spec:
     - targetPort: web
       name: web
       port: 8080
-      nodePort: 30000
+      nodePort: 30080
     - targetPort: proxy
       name: proxy
       port: 25565
