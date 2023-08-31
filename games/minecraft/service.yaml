@@ -11,3 +11,7 @@ spec:
       port: 25565
       targetPort: 25565
       name: game-port
+    - protocol: UDP
+      port: 25565 # This is the port that the Minecraft client will connect to
+      targetPort: 25565
+      name: game-port-udp
