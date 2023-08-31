@@ -162,7 +162,7 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: games
+  name: k3s-upgrade
   namespace: flux-system
 spec:
   interval: 1h
@@ -171,6 +171,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/upgrade
+  path: ./infrastructure/k3s-upgrade
   prune: true
   wait: true
