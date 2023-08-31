@@ -136,7 +136,15 @@ spec:
               value: "FALSE"
             - name: SERVER_NAME
               value: "Apoorva's Minecraft Server"
-
+            - name: CF_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: curseforge-api-key
+                  key: api-key
+            - name: TYPE
+              value: "AUTO_CURSEFORGE"
+            - name: CF_PAGE_URL
+              value: "https://www.curseforge.com/minecraft/mc-mods/easyauth"
           ports:
             - containerPort: 25565
           volumeMounts:
