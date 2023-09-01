@@ -129,8 +129,8 @@ spec:
 #                secretKeyRef:
 #                  name: curseforge-api-key
 #                  key: api-key
-            - name: TYPE
-              value: MODRINTH
+#            - name: TYPE
+#              value: MODRINTH
 
 
           ports:
