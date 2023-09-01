@@ -5,18 +5,6 @@ metadata:
   name: mc-router
   namespace: minecraft
 ---
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: mc-stable
-  namespace: minecraft
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 5Gi
----
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -141,12 +129,9 @@ spec:
 #                secretKeyRef:
 #                  name: curseforge-api-key
 #                  key: api-key
-#            - name: TYPE
-#              value: FORGE
-#            - name : CURSEFORGE_FILES
-#              value: |
-#                https://www.curseforge.com/minecraft/mc-mods/fabric-api
-#                https://www.curseforge.com/minecraft/mc-mods/easyauth
+            - name: TYPE
+              value: MODRINTH
+
 
           ports:
             - containerPort: 25565
