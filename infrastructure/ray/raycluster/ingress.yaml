@@ -1,5 +1,5 @@
 apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRouteTCP
+kind: IngressRoute
 metadata:
   name: ray-serve
   namespace: kube-ray
@@ -10,9 +10,11 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: HostSNI(`ray-serve.ray.apoorva64.com`)
+    - match: Host(`ray-serve.kube-ray.apoorva64.com`)
+      kind: Rule
       services:
         - name: ray-serve
           port: 8000
+          namespace: kube-ray
   tls:
     secretName: ray-serve-tls-ingress
