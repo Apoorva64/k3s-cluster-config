@@ -10,7 +10,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: HostSNI(`ray-serve.devops-tools.apoorva64.com`)
+    - match: HostSNI(`ray-serve.ray.apoorva64.com`)
       services:
         - name: ray-serve
           port: 8000
