@@ -22,4 +22,3 @@ spec:
   tls:
     - hosts:
         - ray-serve.ray.apoorva64.com
-      secretName: ray-serve-tls-ingress
