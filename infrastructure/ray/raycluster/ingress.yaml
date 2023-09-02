@@ -18,7 +18,7 @@ spec:
               service:
                 name: ray-cluster-kuberay-head-svc
                 port:
-                  number: 8000
+                  name: serve
   tls:
     - hosts:
         - ray-serve.ray.apoorva64.com
