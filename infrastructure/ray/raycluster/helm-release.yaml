@@ -29,6 +29,17 @@ spec:
         requests:
           cpu: "1"
           memory: "8G"
+      ports:
+        - containerPort: 6379
+          name: gcs-server
+        - containerPort: 8265
+          name: dashboard
+        - containerPort: 8000
+          name: serve
+        - containerPort: 10001
+          name: client
+        - containerPort: 8080
+          name: metrics
     head:
       resources:
         limits:
@@ -37,3 +48,14 @@ spec:
         requests:
           cpu: "1"
           memory: "8G"
+      ports:
+        - containerPort: 6379
+          name: gcs-server
+        - containerPort: 8265
+          name: dashboard
+        - containerPort: 8000
+          name: serve
+        - containerPort: 10001
+          name: client
+        - containerPort: 8080
+          name: metrics

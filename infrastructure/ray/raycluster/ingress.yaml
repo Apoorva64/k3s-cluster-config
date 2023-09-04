@@ -1,15 +1,3 @@
-apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: test-header
-  namespace: kube-ray
-spec:
-  # replace Host header with localhost
-  headers:
-    customRequestHeaders:
-      Host: localhost
-
----
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
