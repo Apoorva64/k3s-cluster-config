@@ -53,7 +53,7 @@ spec:
     replication:
       synchronousCommit: "on"
       numSynchronousReplicas: 1
-      applicationName: {{ include "postgres.fullname" . }}
+      applicationName: keycloak-postgresql
     readReplicas:
       replicaCount: 2
 ---
