@@ -78,7 +78,7 @@ spec:
     remediation:
       retries: 2
   values:
-    replicaCount: 3
+    replicas: 3
     ingress:
       enabled: true
       className: traefik
