@@ -25,8 +25,8 @@ spec:
         replicas: 3
 
     grafana:
-      enabled: true
-      replicas: 3
+      enabled: false
+      replicas: 1
       extraSecretMounts:
         - name: auth-generic-oauth-secret-mount
           secretName: auth-generic-oauth-secret
