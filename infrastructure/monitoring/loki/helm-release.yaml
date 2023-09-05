@@ -30,11 +30,11 @@ spec:
           ruler: loki-ruler
           admin: loki-admin
     backend:
-      replicas: 2
+      replicas: 3
     read:
-      replicas: 2
+      replicas: 3
     write:
-      replicas: 2
+      replicas: 3
     monitoring:
       serviceMonitor:
         labels:
