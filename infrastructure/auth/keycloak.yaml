@@ -29,7 +29,7 @@ spec:
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: postgres
+  name: keycloak-postgresql
   namespace: keycloak
 spec:
   interval: 30m
@@ -49,6 +49,7 @@ spec:
           username: dbusername
           password: dbpassword
           database: keycloak
+          replicationPassword: replication-password
     architecture: replication
     replication:
       synchronousCommit: "on"
