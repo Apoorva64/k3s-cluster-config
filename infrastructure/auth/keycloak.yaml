@@ -130,7 +130,7 @@ spec:
 
     database:
       vendor: postgres
-      hostname: postgres-postgresql
+      hostname: keycloak-postgresql-primary
       port: 5432
       username: dbusername
       password: dbpassword
