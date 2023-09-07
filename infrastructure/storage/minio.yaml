@@ -56,18 +56,18 @@ spec:
         value: "minio"
       - name: MINIO_PROMETHEUS_AUTH_TYPE
         value: "public"
-#      - name: MINIO_IDENTITY_OPENID_CONFIG_URL_KEYCLOAK_PRIMARY
-#        value: "https://keycloak.auth.apoorva64.com/auth/realms/lab/.well-known/openid-configuration"
-#      - name: MINIO_IDENTITY_OPENID_CLIENT_ID_KEYCLOAK_PRIMARY
-#        value: "minio"
-#      - name: MINIO_IDENTITY_OPENID_DISPLAY_NAME_KEYCLOAK_PRIMARY
-#        value: "Keycloak"
-#      - name: MINIO_IDENTITY_OPENID_SCOPES_KEYCLOAK_PRIMARY
-#        value: "openid,email,profile"
-#      - name: MINIO_IDENTITY_OPENID_REDIRECT_URI_DYNAMIC_KEYCLOAK_PRIMARY
-#        value: "on"
-#      - name: MINIO_IDENTITY_OPENID_CLAIM_NAME_KEYCLOAK_PRIMARY
-#        value: "minio-roles"
-#      - name: MINIO_BROWSER_REDIRECT_URL_KEYCLOAK_PRIMARY
-#        value: "https://minio.storage.apoorva64.com/"
+      - name: MINIO_IDENTITY_OPENID_CONFIG_URL_KEYCLOAK_PRIMARY
+        value: "https://keycloak.auth.apoorva64.com/auth/realms/lab/.well-known/openid-configuration"
+      - name: MINIO_IDENTITY_OPENID_CLIENT_ID_KEYCLOAK_PRIMARY
+        value: "minio"
+      - name: MINIO_IDENTITY_OPENID_DISPLAY_NAME_KEYCLOAK_PRIMARY
+        value: "Keycloak"
+      - name: MINIO_IDENTITY_OPENID_SCOPES_KEYCLOAK_PRIMARY
+        value: "openid,email,profile"
+      - name: MINIO_IDENTITY_OPENID_REDIRECT_URI_DYNAMIC_KEYCLOAK_PRIMARY
+        value: "on"
+      - name: MINIO_IDENTITY_OPENID_CLAIM_NAME_KEYCLOAK_PRIMARY
+        value: "minio-roles"
+      - name: MINIO_BROWSER_REDIRECT_URL_KEYCLOAK_PRIMARY
+        value: "https://minio.storage.apoorva64.com/"
     extraEnvVarsSecret: minio-env
