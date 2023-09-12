@@ -14,8 +14,7 @@ spec:
           namespace: kube-system
       services:
         - name: ray-cluster-kuberay-head-svc
-          port:
-            number: 8265
+          port: 8265
   tls:
     certResolver: letsencrypt-prod
     domains:
