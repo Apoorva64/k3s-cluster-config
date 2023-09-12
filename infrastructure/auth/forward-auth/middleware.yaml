@@ -6,5 +6,6 @@ metadata:
 spec:
   forwardAuth:
     address: https://traefik-forward-auth.kube-system.svc.cluster.local
+    trustForwardHeader: true
     authResponseHeaders:
       - X-Forwarded-User
