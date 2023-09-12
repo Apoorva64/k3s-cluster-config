@@ -2,10 +2,10 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
   name: traefik-forward-auth
-  namespace: kube-ray
+  namespace: default
 spec:
   forwardAuth:
-    address: https://forward-auth.auth.apoorva64.com/
+    address: http://traefik-forward-auth.default.svc.cluster.local:4181
     trustForwardHeader: true
     authResponseHeaders:
       - X-Forwarded-User
