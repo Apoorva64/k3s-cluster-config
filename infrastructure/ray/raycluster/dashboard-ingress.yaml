@@ -12,6 +12,8 @@ spec:
       middlewares:
         - name: traefik-forward-auth
           namespace: kube-ray
+        - name: redirect-https
+          namespace: default
       services:
         - name: ray-cluster-kuberay-head-svc
           port: 8265
