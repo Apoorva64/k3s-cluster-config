@@ -8,7 +8,7 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`ray-dashboard.ray.apoorva64.com`)
+      match: Host('ray-dashboard.ray.apoorva64.com')
       middlewares:
         - name: traefik-forward-auth
           namespace: kube-ray
