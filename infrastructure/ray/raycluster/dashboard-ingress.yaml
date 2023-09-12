@@ -1,21 +1,26 @@
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
   name: ray-dashboard
   namespace: kube-ray
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    ingress.kubernetes.io/auth-type: forward
+    ingress.kubernetes.io/auth-url: http://traefik-forward-auth.kube-system.svc.cluster.local
+    ingress.kubernetes.io/auth-response-headers: X-Forwarded-Use
 spec:
-  entryPoints:
-    - websecure
-  routes:
-    - kind: Rule
-      match: Host(`ray-dashboard.ray.apoorva64.com`)
-      middlewares:
-        - name: traefik-forward-auth
-          namespace: kube-ray
-      services:
-        - name: ray-cluster-kuberay-head-svc
-          port: 8265
+  rules:
+    - host: ray-dashboard.ray.apoorva64.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ray-cluster-kuberay-head-svc
+                port:
+                  number: 8265
   tls:
-    certResolver: letsencrypt-prod
-    domains:
-      - main: ray-dashboard.ray.apoorva64.com
+    - hosts:
+        - ray-dashboard.ray.apoorva64.com
+      secretName: ray-dashboard-ingress
