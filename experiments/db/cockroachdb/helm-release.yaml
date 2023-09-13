@@ -17,4 +17,4 @@ spec:
   values:
     storage:
       persistentVolume:
-        size: 10Gi
+        size: 5Gi
