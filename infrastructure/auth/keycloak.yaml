@@ -53,10 +53,10 @@ spec:
     architecture: replication
     replication:
       synchronousCommit: "on"
-      numSynchronousReplicas: 1
+      numSynchronousReplicas: 2
       applicationName: keycloak-postgresql
     readReplicas:
-      replicaCount: 2
+      replicaCount: 3
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
