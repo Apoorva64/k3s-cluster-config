@@ -35,16 +35,16 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - targetPort: web
-      name: web
-      port: 8080
-      nodePort: 30080
+#    - targetPort: web
+#      name: web
+#      port: 8080
+#      nodePort: 30080
     - targetPort: proxy
       name: proxy
       port: 25565
       nodePort: 30000
   selector:
-    run: mc-router
+    run: mc-stable
 ---
 apiVersion: apps/v1
 kind: Deployment
