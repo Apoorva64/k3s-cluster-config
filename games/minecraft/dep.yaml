@@ -92,6 +92,7 @@ metadata:
 spec:
   ports:
     - port: 25565
+      nodePort: 30001
   selector:
     run: mc-stable
 ---
@@ -124,13 +125,13 @@ spec:
               value: "FALSE"
             - name: SERVER_NAME
               value: "Apoorva's Minecraft Server"
-#            - name: CF_API_KEY
-#              valueFrom:
-#                secretKeyRef:
-#                  name: curseforge-api-key
-#                  key: api-key
-#            - name: TYPE
-#              value: MODRINTH
+          #            - name: CF_API_KEY
+          #              valueFrom:
+          #                secretKeyRef:
+          #                  name: curseforge-api-key
+          #                  key: api-key
+          #            - name: TYPE
+          #              value: MODRINTH
 
 
           ports:
