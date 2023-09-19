@@ -82,7 +82,7 @@ Using this setup, you can use git as a single source of truth for the cluster st
 
     ```shell
     export GITLAB_TOKEN=<your-gitlab-token>
-    export GITLAB_USER=<your-gitlab-username>
+    export GITLAB_USER=<your-gitlab-username> #devops573026/flux-gitops
     ```
    You also need to set the KUBECONFIG environment variable to point to the kubeconfig file for the cluster.
 
@@ -100,6 +100,7 @@ And then bootstrap flux using the following command.
       --path=clusters/arm-cluster \
       --deploy-token-auth \
       --components-extra=image-reflector-controller,image-automation-controller 
+
     ```
 
 ## Infrastructure
