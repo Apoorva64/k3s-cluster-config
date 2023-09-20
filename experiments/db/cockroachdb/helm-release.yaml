@@ -14,7 +14,3 @@ spec:
         name: cockroachdb
         namespace: flux-system
       interval: 12h
-  values:
-    storage:
-      persistentVolume:
-        size: 5Gi
