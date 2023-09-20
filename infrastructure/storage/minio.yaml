@@ -25,7 +25,8 @@ spec:
       interval: 12h
   values:
     mode: distributed
-    replicas: 6
+    statefulset:
+      replicaCount: 6
     ingress:
       enabled: true
       className: traefik
