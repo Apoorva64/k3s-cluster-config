@@ -36,7 +36,7 @@ spec:
   chart:
     spec:
       chart: postgresql
-      version: "12"
+      version: "12.12.10"
       interval: 12h
       sourceRef:
         kind: HelmRepository
