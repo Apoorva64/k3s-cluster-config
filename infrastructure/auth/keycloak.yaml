@@ -49,14 +49,7 @@ spec:
           username: dbusername
           password: dbpassword
           database: keycloak
-          replicationPassword: replication-password
-    architecture: replication
-    replication:
-      synchronousCommit: "on"
-      numSynchronousReplicas: 2
-      applicationName: keycloak-postgresql
-    readReplicas:
-      replicaCount: 3
+    architecture: standalone
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
