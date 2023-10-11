@@ -123,7 +123,7 @@ spec:
 
     database:
       vendor: postgres
-      hostname: keycloak-postgresql-primary.keycloak.svc.cluster.local
+      hostname: keycloak-postgresql.keycloak.svc.cluster.local
       port: 5432
       username: dbusername
       password: dbpassword
