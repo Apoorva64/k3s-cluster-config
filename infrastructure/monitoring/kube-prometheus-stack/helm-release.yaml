@@ -48,10 +48,10 @@ spec:
 
       grafana.ini:
         server:
-          root_url: https://grafana.monitoring.apoorva64.com
+          root_url: https://grafana.monitoring.apoorva64.com/
         auth.generic_oauth:
           enabled: true
-          auto_login: true
+          auto_login: false
           name: "Keycloak-OAuth"
           allow_sign_up: true
           client_id: $__file{/etc/secrets/auth_generic_oauth/client_id}
