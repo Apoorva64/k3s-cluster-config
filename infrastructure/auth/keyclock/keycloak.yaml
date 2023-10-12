@@ -41,10 +41,11 @@ spec:
       rules:
         - # Ingress host
           host: 'keycloak.auth.apoorva64.com'
-          # Paths for the host
-          paths:
-            - path: '{{ tpl .Values.http.relativePath $ | trimSuffix "/" }}/'
-              pathType: Prefix
+            # Paths for the host
+          http:
+            paths:
+              - path: /
+                pathType: Prefix
       tls:
         - hosts:
             - keycloak.auth.apoorva64.com
