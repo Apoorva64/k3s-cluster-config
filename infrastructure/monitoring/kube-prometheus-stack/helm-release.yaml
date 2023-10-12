@@ -48,7 +48,7 @@ spec:
 
       grafana.ini:
         server:
-          root_url: http://grafana.monitoring.apoorva64.com
+          root_url: https://grafana.monitoring.apoorva64.com
         auth.generic_oauth:
           enabled: true
           auto_login: false
