@@ -14,42 +14,6 @@ metadata:
 spec:
   interval: 24h
   url: https://codecentric.github.io/helm-charts
-
-
----
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
-metadata:
-  name: bitnami
-  namespace: flux-system
-spec:
-  interval: 24h
-  url: https://charts.bitnami.com/bitnami
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: keycloak-postgresql
-  namespace: keycloak
-spec:
-  interval: 30m
-  chart:
-    spec:
-      chart: postgresql
-      version: "12.12.10"
-      interval: 12h
-      sourceRef:
-        kind: HelmRepository
-        name: bitnami
-        namespace: flux-system
-  values:
-    global:
-      postgresql:
-        auth:
-          username: dbusername
-          password: dbpassword
-          database: keycloak
-    architecture: standalone
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -60,8 +24,8 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: keycloakx
-      version: "2.0.0"
+      chart: keycloak
+      version: "*"
       interval: 12h
       sourceRef:
         kind: HelmRepository
@@ -74,7 +38,7 @@ spec:
     replicas: 3
     ingress:
       enabled: true
-      className: traefik
+      ingressClassName: traefik
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-prod
         traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
@@ -89,16 +53,6 @@ spec:
         - hosts:
             - keycloak.auth.apoorva64.com
           secretName: keycloak-tls
-    command:
-      - "/opt/keycloak/bin/kc.sh"
-      - "--verbose"
-      - "start"
-      - "--http-enabled=true"
-      - "--http-port=8080"
-      - "--hostname-strict=false"
-      - "--hostname-strict-https=false"
-      - "--spi-events-listener-jboss-logging-success-level=info"
-      - "--spi-events-listener-jboss-logging-error-level=warn"
 
     extraEnv: |
       - name: KEYCLOAK_ADMIN
@@ -117,14 +71,3 @@ spec:
           -XX:MaxRAMPercentage=50.0
           -Djava.awt.headless=true
           -Djgroups.dns.query={{ include "keycloak.fullname" . }}-headless
-
-    dbchecker:
-      enabled: true
-
-    database:
-      vendor: postgres
-      hostname: keycloak-postgresql.keycloak.svc.cluster.local
-      port: 5432
-      username: dbusername
-      password: dbpassword
-      database: keycloak
