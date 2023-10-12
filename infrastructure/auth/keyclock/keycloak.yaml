@@ -31,11 +31,7 @@ spec:
         kind: HelmRepository
         name: codecentric
         namespace: flux-system
-  install:
-    remediation:
-      retries: 2
   values:
-    replicas: 3
     ingress:
       enabled: true
       ingressClassName: traefik
@@ -53,21 +49,3 @@ spec:
         - hosts:
             - keycloak.auth.apoorva64.com
           secretName: keycloak-tls
-
-    extraEnv: |
-      - name: KEYCLOAK_ADMIN
-        valueFrom:
-          secretKeyRef:
-            name: {{ include "keycloak.fullname" . }}-admin-creds
-            key: user
-      - name: KEYCLOAK_ADMIN_PASSWORD
-        valueFrom:
-          secretKeyRef:
-            name: {{ include "keycloak.fullname" . }}-admin-creds
-            key: password
-      - name: JAVA_OPTS_APPEND
-        value: >-
-          -XX:+UseContainerSupport
-          -XX:MaxRAMPercentage=50.0
-          -Djava.awt.headless=true
-          -Djgroups.dns.query={{ include "keycloak.fullname" . }}-headless
