@@ -4,3 +4,9 @@ namespace: flux-system
 resources:
   - ../../base/si4-ml-digits-recognition
 namePrefix: prod-
+
+patches:
+  - target:
+      kind: Kustomization
+      name: react-flight-tracker
+    path: kustomize-patch.yaml
