@@ -33,5 +33,6 @@ spec:
       create: true
       createClusterRole: false
       passwordHash: $2a$10$MiDXkFqZMFWBkmPYfD6/PuvxGtEwrvhguYqaOHBbPBfY7CLA8oXdK
+
 #    additionalArgs:
 #      - --auth-methods=oidc
