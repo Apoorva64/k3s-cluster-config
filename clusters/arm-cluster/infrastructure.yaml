@@ -172,4 +172,3 @@ spec:
   path: ./infrastructure/k3s-upgrade
   prune: true
   wait: true
-
