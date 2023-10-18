@@ -57,8 +57,8 @@ metadata:
   name: storage
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: auth-apps
+#  dependsOn:
+#    - name: auth-apps
   interval: 1h
   retryInterval: 1m
   timeout: 5m
@@ -75,8 +75,8 @@ metadata:
   name: devops-tools
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: auth-apps
+#  dependsOn:
+#    - name: auth-apps
   interval: 1h
   retryInterval: 1m
   timeout: 5m
