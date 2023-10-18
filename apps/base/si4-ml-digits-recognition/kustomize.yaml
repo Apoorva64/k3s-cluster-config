@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  path: ./manifests/react-flight-tracker/base
+  path: ./manifests/si4-ml-digits-recognition/base
   prune: true
   sourceRef:
     kind: GitRepository
