@@ -35,5 +35,5 @@ spec:
       passwordHash: $2a$10$MiDXkFqZMFWBkmPYfD6/PuvxGtEwrvhguYqaOHBbPBfY7CLA8oXdK
 
     additionalArgs:
-      - --insecure-no-authentication-user=admin
+      - --insecure-no-authentication-user=weave-gitops
 #      - --auth-methods=oidc
