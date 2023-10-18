@@ -32,5 +32,5 @@ spec:
       runAsUser: 1000
     adminUser:
       create: false
-    additionalArgs:
-      - --auth-methods=oidc
+#    additionalArgs:
+#      - --auth-methods=oidc

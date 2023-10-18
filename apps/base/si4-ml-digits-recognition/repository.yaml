@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: si4-ml-digits-recognition
+  namespace: flux-system
+spec:
+  interval: 5m
+  url: https://github.com/BedinoTom/Polytech-Si4-Machine-Learning-Model-Server
+  ref:
+    branch: main
