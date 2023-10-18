@@ -8,5 +8,5 @@ namePrefix: prod-
 patches:
   - target:
       kind: Kustomization
-      name: react-flight-tracker
+      name: si4-ml-digits-recognition
     path: kustomize-patch.yaml
