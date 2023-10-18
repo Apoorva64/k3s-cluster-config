@@ -34,5 +34,6 @@ spec:
       createClusterRole: false
       passwordHash: $2a$10$MiDXkFqZMFWBkmPYfD6/PuvxGtEwrvhguYqaOHBbPBfY7CLA8oXdK
 
-#    additionalArgs:
+    additionalArgs:
+      - --insecure-no-authentication-user gitops-test-user
 #      - --auth-methods=oidc
