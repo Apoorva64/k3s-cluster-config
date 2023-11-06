@@ -15,5 +15,7 @@ spec:
     passwordSecret:
       name: mariadb-galera
       key: mariadb-password
+  transaction:
+    xaEnabled: true
   hostname:
     hostname: keycloak.auth.apoorva64.com
