@@ -28,4 +28,3 @@ spec:
       name: keycloak
     persistence:
       enabled: true
-      size: 4Gi
