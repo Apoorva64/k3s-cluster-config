@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: youtube-analyzer
+  namespace: flux-system
+spec:
+  interval: 5m
+  url: https://github.com/neoteristis/youtube-sentiment-analyzer/
+  ref:
+    branch: main
