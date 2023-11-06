@@ -14,3 +14,13 @@ spec:
         name: bitnami
         namespace: keycloak
       interval: 24h
+  values:
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+      prometheusRules:
+        enabled: true
+    db:
+      user: keycloak
+      name: keycloak
