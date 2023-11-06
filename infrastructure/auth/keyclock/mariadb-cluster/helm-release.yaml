@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mariadb-galera
+  namespace: keycloak
+spec:
+  interval: 60m
+  chart:
+    spec:
+      chart: mariadb-galera
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: keycloak
+      interval: 24h
