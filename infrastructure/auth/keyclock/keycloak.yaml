@@ -5,7 +5,7 @@ metadata:
   namespace: keycloak
 spec:
   instances: 3
-  image: quay.io/keycloak/keycloak:22.0
+  image: quay.io/keycloak/keycloak:22.0.4
   db:
     vendor: mariadb
     host: mariadb-galera
