@@ -28,3 +28,4 @@ spec:
       name: keycloak
     persistence:
       storageClass: longhorn
+      size: 3Gi
