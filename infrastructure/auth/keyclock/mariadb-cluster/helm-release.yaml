@@ -14,6 +14,10 @@ spec:
         name: bitnami
         namespace: keycloak
       interval: 24h
+  valuesFrom:
+    - kind: Secret
+      name: mariadb-secrets
+      valuesKey: mariadb-secrets.yaml
   values:
     metrics:
       enabled: true
