@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - mariadb-cluster
   - db-username.yaml
-#  - keycloak.yaml
+  - keycloak.yaml
