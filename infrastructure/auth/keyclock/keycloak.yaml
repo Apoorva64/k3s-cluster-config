@@ -1,44 +1,18 @@
----
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
+apiVersion: k8s.keycloak.org/v2alpha1
+kind: Keycloak
 metadata:
-  name: codecentric
-  namespace: flux-system
+  name: main-keycloak
 spec:
-  interval: 24h
-  url: https://codecentric.github.io/helm-charts
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: keycloak
-  namespace: keycloak
-spec:
-  interval: 30m
-  chart:
-    spec:
-      chart: keycloak
-      version: "*"
-      interval: 12h
-      sourceRef:
-        kind: HelmRepository
-        name: codecentric
-        namespace: flux-system
-  values:
-    ingress:
-      enabled: true
-      ingressClassName: traefik
-      annotations:
-        cert-manager.io/cluster-issuer: letsencrypt-prod
-        traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
-      rules:
-        - host: 'keycloak.auth.apoorva64.com'
-            # Paths for the host
-          http:
-            paths:
-              - path: /
-                pathType: Prefix
-      tls:
-        - hosts:
-            - keycloak.auth.apoorva64.com
-          secretName: keycloak-tls
+  instances: 3
+  db:
+    vendor: mariadb
+    host: mariadb-galera
+    database: keycloak
+    usernameSecret:
+      name: db-username
+      key: username
+    passwordSecret:
+      name: keycloak-db-secret
+      key: password
+  hostname:
+    hostname: keycloak.auth.apoorva64.com
