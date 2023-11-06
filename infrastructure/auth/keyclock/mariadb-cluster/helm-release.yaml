@@ -26,3 +26,5 @@ spec:
     db:
       user: keycloak
       name: keycloak
+    persistence:
+      storageClass: longhorn
