@@ -13,7 +13,7 @@ spec:
       name: db-username
       key: username
     passwordSecret:
-      name: keycloak-db-secret
-      key: password
+      name: mariadb-galera
+      key: mariadb-password
   hostname:
     hostname: keycloak.auth.apoorva64.com
