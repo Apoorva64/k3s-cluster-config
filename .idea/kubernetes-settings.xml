@@ -7,13 +7,4 @@
       </list>
     </option>
   </component>
-  <component name="KubernetesSettings">
-    <option name="contextName" value="default" />
-    <option name="getSpecFromCluster" value="true" />
-    <specSources>
-      <SpecSource>
-        <option name="pathOrUrl" value="$PROJECT_DIR$/experiments/db/cockroachdb-operator/raw.githubusercontent.com_cockroachdb_cockroach-operator_master_install_crds.yaml" />
-      </SpecSource>
-    </specSources>
-  </component>
 </project>
