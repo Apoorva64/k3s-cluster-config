@@ -6,7 +6,7 @@ metadata:
 spec:
   instances: 3
   db:
-    vendor: mysql
+    vendor: mariadb
     host: mariadb-galera
     database: keycloak
     usernameSecret:
@@ -15,8 +15,8 @@ spec:
     passwordSecret:
       name: mariadb-galera
       key: mariadb-password
-  transaction:
-    xaEnabled: true
+#  transaction:
+#    xaEnabled: true
   hostname:
     hostname: keycloak.auth.apoorva64.com
   additionalOptions:
