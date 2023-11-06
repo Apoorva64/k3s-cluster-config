@@ -23,8 +23,6 @@ spec:
       enabled: true
       serviceMonitor:
         enabled: true
-      prometheusRules:
-        enabled: true
     db:
       user: keycloak
       name: keycloak
