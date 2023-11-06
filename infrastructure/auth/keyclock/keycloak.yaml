@@ -19,3 +19,6 @@ spec:
     xaEnabled: true
   hostname:
     hostname: keycloak.auth.apoorva64.com
+  additionalOptions:
+    - name: "proxy"
+      value: "edge"
