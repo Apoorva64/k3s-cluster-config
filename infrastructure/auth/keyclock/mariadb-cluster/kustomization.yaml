@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - mariadb-secrets-secret-sealed.yaml
   - helm-repository.yaml
-  - helm-release.yaml
+#  - helm-release.yaml
