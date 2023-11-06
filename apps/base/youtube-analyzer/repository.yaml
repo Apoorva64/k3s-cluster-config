@@ -8,3 +8,5 @@ spec:
   url: https://github.com/neoteristis/youtube-sentiment-analyzer/
   ref:
     branch: main
+  secretRef:
+    name: raph-github-auth
