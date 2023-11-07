@@ -1,6 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - mariadb-cluster
+#  - mariadb-cluster
   - db-username.yaml
-  - keycloak.yaml
+  - tidb-cluster/tidb.yaml
+#  - keycloak.yaml
