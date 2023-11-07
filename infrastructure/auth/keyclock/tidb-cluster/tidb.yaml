@@ -58,7 +58,7 @@ metadata:
   name: keycloak-db-init
   namespace: keycloak
 spec:
-  image: tnir/mysqlclient
+  image: bedinotom/mysql:ap-arm64
   cluster:
     namespace: keycloak
     name: keycloak-db
