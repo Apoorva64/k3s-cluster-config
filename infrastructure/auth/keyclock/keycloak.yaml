@@ -18,7 +18,4 @@ spec:
     vendor: mariadb
   hostname:
     hostname: keycloak.auth.apoorva64.com
-  image: quay.io/keycloak/keycloak:22.0.5
-  instances: 3
-  transaction:
-    xaEnabled: true
+  instances: 1
