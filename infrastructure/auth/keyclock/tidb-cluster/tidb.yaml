@@ -16,15 +16,20 @@ spec:
   helper:
     image: alpine:3.16.0
   pd:
+    requests:
+      storage: "4Gi"
     replicas: 2
     # if storageClassName is not set, the default Storage Class of the Kubernetes cluster will be used
     storageClassName: local-storage
   tikv:
+    requests:
+      storage: "4Gi"
     storageClassName: local-storage
     replicas: 2
   tidb:
     replicas: 2
     storageClassName: local-storage
+
 ---
 apiVersion: pingcap.com/v1alpha1
 kind: TidbDashboard
