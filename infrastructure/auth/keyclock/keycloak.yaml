@@ -5,22 +5,17 @@ metadata:
   namespace: keycloak
 spec:
   instances: 3
-  image: quay.io/keycloak/keycloak:22.0
+  image: quay.io/keycloak/keycloak:latest
   db:
-    vendor: mariadb
-    host: mariadb-galera
-    database: keycloak
-    port: 3306
-
     usernameSecret:
       name: db-username
       key: username
     passwordSecret:
       name: mariadb-galera
       key: mariadb-password
-    url: jdbc:mariadb://mariadb-galera:3306/keycloak?useSSL=false
-#  transaction:
-#    xaEnabled: true
+
+  transaction:
+    xaEnabled: true
   hostname:
     hostname: keycloak.auth.apoorva64.com
   additionalOptions:
