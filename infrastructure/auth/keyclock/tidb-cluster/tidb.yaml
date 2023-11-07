@@ -5,6 +5,7 @@ apiVersion: pingcap.com/v1alpha1
 kind: TidbCluster
 metadata:
   name: keycloak-db
+  namespace: keycloak
 spec:
   version: v7.1.1
   timezone: UTC
@@ -57,6 +58,7 @@ apiVersion: pingcap.com/v1alpha1
 kind: TidbDashboard
 metadata:
   name: keycloak-db
+  namespace: keycloak
 spec:
   baseImage: pingcap/tidb-dashboard
   version: latest
