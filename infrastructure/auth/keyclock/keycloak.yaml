@@ -4,20 +4,21 @@ metadata:
   name: main-keycloak
   namespace: keycloak
 spec:
-  instances: 3
-  image: quay.io/keycloak/keycloak:latest
+  additionalOptions:
+    - name: proxy
+      value: edge
   db:
-    usernameSecret:
-      name: db-username
-      key: username
+    host: mariadb-galera
     passwordSecret:
-      name: mariadb-galera
       key: mariadb-password
-
-  transaction:
-    xaEnabled: true
+      name: mariadb-galera
+    usernameSecret:
+      key: username
+      name: db-username
+    vendor: mariadb
   hostname:
     hostname: keycloak.auth.apoorva64.com
-  additionalOptions:
-    - name: "proxy"
-      value: "edge"
+  image: quay.io/keycloak/keycloak:22.0.5
+  instances: 3
+  transaction:
+    xaEnabled: true
