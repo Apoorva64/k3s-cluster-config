@@ -20,15 +20,15 @@ spec:
       storage: "4Gi"
     replicas: 2
     # if storageClassName is not set, the default Storage Class of the Kubernetes cluster will be used
-    storageClassName: local-storage
+    storageClassName: longhorn-single-replica
   tikv:
     requests:
       storage: "4Gi"
-    storageClassName: local-storage
+    storageClassName: longhorn-single-replica
     replicas: 2
   tidb:
     replicas: 2
-    storageClassName: local-storage
+    storageClassName: longhorn-single-replica
 
 ---
 apiVersion: pingcap.com/v1alpha1
@@ -51,6 +51,7 @@ spec:
     #   cpu: 1000m
     #   memory: 1Gi
     storage: 10Gi
+  storageClassName: longhorn-single-replica
   # limits:
   #   cpu: 2000m
   #   memory: 2Gi
