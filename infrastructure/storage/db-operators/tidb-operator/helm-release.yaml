@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: tidb-operator
+  namespace: tidb-admin
+spec:
+  interval: 60m
+  chart:
+    spec:
+      chart: tidb-operator
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: pingcap
+        namespace: tidb-admin
+      interval: 24h

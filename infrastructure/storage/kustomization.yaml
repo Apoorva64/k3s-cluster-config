@@ -6,3 +6,4 @@ resources:
   - service-monitor.yaml
   - minio-env-sealed.yaml
   - longhorn
+  - db-operators
