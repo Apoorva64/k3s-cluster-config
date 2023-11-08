@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
 #  - mariadb-cluster
   - db-username.yaml
-#  - tidb-cluster/tidb.yaml
+  - tidb-cluster/tidb.yaml
 #  - keycloak.yaml
