@@ -24,11 +24,11 @@ spec:
   tikv:
     requests:
       storage: "4Gi"
-    storageClassName:  longhorn-single-replica
+    storageClassName:  local-path
     replicas: 2
   tidb:
     replicas: 2
-    storageClassName:  longhorn-single-replica
+    storageClassName: local-path
 
 ---
 apiVersion: pingcap.com/v1alpha1
@@ -51,7 +51,7 @@ spec:
     #   cpu: 1000m
     #   memory: 1Gi
     storage: 10Gi
-  storageClassName: longhorn-single-replica
+  storageClassName: local-path
   # limits:
   #   cpu: 2000m
   #   memory: 2Gi
