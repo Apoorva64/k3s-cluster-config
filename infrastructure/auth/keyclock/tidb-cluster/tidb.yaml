@@ -34,24 +34,22 @@ spec:
     # if storageClassName is not set, the default Storage Class of the Kubernetes cluster will be used
     storageClassName: local-path
     requests:
-      storage: "1Gi"
-    config:
-      storage:
-        # In basic examples, we set this to avoid using too much storage.
-        reserve-space: "0MB"
-      rocksdb:
-        # In basic examples, we set this to avoid the following error in some Kubernetes clusters:
-        # "the maximum number of open file descriptors is too small, got 1024, expect greater or equal to 82920"
-        max-open-files: 256
-      raftdb:
-        max-open-files: 256
+      storage: "4Gi"
+
   tidb:
+
     baseImage: pingcap/tidb
     maxFailoverCount: 0
     replicas: 3
     service:
       type: ClusterIP
     config: {}
+    initializer:
+      image: bedinotom/mysql:ap-arm64-v2
+      initSql: |-
+        create database keycloak;
+      passwordSecret: tidb-secret
+
 ---
 apiVersion: pingcap.com/v1alpha1
 kind: TidbDashboard
@@ -73,7 +71,7 @@ spec:
     #   cpu: 1000m
     #   memory: 1Gi
     storage: 10Gi
-  storageClassName: local-path
+  storageClassName: longhorn-single-replica
   # limits:
   #   cpu: 2000m
   #   memory: 2Gi
