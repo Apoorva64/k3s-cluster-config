@@ -18,16 +18,16 @@ spec:
   pd:
     requests:
       storage: "4Gi"
-    replicas: 2
+    replicas: 3
     # if storageClassName is not set, the default Storage Class of the Kubernetes cluster will be used
     storageClassName: local-path
   tikv:
     requests:
       storage: "4Gi"
     storageClassName:  local-path
-    replicas: 2
+    replicas: 3
   tidb:
-    replicas: 2
+    replicas: 3
     storageClassName: local-path
 
 ---
