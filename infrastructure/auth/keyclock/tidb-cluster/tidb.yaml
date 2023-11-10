@@ -40,15 +40,14 @@ spec:
 
     baseImage: pingcap/tidb
     maxFailoverCount: 0
+    storageClassName: local-path
     replicas: 3
     service:
       type: ClusterIP
     config: {}
     initializer:
-      image: bedinotom/mysql:ap-arm64-v2
-      initSql: |-
-        create database keycloak;
-      passwordSecret: tidb-secret
+      createPassword: true
+
 
 ---
 apiVersion: pingcap.com/v1alpha1
