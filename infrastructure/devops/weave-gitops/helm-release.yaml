@@ -29,10 +29,10 @@ spec:
       readOnlyRootFilesystem: true
       runAsNonRoot: true
       runAsUser: 1000
-    adminUser:
-      create: true
-      createClusterRole: true
-      passwordHash: $2a$10$P.vkIIrdUOfupHZJRecCu.c7V9S5dDF88.3z12H5BFDBHB4s7qp2i
+#    adminUser:
+#      create: true
+#      createClusterRole: true
+#      passwordHash: $2a$10$P.vkIIrdUOfupHZJRecCu.c7V9S5dDF88.3z12H5BFDBHB4s7qp2i
 
-#    additionalArgs:
-#      - --auth-methods=oidc
+    additionalArgs:
+      - --auth-methods=oidc
