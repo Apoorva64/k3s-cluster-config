@@ -10,8 +10,8 @@ spec:
   db:
     host: keycloak-postgres-ha-postgresql-ha-pgpool
     passwordSecret:
-      key: root
-      name: tidb-secret
+      key: password
+      name: keycloak-postgres-ha-postgresql-ha-postgresql
     usernameSecret:
       key: username
       name: db-username
