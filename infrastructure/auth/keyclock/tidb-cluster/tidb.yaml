@@ -35,6 +35,7 @@ spec:
     storageClassName: local-path
     requests:
       storage: "4Gi"
+    config: {}
 
   tidb:
 
@@ -76,17 +77,17 @@ spec:
   #   memory: 2Gi
 #
 #
-#---
-#apiVersion: pingcap.com/v1alpha1
-#kind: TidbInitializer
-#metadata:
-#  name: keycloak-db-init
-#  namespace: keycloak
-#spec:
-#  image: bedinotom/mysql:ap-arm64-v2
-#  cluster:
-#    namespace: keycloak
-#    name: keycloak-db
-#  initSql: |-
-#    create database keycloak;
-#  passwordSecret: tidb-secret
+---
+apiVersion: pingcap.com/v1alpha1
+kind: TidbInitializer
+metadata:
+  name: keycloak-db-init
+  namespace: keycloak
+spec:
+  image: bedinotom/mysql:ap-arm64-v2
+  cluster:
+    namespace: keycloak
+    name: keycloak-db
+  initSql: |-
+    create database keycloak;
+  passwordSecret: tidb-secret
