@@ -4,9 +4,6 @@ metadata:
   name: keycloak
   namespace: keycloak
 spec:
-  additionalOptions:
-    - name: proxy
-      value: edge
   db:
     host: keycloak-postgres-ha-postgresql-ha-pgpool
     passwordSecret:
@@ -22,3 +19,11 @@ spec:
   hostname:
     hostname: keycloak.auth.apoorva64.com
   instances: 3
+  ingress:
+    className: traefik
+    annotations:
+      traefik.ingress.kubernetes.io/router.tls.certresolver: letsencrypt-prod
+      traefik.ingress.kubernetes.io/router.tls: "true"
+  additionalOptions:
+    - name: proxy-address-forwarding
+      value: "true"
