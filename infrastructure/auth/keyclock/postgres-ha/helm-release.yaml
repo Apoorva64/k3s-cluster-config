@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: keycloak-postgres-ha
+  namespace: keycloak
+spec:
+  interval: 60m
+  chart:
+    spec:
+      chart: postgresql-ha
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: keycloak
+      interval: 24h
