@@ -4,3 +4,4 @@ resources:
   - db-username.yaml
   - postgres-ha
   - keycloak.yaml
+  - ingress.yaml
