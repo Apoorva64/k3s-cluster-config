@@ -14,3 +14,9 @@ spec:
         name: bitnami
         namespace: keycloak
       interval: 24h
+  values:
+    pgpool:
+      replicas: 2
+    persistence:
+      storageClass: longhorn-single-replica
+      size: 8Gi
