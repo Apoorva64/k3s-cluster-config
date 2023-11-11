@@ -27,3 +27,5 @@ spec:
   additionalOptions:
     - name: proxy-address-forwarding
       value: "true"
+    - name: proxy
+      value: edge
