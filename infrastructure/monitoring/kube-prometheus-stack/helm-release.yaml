@@ -61,9 +61,9 @@ spec:
           email_attribute_path: "email"
           login_attribute_path: "preferred_username"
           name_attribute_path: "name"
-          auth_url: "https://keycloak.auth.apoorva64.com/auth/realms/lab/protocol/openid-connect/auth"
-          token_url: "https://keycloak.auth.apoorva64.com/auth/realms/lab/protocol/openid-connect/token"
-          api_url: "https://keycloak.auth.apoorva64.com/auth/realms/lab/protocol/openid-connect/userinfo"
+          auth_url: "https://keycloak.auth.apoorva64.com/realms/lab/protocol/openid-connect/auth"
+          token_url: "https://keycloak.auth.apoorva64.com/realms/lab/protocol/openid-connect/token"
+          api_url: "https://keycloak.auth.apoorva64.com/realms/lab/protocol/openid-connect/userinfo"
           allow_assign_grafana_admin: true
           role_attribute_path: "contains(resource_access.grafana_oauth.roles[*], 'admin') && 'GrafanaAdmin' || contains(resource_access.grafana_oauth.roles[*], 'editor') && 'Editor' || 'Viewer'"
       ingress:
