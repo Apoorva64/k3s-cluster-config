@@ -16,6 +16,7 @@ spec:
       key: username
       name: db-username
     vendor: mysql
+    port: 4000
   hostname:
     hostname: keycloak.auth.apoorva64.com
   instances: 1
