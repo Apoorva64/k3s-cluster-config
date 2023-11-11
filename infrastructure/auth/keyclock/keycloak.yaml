@@ -8,14 +8,14 @@ spec:
     - name: proxy
       value: edge
   db:
-    host: mariadb-galera
+    host: keycloak-db.keycloak.svc
     passwordSecret:
-      key: mariadb-password
-      name: mariadb-galera
+      key: root
+      name: tidb-secret
     usernameSecret:
       key: username
       name: db-username
-    vendor: mariadb
+    vendor: mysql
   hostname:
     hostname: keycloak.auth.apoorva64.com
   instances: 1
