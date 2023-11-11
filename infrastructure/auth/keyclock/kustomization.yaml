@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - db-username.yaml
   - postgres-ha
-#  - keycloak.yaml
+  - keycloak.yaml
