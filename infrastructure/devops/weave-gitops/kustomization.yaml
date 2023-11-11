@@ -4,5 +4,5 @@ resources:
   - helm-repository.yaml
   - oidc-auth-secret-sealed.yaml
   - helm-release.yaml
-#  - rbac.yaml
+  - rbac.yaml
   - ingress.yaml
