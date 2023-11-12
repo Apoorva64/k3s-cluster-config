@@ -78,8 +78,6 @@ spec:
           - secretName: grafana-tls
             hosts:
               - grafana.monitoring.apoorva64.com
-        paths:
-          - /
       # Provision grafana-dashboards-kubernetes
       dashboardProviders:
         dashboardproviders.yaml:

@@ -10,5 +10,5 @@ data:
   AUTH_HOST: forward-auth.auth.apoorva64.com
   URL_PATH: /_oauth
   DEFAULT_PROVIDER: oidc
-  PROVIDERS_OIDC_ISSUER_URL: https://keycloak.auth.apoorva64.com/auth/realms/lab
+  PROVIDERS_OIDC_ISSUER_URL: https://keycloak.auth.apoorva64.com/realms/lab
   PROVIDERS_OIDC_CLIENT_ID: traefik-forward-auth
