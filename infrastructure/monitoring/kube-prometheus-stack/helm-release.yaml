@@ -48,7 +48,9 @@ spec:
 
       grafana.ini:
         server:
-          root_url: https://grafana.monitoring.apoorva64.com/
+          serve_from_sub_path: true
+          root_url: https://grafana.monitoring.apoorva64.com
+          domain: grafana.monitoring.apoorva64.com
         auth.generic_oauth:
           enabled: true
           auto_login: false
@@ -70,15 +72,15 @@ spec:
         annotations:
           kubernetes.io/ingress.class: traefik
           cert-manager.io/cluster-issuer: letsencrypt-prod
-#          traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
+          traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
         hosts:
           - grafana.monitoring.apoorva64.com
         tls:
           - secretName: grafana-tls
             hosts:
               - grafana.monitoring.apoorva64.com
-#        paths:
-#          - /
+        paths:
+          - /
       # Provision grafana-dashboards-kubernetes
       dashboardProviders:
         dashboardproviders.yaml:
