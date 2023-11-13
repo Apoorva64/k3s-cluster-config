@@ -25,6 +25,8 @@ spec:
         replicas: 3
 
     grafana:
+      image:
+        tag: 9.1.3
       enabled: true
       replicas: 1
       extraSecretMounts:
@@ -49,8 +51,6 @@ spec:
       grafana.ini:
         server:
           domain = grafana.monitoring.apoorva64.com
-          root_url = %(protocol)s://%(domain)s:%(http_port)s/grafana/
-          serve_from_sub_path = true
         auth.generic_oauth:
           enabled: true
           auto_login: false
@@ -78,7 +78,7 @@ spec:
           - secretName: grafana-tls
             hosts:
               - grafana.monitoring.apoorva64.com
-        path: /grafana
+        path: /
       # Provision grafana-dashboards-kubernetes
       dashboardProviders:
         dashboardproviders.yaml:
