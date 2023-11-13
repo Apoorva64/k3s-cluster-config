@@ -26,7 +26,7 @@ spec:
 
     grafana:
       image:
-        tag: 9.1.3
+        tag: 9.1.5
       enabled: true
       replicas: 1
       extraSecretMounts:
@@ -50,7 +50,7 @@ spec:
 
       grafana.ini:
         server:
-          domain = grafana.monitoring.apoorva64.com
+          root_url: https://grafana.monitoring.apoorva64.com
         auth.generic_oauth:
           enabled: true
           auto_login: true
