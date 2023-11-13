@@ -3,4 +3,3 @@ kind: Kustomization
 resources:
   - cockroachdb-operator
   - namespace.yaml
-#  - cockroachdb-database
