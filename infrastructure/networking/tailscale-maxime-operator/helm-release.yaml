@@ -1,0 +1,14 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: tailscale-maxime-operator
+  namespace: tailscale-maxime-operator
+spec:
+  interval: 60m
+  chart:
+    spec:
+      chart: cmd/k8s-operator/deploy/chart
+      sourceRef:
+          kind: GitRepository
+          name: tailscale-maxime-operator
+      interval: 60m
