@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   forwardAuth:
-    address: http://traefik-forward-auth
+    address: https://forward-auth.auth.apoorva64.com
     trustForwardHeader: true
     authResponseHeaders:
       - X-Forwarded-User
