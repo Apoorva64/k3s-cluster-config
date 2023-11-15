@@ -4,7 +4,7 @@ metadata:
   name: traefik-forward-auth
   namespace: kube-system
 data:
-  INSECURE_COOKIE: 'false'
+  INSECURE_COOKIE: 'true'
   COOKIE_DOMAIN: apoorva64.com
   DOMAINS: apoorva64.com
   AUTH_HOST: forward-auth.auth.apoorva64.com
