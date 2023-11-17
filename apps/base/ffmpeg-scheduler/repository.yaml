@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: ffmpeg-scheduler
+  namespace: flux-system
+spec:
+  interval: 5m
+  url: https://github.com/Apoorva64/ffmpeg-scheduler
+  ref:
+    branch: master
