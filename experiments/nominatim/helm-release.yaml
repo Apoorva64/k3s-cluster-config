@@ -7,11 +7,11 @@ spec:
   interval: 60m
   chart:
     spec:
-      chart: nominatim
+      chart: ./charts/nominatim
       version: "*"
       sourceRef:
-        kind: HelmRepository
-        name: robjuz
+        kind: GitRepository
+        name: nominatim
         namespace: nominatim
       interval: 24h
   values:
