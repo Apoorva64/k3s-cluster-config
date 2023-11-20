@@ -17,9 +17,13 @@ spec:
   values:
     nominatimInitialize:
       enabled: true
+      pbfUrl: https://download.geofabrik.de/europe/france-latest.osm.pbf
 
     postgresql:
       primary:
+        persistence:
+          size: 10Gi
+          storageClass: longhorn-single-replica
         extendedConfiguration: |
           shared_buffers = 2GB
           maintenance_work_mem = 10GB
