@@ -20,6 +20,10 @@ spec:
       pbfUrl: https://download.geofabrik.de/europe/france-latest.osm.pbf
 
     postgresql:
+      image:
+        registry: docker.io
+        repository: bitnami/postgresql
+        tag: 14.10.0-debian-11-r7
       primary:
         persistence:
           size: 10Gi
