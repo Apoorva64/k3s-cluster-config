@@ -29,10 +29,21 @@ spec:
           chunks: loki-chunks
           ruler: loki-ruler
           admin: loki-admin
-      compactor: 
+        storage_config:
+          aws:
+            s3: "s3://loki-chunks"
+      schema_config:
+        configs:
+          - from: "2022-01-01"
+            store: aws
+            object_store: aws
+      compactor:
         compaction_interval: 360m
         retention_enabled: true
         retention_delete_delay: 168h
+        compactions_enabled: true
+        shared_store: aws
+        shared_store_bucket: loki-chunks
     backend:
       replicas: 3
     read:
@@ -43,7 +54,6 @@ spec:
       serviceMonitor:
         labels:
           release: kube-prometheus-stack
-
 
   valuesFrom:
     - kind: Secret
