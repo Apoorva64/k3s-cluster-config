@@ -29,6 +29,10 @@ spec:
           chunks: loki-chunks
           ruler: loki-ruler
           admin: loki-admin
+      compactor: 
+        compaction_interval: 6h
+        retention_enabled: true
+        retention_delete_delay: 7d
     backend:
       replicas: 3
     read:
