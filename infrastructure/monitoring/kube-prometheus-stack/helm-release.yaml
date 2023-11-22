@@ -152,7 +152,7 @@ spec:
                 "description": "Logs collected from Kubernetes, stored in Loki",
                 "editable": true,
                 "fiscalYearStartMonth": 0,
-                "gnetId": 15141,
+                "gnetId": 151421,
                 "graphTooltip": 0,
                 "links": [],
                 "liveNow": false,
@@ -397,7 +397,7 @@ spec:
                 "timepicker": {},
                 "timezone": "",
                 "title": "Loki Kubernetes Logs",
-                "uid": "o6-BGgnnk",
+                "uid": "o6-BGagnnk",
                 "version": 1,
                 "weekStart": ""
               }
