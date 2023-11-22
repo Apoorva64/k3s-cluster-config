@@ -20,7 +20,8 @@ spec:
     persistence:
       storageClass: longhorn-single-replica
       size: 8Gi
-
+    postgresql:
+      syncReplication: true
     global:
       postgresql:
         existingSecret: keycloak-postgres-ha-postgresql-ha-postgresql
