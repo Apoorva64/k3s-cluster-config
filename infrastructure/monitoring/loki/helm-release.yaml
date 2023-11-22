@@ -41,9 +41,7 @@ spec:
         compaction_interval: 360m
         retention_enabled: true
         retention_delete_delay: 168h
-        compactions_enabled: true
         shared_store: aws
-        shared_store_bucket: loki-chunks
     backend:
       replicas: 3
     read:
