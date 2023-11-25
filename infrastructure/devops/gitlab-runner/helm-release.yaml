@@ -28,7 +28,7 @@ spec:
         [[runners]]
           [runners.kubernetes]
             image = "ubuntu:20.04"
-            helper_image = "gitlab/gitlab-runner-helper:ubuntu-arm-latest"
+            helper_image = "gitlab/gitlab-runner-helper:ubuntu-arm64-v16.4.2"
             privileged = true
           [[runners.kubernetes.volumes.empty_dir]]
             name = "docker-certs"
