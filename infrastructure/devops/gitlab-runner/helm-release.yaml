@@ -15,12 +15,6 @@ spec:
         namespace: flux-system
       interval: 12h
   values:
-    image:
-      tag: ubuntu
-    securityContext:
-      fsGroup: 999
-      runAsUser: 999
-
     rbac:
       create: true
     gitlabUrl: https://gitlab.com
@@ -34,19 +28,19 @@ spec:
         [[runners]]
           [runners.kubernetes]
             image = "ubuntu:20.04"
-            helper_image = "gitlab/gitlab-runner-helper:arm64-bleeding"
-            privileged = true
-            pull_policy = "if-not-present"
-          [[runners.kubernetes.volumes.empty_dir]]
-            name = "docker-certs"
-            mount_path = "/certs/client"
-            medium = "Memory"
-          [runners.cache]
-            Type = "s3"
-            Shared = true
-            [runners.cache.s3]
-              ServerAddress = "minio.storage.svc.cluster.local:9000"
-              BucketName = "gitlab-runners-cache"
-              BucketLocation = "eu-central-1"
-              Insecure = true
-              AuthenticationType = "access-key"
+            helper_image = "gitlab/gitlab-runner-helper:arm64-latest"
+#            privileged = true
+#            pull_policy = "if-not-present"
+#          [[runners.kubernetes.volumes.empty_dir]]
+#            name = "docker-certs"
+#            mount_path = "/certs/client"
+#            medium = "Memory"
+#          [runners.cache]
+#            Type = "s3"
+#            Shared = true
+#            [runners.cache.s3]
+#              ServerAddress = "minio.storage.svc.cluster.local:9000"
+#              BucketName = "gitlab-runners-cache"
+#              BucketLocation = "eu-central-1"
+#              Insecure = true
+#              AuthenticationType = "access-key"
