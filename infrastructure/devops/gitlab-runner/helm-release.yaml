@@ -20,7 +20,7 @@ spec:
     gitlabUrl: https://gitlab.com
     concurrent: 4
     runners:
-      secret: gitlab-runner-secret
+      secret: gitlab-runner
       cache:
         secretName: gitlab-runner-s3-access
       config: |
