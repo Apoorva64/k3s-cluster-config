@@ -17,6 +17,9 @@ spec:
   values:
     image:
       tag: ubuntu
+    securityContext:
+      fsGroup: 999
+      runAsUser: 999
 
     rbac:
       create: true
@@ -37,10 +40,6 @@ spec:
           [[runners.kubernetes.volumes.empty_dir]]
             name = "docker-certs"
             mount_path = "/certs/client"
-            medium = "Memory"
-          [[runners.kubernetes.volumes.empty_dir]]
-            name = "nonexistent"
-            mount_path = "/nonexistent"
             medium = "Memory"
           [runners.cache]
             Type = "s3"
