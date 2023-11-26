@@ -21,6 +21,7 @@ spec:
       create: true
     gitlabUrl: https://gitlab.com
     concurrent: 4
+    secret: gitlab-runner
     runners:
       secret: gitlab-runner
       cache:
