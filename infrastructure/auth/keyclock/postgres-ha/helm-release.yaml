@@ -16,7 +16,7 @@ spec:
       interval: 24h
   values:
     pgpool:
-      replicaCount: 2
+      replicaCount: 1
     persistence:
       storageClass: longhorn-single-replica
       size: 8Gi
