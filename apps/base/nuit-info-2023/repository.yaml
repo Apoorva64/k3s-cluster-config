@@ -1,11 +1,10 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: nominatim
-  namespace: nominatim
+  name: nuit-info-2023
+  namespace: flux-system
 spec:
   interval: 5m
-  url: https://github.com/Apoorva64/helm-charts
-
+  url: https://github.com/5-2-5-equipe-2/nuit-info-2023
   ref:
     branch: master
