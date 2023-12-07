@@ -4,7 +4,7 @@ metadata:
   name: nuit-info-2023
   namespace: flux-system
 spec:
-  interval: 5m
+  interval: 1m
   url: https://github.com/5-2-5-equipe-2/nuit-info-2023
   ref:
     branch: master
