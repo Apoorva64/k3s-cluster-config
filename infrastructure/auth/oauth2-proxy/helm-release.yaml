@@ -34,6 +34,6 @@ spec:
 
   valuesFrom:
     - kind: Secret
-      name: oauth2-proxy-config
+      name: oauth2-proxy-secret
       valuesKey: config.yaml
       optional: false
