@@ -1,0 +1,2 @@
+kubectl create secret generic oauth2-proxy-secret --from-file=config.yaml --dry-run=client -o yaml > oauth2-proxy-secret.yaml
+kubeseal --format=yaml < oauth2-proxy-secret.yaml > oauth2-proxy-secret-sealed.yaml
