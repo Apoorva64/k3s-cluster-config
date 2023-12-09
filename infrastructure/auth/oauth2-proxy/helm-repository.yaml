@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: oauth2-proxy
+  namespace: oauth2-proxy
+  labels:
+    toolkit.fluxcd.io/tenant: sre-team
+spec:
+  interval: 60m0s
+  url: https://oauth2-proxy.github.io/manifests
