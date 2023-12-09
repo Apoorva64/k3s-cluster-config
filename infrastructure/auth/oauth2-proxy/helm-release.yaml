@@ -19,7 +19,7 @@ spec:
 
   values:
     config:
-    clientID: "oauth2-proxy"
+      clientID: "oauth2-proxy"
     ingress:
       enabled: true
       className: traefik
