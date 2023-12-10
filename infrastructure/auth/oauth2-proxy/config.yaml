@@ -1,0 +1,23 @@
+config:
+  configFile: |-
+    # Provider config
+    provider="keycloak"
+    provider_display_name="Keycloak"
+    login_url="https://keycloak.auth.apoorva64.com/realms/lab/protocol/openid-connect/auth"
+    redeem_url="https://keycloak.auth.apoorva64.com/realms/lab/protocol/openid-connect/token"
+    validate_url="https://keycloak.auth.apoorva64.com/realms/lab/protocol/openid-connect/userinfo"
+    ssl_insecure_skip_verify=true
+    client_secret="<redacted>"
+    cookie_secret="<redacted>"
+    cookie_secure="true"
+    # Proxy Config
+    user_id_claim="preferred_username"
+    skip_auth_routes=["/health.*"]
+    skip_provider_button="true"
+    reverse_proxy="true"
+    email_domains=["*"]
+    cookie_domains=[".apoorva64.com"]
+    whitelist_domains=[".apoorva64.com"]
+    scope="openid"
+  clientSecret: "<redacted>"
+  cookieSecret: "<redacted>"
