@@ -8,4 +8,5 @@ spec:
     address: https://oauth2-proxy.auth.apoorva64.com/oauth2/auth
     trustForwardHeader: true
     authResponseHeaders:
-      - X-Forwarded-User
+      - X-Auth-Request-User
+      - Set-Cookie

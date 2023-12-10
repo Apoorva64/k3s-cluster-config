@@ -5,4 +5,4 @@ resources:
   - oauth2-proxy-secret-sealed.yaml
   - helm-repository.yaml
   - helm-release.yaml
-  - middleware.yaml
+  - oauth2-forward-auth-middleware.yaml
