@@ -1,7 +1,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
-  name: oauth2-forward-auth
+  name: sign-in-redirect-auth
   namespace: default
 spec:
   errors:

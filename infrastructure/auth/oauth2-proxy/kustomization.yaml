@@ -6,3 +6,4 @@ resources:
   - helm-repository.yaml
   - helm-release.yaml
   - oauth2-forward-auth-middleware.yaml
+  - oauth2-sign-in-redirect-middleware.yaml
