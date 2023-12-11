@@ -5,4 +5,5 @@ resources:
   - elastic-operator
   - elastic-search.yaml
   - kibana.yaml
+  - metric-beat.yaml
 #  - fluentd.yaml
