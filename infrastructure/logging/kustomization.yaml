@@ -6,4 +6,5 @@ resources:
   - elastic-search.yaml
   - kibana.yaml
   - metric-beat.yaml
+  - ingress.yaml
 #  - fluentd.yaml
