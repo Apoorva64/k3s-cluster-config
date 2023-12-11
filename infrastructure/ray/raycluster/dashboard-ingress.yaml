@@ -6,7 +6,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd, oauth2-proxy-sign-in-redirect-auth@kubernetescrd, oauth2-proxy-oauth2-forward-auth@kubernetescrd
+    traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd, oauth2-proxy-oauth2-forward-auth@kubernetescrd
 spec:
   rules:
     - host: ray-dashboard.ray.apoorva64.com
