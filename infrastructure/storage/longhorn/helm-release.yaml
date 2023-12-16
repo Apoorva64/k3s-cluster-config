@@ -13,4 +13,4 @@ spec:
         kind: HelmRepository
         name: longhorn
         namespace: longhorn-system
-      interval: 24h
+      interval: 48h
