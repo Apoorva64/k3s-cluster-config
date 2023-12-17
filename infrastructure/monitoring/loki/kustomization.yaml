@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - loki-s3-access-sealed.yaml
   - helm-repository.yaml
-  - helm-release.yaml
+#  - helm-release.yaml
