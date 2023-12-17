@@ -50,15 +50,18 @@ spec:
             store: aws
             object_store: aws
       compactor:
-        compaction_interval: 360m
+        compaction_interval: 10m
         retention_enabled: true
-        retention_delete_delay: 168h
+        retention_delete_delay: 2h
+        retention_delete_worker_count: 150
         shared_store: aws
+
     monitoring:
       serviceMonitor:
         labels:
           release: kube-prometheus-stack
-
+    limits_config:
+      retention_period: 96h
   valuesFrom:
     - kind: Secret
       name: loki-s3-access
