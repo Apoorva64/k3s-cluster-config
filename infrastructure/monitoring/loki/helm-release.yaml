@@ -17,6 +17,18 @@ spec:
         namespace: monitoring
       interval: 12h
   values:
+    write:
+      persistence:
+        storageClass: "longhorn-single-replica"
+    read:
+      persistence:
+        storageClass: "longhorn-single-replica"
+    backend:
+      persistence:
+        storageClass: "longhorn-single-replica"
+    singleBinary:
+      persistence:
+        storageClass: "longhorn-single-replica"
     loki:
       storage:
         type: "s3"
