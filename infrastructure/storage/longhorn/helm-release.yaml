@@ -8,9 +8,47 @@ spec:
   chart:
     spec:
       chart: longhorn
-      version: "*"
+      version: "1.5.*"
       sourceRef:
         kind: HelmRepository
         name: longhorn
         namespace: longhorn-system
       interval: 48h
+  values:
+    defaultSettings:
+      backupTarget: "s3://k3s-longhorn-backup@us-east-1/"
+      backupTargetCredentialSecret: "minio-secret"
+    ingress:
+      ## Set to true to enable ingress record generation
+      enabled: true
+
+      ## Add ingressClassName to the Ingress
+      ## Can replace the kubernetes.io/ingress.class annotation on v1.18+
+      ingressClassName: traefik
+
+      host: longhorn.storage.apoorva64.com
+
+      ## Set this to true in order to enable TLS on the ingress record
+      tls: true
+
+      ## Enable this in order to enable that the backend service will be connected at port 443
+      secureBackends: false
+
+      ## If TLS is set to true, you must declare what secret will store the key/certificate for TLS
+      tlsSecret: longhorn.storage.apoorva64.com-tls
+
+      ## If ingress is enabled you can set the default ingress path
+      ## then you can access the UI by using the following full path {{host}}+{{path}}
+      path: /
+
+      ## Ingress annotations done as key:value pairs
+      ## If you're using kube-lego, you will want to add:
+      ## kubernetes.io/tls-acme: true
+      ##
+      ## For a full list of possible ingress annotations, please see
+      ## ref: https://github.com/kubernetes/ingress-nginx/blob/master/docs/annotations.md
+      ##
+      ## If tls is set to true, annotation ingress.kubernetes.io/secure-backends: "true" will automatically be set
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd, oauth2-proxy-oauth2-forward-auth@kubernetescrd
