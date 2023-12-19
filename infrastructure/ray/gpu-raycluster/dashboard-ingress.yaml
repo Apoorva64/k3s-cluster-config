@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ray-dashboard
+  namespace: kube-ray
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd, oauth2-proxy-oauth2-forward-auth@kubernetescrd
+spec:
+  rules:
+    - host: ray-gpu-dashboard.ray.apoorva64.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ray-gpu-cluster-kuberay-head-svc
+                port:
+                  number: 8265
+  tls:
+    - hosts:
+        - ray-gpu-dashboard.ray.apoorva64.com
+      secretName: ray-gpu-dashboard-ingress

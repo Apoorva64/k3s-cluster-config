@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ray-cluster
+  name: ray-gpu-cluster
   namespace: kube-ray
   labels:
     toolkit.fluxcd.io/tenant: sre-team
@@ -17,12 +17,9 @@ spec:
         namespace: kube-ray
       interval: 12h
   values:
-    image:
-      repository: apoorva64/ray-w-deps
-      tag: latest
     worker:
       nodeSelector:
-        kubernetes.io/arch: arm64
+        kubernetes.io/arch: amd64
       replicas: 2
       resources:
         limits:
@@ -44,7 +41,7 @@ spec:
           name: metrics
     head:
       nodeSelector:
-        kubernetes.io/arch: arm64
+        kubernetes.io/arch: amd64
       resources:
         limits:
           cpu: "4"

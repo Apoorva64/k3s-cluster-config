@@ -5,3 +5,4 @@ resources:
   - helm-repository.yaml
   - kube-ray
   - raycluster
+  - gpu-raycluster
