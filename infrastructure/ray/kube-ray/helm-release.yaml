@@ -19,5 +19,5 @@ spec:
   values:
     image:
       repository: kuberay/operator
-      tag: nightly-aarch64
+      tag: 56b4d14
       pullPolicy: IfNotPresent
