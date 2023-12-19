@@ -6,3 +6,4 @@ resources:
   - kube-ray
   - raycluster
   - gpu-raycluster
+  - ollama
