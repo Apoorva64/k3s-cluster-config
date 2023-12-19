@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: llama-bot
+  namespace: flux-system
+spec:
+  interval: 5m
+  url: https://github.com/ozeliurs/ollama-bot
+  ref:
+    branch: main
