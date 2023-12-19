@@ -18,9 +18,10 @@ spec:
       interval: 12h
   values:
     worker:
+      runtimeClass: nvidia
       nodeSelector:
         kubernetes.io/arch: amd64
-      replicas: 2
+      replicas: 1
       resources:
         limits:
           cpu: "4"
@@ -40,6 +41,7 @@ spec:
         - containerPort: 8080
           name: metrics
     head:
+      runtimeClass: nvidia
       nodeSelector:
         kubernetes.io/arch: amd64
       resources:

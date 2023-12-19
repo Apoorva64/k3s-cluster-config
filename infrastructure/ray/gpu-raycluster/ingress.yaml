@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ray-serve
+  name: ray-gpu-serve
   namespace: kube-ray
   annotations:
     kubernetes.io/ingress.class: traefik
