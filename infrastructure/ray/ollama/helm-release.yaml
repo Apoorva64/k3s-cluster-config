@@ -17,6 +17,9 @@ spec:
         namespace: ollama
       interval: 12h
   values:
+    ressources:
+      limits:
+        nvidia.com/gpu: 1
     nodeSelector:
       nvidia.com/gpu.product: NVIDIA-GeForce-RTX-2060-with-Max-Q-Design
 
@@ -29,14 +32,14 @@ spec:
       enabled: true
       storageClass: longhorn-single-replica
   # use nvidia containerRuntime
-  postRenderers:
-    - kustomize:
-        patches:
-          - target:
-              kind: Deployment
-
-            patch: |
-              - op: add
-                path: /spec/template/spec/runtimeClassName
-                value: nvidia
+#  postRenderers:
+#    - kustomize:
+#        patches:
+#          - target:
+#              kind: Deployment
+#
+#            patch: |
+#              - op: add
+#                path: /spec/template/spec/runtimeClassName
+#                value: nvidia
 
