@@ -18,8 +18,8 @@ spec:
       interval: 12h
   values:
     nodeSelector:
-      kubernetes.io/arch: amd64
-      k3s.io/hostname: node-apoorva2
+      nvidia.com/gpu: product=NVIDIA-GeForce-RTX-2060-with-Max-Q-Design
+
     ollama:
       # If you want to use GPU, set it to true
       gpu:
