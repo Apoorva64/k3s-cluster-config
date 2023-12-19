@@ -18,7 +18,7 @@ spec:
       interval: 12h
   values:
     nodeSelector:
-      nvidia.com/gpu: product=NVIDIA-GeForce-RTX-2060-with-Max-Q-Design
+      nvidia.com/gpu.product : NVIDIA-GeForce-RTX-2060-with-Max-Q-Design
 
     ollama:
       # If you want to use GPU, set it to true
