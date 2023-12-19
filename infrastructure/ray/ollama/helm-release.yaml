@@ -21,31 +21,31 @@ spec:
       requests:
         memory: 4096Mi
         cpu: 2000m
-        nvidia.com/gpu: 1
+#        nvidia.com/gpu: 1
       limits:
         memory: 8192Mi
-        nvidia.com/gpu: 1
-        cpu: 2000m
+#        nvidia.com/gpu: 1
+        cpu: 16000m
     nodeSelector:
       nvidia.com/gpu.product: NVIDIA-GeForce-RTX-2060-with-Max-Q-Design
 
     ollama:
       # If you want to use GPU, set it to true
       gpu:
-        enabled: true
+        enabled: false
         number: 1
     persistentVolume:
       enabled: true
       storageClass: longhorn-single-replica
   # use nvidia containerRuntime
-  postRenderers:
-    - kustomize:
-        patches:
-          - target:
-              kind: Deployment
-
-            patch: |
-              - op: add
-                path: /spec/template/spec/runtimeClassName
-                value: nvidia
-
+#  postRenderers:
+#    - kustomize:
+#        patches:
+#          - target:
+#              kind: Deployment
+#
+#            patch: |
+#              - op: add
+#                path: /spec/template/spec/runtimeClassName
+#                value: nvidia
+#
