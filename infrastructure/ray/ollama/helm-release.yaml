@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: ollama
-      version: "*"
+      version: "0.5.0"
       sourceRef:
         kind: HelmRepository
         name: ollama
@@ -25,7 +25,7 @@ spec:
       gpu:
         enabled: true
         number: 1
-        nbrGpu: 1
+    l
     persistentVolume:
       enabled: true
       storageClass: longhorn-single-replica
