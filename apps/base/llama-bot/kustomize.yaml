@@ -7,7 +7,6 @@ spec:
   interval: 5m
   path: ./manifests
   prune: true
-  targetNamespace: llama-bot
   sourceRef:
     kind: GitRepository
     name: llama-bot
