@@ -21,10 +21,10 @@ spec:
       requests:
         memory: 4096Mi
         cpu: 2000m
-#        nvidia.com/gpu: 1
+        nvidia.com/gpu: 1
       limits:
         memory: 8192Mi
-#        nvidia.com/gpu: 1
+        nvidia.com/gpu: 1
         cpu: 16000m
     nodeSelector:
       nvidia.com/gpu.product: NVIDIA-GeForce-RTX-2060-with-Max-Q-Design
@@ -36,16 +36,16 @@ spec:
         number: 1
     persistentVolume:
       enabled: true
-      storageClass: longhorn-single-replica
+      storageClass: local-path
   # use nvidia containerRuntime
-#  postRenderers:
-#    - kustomize:
-#        patches:
-#          - target:
-#              kind: Deployment
-#
-#            patch: |
-#              - op: add
-#                path: /spec/template/spec/runtimeClassName
-#                value: nvidia
-#
+  postRenderers:
+    - kustomize:
+        patches:
+          - target:
+              kind: Deployment
+
+            patch: |
+              - op: add
+                path: /spec/template/spec/runtimeClassName
+                value: nvidia
+
