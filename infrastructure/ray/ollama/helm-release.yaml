@@ -25,7 +25,6 @@ spec:
       gpu:
         enabled: true
         number: 1
-    l
     persistentVolume:
       enabled: true
       storageClass: longhorn-single-replica
