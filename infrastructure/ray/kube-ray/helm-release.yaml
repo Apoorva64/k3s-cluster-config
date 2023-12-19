@@ -19,5 +19,5 @@ spec:
   values:
     image:
       repository: kuberay/operator
-      tag: 56b4d14
+      tag: c5d7de6
       pullPolicy: IfNotPresent
