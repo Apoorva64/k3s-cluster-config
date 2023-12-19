@@ -16,8 +16,8 @@ spec:
         name: kuberay
         namespace: kube-ray
       interval: 12h
-  values:
-    image:
-      repository: kuberay/operator
-      tag: 56b4d14
-      pullPolicy: IfNotPresent
+#  values:
+#    image:
+#      repository: kuberay/operator
+#      tag: 56b4d14
+#      pullPolicy: IfNotPresent
