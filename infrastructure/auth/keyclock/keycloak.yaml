@@ -14,8 +14,6 @@ spec:
       name: db-username
     vendor: postgres
     database: postgres
-  transaction:
-    xaEnabled: true
   hostname:
     hostname: keycloak.auth.apoorva64.com
   instances: 3
