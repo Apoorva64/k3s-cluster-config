@@ -43,7 +43,6 @@ spec:
         patches:
           - target:
               kind: Deployment
-
             patch: |
               - op: add
                 path: /spec/template/spec/runtimeClassName
