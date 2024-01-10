@@ -19,6 +19,6 @@ spec:
       namespace: jenkins
       plugins:
         - name: saml
-          version: 689.v731678c3e0eb_
+          version: 4.429.v9a_781a_61f1da_
         - name: role-strategy
-          version: 3.0.2
+          version: 689.v731678c3e0eb_
