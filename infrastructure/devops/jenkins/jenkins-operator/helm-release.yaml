@@ -14,3 +14,6 @@ spec:
         name: jenkins
         namespace: flux-system
       interval: 12h
+  values:
+    jenkins:
+      namespace: jenkins
