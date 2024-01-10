@@ -18,5 +18,5 @@ spec:
     jenkins:
       namespace: jenkins
       plugins:
-        - name: miniorange-saml-sp
-          version: 2.4.1
+        - name: saml
+          version: 4.429.v9a_781a_61f1da_
