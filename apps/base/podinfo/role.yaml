@@ -5,6 +5,6 @@ metadata:
   name: podinfo
   namespace: podinfo
 rules:
-  - apiGroups: [ "" ]
+  - apiGroups: [ "*" ]
     resources: [ "*" ]
     verbs: [ "*" ]
