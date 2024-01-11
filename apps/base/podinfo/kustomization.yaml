@@ -4,7 +4,7 @@ namespace: podinfo
 resources:
   - namespace.yaml
   - repository.yaml
-  - release.yaml
   - role.yaml
   - service-account.yaml
   - role-binding.yaml
+  - release.yaml
