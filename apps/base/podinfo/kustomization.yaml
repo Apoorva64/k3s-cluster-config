@@ -5,3 +5,5 @@ resources:
   - namespace.yaml
   - repository.yaml
   - release.yaml
+  - role.yaml
+  - serviceaccount.yaml

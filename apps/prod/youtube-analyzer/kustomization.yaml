@@ -4,7 +4,6 @@ namespace: flux-system
 resources:
   - ../../base/youtube-analyzer
 namePrefix: prod-
-
 patches:
   - target:
       kind: Kustomization
