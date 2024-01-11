@@ -6,4 +6,4 @@ resources:
   - repository.yaml
   - release.yaml
   - role.yaml
-  - serviceaccount.yaml
+  - service-account.yaml
