@@ -7,3 +7,4 @@ resources:
   - release.yaml
   - role.yaml
   - service-account.yaml
+  - role-binding.yaml
