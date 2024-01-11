@@ -3,9 +3,3 @@ kind: Kustomization
 namespace: podinfo
 resources:
   - ../../base/podinfo
-namePrefix: prod-
-patches:
-  - target:
-      kind: HelmRelease
-      name: podinfo
-    path: release-patch.yaml

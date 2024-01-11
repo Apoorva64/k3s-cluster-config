@@ -1,3 +1,0 @@
-- op: replace
-  path: /spec/chart/spec/sourceRef/name
-  value: prod-podinfo
