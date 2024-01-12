@@ -23,8 +23,8 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  dependsOn:
-    - name: devops-tools
+#  dependsOn:
+#    - name: devops-tools
   sourceRef:
     kind: GitRepository
     name: flux-system
