@@ -1,0 +1,9 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: bank-api-polytech
+spec:
+  interval: 5m
+  url: https://github.com/Apoorva64/simpleTCFS
+  ref:
+    branch: main

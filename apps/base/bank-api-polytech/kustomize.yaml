@@ -1,0 +1,13 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: bank-api-polytech
+spec:
+  interval: 5m
+  path: ./manifests/bank
+  targetNamespace: bank-api-polytech
+  serviceAccountName: flux-cd-base
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: bank-api-polytech
