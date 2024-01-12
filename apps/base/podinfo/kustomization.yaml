@@ -4,5 +4,5 @@ namespace: podinfo
 resources:
   - namespace.yaml
   - repository.yaml
-  - ../../../permissions/apps/podinfo
+  - rbac
   - release.yaml
