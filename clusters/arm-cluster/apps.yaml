@@ -2,23 +2,6 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: apps-permissions
-  namespace: flux-system
-spec:
-  interval: 10m0s
-  dependsOn:
-    - name: devops-tools
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  path: ./permissions/apps
-  prune: true
-  wait: true
-  timeout: 5m0s
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
-metadata:
   name: dev-apps
   namespace: flux-system
 spec:
@@ -42,7 +25,6 @@ spec:
   interval: 10m0s
   dependsOn:
     - name: devops-tools
-    - name: apps-permissions
   sourceRef:
     kind: GitRepository
     name: flux-system
