@@ -9,5 +9,6 @@ rules:
       - ""
       - "apps"
       - "core"
+      - "networking.k8s.io"
     resources: [ "*" ]
     verbs: [ "*" ]
