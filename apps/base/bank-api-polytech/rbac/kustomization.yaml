@@ -3,3 +3,16 @@ kind: Kustomization
 namespace: bank-api-polytech
 resources:
   - ../../../../permissions/apps/base
+
+patches:
+  - patch: |-
+      - op: replace
+        path: /rules/0/resources
+        value:
+            - pods
+            - deployments
+            - ingresses
+    target:
+      kind: Role
+      name: flux-cd-base
+      namespace: bank-api-polytech
