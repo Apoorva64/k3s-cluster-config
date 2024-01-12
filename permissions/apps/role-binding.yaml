@@ -1,13 +1,13 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: podinfo
-  namespace: podinfo
+  name: flux-cd-base
+  namespace: my-namespace
 subjects:
   - kind: ServiceAccount
-    name: podinfo
-    namespace: podinfo
+    name: flux-cd-base
+    namespace: my-namespace
 roleRef:
   kind: Role
-  name: podinfo
+  name: flux-cd-base
   apiGroup: rbac.authorization.k8s.io

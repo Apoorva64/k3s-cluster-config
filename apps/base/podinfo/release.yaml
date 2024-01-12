@@ -5,7 +5,7 @@ metadata:
   namespace: podinfo
 spec:
   releaseName: podinfo
-  serviceAccountName: podinfo
+  serviceAccountName: flux-cd-base
   chart:
     spec:
       chart: podinfo
