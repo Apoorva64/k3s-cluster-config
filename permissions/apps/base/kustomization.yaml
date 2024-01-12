@@ -5,4 +5,4 @@ resources:
   - role.yaml
   - role-binding.yaml
   - service-account.yaml
-#  - ressource-quota.yaml
+  - ressource-quota.yaml
