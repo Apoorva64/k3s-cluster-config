@@ -5,6 +5,6 @@ metadata:
   name: flux-cd-base
   namespace: my-namespace
 rules:
-  - apiGroups: [ "core", "apps" ]
+  - apiGroups: [ "" ]
     resources: [ "*" ]
-    verbs: [ "get", "list", "watch", "create", "update", "patch", "delete" ]
+    verbs: [ "*" ]
