@@ -3,16 +3,17 @@ kind: Kustomization
 namespace: bank-api-polytech
 resources:
   - ../../../../permissions/apps/base
-
+# patch rbac resources to have only deployments, services, ingress
 patches:
   - patch: |-
       - op: replace
         path: /rules/0/resources
         value:
-            - pods
-            - deployments
-            - ingresses
+          - deployments
+          - services
+          - ingresses
     target:
+      group: rbac.authorization.k8s.io
+      version: v1
       kind: Role
       name: flux-cd-base
-      namespace: bank-api-polytech
