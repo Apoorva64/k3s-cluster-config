@@ -15,7 +15,7 @@ spec:
   interval: 50m
   install:
     remediation:
-      retries: 2
+      retries: 4
   # Default values
   # https://github.com/stefanprodan/podinfo/blob/master/charts/podinfo/values.yaml
   values:
