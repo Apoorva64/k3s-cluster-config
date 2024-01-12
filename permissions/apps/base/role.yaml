@@ -5,6 +5,6 @@ metadata:
   name: flux-cd-base
   namespace: my-namespace
 rules:
-  - apiGroups: [ "" ]
+  - apiGroups: [ "apps" ]
     resources: [ "*" ]
     verbs: [ "*" ]
