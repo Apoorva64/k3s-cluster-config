@@ -4,3 +4,4 @@ namespace: bank-api-polytech
 resources:
   - repository.yaml
   - kustomize.yaml
+  - network-policy.yaml
