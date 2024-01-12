@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: bank-api-polytech
 resources:
   - namespace.yaml
+  - rbac
   - repository.yaml
   - kustomize.yaml
   - network-policy.yaml
