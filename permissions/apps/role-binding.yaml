@@ -6,7 +6,6 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: flux-cd-base
-    namespace: my-namespace
 roleRef:
   kind: Role
   name: flux-cd-base
