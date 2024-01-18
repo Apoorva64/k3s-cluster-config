@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: ollama
-      version: "0.6.0"
+      version: "*"
       sourceRef:
         kind: HelmRepository
         name: ollama
