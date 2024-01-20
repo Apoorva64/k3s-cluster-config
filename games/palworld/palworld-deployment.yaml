@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.31.2 (a92241f79)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: palworld
+  name: palworld
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: palworld
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.31.2 (a92241f79)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/palworld-default: "true"
+        io.kompose.service: palworld
+    spec:
+      containers:
+        - env:
+            - name: GAMEPLAYERS
+              value: "16"
+            - name: GAMEPORT
+              value: "8211"
+            - name: MULTITHREAD
+              value: "FALSE"
+          image: qmarchi/palworld
+          name: palworld-server
+          ports:
+            - containerPort: 8211
+              hostPort: 8211
+              protocol: UDP
+            - containerPort: 27015
+              hostPort: 27015
+              protocol: UDP
+          resources: {}
+          volumeMounts:
+            - mountPath: /game
+              name: palworld-claim0
+      restartPolicy: Always
+      volumes:
+        - name: palworld-claim0
+          persistentVolumeClaim:
+            claimName: palworld-claim0
+status: {}
