@@ -28,6 +28,7 @@ spec:
     spec:
       nodeSelector:
         kubernetes.io/arch: amd64
+
       containers:
         - env:
             - name: GAMEPLAYERS
@@ -45,7 +46,9 @@ spec:
             - containerPort: 27015
               hostPort: 27015
               protocol: UDP
-          resources: {}
+          resources:
+            limits:
+              memory: "12Gi"
           volumeMounts:
             - mountPath: /game
               name: palworld-claim0
