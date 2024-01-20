@@ -15,6 +15,7 @@ spec:
       port: 8211
       protocol: UDP
       targetPort: 8211
+      nodePort: 30969
   selector:
     io.kompose.service: palworld
 status:
