@@ -10,7 +10,6 @@ metadata:
   name: palworld
   namespace: palworld
 spec:
-
   replicas: 1
   selector:
     matchLabels:
@@ -27,6 +26,8 @@ spec:
         io.kompose.network/palworld-default: "true"
         io.kompose.service: palworld
     spec:
+      nodeSelector:
+        kubernetes.io/arch: amd64
       containers:
         - env:
             - name: GAMEPLAYERS
