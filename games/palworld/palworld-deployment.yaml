@@ -46,9 +46,6 @@ spec:
             - containerPort: 27015
               hostPort: 27015
               protocol: UDP
-          resources:
-            limits:
-              memory: "12Gi"
           volumeMounts:
             - mountPath: /game
               name: palworld-claim0
