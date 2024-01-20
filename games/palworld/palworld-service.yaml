@@ -8,6 +8,7 @@ metadata:
   labels:
     io.kompose.service: palworld
   name: palworld
+  namespace: palworld
 spec:
   ports:
     - name: "8211"

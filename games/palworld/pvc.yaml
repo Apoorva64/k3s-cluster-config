@@ -5,6 +5,7 @@ metadata:
   labels:
     io.kompose.service: palworld-claim0
   name: palworld-claim0
+  namespace: palworld
 spec:
   storageClassName: local-path
   accessModes:
