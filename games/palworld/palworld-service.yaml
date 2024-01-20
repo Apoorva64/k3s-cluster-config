@@ -9,6 +9,7 @@ metadata:
     io.kompose.service: palworld
   name: palworld
   namespace: palworld
+
 spec:
   ports:
     - name: "8211"
@@ -16,7 +17,7 @@ spec:
       protocol: UDP
       targetPort: 8211
       nodePort: 30969
+
   selector:
     io.kompose.service: palworld
-status:
-  loadBalancer: {}
+  type: NodePort
