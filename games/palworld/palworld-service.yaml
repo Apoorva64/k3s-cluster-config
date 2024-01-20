@@ -16,12 +16,8 @@ spec:
       port: 8211
       protocol: UDP
       targetPort: 8211
-      nodePort: 30969
-    - name: "27015"
-      port: 27015
-      protocol: UDP
-      targetPort: 27015
       nodePort: 27015
+
 
   selector:
     io.kompose.service: palworld
