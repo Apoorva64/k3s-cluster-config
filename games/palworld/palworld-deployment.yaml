@@ -42,9 +42,6 @@ spec:
             - containerPort: 8211
               hostPort: 8211
               protocol: UDP
-            - containerPort: 27015
-              hostPort: 27015
-              protocol: UDP
           resources: {}
           volumeMounts:
             - mountPath: /game
