@@ -36,7 +36,7 @@ spec:
             - name: GAMEPORT
               value: "8211"
             - name: MULTITHREAD
-              value: "TRUE"
+              value: "FALSE"
           image: qmarchi/palworld
           name: palworld-server
           resources:
