@@ -39,6 +39,9 @@ spec:
               value: "TRUE"
           image: qmarchi/palworld
           name: palworld-server
+          resources:
+            limits:
+              cpu: "4"
           ports:
             - containerPort: 8211
               hostPort: 8211
@@ -50,6 +53,7 @@ spec:
             - mountPath: /game
               name: palworld-claim0
       restartPolicy: Always
+
       volumes:
         - name: palworld-claim0
           persistentVolumeClaim:
