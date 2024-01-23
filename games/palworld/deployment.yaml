@@ -60,7 +60,7 @@ spec:
             - name: SERVER_PASSWORD
               value: ""
             - name: PAL_SPAWN_NUM_RATE
-              value: "50"
+              value: "100"
 
           image: ghcr.io/ozeliurs/docker-palworld-dedicated-server/docker-palworld-dedicated-server:0d921be1c7ac56957495719542740240f3270154
           name: palworld-dedicated-server
