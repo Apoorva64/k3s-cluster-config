@@ -3,14 +3,14 @@ kind: PersistentVolumeClaim
 metadata:
   creationTimestamp: null
   labels:
-    io.kompose.service: palworld-dedicated-server-claim0
-  name: palworld-dedicated-server-claim0
+    io.kompose.service: palworld-claim0
+  name: palworld-claim0
   namespace: palworld
 spec:
+  storageClassName: local-path
   accessModes:
     - ReadWriteOnce
-  storageClassName: local-path
   resources:
     requests:
-      storage: 10Gi
+      storage: 100Mi
 status: {}
