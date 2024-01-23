@@ -1,0 +1,77 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.31.2 (a92241f79)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: palworld-dedicated-server
+  name: palworld-dedicated-server
+  namespace: palworld
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: palworld-dedicated-server
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.31.2 (a92241f79)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/palworld-test-default: "true"
+        io.kompose.service: palworld-dedicated-server
+    spec:
+      containers:
+        - env:
+            - name: ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: adminPassword
+                  name: palworld-dedicated-server
+
+            - name: ALWAYS_UPDATE_ON_START
+              value: "true"
+            - name: BACKUP_CRON_EXPRESSION
+              value: 0 * * * *
+            - name: BACKUP_ENABLED
+              value: "true"
+            - name: COMMUNITY_SERVER
+              value: "false"
+            - name: MAX_PLAYERS
+              value: "32"
+            - name: MULTITHREAD_ENABLED
+              value: "true"
+            - name: PUBLIC_PORT
+              value: "8211"
+            - name: RCON_ENABLED
+              value: "true"
+            - name: RCON_PORT
+              value: "25575"
+            - name: SERVER_DESCRIPTION
+              value: Palworld-Dedicated-Server running in Docker by jammsen
+            - name: SERVER_NAME
+              value: Apoorva Hosting Services - Palworld
+          image: jammsen/palworld-dedicated-server:latest
+          name: palworld-dedicated-server
+          ports:
+            - containerPort: 8211
+              hostPort: 8211
+              protocol: UDP
+            - containerPort: 25575
+              hostPort: 25575
+              protocol: TCP
+          resources: {}
+          volumeMounts:
+            - mountPath: /palworld
+              name: palworld-dedicated-server-claim0
+      restartPolicy: Always
+      volumes:
+        - name: palworld-dedicated-server-claim0
+          persistentVolumeClaim:
+            claimName: palworld-dedicated-server-claim0
+status: {}
