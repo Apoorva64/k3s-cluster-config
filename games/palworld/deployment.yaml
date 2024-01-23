@@ -59,8 +59,10 @@ spec:
               value: Apoorva Hosting Services - Palworld
             - name: SERVER_PASSWORD
               value: ""
+            - name: PAL_SPAWN_NUM_RATE
+              value: "5"
 
-          image: jammsen/palworld-dedicated-server:latest
+          image: ghcr.io/ozeliurs/docker-palworld-dedicated-server/docker-palworld-dedicated-server:76348ece0d78f1c805783b0b5233931e9b5553d2
           name: palworld-dedicated-server
           ports:
             - containerPort: 8211
