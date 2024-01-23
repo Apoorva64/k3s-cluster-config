@@ -36,7 +36,7 @@ spec:
                   name: palworld-dedicated-server
 
             - name: ALWAYS_UPDATE_ON_START
-              value: "true"
+              value: "false"
             - name: BACKUP_CRON_EXPRESSION
               value: 0 * * * *
             - name: BACKUP_ENABLED
