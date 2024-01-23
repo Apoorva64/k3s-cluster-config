@@ -23,7 +23,6 @@ spec:
         kompose.version: 1.31.2 (a92241f79)
       creationTimestamp: null
       labels:
-        io.kompose.network/palworld-test-default: "true"
         io.kompose.service: palworld-dedicated-server
     spec:
       nodeSelector:
@@ -58,6 +57,9 @@ spec:
               value: Palworld-Dedicated-Server running in Docker by jammsen
             - name: SERVER_NAME
               value: Apoorva Hosting Services - Palworld
+            - name: SERVER_PASSWORD
+              value: ""
+
           image: jammsen/palworld-dedicated-server:latest
           name: palworld-dedicated-server
           ports:
