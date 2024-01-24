@@ -15,6 +15,7 @@ metadata:
     name: traefik
     release: kube-prometheus-stack
   namespace: monitoring
+  name: traefik
 spec:
   endpoints:
     - honorLabels: true
