@@ -53,3 +53,5 @@ spec:
         addEntryPointsLabels: true
         addServicesLabels: true
         addRoutersLabels: true
+      service:
+        enabled: true
