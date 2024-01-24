@@ -13,3 +13,6 @@ patches:
       kind: Kustomization
       name: react-flight-tracker
     path: kustomize-patch.yaml
+replicas:
+  - name: dev-react-flight-tracker
+    count: 5
