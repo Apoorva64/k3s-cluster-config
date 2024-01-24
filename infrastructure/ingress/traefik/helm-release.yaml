@@ -18,7 +18,7 @@ spec:
       interval: 12h
   values:
     deployment:
-      replicas: 3
+      replicas: 6
     ingressRoute:
       dashboard:
         enabled: false
