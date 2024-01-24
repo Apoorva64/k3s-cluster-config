@@ -64,7 +64,7 @@ spec:
             - name: PAL_EGG_DEFAULT_HATCHING_TIME
               value: "9"
 
-          image: ghcr.io/ozeliurs/docker-palworld-dedicated-server/docker-palworld-dedicated-server:4c5af05f1b178f54dc79df766b1fc1b71ecb583e
+          image: ghcr.io/ozeliurs/docker-palworld-dedicated-server/docker-palworld-dedicated-server:9af954d045d362db49e2f2dd57d1328089815c0f
           name: palworld-dedicated-server
           ports:
             - containerPort: 8211
