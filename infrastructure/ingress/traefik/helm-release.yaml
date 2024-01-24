@@ -53,12 +53,36 @@ spec:
         addEntryPointsLabels: true
         addServicesLabels: true
         addRoutersLabels: true
-        service:
-          enabled: true
-        serviceMonitor:
-          jobLabel: traefik
-          interval: 30s
-          honorLabels: true
-          namespace: "monitoring"
-          labels:
-            release: "kube-prometheus-stack"
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  annotations:
+    meta.helm.sh/release-name: traefik
+    meta.helm.sh/release-namespace: kube-system
+  labels:
+    app.kubernetes.io/component: metrics
+    app.kubernetes.io/instance: traefik-kube-system
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: traefik
+    helm.sh/chart: traefik-26.0.0
+    helm.toolkit.fluxcd.io/name: traefik
+    helm.toolkit.fluxcd.io/namespace: kube-system
+    name: traefik
+    release: kube-prometheus-stack
+  namespace: monitoring
+spec:
+  endpoints:
+    - honorLabels: true
+      interval: 30s
+      path: /metrics
+      targetPort: metrics
+  jobLabel: traefik
+  namespaceSelector:
+    matchNames:
+      - kube-system
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: metrics
+      app.kubernetes.io/instance: traefik-kube-system
+      app.kubernetes.io/name: traefik
