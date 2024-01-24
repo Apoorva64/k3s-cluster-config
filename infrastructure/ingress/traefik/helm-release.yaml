@@ -42,3 +42,16 @@ spec:
           effect: "NoSchedule"
       service:
         ipFamilyPolicy: "PreferDualStack"
+    metrics:
+      ## -- Prometheus is enabled by default.
+      ## -- It can be disabled by setting "prometheus: null"
+      prometheus:
+        # -- Entry point used to expose metrics.
+        entryPoint: metrics
+        addEntryPointsLabels: true
+        addServicesLabels: true
+        buckets:
+          - 0.1
+          - 0.3
+          - 1.2
+          - 5.0
