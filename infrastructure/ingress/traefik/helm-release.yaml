@@ -52,8 +52,17 @@ spec:
         entryPoint: metrics
         addEntryPointsLabels: true
         addServicesLabels: true
+        addRoutersLabels: true
         buckets:
           - 0.1
           - 0.3
           - 1.2
           - 5.0
+        service:
+          enabled: true
+        serviceMonitor:
+          jobLabel: traefik
+          interval: 30s
+          honorLabels: true
+
+          namespace: "monitoring"
