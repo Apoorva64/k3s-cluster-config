@@ -197,7 +197,7 @@ metadata:
   name: experiments
   namespace: flux-system
 spec:
-  interval: 1h
+  interval: 1m
   retryInterval: 1m
   timeout: 5m
   sourceRef:
