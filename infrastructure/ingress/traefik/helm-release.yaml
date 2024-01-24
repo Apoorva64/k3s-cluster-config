@@ -17,6 +17,8 @@ spec:
         namespace: kube-system
       interval: 12h
   values:
+    deployment:
+      replicas: 3
     ingressRoute:
       dashboard:
         enabled: false
