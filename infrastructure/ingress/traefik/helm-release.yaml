@@ -60,3 +60,5 @@ spec:
           interval: 30s
           honorLabels: true
           namespace: "monitoring"
+          labels:
+            release: "kube-prometheus-stack"
