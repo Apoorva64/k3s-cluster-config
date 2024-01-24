@@ -17,6 +17,9 @@ spec:
         namespace: kube-system
       interval: 12h
   values:
+    ingressRoute:
+      dashboard:
+        enabled: false
     podAnnotations:
       prometheus.io/port: "8082"
       prometheus.io/scrape: "true"
