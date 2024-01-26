@@ -130,7 +130,6 @@ spec:
         traefik:
           traefik:
             gnetId: 12250
-            datasource: prometheus
 
         loki:
           loki:
