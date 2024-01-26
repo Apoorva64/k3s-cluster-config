@@ -127,9 +127,9 @@ spec:
           k8s-views-pods:
             url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
             token: ''
-        traefik:
-          traefik:
-            gnetId: 12250
+#        traefik:
+#          traefik:
+#            gnetId: 12250
 
         loki:
           loki:
