@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: traefik
-      version: "25.0.2+up25.0.0"
+      version: "*"
       sourceRef:
         kind: HelmRepository
         name: traefik
