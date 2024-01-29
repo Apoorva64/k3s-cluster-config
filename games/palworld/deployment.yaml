@@ -54,7 +54,7 @@ spec:
             - name: RCON_PORT
               value: "25575"
             - name: SERVER_DESCRIPTION
-              value: Palworld-Dedicated-Server running in Docker by jammsen
+              value: "Apoorva Hosting Services - Palworld"
             - name: SERVER_NAME
               value: Apoorva Hosting Services - Palworld
             - name: SERVER_PASSWORD
@@ -63,8 +63,10 @@ spec:
               value: "2"
             - name: PAL_EGG_DEFAULT_HATCHING_TIME
               value: "9"
+            - name: BASE_CAMP_WORKER_MAXNUM
+              value: "100"
 
-          image: ghcr.io/ozeliurs/docker-palworld-dedicated-server/docker-palworld-dedicated-server:9af954d045d362db49e2f2dd57d1328089815c0f
+          image: jammsen/palworld-dedicated-server:7c44003
           name: palworld-dedicated-server
           ports:
             - containerPort: 8211
