@@ -64,7 +64,7 @@ spec:
             - name: PAL_EGG_DEFAULT_HATCHING_TIME
               value: "9"
             - name: BASE_CAMP_WORKER_MAXNUM
-              value: "100"
+              value: "30"
 
           image: jammsen/palworld-dedicated-server:7c44003
           name: palworld-dedicated-server
