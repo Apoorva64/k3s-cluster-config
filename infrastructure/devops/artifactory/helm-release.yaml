@@ -7,7 +7,7 @@ spec:
   interval: 60m
   chart:
     spec:
-      chart: artifactory-ha
+      chart: artifactory
       version: "*"
       sourceRef:
         kind: HelmRepository
