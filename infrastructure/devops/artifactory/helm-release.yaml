@@ -21,7 +21,26 @@ spec:
         repository: ozeliurs/artifactory
         tag: latest
     postgresql:
-      enabled: true
-      postgresqlDatabase: artifactory
-      postgresqlUsername: artifactory
-      postgresqlPassword: dSgrP9Uq1H
+      enabled: false
+
+    database:
+      type: "postgresql"
+      driver: "org.postgresql.Driver"
+      ## If you set the url, leave host and port empty
+      url: 'jdbc:postgresql://postgres:5432/artifactory'
+      ## If you would like this chart to create the secret containing the db
+      ## password, use these values
+      user: "artifactory"
+      password: "artifactory"
+      ## If you have existing Kubernetes secrets containing db credentials, use
+      ## these values
+      secrets: { }
+      #  user:
+      #    name: "rds-artifactory"
+      #    key: "db-user"
+      #  password:
+      #    name: "rds-artifactory"
+      #    key: "db-password"
+      #  url:
+      #    name: "rds-artifactory"
+      #    key: "db-url"
