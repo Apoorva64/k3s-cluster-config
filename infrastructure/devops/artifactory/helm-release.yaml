@@ -20,3 +20,8 @@ spec:
         registry: docker.io
         repository: ozeliurs/artifactory
         tag: latest
+    postgresql:
+      enabled: true
+      postgresqlDatabase: artifactory
+      postgresqlUsername: artifactory
+      postgresqlPassword: dSgrP9Uq1H
