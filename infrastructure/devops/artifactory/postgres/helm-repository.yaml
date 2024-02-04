@@ -5,5 +5,4 @@ metadata:
   namespace: artifactory
 spec:
   interval: 60m0s
-  url: oci://registry-1.docker.io/bitnamicharts
-  type: oci
+  url: https://charts.bitnami.com/bitnami
