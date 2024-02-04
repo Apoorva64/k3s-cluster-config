@@ -7,11 +7,11 @@ spec:
   interval: 60m
   chart:
     spec:
-      chart: postgresql-ha
+      chart: postgresql
       version: "*"
       sourceRef:
         kind: HelmRepository
-        name: postgresql
+        name: bitnami
         namespace: artifactory
       interval: 24h
   values:
