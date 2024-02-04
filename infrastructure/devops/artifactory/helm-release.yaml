@@ -18,4 +18,5 @@ spec:
     artifactory:
       image:
         registry: docker.io
-        repository: ozeliurs/artifactory:latest
+        repository: ozeliurs/artifactory
+        tag: latest
