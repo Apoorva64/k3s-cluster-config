@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: artifactory
+  namespace: artifactory
+spec:
+  interval: 60m
+  chart:
+    spec:
+      chart: artifactory-ha
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: jfrog
+        namespace: artifactory
+      interval: 12h
+  values:
+    artifactory:
+      image:
+        registry: docker.io
+        repository: ozeliurs/artifactory:latest
