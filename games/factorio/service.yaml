@@ -6,19 +6,15 @@ metadata:
     kompose.version: 1.31.2 (a92241f79)
   creationTimestamp: null
   labels:
-    io.kompose.service: palworld
-  name: palworld
-  namespace: palworld
-
+    io.kompose.service: factorio-dedicated-server
+  name: factorio-dedicated-server
+  namespace: factorio
 spec:
   ports:
-    - name: "8211"
-      port: 8211
+    - name: "34197"
+      port: 34197
       protocol: UDP
-      targetPort: 8211
-      nodePort: 27015
-
-
+      nodePort: 30697
   selector:
-    io.kompose.service: palworld
+    io.kompose.service: factorio-dedicated-server
   type: NodePort
