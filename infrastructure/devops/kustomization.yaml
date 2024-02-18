@@ -4,7 +4,7 @@ resources:
   - namespace.yaml
   - weave-gitops
   - gitlab-runner
-#  - sonarqube
+  - sonarqube
   - starboard
   - jenkins
   - artifactory
