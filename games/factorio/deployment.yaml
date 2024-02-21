@@ -30,7 +30,7 @@ spec:
       containers:
         - env: []
 
-          image: factoriotools/factorio:1.1.101
+          image: factoriotools/factorio:1.1.104
           name: factorio-dedicated-server
           ports:
             - containerPort: 34197
