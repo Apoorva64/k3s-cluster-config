@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: kube-prometheus-stack
-      version: "56.6.2"
+      version: "56.7.0"
       sourceRef:
         kind: HelmRepository
         name: prometheus-community
@@ -25,8 +25,8 @@ spec:
         replicas: 3
 
     grafana:
-      image:
-        tag: 9.1.6
+#      image:
+#        tag: 9.1.6
       enabled: true
       replicas: 3
       extraSecretMounts:
@@ -58,8 +58,8 @@ spec:
           root_url: https://grafana.monitoring.apoorva64.com
         auth.generic_oauth:
           enabled: true
-          auto_login: true
-          disable_login_form: true
+#          auto_login: true
+#          disable_login_form: true
           name: "Keycloak-OAuth"
           allow_sign_up: true
           client_id: $__file{/etc/secrets/auth_generic_oauth/client_id}
