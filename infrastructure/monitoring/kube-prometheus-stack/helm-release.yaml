@@ -28,7 +28,7 @@ spec:
 #      image:
 #        tag: 9.1.6
       enabled: true
-      replicas: 3
+      replicas: 1
       extraSecretMounts:
         - name: auth-generic-oauth-secret-mount
           secretName: auth-generic-oauth-secret
