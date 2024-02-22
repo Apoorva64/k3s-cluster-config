@@ -55,13 +55,11 @@ spec:
 
       grafana.ini:
         server:
-          serve_from_sub_path: true
-          enforce_domain: false
-          root_url: https://grafana.monitoring.apoorva64.com/grafana
+          root_url: https://grafana.monitoring.apoorva64.com
         security:
           allow_embedding: true
-          cookie_secure: true
-          cookie_samesite: none
+          cookie_secure: false
+          cookie_samesite: disabled
         auth.generic_oauth:
           enabled: true
           auto_login: true
