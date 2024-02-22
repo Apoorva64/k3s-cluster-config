@@ -58,10 +58,12 @@ spec:
           root_url: https://grafana.monitoring.apoorva64.com
           domain: grafana.monitoring.apoorva64.com
           serve_from_sub_path: true
+        security:
+          allow_embedding: true
         auth.generic_oauth:
           enabled: true
-#          auto_login: true
-#          disable_login_form: true
+          auto_login: true
+          disable_login_form: true
           name: "Keycloak-OAuth"
           allow_sign_up: true
           client_id: $__file{/etc/secrets/auth_generic_oauth/client_id}
