@@ -23,6 +23,8 @@ spec:
     postgresql:
       syncReplication: true
       syncReplicationMode: FIRST
+      nodeSelector:
+        kubernetes.io/arch: arm64
     global:
       postgresql:
         existingSecret: keycloak-postgres-ha-postgresql-ha-postgresql
