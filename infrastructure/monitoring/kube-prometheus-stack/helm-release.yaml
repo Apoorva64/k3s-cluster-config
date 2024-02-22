@@ -60,6 +60,7 @@ spec:
           enforce_domain: false
           enable_gzip: true
           router_logging: true
+          root_url: https://grafana.monitoring.apoorva64.com
         security:
           allow_embedding: true
           cookie_secure: true
