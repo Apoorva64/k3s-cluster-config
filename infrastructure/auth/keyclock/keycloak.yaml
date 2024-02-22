@@ -16,7 +16,7 @@ spec:
     database: postgres
   hostname:
     hostname: keycloak.auth.apoorva64.com
-  instances: 1
+  instances: 3
   ingress:
     enabled: false
   additionalOptions:
