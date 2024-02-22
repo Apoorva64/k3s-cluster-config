@@ -56,8 +56,6 @@ spec:
       grafana.ini:
         server:
           root_url: https://grafana.monitoring.apoorva64.com
-          domain: grafana.monitoring.apoorva64.com
-          serve_from_sub_path: true
         security:
           allow_embedding: true
         auth.generic_oauth:
