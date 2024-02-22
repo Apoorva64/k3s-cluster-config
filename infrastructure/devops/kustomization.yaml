@@ -8,3 +8,4 @@ resources:
   - starboard
   - jenkins
   # - artifactory
+  - gitlab
