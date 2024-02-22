@@ -345,7 +345,6 @@ spec:
             - name: RELATED_IMAGE_KEYCLOAK
               value: quay.io/keycloak/keycloak:23.0.7
           image: quay.io/keycloak/keycloak-operator:23.0.7
-
           imagePullPolicy: Always
           livenessProbe:
             failureThreshold: 3
