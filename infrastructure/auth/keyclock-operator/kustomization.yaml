@@ -3,5 +3,4 @@ kind: Kustomization
 namespace: keycloak
 resources:
   - crds.yaml
-  - crds-2.yaml
   - deployment.yaml
