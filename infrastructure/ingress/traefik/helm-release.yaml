@@ -21,7 +21,7 @@ spec:
       replicas: 1
     ingressRoute:
       dashboard:
-        enabled: false
+        enabled: true
     podAnnotations:
       prometheus.io/port: "8082"
       prometheus.io/scrape: "true"
