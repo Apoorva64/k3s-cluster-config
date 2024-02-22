@@ -16,9 +16,11 @@ spec:
     database: postgres
   hostname:
     hostname: keycloak.auth.apoorva64.com
-  instances: 2
+  instances: 3
   ingress:
     enabled: false
+  transaction:
+    xaEnabled: true
   additionalOptions:
     - name: proxy-address-forwarding
       value: "true"
