@@ -104,6 +104,7 @@ spec:
 
 
       dashboards:
+
         default:
 #          k8s-system-api-server:
 #            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
@@ -123,8 +124,8 @@ spec:
 #          k8s-views-pods:
 #            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
 #            token: ''
-          traefik:
-            gnetId: 12250
+#          traefik:
+#            gnetId: 12250
 
           loki:
             token: ''
