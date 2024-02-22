@@ -89,26 +89,26 @@ spec:
         path: /
         pathType: Prefix
       # Provision grafana-dashboards-kubernetes
-#      dashboardProviders:
-#        dashboardproviders.yaml:
-#          apiVersion: 1
-#          providers:
-#            - name: 'grafana-dashboards-kubernetes'
-#              orgId: 1
-#              folder: 'Kubernetes'
-#              type: file
-#              disableDeletion: true
-#              editable: true
-#              options:
-#                path: /var/lib/grafana/dashboards/grafana-dashboards-kubernetes
-#            - name: 'loki-dashboard'
-#              orgId: 1
-#              folder: 'Loki'
-#              type: file
-#              disableDeletion: true
-#              editable: true
-#              options:
-#                path: /var/lib/grafana/dashboards/loki
+      dashboardProviders:
+        dashboardproviders.yaml:
+          apiVersion: 1
+          providers:
+            - name: 'grafana-dashboards-kubernetes'
+              orgId: 1
+              folder: 'Kubernetes'
+              type: file
+              disableDeletion: true
+              editable: true
+              options:
+                path: /var/lib/grafana/dashboards/grafana-dashboards-kubernetes
+            - name: 'loki-dashboard'
+              orgId: 1
+              folder: 'Loki'
+              type: file
+              disableDeletion: true
+              editable: true
+              options:
+                path: /var/lib/grafana/dashboards/loki
 
       dashboards:
 #        grafana-dashboards-kubernetes:
