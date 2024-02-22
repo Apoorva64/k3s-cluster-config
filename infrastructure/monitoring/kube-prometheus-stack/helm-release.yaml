@@ -89,6 +89,7 @@ spec:
             hosts:
               - grafana.monitoring.apoorva64.com
         path: /
+        pathType: Prefix
       # Provision grafana-dashboards-kubernetes
 #      dashboardProviders:
 #        dashboardproviders.yaml:
