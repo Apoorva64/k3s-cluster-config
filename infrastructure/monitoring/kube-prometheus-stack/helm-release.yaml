@@ -53,30 +53,30 @@ spec:
         - grafana-simple-json-datasource
         - grafana-kubernetes-app
 
-      grafana.ini:
-        server:
-          root_url: https://grafana.monitoring.apoorva64.com
-        security:
-          allow_embedding: true
-          cookie_secure: false
-          cookie_samesite: disabled
-        auth.generic_oauth:
-          enabled: true
-          auto_login: true
-          disable_login_form: true
-          name: "Keycloak-OAuth"
-          allow_sign_up: true
-          client_id: $__file{/etc/secrets/auth_generic_oauth/client_id}
-          client_secret: $__file{/etc/secrets/auth_generic_oauth/client_secret}
-          scopes: "openid profile email roles offline_access"
-          email_attribute_path: "email"
-          login_attribute_path: "preferred_username"
-          name_attribute_path: "name"
-          auth_url: "https://keycloak.auth.apoorva64.com/realms/lab/protocol/openid-connect/auth"
-          token_url: "https://keycloak.auth.apoorva64.com/realms/lab/protocol/openid-connect/token"
-          api_url: "https://keycloak.auth.apoorva64.com/realms/lab/protocol/openid-connect/userinfo"
-          allow_assign_grafana_admin: true
-          role_attribute_path: "contains(resource_access.grafana_oauth.roles[*], 'admin') && 'GrafanaAdmin' || contains(resource_access.grafana_oauth.roles[*], 'editor') && 'Editor' || 'Viewer'"
+#      grafana.ini:
+#        server:
+#          root_url: https://grafana.monitoring.apoorva64.com
+#        security:
+#          allow_embedding: true
+#          cookie_secure: false
+#          cookie_samesite: disabled
+#        auth.generic_oauth:
+#          enabled: true
+#          auto_login: true
+#          disable_login_form: true
+#          name: "Keycloak-OAuth"
+#          allow_sign_up: true
+#          client_id: $__file{/etc/secrets/auth_generic_oauth/client_id}
+#          client_secret: $__file{/etc/secrets/auth_generic_oauth/client_secret}
+#          scopes: "openid profile email roles offline_access"
+#          email_attribute_path: "email"
+#          login_attribute_path: "preferred_username"
+#          name_attribute_path: "name"
+#          auth_url: "https://keycloak.auth.apoorva64.com/realms/lab/protocol/openid-connect/auth"
+#          token_url: "https://keycloak.auth.apoorva64.com/realms/lab/protocol/openid-connect/token"
+#          api_url: "https://keycloak.auth.apoorva64.com/realms/lab/protocol/openid-connect/userinfo"
+#          allow_assign_grafana_admin: true
+#          role_attribute_path: "contains(resource_access.grafana_oauth.roles[*], 'admin') && 'GrafanaAdmin' || contains(resource_access.grafana_oauth.roles[*], 'editor') && 'Editor' || 'Viewer'"
       ingress:
         enabled: true
         annotations:
