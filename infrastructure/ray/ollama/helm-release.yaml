@@ -18,10 +18,6 @@ spec:
       interval: 12h
   values:
     resources:
-      requests:
-        memory: 4096Mi
-        cpu: 2000m
-        nvidia.com/gpu: 1
       limits:
         memory: 8192Mi
         nvidia.com/gpu: 1
@@ -47,9 +43,3 @@ spec:
               - op: add
                 path: /spec/template/spec/runtimeClassName
                 value: nvidia
-          - target:
-              kind: Deployment
-            patch: |
-              - op: add
-                path: /spec/strategy/type
-                value: Recreate
