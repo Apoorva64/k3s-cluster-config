@@ -14,3 +14,5 @@ spec:
         name: strimzi
         namespace: strimzi-kafka-operator
       interval: 24h
+  values:
+    watchAnyNamespace: true
