@@ -50,6 +50,6 @@ spec:
           - target:
               kind: Deployment
             patch: |
-              - op: add
-                  path: /spec/strategy/type
-                  value: Recreate
+              - op: replace
+                path: /spec/strategy/type
+                value: Recreate
