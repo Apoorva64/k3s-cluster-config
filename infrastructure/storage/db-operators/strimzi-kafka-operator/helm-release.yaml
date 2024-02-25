@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: strimzi-kafka-operator
+  namespace: strimzi-kafka-operator
+spec:
+  interval: 60m
+  chart:
+    spec:
+      chart: strimzi-kafka-operator
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: strimzi
+        namespace: strimzi-kafka-operator
+      interval: 24h
