@@ -47,4 +47,6 @@ spec:
               - op: add
                 path: /spec/template/spec/runtimeClassName
                 value: nvidia
-
+              - op: replace
+                  path: /spec/strategy/type
+                  value: Recreate
