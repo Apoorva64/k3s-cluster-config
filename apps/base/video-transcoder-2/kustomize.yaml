@@ -10,3 +10,4 @@ spec:
   sourceRef:
     kind: GitRepository
     name: video-transcoder-2
+  targetNamespace: video-transcoder-2
