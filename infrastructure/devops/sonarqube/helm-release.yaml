@@ -17,7 +17,7 @@ spec:
   values:
     image:
       repository: git.ozeliurs.com/ozeliurs/sonarqube
-      tag: 10.4.0
+      tag: 10.3.0
       pullSecrets:
       - name: gitea-pull-secrets
     ingress:
