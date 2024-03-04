@@ -1,8 +1,12 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: raphael-anjou
+  name: maxime
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: camping
+  name: cluster-admin
+subjects:
+  - kind: User
+    name: ozeliurs@gmail.com
+    apiGroup: rbac.authorization.k8s.io
