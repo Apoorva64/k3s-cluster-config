@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  password: <base64 encoded password>
+kind: Secret
+metadata:
+  name: redis-auth
+  namespace: redis

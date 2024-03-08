@@ -7,3 +7,4 @@ resources:
   - minio-env-sealed.yaml
   - longhorn
   - db-operators
+  - redis
