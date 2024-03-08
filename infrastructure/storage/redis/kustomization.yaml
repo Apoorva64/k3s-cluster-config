@@ -4,4 +4,3 @@ resources:
   - namespace.yaml
   - helm-release.yaml
   - redis-auth-sealed.yaml
-  - service.yaml
