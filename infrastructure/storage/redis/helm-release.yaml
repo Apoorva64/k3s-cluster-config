@@ -19,7 +19,8 @@ spec:
     auth:
       enabled: true
       existingSecret: redis-auth
-    service:
-      type: NodePort
-      nodePorts:
-        redis: 30001
+    master:
+      service:
+        type: NodePort
+        nodePorts:
+          redis: 30001
