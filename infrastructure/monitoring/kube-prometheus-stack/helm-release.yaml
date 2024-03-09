@@ -23,10 +23,42 @@ spec:
     prometheus:
       prometheusSpec:
         replicas: 3
+        additionalScrapeConfigs:
+          # federation,
+          - job_name: 'maxime-datacenter'
+            metrics_path: /federate
+            scrape_interval: 1m
+            scrape_timeout: 55s
+            honor_labels: true
+            params:
+              # match everything
+              'match[]':
+                - '{job="blackbox-http"}'
+                - '{job="blackbox-icmp"}'
+                - '{job="kasa"}'
+                - '{job="pve"}'
+            static_configs:
+              - targets: [ 'adakite.ozeliurs.gmail.com.hs.ozeliurs.com:9090' ]
+            # add "datacenter = maxime" label to all metrics
+            relabel_configs:
+              - source_labels: [ __address__ ]
+                target_label: __param_target
+              - source_labels: [ __param_target ]
+                target_label: instance
+              - target_label: __address__
+                replacement: adakite.ozeliurs.gmail.com.hs.ozeliurs.com:9090
+              - source_labels: [ ]
+                target_label: datacenter
+                replacement: maxime
+
+
+
+
+
 
     grafana:
-#      image:
-#        tag: 9.1.6
+      #      image:
+      #        tag: 9.1.6
       enabled: true
       replicas: 1
       extraSecretMounts:
@@ -50,8 +82,8 @@ spec:
         - grafana-piechart-panel
         - grafana-worldmap-panel
         - grafana-clock-panel
-#        - grafana-simple-json-datasource
-#        - grafana-kubernetes-app
+      #        - grafana-simple-json-datasource
+      #        - grafana-kubernetes-app
 
       grafana.ini:
         server:
@@ -100,32 +132,32 @@ spec:
               disableDeletion: false
               editable: true
               options:
-                path:  /var/lib/grafana/dashboards/default
+                path: /var/lib/grafana/dashboards/default
 
 
       dashboards:
 
         default:
-#          k8s-system-api-server:
-#            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
-#            token: ''
-#          k8s-system-coredns:
-#            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-coredns.json
-#            token: ''
-#          k8s-views-global:
-#            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-global.json
-#            token: ''
-#          k8s-views-namespaces:
-#            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-namespaces.json
-#            token: ''
-#          k8s-views-nodes:
-#            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-nodes.json
-#            token: ''
-#          k8s-views-pods:
-#            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
-#            token: ''
-#          traefik:
-#            gnetId: 12250
+          #          k8s-system-api-server:
+          #            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
+          #            token: ''
+          #          k8s-system-coredns:
+          #            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-coredns.json
+          #            token: ''
+          #          k8s-views-global:
+          #            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-global.json
+          #            token: ''
+          #          k8s-views-namespaces:
+          #            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-namespaces.json
+          #            token: ''
+          #          k8s-views-nodes:
+          #            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-nodes.json
+          #            token: ''
+          #          k8s-views-pods:
+          #            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
+          #            token: ''
+          #          traefik:
+          #            gnetId: 12250
 
           loki:
             token: ''
