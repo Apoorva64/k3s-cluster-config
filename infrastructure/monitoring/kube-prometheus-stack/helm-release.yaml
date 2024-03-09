@@ -119,33 +119,58 @@ spec:
         dashboardproviders.yaml:
           apiVersion: 1
           providers:
-            - name: provider-site
+            - name: 'default'
               orgId: 1
               folder: ''
               type: file
               disableDeletion: false
               editable: true
               options:
-                path: /var/lib/grafana/dashboards/provider-site
+                path: /var/lib/grafana/dashboards/default
+               # Provision grafana-dashboards-kubernetes
+            - name: 'loki'
+              orgId: 1
+              folder: 'loki'
+              type: file
+              disableDeletion: false
+              editable: true
+              options:
+                path: /var/lib/grafana/dashboards/loki
+            - name: 'traefik'
+              orgId: 1
+              folder: 'traefik'
+              type: file
+              disableDeletion: false
+              editable: true
+              options:
+                path: /var/lib/grafana/dashboards/traefik
 
 
-      provider-site:
+      dashboards:
+        traefik:
+          gnetId: 17347
+          revision: 7
 
-        provider-site:
-          k8s-system-api-server:
-            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
-          k8s-system-coredns:
-            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-coredns.json
-          k8s-views-global:
-            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-global.json
-          k8s-views-namespaces:
-            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-namespaces.json
-          k8s-views-nodes:
-            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-nodes.json
-          k8s-views-pods:
-            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
-#          traefik:
-#            gnetId: 12250
+        default:
+          #          k8s-system-api-server:
+          #            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
+          #            token: ''
+          #          k8s-system-coredns:
+          #            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-coredns.json
+          #            token: ''
+          #          k8s-views-global:
+          #            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-global.json
+          #            token: ''
+          #          k8s-views-namespaces:
+          #            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-namespaces.json
+          #            token: ''
+          #          k8s-views-nodes:
+          #            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-nodes.json
+          #            token: ''
+          #          k8s-views-pods:
+          #            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
+          #            token: ''
+            #          k8s-views-workloads:
 
           loki:
             token: ''
