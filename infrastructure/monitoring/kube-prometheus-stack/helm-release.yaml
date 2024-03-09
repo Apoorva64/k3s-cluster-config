@@ -151,7 +151,7 @@ spec:
           gnetId: 17347
           revision: 7
 
-        default:
+#        default:
           #          k8s-system-api-server:
           #            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
           #            token: ''
