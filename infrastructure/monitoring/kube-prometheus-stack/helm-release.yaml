@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: kube-prometheus-stack
-      version: "*"
+      version: "56.9.*"
       sourceRef:
         kind: HelmRepository
         name: prometheus-community
@@ -37,7 +37,6 @@ spec:
                 - '{job="blackbox-icmp"}'
                 - '{job="kasa"}'
                 - '{job="pve"}'
-                - '{job="node"}'
             static_configs:
               - targets: [ '100.64.0.42:9090' ]
             # add "datacenter = maxime" label to all metrics
@@ -62,7 +61,6 @@ spec:
           defaultMode: 0440
           mountPath: /etc/secrets/auth_generic_oauth
           readOnly: true
-          subPath: ''
 
 
       additionalDataSources:
@@ -129,31 +127,11 @@ spec:
               editable: true
               options:
                 path: /var/lib/grafana/dashboards/default
-               # Provision grafana-dashboards-kubernetes
-            - name: 'loki'
-              orgId: 1
-              folder: 'loki'
-              type: file
-              disableDeletion: false
-              editable: true
-              options:
-                path: /var/lib/grafana/dashboards/loki
-            - name: 'traefik'
-              orgId: 1
-              folder: 'traefik'
-              type: file
-              disableDeletion: false
-              editable: true
-              options:
-                path: /var/lib/grafana/dashboards/traefik
 
 
       dashboards:
-        traefik:
-          gnetId: 17347
-          revision: 7
 
-#        default:
+        default:
           #          k8s-system-api-server:
           #            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
           #            token: ''
@@ -172,7 +150,8 @@ spec:
           #          k8s-views-pods:
           #            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
           #            token: ''
-            #          k8s-views-workloads:
+          #          traefik:
+          #            gnetId: 12250
 
           loki:
             token: ''
