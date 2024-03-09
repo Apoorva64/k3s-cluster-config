@@ -37,6 +37,7 @@ spec:
                 - '{job="blackbox-icmp"}'
                 - '{job="kasa"}'
                 - '{job="pve"}'
+                - '{job="node"}'
             static_configs:
               - targets: [ '100.64.0.42:9090' ]
             # add "datacenter = maxime" label to all metrics
@@ -61,6 +62,7 @@ spec:
           defaultMode: 0440
           mountPath: /etc/secrets/auth_generic_oauth
           readOnly: true
+          subPath: ''
 
 
       additionalDataSources:
