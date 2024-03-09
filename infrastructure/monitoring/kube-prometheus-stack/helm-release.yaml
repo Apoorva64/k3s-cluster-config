@@ -41,12 +41,6 @@ spec:
               - targets: [ '100.64.0.42:9090' ]
             # add "datacenter = maxime" label to all metrics
             relabel_configs:
-              - source_labels: [ __address__ ]
-                target_label: __param_target
-              - source_labels: [ __param_target ]
-                target_label: instance
-              - target_label: __address__
-                replacement: adakite.ozeliurs.gmail.com.hs.ozeliurs.com:9090
               - source_labels: [ ]
                 target_label: datacenter
                 replacement: maxime
