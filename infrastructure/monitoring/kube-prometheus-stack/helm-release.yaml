@@ -131,7 +131,7 @@ spec:
 
       provider-site:
 
-        default:
+        provider-site:
           k8s-system-api-server:
             url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
           k8s-system-coredns:
