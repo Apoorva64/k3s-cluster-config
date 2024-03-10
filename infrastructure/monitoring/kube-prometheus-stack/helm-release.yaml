@@ -26,6 +26,9 @@ spec:
               - op: add
                 path: spec/template/spec/dnsConfig/options/0/name
                 value: ndots
+          - target:
+              kind: Deployment
+            patch: |
               - op: add
                 path: spec/template/spec/dnsConfig/options/0/value
                 value: "1"
