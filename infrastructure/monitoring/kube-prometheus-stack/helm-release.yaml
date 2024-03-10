@@ -16,6 +16,22 @@ spec:
         name: prometheus-community
         namespace: monitoring
       interval: 12h
+  
+  postRenderers:
+    - kustomize:
+        patches:
+          - target:
+              kind: Deployment
+            patch: |
+              - op: add
+                path: spec/template/spec/dnsConfig/options/0/name
+                value: ndots
+              - op: add
+                path: spec/template/spec/dnsConfig/options/0/value
+                value: "1"
+
+              
+
   values:
     alertmanager:
       alertmanagerSpec:
