@@ -51,8 +51,8 @@ spec:
 
 
     grafana:
-      #      image:
-      #        tag: 9.1.6
+      image:
+        tag: 9.0.0
       enabled: true
       replicas: 1
       extraSecretMounts:
