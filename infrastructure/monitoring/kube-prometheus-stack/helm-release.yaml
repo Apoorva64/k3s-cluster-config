@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: kube-prometheus-stack
-      version: "56.21.*"
+      version: "57.0.0"
       sourceRef:
         kind: HelmRepository
         name: prometheus-community
@@ -51,8 +51,7 @@ spec:
 
 
     grafana:
-      image:
-        tag: 9.0.0
+
       enabled: true
       replicas: 1
       extraSecretMounts:
