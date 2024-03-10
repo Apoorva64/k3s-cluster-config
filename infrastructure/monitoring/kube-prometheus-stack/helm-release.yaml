@@ -24,7 +24,7 @@ spec:
               kind: Deployment
             patch: |
               - op: add
-                path: spec/template/spec/
+                path: spec/template/spec
                 value:
                   dnsConfig:
                     options:
