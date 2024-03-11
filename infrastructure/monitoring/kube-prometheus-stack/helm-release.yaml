@@ -22,7 +22,7 @@ spec:
         patches:
           - target:
               kind: Deployment
-            patch: | 
+            patch: |
               - op: add
                 path: /spec/template/spec/dnsConfig
                 value:
@@ -148,12 +148,24 @@ spec:
               editable: true
               options:
                 path: /var/lib/grafana/dashboards/datacenter
-
-
-
+            - name: 'traefik'
+              orgId: 1
+              folder: 'Traefik'
+              type: file
+              disableDeletion: false
+              editable: true
+              options:
+                path: /var/lib/grafana/dashboards/traefik
+            - name: 'kubernetes'
+              orgId: 1
+              folder: 'Kubernetes'
+              type: file
+              disableDeletion: false
+              editable: true
+              options:
+                path: /var/lib/grafana/dashboards/kubernetes
       dashboards:
-
-        default:
+        kubernetes:
           k8s-system-api-server:
             url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
           k8s-system-coredns:
@@ -166,7 +178,8 @@ spec:
             url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-nodes.json
           k8s-views-pods:
             url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
-          traefik:
+        traefik:
+          traefik-dashboard:
             gnetId: 12250
 
         datacenter:
