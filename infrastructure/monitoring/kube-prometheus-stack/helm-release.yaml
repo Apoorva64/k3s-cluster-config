@@ -174,49 +174,6 @@ spec:
             token: ''
             json: |
               {
-                "__inputs": [
-                  {
-                    "name": "DS_PROMETHEUS",
-                    "label": "prometheus",
-                    "description": "",
-                    "type": "datasource",
-                    "pluginId": "prometheus",
-                    "pluginName": "Prometheus"
-                  }
-                ],
-                "__elements": {},
-                "__requires": [
-                  {
-                    "type": "panel",
-                    "id": "bargauge",
-                    "name": "Bar gauge",
-                    "version": ""
-                  },
-                  {
-                    "type": "grafana",
-                    "id": "grafana",
-                    "name": "Grafana",
-                    "version": "10.3.3"
-                  },
-                  {
-                    "type": "datasource",
-                    "id": "prometheus",
-                    "name": "Prometheus",
-                    "version": "1.0.0"
-                  },
-                  {
-                    "type": "panel",
-                    "id": "stat",
-                    "name": "Stat",
-                    "version": ""
-                  },
-                  {
-                    "type": "panel",
-                    "id": "timeseries",
-                    "name": "Time series",
-                    "version": ""
-                  }
-                ],
                 "annotations": {
                   "list": [
                     {
@@ -236,14 +193,14 @@ spec:
                 "editable": true,
                 "fiscalYearStartMonth": 0,
                 "graphTooltip": 0,
-                "id": null,
+                "id": 7,
                 "links": [],
                 "liveNow": false,
                 "panels": [
                   {
                     "datasource": {
                       "type": "prometheus",
-                      "uid": "${DS_PROMETHEUS}"
+                      "uid": "${prometheus}"
                     },
                     "description": "",
                     "fieldConfig": {
@@ -329,7 +286,7 @@ spec:
                       {
                         "datasource": {
                           "type": "prometheus",
-                          "uid": "${DS_PROMETHEUS}"
+                          "uid": "d2814af5-8a0e-493c-8d5f-cb293accfe89"
                         },
                         "disableTextWrap": false,
                         "editorMode": "builder",
@@ -350,7 +307,7 @@ spec:
                   {
                     "datasource": {
                       "type": "prometheus",
-                      "uid": "${DS_PROMETHEUS}"
+                      "uid": "${prometheus}"
                     },
                     "fieldConfig": {
                       "defaults": {
@@ -408,7 +365,7 @@ spec:
                       {
                         "datasource": {
                           "type": "prometheus",
-                          "uid": "${DS_PROMETHEUS}"
+                          "uid": "${prometheus}"
                         },
                         "disableTextWrap": false,
                         "editorMode": "builder",
@@ -429,7 +386,7 @@ spec:
                   {
                     "datasource": {
                       "type": "prometheus",
-                      "uid": "${DS_PROMETHEUS}"
+                      "uid": "${prometheus}"
                     },
                     "description": "",
                     "fieldConfig": {
@@ -487,7 +444,7 @@ spec:
                       {
                         "datasource": {
                           "type": "prometheus",
-                          "uid": "${DS_PROMETHEUS}"
+                          "uid": "${prometheus}"
                         },
                         "disableTextWrap": false,
                         "editorMode": "builder",
@@ -508,7 +465,7 @@ spec:
                   {
                     "datasource": {
                       "type": "prometheus",
-                      "uid": "${DS_PROMETHEUS}"
+                      "uid": "${prometheus}"
                     },
                     "fieldConfig": {
                       "defaults": {
@@ -565,7 +522,7 @@ spec:
                       {
                         "datasource": {
                           "type": "prometheus",
-                          "uid": "${DS_PROMETHEUS}"
+                          "uid": "${prometheus}"
                         },
                         "disableTextWrap": false,
                         "editorMode": "builder",
@@ -588,7 +545,26 @@ spec:
                 "schemaVersion": 39,
                 "tags": [],
                 "templating": {
-                  "list": []
+                  "list": [
+                    {
+                      "current": {
+                        "selected": false,
+                        "text": "prometheus",
+                        "value": "d2814af5-8a0e-493c-8d5f-cb293accfe89"
+                      },
+                      "hide": 0,
+                      "includeAll": false,
+                      "multi": false,
+                      "name": "prometheus",
+                      "options": [],
+                      "query": "prometheus",
+                      "queryValue": "",
+                      "refresh": 1,
+                      "regex": "",
+                      "skipUrlSync": false,
+                      "type": "datasource"
+                    }
+                  ]
                 },
                 "time": {
                   "from": "now-15m",
@@ -598,6 +574,6 @@ spec:
                 "timezone": "",
                 "title": "Kasa Dashboard",
                 "uid": "ef06516f-1d02-4cb6-bc06-ade09acaaaa0",
-                "version": 4,
+                "version": 7,
                 "weekStart": ""
               }
