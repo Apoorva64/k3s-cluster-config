@@ -39,4 +39,7 @@ spec:
         patches:
           - target:
               kind: Deployment
-            patch: dns-patch.yaml
+            patch: |
+              - op: add
+                path: /spec/template/spec/runtimeClassName
+                value: nvidia
