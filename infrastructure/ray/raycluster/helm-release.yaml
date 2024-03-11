@@ -10,16 +10,16 @@ spec:
   chart:
     spec:
       chart: ray-cluster
-      version: "0.6.0"
+      version: "1.0.0"
       sourceRef:
         kind: HelmRepository
         name: kuberay
         namespace: kube-ray
       interval: 12h
   values:
-    image:
-      repository: apoorva64/ray-w-deps
-      tag: latest
+#    image:
+#      repository: apoorva64/ray-w-deps
+#      tag: latest
     worker:
       nodeSelector:
         kubernetes.io/arch: arm64

@@ -4,6 +4,6 @@ resources:
   - namespace.yaml
   - helm-repository.yaml
   - kube-ray
-#  - raycluster
+  - raycluster
 #  - gpu-raycluster
   - ollama
