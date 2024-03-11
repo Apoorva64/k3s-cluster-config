@@ -1,0 +1,7 @@
+- op: add
+  path: spec/template/spec
+  value:
+    dnsConfig:
+      options:
+        - name: ndots
+          value: "1"
