@@ -22,7 +22,14 @@ spec:
         patches:
           - target:
               kind: Deployment
-            patch: dns-patch.yaml
+            patch: | 
+              - op: add
+                path: /spec/template/spec
+                value:
+                  dnsConfig:
+                    options:
+                      - name: ndots
+                        value: "1"
 
   values:
     alertmanager:
