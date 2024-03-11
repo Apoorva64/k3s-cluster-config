@@ -22,7 +22,7 @@ spec:
     worker:
       nodeSelector:
         kubernetes.io/arch: arm64
-      replicas: 2
+      replicas: 6
       resources:
         limits:
           cpu: "4"
