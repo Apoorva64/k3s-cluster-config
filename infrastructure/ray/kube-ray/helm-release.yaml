@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: kuberay-operator
-      version: "*"
+      version: "1.0.0"
       sourceRef:
         kind: HelmRepository
         name: kuberay
