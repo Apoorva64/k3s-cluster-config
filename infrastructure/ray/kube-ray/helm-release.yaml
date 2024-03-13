@@ -16,11 +16,11 @@ spec:
         name: kuberay
         namespace: kube-ray
       interval: 12h
-#  values:
+  values:
 #    image:
 #      repository: apoorva64/kuberay-operator
 #      tag: latest-arm64
 #      pullPolicy: IfNotPresent
 #
-#    nodeSelector:
-#      kubernetes.io/arch: arm64
+    nodeSelector:
+      kubernetes.io/arch: amd64
