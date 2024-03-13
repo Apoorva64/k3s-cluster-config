@@ -53,3 +53,7 @@ spec:
         addEntryPointsLabels: true
         addServicesLabels: true
         addRoutersLabels: true
+    experimental:
+      sablier:
+        moduleName: "github.com/acouvreur/sablier"
+        version: "v1.6.0"
