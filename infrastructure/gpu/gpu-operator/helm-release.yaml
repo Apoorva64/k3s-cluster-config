@@ -23,3 +23,7 @@ spec:
           value: /var/lib/rancher/k3s/agent/etc/containerd/config.toml
         - name: CONTAINERD_SOCKET
           value: /run/k3s/containerd/containerd.sock
+    dcgmExporter:
+      enabled: true
+      serviceMonitor:
+        enabled: true
