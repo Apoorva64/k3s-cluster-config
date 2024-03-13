@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sablier-deployment
+  namespace: kube-system
+  labels:
+    app: sablier
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sablier
+  template:
+    metadata:
+      labels:
+        app: sablier
+    spec:
+      serviceAccountName: sablier
+      serviceAccount: sablier
+      containers:
+        - name: sablier
+          image: acouvreur/sablier:1.6.0
+          args:
+            - "start"
+            - "--provider.name=kubernetes"
+          ports:
+            - containerPort: 10000
