@@ -37,6 +37,18 @@ spec:
     prometheus:
       prometheusSpec:
         replicas: 3
+        podMonitorNamespaceSelector:
+          any: true
+        podMonitorSelector: { }
+        podMonitorSelectorNilUsesHelmValues: false
+        ruleNamespaceSelector:
+          any: true
+        ruleSelector: { }
+        ruleSelectorNilUsesHelmValues: false
+        serviceMonitorNamespaceSelector:
+          any: true
+        serviceMonitorSelector: { }
+        serviceMonitorSelectorNilUsesHelmValues: false
         additionalScrapeConfigs:
           # federation,
           - job_name: 'maxime-datacenter'
