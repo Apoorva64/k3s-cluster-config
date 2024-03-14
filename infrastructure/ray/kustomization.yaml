@@ -7,4 +7,4 @@ resources:
   - raycluster
 #  - gpu-raycluster
   - ollama
-  - ollama-gpu2
+  - open-webui
