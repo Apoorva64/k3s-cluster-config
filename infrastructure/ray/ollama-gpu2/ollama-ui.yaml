@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - name: ollama-webui
-          image: ghcr.io/ollama-webui/ollama-webui:main
+          image: ghcr.io/open-webui/open-webui:main
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           resources:
