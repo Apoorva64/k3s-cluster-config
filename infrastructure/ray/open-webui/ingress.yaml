@@ -1,20 +1,25 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: open-webui-ingress
+  name: open-webui-tls-ingress
   namespace: open-webui
-  #annotations:
-    # Use appropriate annotations for your Ingress controller, e.g., for NGINX:
-    # nginx.ingress.kubernetes.io/rewrite-target: /
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
 spec:
   rules:
-  - host: open-webui.minikube.local
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: open-webui-service
-            port:
-              number: 8080
+    - host: open-webui.ai.apoorva64.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: open-webui-service
+                port:
+                  number: 8080
+  tls:
+    - hosts:
+        - open-webui.ai.apoorva64.com
+      secretName: open-webui-tls-ingress
