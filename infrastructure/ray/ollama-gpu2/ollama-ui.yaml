@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: ollama-webui
-          image: ghcr.io/open-webui/open-webui:main
+          image: ghcr.io/open-webui/open-webui:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -24,6 +24,6 @@ spec:
               cpu: "500m"
               memory: "500Mi"
           env:
-            - name: OLLAMA_API_BASE_URL
+            - name: OLLAMA_BASE_URL
               value: "http://ollama.ollama-gpu2.svc.cluster.local:11434"
           tty: true
