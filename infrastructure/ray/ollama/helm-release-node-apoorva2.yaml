@@ -17,11 +17,11 @@ spec:
         namespace: ollama
       interval: 12h
   values:
-    resources:
-      limits:
-        memory: 8192Mi
-        nvidia.com/gpu: 1
-        cpu: 16000m
+#    resources:
+#      limits:
+#        memory: 8192Mi
+#        nvidia.com/gpu: 1
+#        cpu: 16000m
     nodeSelector:
       nvidia.com/gpu.product: NVIDIA-GeForce-RTX-2060-with-Max-Q-Design
 
