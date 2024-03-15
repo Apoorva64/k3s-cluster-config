@@ -170,6 +170,10 @@ spec:
               options:
                 path: /var/lib/grafana/dashboards/kubernetes
       dashboards:
+        traefik:
+          traefik-dashboard:
+            gnetId: 12250
+            
         kubernetes:
           k8s-system-api-server:
             url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
@@ -183,9 +187,484 @@ spec:
             url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-nodes.json
           k8s-views-pods:
             url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
-        traefik:
-          traefik-dashboard:
-            gnetId: 12250
+          k8s-inner-network:
+            json: | 
+              {
+                "annotations": {
+                  "list": [
+                    {
+                      "builtIn": 1,
+                      "datasource": {
+                        "type": "grafana",
+                        "uid": "-- Grafana --"
+                      },
+                      "enable": true,
+                      "hide": true,
+                      "iconColor": "rgba(0, 211, 255, 1)",
+                      "name": "Annotations & Alerts",
+                      "type": "dashboard"
+                    }
+                  ]
+                },
+                "editable": true,
+                "fiscalYearStartMonth": 0,
+                "graphTooltip": 0,
+                "id": 17,
+                "links": [],
+                "liveNow": false,
+                "panels": [
+                  {
+                    "datasource": {
+                      "type": "prometheus",
+                      "uid": "${prometheus}"
+                    },
+                    "fieldConfig": {
+                      "defaults": {
+                        "color": {
+                          "mode": "thresholds"
+                        },
+                        "mappings": [],
+                        "thresholds": {
+                          "mode": "absolute",
+                          "steps": [
+                            {
+                              "color": "green",
+                              "value": null
+                            },
+                            {
+                              "color": "red",
+                              "value": 80
+                            }
+                          ]
+                        },
+                        "unit": "percentunit",
+                        "unitScale": true
+                      },
+                      "overrides": []
+                    },
+                    "gridPos": {
+                      "h": 4,
+                      "w": 2,
+                      "x": 0,
+                      "y": 0
+                    },
+                    "id": 2,
+                    "options": {
+                      "minVizHeight": 75,
+                      "minVizWidth": 75,
+                      "orientation": "auto",
+                      "reduceOptions": {
+                        "calcs": [
+                          "lastNotNull"
+                        ],
+                        "fields": "",
+                        "values": false
+                      },
+                      "showThresholdLabels": false,
+                      "showThresholdMarkers": true,
+                      "sizing": "auto"
+                    },
+                    "pluginVersion": "10.3.3",
+                    "targets": [
+                      {
+                        "datasource": {
+                          "type": "prometheus",
+                          "uid": "${prometheus}"
+                        },
+                        "disableTextWrap": false,
+                        "editorMode": "code",
+                        "expr": "count(k8s_network_available{job=\"network-checker\"}) / count(k8s_network_available{job=\"network-checker\"} == 1)",
+                        "fullMetaSearch": false,
+                        "includeNullMetadata": true,
+                        "instant": false,
+                        "legendFormat": "__auto",
+                        "range": true,
+                        "refId": "A",
+                        "useBackend": false
+                      }
+                    ],
+                    "title": "Route Percent",
+                    "type": "gauge"
+                  },
+                  {
+                    "datasource": {
+                      "type": "prometheus",
+                      "uid": "${prometheus}"
+                    },
+                    "fieldConfig": {
+                      "defaults": {
+                        "color": {
+                          "mode": "palette-classic"
+                        },
+                        "custom": {
+                          "axisBorderShow": false,
+                          "axisCenteredZero": false,
+                          "axisColorMode": "text",
+                          "axisLabel": "",
+                          "axisPlacement": "auto",
+                          "barAlignment": 0,
+                          "drawStyle": "line",
+                          "fillOpacity": 0,
+                          "gradientMode": "none",
+                          "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                          },
+                          "insertNulls": false,
+                          "lineInterpolation": "linear",
+                          "lineWidth": 1,
+                          "pointSize": 5,
+                          "scaleDistribution": {
+                            "type": "linear"
+                          },
+                          "showPoints": "auto",
+                          "spanNulls": false,
+                          "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                          },
+                          "thresholdsStyle": {
+                            "mode": "off"
+                          }
+                        },
+                        "mappings": [],
+                        "thresholds": {
+                          "mode": "absolute",
+                          "steps": [
+                            {
+                              "color": "green",
+                              "value": null
+                            },
+                            {
+                              "color": "red",
+                              "value": 80
+                            }
+                          ]
+                        },
+                        "unitScale": true
+                      },
+                      "overrides": []
+                    },
+                    "gridPos": {
+                      "h": 13,
+                      "w": 22,
+                      "x": 2,
+                      "y": 0
+                    },
+                    "id": 1,
+                    "options": {
+                      "legend": {
+                        "calcs": [],
+                        "displayMode": "table",
+                        "placement": "bottom",
+                        "showLegend": false
+                      },
+                      "tooltip": {
+                        "mode": "single",
+                        "sort": "none"
+                      }
+                    },
+                    "targets": [
+                      {
+                        "datasource": {
+                          "type": "prometheus",
+                          "uid": "${prometheus}"
+                        },
+                        "disableTextWrap": false,
+                        "editorMode": "builder",
+                        "expr": "k8s_network_latency{job=\"network-checker\"}",
+                        "fullMetaSearch": false,
+                        "includeNullMetadata": true,
+                        "instant": false,
+                        "legendFormat": "{{from}} -> {{to}}",
+                        "range": true,
+                        "refId": "A",
+                        "useBackend": false
+                      }
+                    ],
+                    "title": "Panel Title",
+                    "type": "timeseries"
+                  },
+                  {
+                    "datasource": {
+                      "type": "prometheus",
+                      "uid": "${prometheus}"
+                    },
+                    "fieldConfig": {
+                      "defaults": {
+                        "color": {
+                          "mode": "continuous-GrYlRd"
+                        },
+                        "mappings": [],
+                        "min": 0,
+                        "thresholds": {
+                          "mode": "absolute",
+                          "steps": [
+                            {
+                              "color": "green",
+                              "value": null
+                            },
+                            {
+                              "color": "red",
+                              "value": 80
+                            }
+                          ]
+                        },
+                        "unit": "ms",
+                        "unitScale": true
+                      },
+                      "overrides": []
+                    },
+                    "gridPos": {
+                      "h": 9,
+                      "w": 24,
+                      "x": 0,
+                      "y": 13
+                    },
+                    "id": 4,
+                    "options": {
+                      "displayMode": "lcd",
+                      "maxVizHeight": 300,
+                      "minVizHeight": 16,
+                      "minVizWidth": 8,
+                      "namePlacement": "auto",
+                      "orientation": "horizontal",
+                      "reduceOptions": {
+                        "calcs": [
+                          "lastNotNull"
+                        ],
+                        "fields": "",
+                        "values": false
+                      },
+                      "showUnfilled": true,
+                      "sizing": "auto",
+                      "valueMode": "color"
+                    },
+                    "pluginVersion": "10.3.3",
+                    "targets": [
+                      {
+                        "datasource": {
+                          "type": "prometheus",
+                          "uid": "${prometheus}"
+                        },
+                        "disableTextWrap": false,
+                        "editorMode": "builder",
+                        "expr": "k8s_network_latency{job=\"network-checker\"}",
+                        "fullMetaSearch": false,
+                        "includeNullMetadata": true,
+                        "instant": false,
+                        "legendFormat": "{{from}} -> {{to}}",
+                        "range": true,
+                        "refId": "A",
+                        "useBackend": false
+                      }
+                    ],
+                    "title": "Latency",
+                    "type": "bargauge"
+                  },
+                  {
+                    "datasource": {
+                      "type": "prometheus",
+                      "uid": "${prometheus}"
+                    },
+                    "fieldConfig": {
+                      "defaults": {
+                        "color": {
+                          "mode": "thresholds"
+                        },
+                        "mappings": [],
+                        "thresholds": {
+                          "mode": "absolute",
+                          "steps": [
+                            {
+                              "color": "red",
+                              "value": null
+                            },
+                            {
+                              "color": "green",
+                              "value": 1
+                            }
+                          ]
+                        },
+                        "unitScale": true
+                      },
+                      "overrides": []
+                    },
+                    "gridPos": {
+                      "h": 8,
+                      "w": 12,
+                      "x": 0,
+                      "y": 22
+                    },
+                    "id": 3,
+                    "options": {
+                      "colorMode": "value",
+                      "graphMode": "area",
+                      "justifyMode": "auto",
+                      "orientation": "auto",
+                      "reduceOptions": {
+                        "calcs": [
+                          "lastNotNull"
+                        ],
+                        "fields": "",
+                        "values": false
+                      },
+                      "showPercentChange": false,
+                      "textMode": "auto",
+                      "wideLayout": true
+                    },
+                    "pluginVersion": "10.3.3",
+                    "targets": [
+                      {
+                        "datasource": {
+                          "type": "prometheus",
+                          "uid": "${prometheus}"
+                        },
+                        "disableTextWrap": false,
+                        "editorMode": "builder",
+                        "expr": "k8s_network_available",
+                        "fullMetaSearch": false,
+                        "includeNullMetadata": true,
+                        "instant": false,
+                        "legendFormat": "{{from}} -> {{to}}",
+                        "range": true,
+                        "refId": "A",
+                        "useBackend": false
+                      }
+                    ],
+                    "title": "Routes",
+                    "type": "stat"
+                  },
+                  {
+                    "datasource": {
+                      "type": "prometheus",
+                      "uid": "${prometheus}"
+                    },
+                    "fieldConfig": {
+                      "defaults": {
+                        "color": {
+                          "mode": "thresholds"
+                        },
+                        "mappings": [],
+                        "thresholds": {
+                          "mode": "absolute",
+                          "steps": [
+                            {
+                              "color": "red",
+                              "value": null
+                            },
+                            {
+                              "color": "green",
+                              "value": 1
+                            }
+                          ]
+                        },
+                        "unitScale": true
+                      },
+                      "overrides": []
+                    },
+                    "gridPos": {
+                      "h": 8,
+                      "w": 12,
+                      "x": 12,
+                      "y": 22
+                    },
+                    "id": 5,
+                    "options": {
+                      "colorMode": "value",
+                      "graphMode": "area",
+                      "justifyMode": "auto",
+                      "orientation": "auto",
+                      "reduceOptions": {
+                        "calcs": [
+                          "lastNotNull"
+                        ],
+                        "fields": "",
+                        "values": false
+                      },
+                      "showPercentChange": false,
+                      "textMode": "auto",
+                      "wideLayout": true
+                    },
+                    "pluginVersion": "10.3.3",
+                    "targets": [
+                      {
+                        "datasource": {
+                          "type": "prometheus",
+                          "uid": "${prometheus}"
+                        },
+                        "disableTextWrap": false,
+                        "editorMode": "builder",
+                        "expr": "k8s_network_available",
+                        "fullMetaSearch": false,
+                        "includeNullMetadata": true,
+                        "instant": false,
+                        "legendFormat": "{{from}} -> {{to}}",
+                        "range": true,
+                        "refId": "A",
+                        "useBackend": false
+                      }
+                    ],
+                    "title": "Routes Down",
+                    "transformations": [
+                      {
+                        "id": "filterByValue",
+                        "options": {
+                          "filters": [
+                            {
+                              "config": {
+                                "id": "lower",
+                                "options": {
+                                  "value": 1
+                                }
+                              },
+                              "fieldName": "arm-1-a1-ozeliurs-com -> node-apoorva"
+                            }
+                          ],
+                          "match": "any",
+                          "type": "include"
+                        }
+                      }
+                    ],
+                    "type": "stat"
+                  }
+                ],
+                "refresh": "5s",
+                "schemaVersion": 39,
+                "tags": [],
+                "templating": {
+                  "list": [
+                    {
+                      "current": {
+                        "selected": false,
+                        "text": "prometheus",
+                        "value": "d2814af5-8a0e-493c-8d5f-cb293accfe89"
+                      },
+                      "hide": 0,
+                      "includeAll": false,
+                      "multi": false,
+                      "name": "prometheus",
+                      "options": [],
+                      "query": "prometheus",
+                      "refresh": 1,
+                      "regex": "",
+                      "skipUrlSync": false,
+                      "type": "datasource"
+                    }
+                  ]
+                },
+                "time": {
+                  "from": "now-15m",
+                  "to": "now"
+                },
+                "timepicker": {},
+                "timezone": "",
+                "title": "Internal Kubernetes Routes",
+                "uid": "ba64535c-b974-4f8d-be17-7acbc73eec4d",
+                "version": 6,
+                "weekStart": ""
+              }
 
         datacenter:
           kasa:
