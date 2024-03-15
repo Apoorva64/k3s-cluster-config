@@ -173,7 +173,7 @@ spec:
         traefik:
           traefik-dashboard:
             gnetId: 12250
-            
+
         kubernetes:
           k8s-system-api-server:
             url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
@@ -667,6 +667,8 @@ spec:
               }
 
         datacenter:
+          proxmox:
+            gnetId: 10347
           kasa:
             token: ''
             json: |
