@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: prometheus
+  namespace: network-check
+data:
+  password: <base64-encoded-data>
+type: Opaque
