@@ -63,6 +63,7 @@ spec:
                 - '{job="blackbox-icmp"}'
                 - '{job="kasa"}'
                 - '{job="pve"}'
+                - '{job="network-checker"}'
             static_configs:
               - targets: [ '100.64.0.42:9090' ]
             # add "datacenter = maxime" label to all metrics
