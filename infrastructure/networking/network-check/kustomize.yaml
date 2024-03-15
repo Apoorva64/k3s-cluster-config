@@ -10,3 +10,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: network-check
+  images:
+    - name: ghcr.io/apoorva64/network-check/network-check
+      newTag: 764ac99d7ea37fe6936dcdbe1a1e45f07a161f39
