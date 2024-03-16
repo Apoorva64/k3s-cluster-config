@@ -19,6 +19,7 @@ spec:
         volumeMounts:
         - mountPath: /mnt
           name: my-volume
+        command: ["/bin/sleep", "3650d"]
       volumes:
       - name: my-volume
         persistentVolumeClaim:
