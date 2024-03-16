@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-#  - harbor-helm
-#  - harbor-database-postgresql
-#  - harbor-database-redis
+  - harbor-helm
+  - harbor-database-postgresql
+  - harbor-database-redis
   - namespace.yaml
