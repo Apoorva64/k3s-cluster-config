@@ -17,11 +17,11 @@ spec:
         namespace: harbor
       interval: 12h
   values:
-    externalURL: https://harbor.storage.apoorva64a.com
+    externalURL: https://harbor.devops-tools.apoorva64.com
     expose:
       ingress:
         hosts:
-          core: harbor.storage.apoorva64.com
+          core: harbor.devops-tools.apoorva64.com
         annotations:
           kubernetes.io/ingress.class: traefik
           cert-manager.io/cluster-issuer: letsencrypt-prod
