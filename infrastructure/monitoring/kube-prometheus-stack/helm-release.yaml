@@ -189,6 +189,7 @@ spec:
             url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
           k8s-inner-network:
             gnetId: 20707
+            revision: 2
         datacenter:
           proxmox:
             gnetId: 10347
