@@ -46,6 +46,9 @@ spec:
     core:
       nodeSelector:
         kubernetes.io/hostname: node-apoorva2
+    jobservice:
+      nodeSelector:
+        kubernetes.io/hostname: node-apoorva2
     database:
       type: external
       external:
