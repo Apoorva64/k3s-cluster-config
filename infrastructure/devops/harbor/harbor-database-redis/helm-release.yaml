@@ -19,6 +19,6 @@ spec:
     global:
       storageClass: longhorn-single-replica
     auth:
-      existingSecret: harbor-database-redis
+      existingSecret: harbor-database-redis-password
       existingSecretPasswordKey: REDIS_PASSWORD
 

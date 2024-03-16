@@ -59,4 +59,4 @@ spec:
       type: external
       external:
         addr: "harbor-database-redis-master.harbor.svc.cluster.local:6379"
-        existingSecret: harbor-database-redis
+        existingSecret: harbor-database-redis-password
