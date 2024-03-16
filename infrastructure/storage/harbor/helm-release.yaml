@@ -28,6 +28,10 @@ spec:
           storageClass: longhorn-single-replica
         trivy:
           storageClass: longhorn-single-replica
-
-#    nodeSelector:
-#      kubernetes.io/hostname: node-apoorva2
+    portal:
+      nodeSelector:
+        kubernetes.io/hostname: node-apoorva2
+    database:
+      internal:
+        nodeSelector:
+          kubernetes.io/hostname: node-apoorva2
