@@ -43,3 +43,10 @@ spec:
               - op: add
                 path: /spec/template/spec/runtimeClassName
                 value: nvidia
+          - target:
+              kind: Deployment
+            patch: |
+              - op: add
+                path: spec/strategy
+                value:
+                  type: Recreate
