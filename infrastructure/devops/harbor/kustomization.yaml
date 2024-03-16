@@ -4,3 +4,4 @@ resources:
   - harbor-helm
   - harbor-database-postgresql
   - harbor-database-redis
+  - namespace.yaml
