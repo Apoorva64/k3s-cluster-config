@@ -17,6 +17,11 @@ spec:
         namespace: harbor
       interval: 12h
   values:
+    externalURL: https://harbor.storage.apoorva64.com
+    expose:
+      ingress:
+        hosts:
+          core: harbor.storage.apoorva64.com
     persistence:
       persistentVolumeClaim:
         registry:
