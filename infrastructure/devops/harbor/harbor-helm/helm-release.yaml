@@ -51,8 +51,8 @@ spec:
       external:
         host: "harbor-database-postgres-postgresql.harbor.svc.cluster.local"
         port: "5432"
-        username: "postgres"
-        coreDatabase: "postgres"
+        username: "harbor"
+        coreDatabase: "registry"
         # if using existing secret, the key must be "password"
         existingSecret: "harbor-database-postgresql"
     redis:

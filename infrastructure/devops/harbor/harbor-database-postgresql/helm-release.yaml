@@ -22,5 +22,13 @@ spec:
 
     global:
       postgresql:
-        existingSecret: harbor-database-postgresql
+        auth:
+          existingSecret: harbor-database-postgresql
+          username: harbor
+          database: harbor
+          secretKeys:
+            adminPasswordKey: postgresPassword
+            userPasswordKey: password
+            replicationPasswordKey: replicationPassword
+
 
