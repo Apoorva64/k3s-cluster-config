@@ -1,0 +1,15 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: harbor-database-redis
+  namespace: harbor
+spec:
+  encryptedData:
+    REDIS_PASSWORD: AgAPcQLqTknNoJh4qs2hMDLYvAUoIvO3a5HWT/z0eGnHDfP31NRETgJKY91aUSAN5KgkzrubvPcelgnTq0b1aYhIPuwmRCQ2oIFJK5atJZIwK6Vox5GhsFNvJqiKxCSILEhOJsO7nTOKPdlYL91YjMCoTYSnVCrJZh+TPMez58R6y7CXbftvP88wqpSrrMMDTX3S4QfwgzMf4rNF5cj34CAopsfnhmoxCyOMchJJ93pEKf1qU5QR3KIg8T23M7LiZUoxMVw8FaGa0D5mpDLkbB3JzluIYGxyFWxA5OSn7f2QO6fDOJMo86VKygpyeiK+XjxNRMjU89bz9jvwf/X8kZ0JLcoAhqUiGjdT+b7oG5TYbsBOVg4YjuWLpP2oYdo8+cz1yvra18TY3ihiOoTDMl/Wmj5KDobm84Ii8sxbagMm7T0VfzsVMEWUs7HRVaFW+34qMXjPsjmcC4/R5dwmxY48Tg76s/IgVraHbKTBv1H31OnwWHlgytVBdkX3Jq74Rriv+IKkQquiVVUhuVbzKF9uztbbwLKKwHKgn2r7mQgcBM6L83AY3iPXEbqtdBKHeRAhYfes4yBdgYyMTK5IO5tsNTI88mZrwUcn+5FTXPKmZC5+N6ID4q5IFfzJo4XukJvVM8k7SNB4TYtXSuUUsYVNUWZ42st8Ag7AU32usPHBSfEDcXKhp9OnrpDm1RK3cvkC+tV29HpAvRhARo7WSv9CtOtmNtwKXi4xaZi1
+  template:
+    metadata:
+      creationTimestamp: null
+      name: harbor-database-redis
+      namespace: harbor

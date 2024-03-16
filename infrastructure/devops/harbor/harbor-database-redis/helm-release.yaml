@@ -18,4 +18,7 @@ spec:
     architecture: standalone
     global:
       storageClass: longhorn-single-replica
+    auth:
+      existingSecret: harbor-database-redis
+      existingSecretPasswordKey: REDIS_PASSWORD
 
