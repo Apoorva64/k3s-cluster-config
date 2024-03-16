@@ -49,7 +49,7 @@ spec:
     database:
       type: external
       external:
-        host: "harbor-database-postgres-postgresql"
+        host: "harbor-database-postgres-postgresql.harbor.svc.cluster.local"
         port: "5432"
         username: "postgres"
         coreDatabase: "postgres"
@@ -58,4 +58,4 @@ spec:
     redis:
       type: external
       external:
-        addr: "harbor-database-redis-master:6379"
+        addr: "harbor-database-redis-master.harbor.svc.cluster.local:6379"
