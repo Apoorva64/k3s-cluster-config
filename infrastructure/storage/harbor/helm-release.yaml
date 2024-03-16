@@ -36,6 +36,9 @@ spec:
     portal:
       nodeSelector:
         kubernetes.io/hostname: node-apoorva2
+    registry:
+      nodeSelector:
+        kubernetes.io/hostname: node-apoorva2
     core:
       nodeSelector:
         kubernetes.io/hostname: node-apoorva2
