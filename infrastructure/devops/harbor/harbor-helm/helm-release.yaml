@@ -17,7 +17,7 @@ spec:
         namespace: harbor
       interval: 12h
   values:
-    externalURL: https://harbor.storage.apoorva64.com
+    externalURL: https://harbor.storage.apoorva64a.com
     expose:
       ingress:
         hosts:
