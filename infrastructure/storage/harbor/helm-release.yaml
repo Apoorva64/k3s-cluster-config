@@ -31,6 +31,9 @@ spec:
     portal:
       nodeSelector:
         kubernetes.io/hostname: node-apoorva2
+    core:
+      nodeSelector:
+        kubernetes.io/hostname: node-apoorva2
     database:
       internal:
         nodeSelector:
