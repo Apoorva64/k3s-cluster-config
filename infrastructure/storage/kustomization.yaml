@@ -8,3 +8,4 @@ resources:
   - longhorn
   - db-operators
   - redis
+  - nfs-provisioner
