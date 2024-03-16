@@ -9,4 +9,3 @@ resources:
   - db-operators
   - redis
   - nfs-provisioner
-  - harbor

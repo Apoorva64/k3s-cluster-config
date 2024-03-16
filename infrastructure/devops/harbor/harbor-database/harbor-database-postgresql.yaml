@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  password: <base64-encoded-string>
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: harbor-database-postgresql
+  namespace: harbor
