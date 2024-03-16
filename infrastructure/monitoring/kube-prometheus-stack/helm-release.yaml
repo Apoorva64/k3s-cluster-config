@@ -172,7 +172,7 @@ spec:
       dashboards:
         traefik:
           traefik-dashboard:
-            gnetId: 12250
+            gnetId: 17346
 
         kubernetes:
           k8s-system-api-server:
