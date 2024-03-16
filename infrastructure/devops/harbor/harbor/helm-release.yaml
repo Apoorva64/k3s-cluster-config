@@ -47,6 +47,15 @@ spec:
       nodeSelector:
         kubernetes.io/hostname: node-apoorva2
     database:
-      internal:
-        nodeSelector:
-          kubernetes.io/hostname: node-apoorva2
+      type: external
+      external:
+        host: "harbor-database-postgres-postgresql"
+        port: "5432"
+        username: "postgres"
+        coreDatabase: "postgres"
+        # if using existing secret, the key must be "password"
+        existingSecret: "harbor-database-postgresql"
+    redis:
+      type: external
+      external:
+        addr: "harbor-database-redis-master:6379"
