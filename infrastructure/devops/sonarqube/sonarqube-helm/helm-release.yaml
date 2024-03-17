@@ -37,7 +37,7 @@ spec:
       enabled: false
     jdbcOverwrite:
       enable: true
-      jdbcUrl: jdbc:postgresql://postgres-postgresql:5432/sonarqube
+      jdbcUrl: jdbc:postgresql://sonarqube-database-postgresql:5432/sonarqube
       jdbcUsername: sonarqube
       jdbcSecretName: sonarqube-database-password
       jdbcSecretPasswordKey: password
