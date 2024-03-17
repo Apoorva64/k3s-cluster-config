@@ -39,16 +39,19 @@ spec:
           storageClass: longhorn-single-replica
     portal:
       nodeSelector:
-        kubernetes.io/hostname: node-apoorva2
+        kubernetes.io/arch: amd64
     registry:
       nodeSelector:
-        kubernetes.io/hostname: node-apoorva2
+        kubernetes.io/arch: amd64
     core:
       nodeSelector:
-        kubernetes.io/hostname: node-apoorva2
+        kubernetes.io/arch: amd64
     jobservice:
       nodeSelector:
-        kubernetes.io/hostname: node-apoorva2
+        kubernetes.io/arch: amd64
+    trivy:
+      nodeSelector:
+        kubernetes.io/arch: amd64
     database:
       type: external
       external:
