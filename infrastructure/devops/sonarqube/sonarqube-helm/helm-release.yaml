@@ -22,7 +22,7 @@ spec:
       - name: gitea-pull-secrets
     ingress:
       ingressClassName: traefik
-      enabled: true
+      enabled: false
       hosts:
         - name: sonarqube.devops-tools.apoorva64.com
           path: "/"
