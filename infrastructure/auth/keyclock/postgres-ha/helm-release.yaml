@@ -15,6 +15,9 @@ spec:
         namespace: keycloak
       interval: 24h
   values:
+    witness:
+      create: true
+      replicaCount: 3
     pgpool:
       replicaCount: 1
     persistence:
