@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - github-actions-operator
+  - runners/stable-diffusion.yaml

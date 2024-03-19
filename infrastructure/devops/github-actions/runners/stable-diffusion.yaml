@@ -1,0 +1,9 @@
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: stable-diffusion
+spec:
+  replicas: 1
+  template:
+    spec:
+      repository: Apoorva64/stable-diffusion-web-ui
