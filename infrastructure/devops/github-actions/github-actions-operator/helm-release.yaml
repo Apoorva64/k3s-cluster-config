@@ -14,3 +14,31 @@ spec:
         name: actions-runner-controller
         namespace: flux-system
       interval: 12h
+  values:
+    replicaCount: 1
+    webhookPort: 9443
+    syncPeriod: 1m
+    defaultScaleDownDelay: 5m
+    enableLeaderElection: true
+
+
+
+    image:
+      repository: "summerwind/actions-runner-controller"
+      actionsRunnerRepositoryAndTag: "summerwind/actions-runner:ubuntu-22.04"
+      dindSidecarRepositoryAndTag: "docker:dind"
+      pullPolicy: IfNotPresent
+
+    serviceAccount:
+      create: true
+
+    service:
+      type: ClusterIP
+      port: 443
+
+    certManagerEnabled: true
+
+    logFormat: text
+
+    githubWebhookServer:
+      enabled: false
