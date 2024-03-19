@@ -10,3 +10,4 @@ resources:
   # - artifactory
   - gitlab
   - harbor
+  - github-actions
