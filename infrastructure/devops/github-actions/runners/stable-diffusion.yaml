@@ -17,3 +17,5 @@ spec:
   values:
     githubConfigSecret: pre-defined-secret
     githubConfigUrl: https://github.com/Apoorva64/stable-diffusion-web-ui
+    containerMode:
+      type: "dind-rootless"
