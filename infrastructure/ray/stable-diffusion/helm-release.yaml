@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       interval: 5m0s
-      chart: ./charts/stable-diffusion
+      chart: ./charts/stable-diffusion-ui
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: GitRepository
