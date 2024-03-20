@@ -12,7 +12,6 @@ spec:
       interval: 5m0s
       chart: ./charts/stable-diffusion
       reconcileStrategy: ChartVersion
-      targetNamespace: stable-diffusion
       sourceRef:
         kind: GitRepository
         name: stable-diffusion
