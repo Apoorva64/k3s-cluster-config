@@ -4,3 +4,4 @@ resources:
   - namespace.yaml
   - github-actions-operator
   - runners/stable-diffusion.yaml
+  - runner-secret-sealed.yaml
