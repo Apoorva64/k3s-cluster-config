@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: stable-diffusion
+  namespace: flux-system
+spec:
+  interval: 5m
+  url: https://github.com/Apoorva64/stable-diffusion-web-ui
+  ref:
+    branch: master

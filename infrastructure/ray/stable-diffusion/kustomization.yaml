@@ -3,6 +3,5 @@ kind: Kustomization
 namespace: stable-diffusion
 resources:
   - namespace.yaml
-  - https://raw.githubusercontent.com/Apoorva64/stable-diffusion-web-ui/master/manifests/webui-claim0-persistentvolumeclaim.yaml
-  - https://raw.githubusercontent.com/Apoorva64/stable-diffusion-web-ui/master/manifests/webui-deployment.yaml
-  - https://raw.githubusercontent.com/Apoorva64/stable-diffusion-web-ui/master/manifests/webui-service.yaml
+  - kustomize.yaml
+  - repository.yaml
