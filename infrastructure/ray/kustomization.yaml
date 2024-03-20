@@ -8,4 +8,4 @@ resources:
 #  - gpu-raycluster
   - ollama
   - open-webui
-#  - stable-diffusion
+  - stable-diffusion
