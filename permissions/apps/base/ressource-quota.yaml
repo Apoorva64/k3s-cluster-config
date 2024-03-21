@@ -5,7 +5,7 @@ metadata:
   namespace: my-namespace
 spec:
   hard:
-    limits.cpu: "1"
-    limits.memory: 1Gi
-    requests.storage: 1Gi
+    limits.cpu: "4"
+    limits.memory: 4Gi
+    requests.storage: 4Gi
     pods: "10"
