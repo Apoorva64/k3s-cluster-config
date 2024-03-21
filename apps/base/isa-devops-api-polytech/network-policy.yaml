@@ -23,8 +23,3 @@ spec:
         - podSelector:
             matchLabels:
               io.kompose.service: bank
-  ingress:
-    - from:
-        - podSelector:
-            matchLabels:
-              io.kompose.service: ski
