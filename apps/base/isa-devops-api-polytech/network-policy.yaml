@@ -4,7 +4,7 @@ metadata:
   name: isa-api-polytech
   namespace: isa-api-polytech
 spec:
-  podSelector: {}
+  podSelector: { }
   policyTypes:
     - Egress
 ---
@@ -14,7 +14,9 @@ metadata:
   name: ski-bank
   namespace: isa-api-polytech
 spec:
-  podSelector: {}
+  podSelector:
+    matchLabels:
+      io.kompose.service: ski
   policyTypes:
     - Egress
   egress:
