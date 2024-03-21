@@ -1,8 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: bank-api-polytech
-  namespace: bank-api-polytech
+  name: isa-api-polytech
+  namespace: isa-api-polytech
 spec:
   podSelector: {}
   policyTypes:
