@@ -16,7 +16,6 @@ metadata:
 spec:
   podSelector: {}
   policyTypes:
-    - Ingress
     - Egress
   egress:
     - to:
