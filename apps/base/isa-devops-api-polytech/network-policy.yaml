@@ -7,3 +7,24 @@ spec:
   podSelector: {}
   policyTypes:
     - Egress
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ski=>bank
+  namespace: isa-api-polytech
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+    - Egress
+  egress:
+    - to:
+        - podSelector:
+            matchLabels:
+              app: bank
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: ski
