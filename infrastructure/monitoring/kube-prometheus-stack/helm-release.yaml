@@ -174,7 +174,7 @@ spec:
         traefik:
           traefik-dashboard:
             gnetId: 17346
-            datasource: prometheus
+            datasource: Prometheus
 
         kubernetes:
           k8s-system-api-server:
@@ -195,10 +195,10 @@ spec:
         datacenter:
           node-exporter:
             gnetId: 1860
-            datasource: prometheus
+            datasource: Prometheus
           proxmox:
             gnetId: 10347
-            datasource: prometheus
+            datasource: Prometheus
           kasa:
             token: ''
             json: |
