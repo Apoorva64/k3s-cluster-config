@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: bank-api-polytech
+namespace: isa-api-polytech
 resources:
   - ../../../../permissions/apps/base
 # patch rbac resources to have only deployments, services, ingress
