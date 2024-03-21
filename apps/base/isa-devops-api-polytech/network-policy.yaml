@@ -1,22 +1,10 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: isa-api-polytech
-  namespace: isa-api-polytech
-spec:
-  podSelector: { }
-  policyTypes:
-    - Egress
----
-apiVersion: networking.k8s.io/v1
-kind: NetworkPolicy
-metadata:
   name: ski-bank
   namespace: isa-api-polytech
 spec:
-  podSelector:
-    matchLabels:
-      io.kompose.service: ski
+  podSelector: {}
   policyTypes:
     - Egress
   egress:
