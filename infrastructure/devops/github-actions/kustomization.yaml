@@ -4,4 +4,5 @@ resources:
   - namespace.yaml
   - github-actions-operator
   - runners/stable-diffusion.yaml
+  - runners/eternity2.yaml
   - runner-secret-sealed.yaml
