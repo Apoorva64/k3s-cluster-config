@@ -23,4 +23,4 @@ spec:
       service:
         type: NodePort
         nodePorts:
-          redis: 30001
+          redis: 30055
