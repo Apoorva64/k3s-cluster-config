@@ -43,7 +43,7 @@ spec:
         storageClass: local-path
       models:
         size: 8Gi
-        storageClass: local-path
+        storageClass: nfs-client
       torch:
         size: 8Gi
         storageClass: local-path
