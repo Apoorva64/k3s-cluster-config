@@ -26,6 +26,28 @@ spec:
         nvidia.com/gpu: 1
 
     persistence:
-      size: 1Ti
-      storageClass: nfs-client
+      repositories:
+        size: 8Gi
+        storageClass: local-path
+      venv:
+        size: 8Gi
+        storageClass: local-path
+      pip-cache:
+        size: 8Gi
+        storageClass: local-path
+      cache:
+        size: 8Gi
+        storageClass: local-path
+      local:
+        size: 8Gi
+        storageClass: local-path
+      models:
+        size: 8Gi
+        storageClass: local-path
+      torch:
+        size: 8Gi
+        storageClass: local-path
+      embeddings:
+        size: 8Gi
+        storageClass: local-path
 
