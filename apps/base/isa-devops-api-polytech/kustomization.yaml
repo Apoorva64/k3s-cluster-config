@@ -5,4 +5,4 @@ resources:
   - rbac
   - repository.yaml
   - kustomize.yaml
-  - network-policy.yaml
+#  - network-policy.yaml
