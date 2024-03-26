@@ -3,6 +3,5 @@ kind: Kustomization
 namespace: stable-diffusion
 resources:
   - namespace.yaml
-  - helm-release.yaml
   - helm-release-node-apoorva2.yaml
   - repository.yaml
