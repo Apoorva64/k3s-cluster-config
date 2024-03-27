@@ -21,7 +21,7 @@ spec:
       runtimeClass: nvidia
       nodeSelector:
         kubernetes.io/arch: amd64
-      image: rayproject/ray-ml:2.6.3-gpu
+      image: rayproject/ray-ml:2.9.0-py39-cu118
       replicas: 1
       resources: { }
       ports:
