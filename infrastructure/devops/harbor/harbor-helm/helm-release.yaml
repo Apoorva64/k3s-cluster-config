@@ -38,15 +38,15 @@ spec:
         trivy:
           storageClass: longhorn-single-replica
     portal:
-      replicas: 2
+      replicas: 1
       nodeSelector:
         kubernetes.io/arch: amd64
     registry:
-      replicas: 2
+      replicas: 1
       nodeSelector:
         kubernetes.io/arch: amd64
     core:
-      replicas: 2
+      replicas: 1
       nodeSelector:
         kubernetes.io/arch: amd64
     jobservice:
