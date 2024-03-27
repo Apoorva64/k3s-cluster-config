@@ -50,11 +50,11 @@ spec:
       nodeSelector:
         kubernetes.io/arch: amd64
     jobservice:
-      replicas: 2
+      replicas: 1
       nodeSelector:
         kubernetes.io/arch: amd64
     trivy:
-      replicas: 2
+      replicas: 1
       nodeSelector:
         kubernetes.io/arch: amd64
     database:
