@@ -26,9 +26,7 @@ spec:
         limits:
           cpu: "4"
           memory: "12G"
-        requests:
-          cpu: "1"
-          memory: "8G"
+          gpu: "1"
       ports:
         - containerPort: 6379
           name: gcs-server
@@ -48,9 +46,7 @@ spec:
         limits:
           cpu: "4"
           memory: "12G"
-        requests:
-          cpu: "1"
-          memory: "8G"
+          gpu: "1"
       ports:
         - containerPort: 6379
           name: gcs-server
