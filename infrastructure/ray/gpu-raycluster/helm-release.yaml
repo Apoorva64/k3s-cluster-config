@@ -22,7 +22,7 @@ spec:
       nodeSelector:
         kubernetes.io/arch: amd64
       replicas: 1
-
+      resources: { }
       ports:
         - containerPort: 6379
           name: gcs-server
@@ -38,6 +38,7 @@ spec:
       runtimeClass: nvidia
       nodeSelector:
         kubernetes.io/arch: amd64
+      resources: { }
 
       ports:
         - containerPort: 6379
