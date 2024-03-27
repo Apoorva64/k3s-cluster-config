@@ -29,6 +29,12 @@ spec:
       resources:
         limits:
           nvidia.com/gpu: 1 # Required to use GPU.
+          cpu: "4"
+          memory: "12G"
+        requests:
+          cpu: "1"
+          memory: "8G"
+          nvidia.com/gpu: 1
       ports:
         - containerPort: 6379
           name: gcs-server
@@ -47,6 +53,12 @@ spec:
       resources:
         limits:
           nvidia.com/gpu: 1 # Required to use GPU.
+          cpu: "4"
+          memory: "12G"
+        requests:
+          cpu: "1"
+          memory: "8G"
+          nvidia.com/gpu: 1
       ports:
         - containerPort: 6379
           name: gcs-server
