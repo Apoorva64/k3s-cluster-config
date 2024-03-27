@@ -21,7 +21,7 @@ spec:
       runtimeClass: nvidia
       nodeSelector:
         kubernetes.io/arch: amd64
-
+      image: rayproject/ray-ml:2.6.3-gpu
       replicas: 1
       resources: { }
       ports:
@@ -40,7 +40,6 @@ spec:
       nodeSelector:
         kubernetes.io/arch: amd64
       resources: { }
-
       ports:
         - containerPort: 6379
           name: gcs-server
