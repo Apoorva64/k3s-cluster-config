@@ -5,7 +5,7 @@ resources:
   - helm-repository.yaml
   - kube-ray
   - raycluster
-#  - gpu-raycluster
+  - gpu-raycluster
   - ollama
   - open-webui
   - stable-diffusion
