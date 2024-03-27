@@ -73,9 +73,11 @@ spec:
                 target_label: datacenter
                 replacement: maxime
 
-
-
-
+          - job_name: 'haproxy'
+            metrics_path: /metrics
+            scrape_interval: 5s
+            static_configs:
+              - targets: [ '100.64.0.5:8404' ]
 
 
     grafana:
