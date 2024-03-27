@@ -194,7 +194,7 @@ spec:
             gnetId: 20707
             revision: 2
           k8s-loadbalancer:
-            url: 'https://github.com/rfmoz/grafana-dashboards/blob/master/prometheus/haproxy-2-full.json'
+            url: 'https://raw.githubusercontent.com/rfmoz/grafana-dashboards/master/prometheus/haproxy-2-full.json'
         datacenter:
           node-exporter:
             gnetId: 1860
