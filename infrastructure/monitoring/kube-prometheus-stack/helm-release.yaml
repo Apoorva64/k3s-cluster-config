@@ -54,7 +54,6 @@ spec:
           - job_name: 'maxime-datacenter'
             metrics_path: /federate
             scrape_interval: 15s
-            scrape_timeout: 55s
             honor_labels: true
             params:
               # match everything
@@ -194,6 +193,8 @@ spec:
           k8s-inner-network:
             gnetId: 20707
             revision: 2
+          k8s-loadbalancer:
+            url: 'https://raw.githubusercontent.com/rfmoz/grafana-dashboards/master/prometheus/haproxy-2-full.json'
         datacenter:
           node-exporter:
             gnetId: 1860
