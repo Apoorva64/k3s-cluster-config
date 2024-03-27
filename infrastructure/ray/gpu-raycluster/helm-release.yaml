@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: ray-cluster
-      version: "0.6.0"
+      version: "*"
       sourceRef:
         kind: HelmRepository
         name: kuberay
@@ -21,6 +21,7 @@ spec:
       runtimeClass: nvidia
       nodeSelector:
         kubernetes.io/arch: amd64
+
       replicas: 1
       resources: { }
       ports:
