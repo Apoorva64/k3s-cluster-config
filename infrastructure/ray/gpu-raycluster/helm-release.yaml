@@ -26,7 +26,9 @@ spec:
       nodeSelector:
         kubernetes.io/arch: amd64
       replicas: 1
-      resources: { }
+      resources:
+        limits:
+          nvidia.com/gpu: 1 # Required to use GPU.
       ports:
         - containerPort: 6379
           name: gcs-server
@@ -42,7 +44,9 @@ spec:
       runtimeClass: nvidia
       nodeSelector:
         kubernetes.io/arch: amd64
-      resources: { }
+      resources:
+        limits:
+          nvidia.com/gpu: 1 # Required to use GPU.
       ports:
         - containerPort: 6379
           name: gcs-server
