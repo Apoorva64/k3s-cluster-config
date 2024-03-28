@@ -4,3 +4,4 @@ resources:
   - minio.yaml
   - namespace.yaml
   - service-monitor.yaml
+  - minio-auth-sealed.yaml

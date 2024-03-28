@@ -60,4 +60,7 @@ spec:
         value: "minio-main"
       - name: MINIO_PROMETHEUS_AUTH_TYPE
         value: "public"
-    extraEnvVarsSecret: minio-env
+
+
+    auth:
+      existingSecret: minio-auth
