@@ -53,12 +53,7 @@ spec:
         - hosts:
             - api.minio.storage.apoorva64.com
           secretName: api-minio-tls
-    securityContext:
-      runAsUser: 1000
-      runAsGroup: 1000
-    containerSecurityContext:
-      runAsUser: 1000
-      runAsGroup: 1000
+
     extraEnvVars:
       - name: MINIO_PROMETHEUS_URL
         value: "http://kube-prometheus-stack-prometheus.monitoring.svc.cluster.local:9090"
@@ -70,6 +65,11 @@ spec:
     podSecurityContext:
       runAsUser: 1000
       runAsGroup: 1000
-
+    securityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+    containerSecurityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
     auth:
       existingSecret: minio-auth
