@@ -30,7 +30,6 @@ spec:
                 values:
                   - minio
           topologyKey: "kubernetes.io/hostname"
-
     ingress:
       enabled: true
       className: traefik
