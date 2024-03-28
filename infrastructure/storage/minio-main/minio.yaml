@@ -66,5 +66,3 @@ spec:
 
     auth:
       existingSecret: minio-auth
-    volumePermissions:
-      enabled: true
