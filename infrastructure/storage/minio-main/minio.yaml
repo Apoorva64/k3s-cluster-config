@@ -35,7 +35,7 @@ spec:
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-prod
         traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
-      hostname: 'minio.storage.apoorva64.com'
+      hostname: minio-main.storage.apoorva64.com
       path: /
       tls:
         - hosts:
@@ -47,7 +47,7 @@ spec:
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-prod
         traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
-      hostname: 'api.minio.storage.apoorva64.com'
+      hostname: api.minio-main.storage.apoorva64.com
       path: /
       tls:
         - hosts:
