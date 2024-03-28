@@ -60,7 +60,11 @@ spec:
         value: "minio-main"
       - name: MINIO_PROMETHEUS_AUTH_TYPE
         value: "public"
-    securityContext: {}
+    securityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
 
     auth:
       existingSecret: minio-auth
+    volumePermissions:
+      enabled: true
