@@ -60,12 +60,7 @@ spec:
         value: "minio-main"
       - name: MINIO_PROMETHEUS_AUTH_TYPE
         value: "public"
-    securityContext:
-      enabled: true
-      runAsUser: 1001
-      runAsGroup: 1001
-      fsGroup: 1001
-      fsGroupChangePolicy: "OnRootMismatch"
+    securityContext: {}
 
     auth:
       existingSecret: minio-auth
