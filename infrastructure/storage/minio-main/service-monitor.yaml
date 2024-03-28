@@ -1,0 +1,23 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: minio-main
+  namespace: monitoring
+  labels:
+    release: kube-prometheus-stack
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: minio
+      app.kubernetes.io/name: minio
+  namespaceSelector:
+    matchNames:
+      - storage
+  endpoints:
+    - targetPort: 9000
+      interval: 15s
+      path: /minio/v2/metrics/cluster
+      scheme: http
+      tlsConfig:
+        insecureSkipVerify: true
+  jobLabel: minio-main
