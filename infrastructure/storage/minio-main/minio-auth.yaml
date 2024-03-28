@@ -1,0 +1,9 @@
+apiVersion: v1
+data:
+  root-password: <REDACTED>
+  root-user: <REDACTED>
+kind: Secret
+metadata:
+  creationTimestamp: null
+  namespace: minio-main
+  name: minio-auth
