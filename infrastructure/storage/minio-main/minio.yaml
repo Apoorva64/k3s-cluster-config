@@ -39,7 +39,7 @@ spec:
       path: /
       tls:
         - hosts:
-            - minio.storage.apoorva64.com
+            - minio-main.storage.apoorva64.com
           secretName: minio-tls
     apiIngress:
       enabled: true
@@ -51,7 +51,7 @@ spec:
       path: /
       tls:
         - hosts:
-            - api.minio.storage.apoorva64.com
+            - api.minio-main.storage.apoorva64.com
           secretName: api-minio-tls
 
     extraEnvVars:
