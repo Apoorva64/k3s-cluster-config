@@ -21,18 +21,14 @@ spec:
       storageClass: nfs-client
     nodeSelector:
       kubernetes.io/arch: amd64
-    affinity:
-      podAntiAffinity:
-        preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 100
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                  - key: app
-                    operator: In
-                    values:
-                      - minio
-              topologyKey: "kubernetes.io/hostname"
+    topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: DoNotSchedule
+        labelSelector:
+          matchLabels:
+            app.kubernetes.io/name: minio
+            app.kubernetes.io/instance: minio
     ingress:
       enabled: true
       className: traefik
