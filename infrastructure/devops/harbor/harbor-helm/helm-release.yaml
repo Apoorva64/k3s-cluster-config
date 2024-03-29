@@ -27,16 +27,26 @@ spec:
           cert-manager.io/cluster-issuer: letsencrypt-prod
           traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
     persistence:
-      persistentVolumeClaim:
-        registry:
-          storageClass: nfs-client
-          size: 1Ti
-        database:
-          storageClass: longhorn-single-replica
-        redis:
-          storageClass: longhorn-single-replica
-        trivy:
-          storageClass: longhorn-single-replica
+#      persistentVolumeClaim:
+#        registry:
+#          storageClass: nfs-client
+#          size: 1Ti
+#        database:
+#          storageClass: longhorn-single-replica
+#        redis:
+#          storageClass: longhorn-single-replica
+#        trivy:
+#          storageClass: longhorn-single-replica
+      imageChartStorage:
+        disableredirect: true
+        type: s3
+        s3:
+          # region: us-west-1
+          bucket: harbor
+          regionendpoint: https://minio-main.storage.apoorva64.com
+          encrypt: false
+          secure: true
+          v4auth: true
     portal:
       replicas: 1
       nodeSelector:
@@ -71,3 +81,7 @@ spec:
       external:
         addr: "harbor-database-redis-master.harbor.svc.cluster.local:6379"
         existingSecret: harbor-database-redis-password
+  valuesFrom:
+    - kind: Secret
+      name: harbor-s3-access
+      valuesKey: harbor-s3-values.yaml

@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  harbor-s3-values.yaml: <REDACTED>
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: harbor-s3-access
+  namespace: harbor
