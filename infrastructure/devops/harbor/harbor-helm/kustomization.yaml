@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - helm-repository.yaml
   - helm-release.yaml
+  - harbor-s3-access-sealed.yaml
