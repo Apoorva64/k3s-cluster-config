@@ -27,16 +27,13 @@ spec:
           cert-manager.io/cluster-issuer: letsencrypt-prod
           traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
     persistence:
-#      persistentVolumeClaim:
-#        registry:
-#          storageClass: nfs-client
-#          size: 1Ti
-#        database:
-#          storageClass: longhorn-single-replica
-#        redis:
-#          storageClass: longhorn-single-replica
-#        trivy:
-#          storageClass: longhorn-single-replica
+      persistentVolumeClaim:
+        database:
+          storageClass: longhorn-single-replica
+        redis:
+          storageClass: longhorn-single-replica
+        trivy:
+          storageClass: longhorn-single-replica
       imageChartStorage:
         disableredirect: true
         type: s3
