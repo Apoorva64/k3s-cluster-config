@@ -1,0 +1,15 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: redbot-token
+  namespace: default
+spec:
+  encryptedData:
+    token: AgCgbh3akQWV0eCdGS4Wwl4vh1UEfw9LQzmCnbTnW0XvbIgCFOI4jOeX1tWd1cRzKnE1f9sBxwsNocOISN8ejR3/d310Lp1mOg+8+Vm4JilexpSyEUyg88H5Q73K+4zV+U6RPOLbQ8X+1p01H9amAYGNPfUmVPg+hmaAolYP/tha3NAtD1eDdUWLFmfdl/XqZ9SmdR9hGnKP5GPpNNjAzyCVcA3fD6RgXtNUiD4EIyrKi7v+YpPj4zfYrZqJ3V0EDCdDtHlqo6P8DpoLY2p2wJ59vw2T8fo+YcZAnM/PfjyqTmabwNZAqIfoSkjUOQHiYebPowSrDAC7LS2kDKR41V0a0rH2WQNoZyUcLjpd1kT14P/LhZP+DYKGjR1Wu8CLIwUw37dUrV7p3UnRt7nVC/dyI3Ssv86WEN2Gsk44aWkl9RAPXTgGVAJnpqGnI0c+QcO6bYYyQq7AiPK/oJZQLxmt90iIcM6cVxz8j1d8FEDZnL+PhDJFHpuY8W00MiSW9EoLyY/88u5hFFnVCok76PtmgFHp2J8HjrXf3cr90WyEfRZw+gsUAft5O6yQkPzxyGzhzhCWxCO6sSvvuKAENarDD4lSOviLDMn06AD+pdF47ctzNBnqELVpbbQE1DhfgL90FPbecM5viExVlJMk4zAIC/sKp5OYvLo4KvAKkLKiHDKoMc77/KmZckP9VIENkYGyFMxNiGUH/Rzh4ioF2aqLPawtL+djDeGrCoR1ZKnRWZJvT/0Bnlk9/iMSmE0HXIASkCB/caT80uH62RnDTMkxDULtsjBRMLU=
+  template:
+    metadata:
+      creationTimestamp: null
+      name: redbot-token
+      namespace: default

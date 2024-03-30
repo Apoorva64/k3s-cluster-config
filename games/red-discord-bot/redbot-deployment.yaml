@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: redbot
+  name: redbot
+  namespace: red-discord-bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: redbot
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: redbot
+    spec:
+      containers:
+      - env:
+        - name: PREFIX
+          value: .
+        - name: PUID
+          value: "1000"
+        - name: TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: token
+              name: redbot-token
+        - name: TZ
+          value: Europe/Paris
+        image: phasecorex/red-discordbot:full
+        imagePullPolicy: ""
+        name: redbot
+        resources: {}
+        volumeMounts:
+        - mountPath: /data
+          name: redbot-claim0
+        securityContext:
+          runAsUser: 1000
+          runAsNonRoot: true
+          runAsGroup: 1000
+          capabilities:
+            add:
+            - SYS_NICE
+
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes:
+      - name: redbot-claim0
+        persistentVolumeClaim:
+          claimName: redbot-claim0
+
+
+
+status: {}
