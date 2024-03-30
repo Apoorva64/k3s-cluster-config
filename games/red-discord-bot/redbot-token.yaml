@@ -5,3 +5,4 @@ kind: Secret
 metadata:
   creationTimestamp: null
   name: redbot-token
+  namespace: red-discord-bot
