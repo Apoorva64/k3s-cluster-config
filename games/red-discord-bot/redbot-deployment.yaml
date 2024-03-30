@@ -29,7 +29,7 @@ spec:
       containers:
       - env:
         - name: PREFIX
-          value: !
+          value: "!"
         - name: PUID
           value: "1000"
         - name: TOKEN
