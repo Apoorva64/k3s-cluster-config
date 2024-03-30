@@ -7,9 +7,9 @@ metadata:
   namespace: red-discord-bot
 spec:
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
+  storageClassName: longhorn-single-replica
   resources:
     requests:
-      storage: 500Mi
-      storageClassName: longhorn-single-replica
-status: {}
+      storage: 1Gi
+status: { }
