@@ -25,6 +25,7 @@ spec:
       labels:
         io.kompose.service: redbot
     spec:
+      automountServiceAccountToken: false
       containers:
       - env:
         - name: PREFIX
@@ -46,13 +47,9 @@ spec:
         - mountPath: /data
           name: redbot-claim0
         securityContext:
-          runAsUser: 1000
-          runAsNonRoot: true
-          runAsGroup: 1000
           capabilities:
             add:
             - SYS_NICE
-
       restartPolicy: Always
       serviceAccountName: ""
       volumes:
