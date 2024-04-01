@@ -7,6 +7,6 @@ spec:
   interval: 5m
   url: https://github.com/pns-isa-devops/isa-devops-23-24-team-o-24
   ref:
-    branch: jenkins
+    branch: main
   secretRef:
     name: reporter-github-ozeliurs-auth
