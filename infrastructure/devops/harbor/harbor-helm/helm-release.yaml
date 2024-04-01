@@ -34,22 +34,25 @@ spec:
 
     persistence:
       persistentVolumeClaim:
+        registry:
+          storageClass: nfs-client
+          size: 1Ti
         database:
           storageClass: longhorn-single-replica
         redis:
           storageClass: longhorn-single-replica
         trivy:
           storageClass: longhorn-single-replica
-      imageChartStorage:
-        disableredirect: true
-        type: s3
-        s3:
-          region: us-east-1
-          bucket: harbor
-          regionendpoint: http://minio.minio-main.svc.cluster.local:9000
-          encrypt: false
-          secure: false
-          v4auth: true
+#      imageChartStorage:
+#        disableredirect: true
+#        type: s3
+#        s3:
+#          region: us-east-1
+#          bucket: harbor
+#          regionendpoint: http://minio.minio-main.svc.cluster.local:9000
+#          encrypt: false
+#          secure: false
+#          v4auth: true
     portal:
       replicas: 1
       nodeSelector:
