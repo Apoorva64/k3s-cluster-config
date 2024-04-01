@@ -44,7 +44,7 @@ spec:
         disableredirect: true
         type: s3
         s3:
-          # region: us-west-1
+          region: us-east-1
           bucket: harbor
           regionendpoint: https://api.minio-main.storage.apoorva64.com
           encrypt: false
