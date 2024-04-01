@@ -46,7 +46,7 @@ spec:
         s3:
           # region: us-west-1
           bucket: harbor
-          regionendpoint: https://minio-main.storage.apoorva64.com
+          regionendpoint: https://api.minio-main.storage.apoorva64.com
           encrypt: false
           secure: true
           v4auth: true
