@@ -37,6 +37,13 @@ spec:
             secretKeyRef:
               key: token
               name: redbot-token
+        - name: SPOTIFY_CLIENT_ID
+          value: "b3df706d36c5401d9a7b1c814e2b5795"
+        - name: SPOTIFY_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              key: spotify
+              name: spotify
         - name: YOUTUBE_API_KEY
           valueFrom:
             secretKeyRef:
