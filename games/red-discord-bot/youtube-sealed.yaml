@@ -1,0 +1,15 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: youtube
+  namespace: red-discord-bot
+spec:
+  encryptedData:
+    token: AgBdsjkVAOcVudfwZuDpEc0aWh7i/SdYIFFMJpY3E46FH/PQHIcr7xNrC6XlNPZaYYMWHfwYUe6lmwyLVNuVO8AB4HKLTfmGcCpVdTDi1ImuSVGQUgplwjBSijxaEso7Wf/9+qlEF48+1ySCZfhA+G3ER1RUhDuOkL0US8sff5R8POKsC8WRidnizk6Yuh1W8mziCgTSk7coo0wF+KN6ZZIs6hOmxltjr/JJ4+F6huaj2uDkkfvU75gq0GqWKwMkOdusS9aaQp3j1h/LP6UeVlKjOKDO8YdccZCIgXWUeWHSA7mq6E56gpbTfVT+5Cl8x0968ggpVWpBZxFsnepCR1va868g70HQqoZpCnTme1GQsEYHwc7J7K7MSRlfJSVxJ+7XNpuDf1o6B9ZZ6Zz1yC8g6sgOm2fPCgLSjz+t6BkX/oI41MhWjcBSjaKzfijI1xV63GANKKOPpBIyzeUaYN1UNyAZK2FBzRnK6kHbDZHJH1nWLI8z0Jb6SZmXPcllKOpZlmLR8XbKiH7luP/w8DwfBq9X31QmDqf0nUvOsOWjT2bsL2y0CeLzKrAhqGbBwI+TC7QjSjKGnqke3V1bDEPtLCcMQCG71PWfB6JhL44OJGlckEud1K1bknVOfaMWzbU6BJUkGx1XhzLELgfALfSWxwouUwb/m5cQAs3u9PJzCOAhlZj8AdA+azL1dlHidQ88oFrnrkeMzD2f14LVUw0Gj1jcIpx8FEzklhd/rhx2pJc0KajyCno=
+  template:
+    metadata:
+      creationTimestamp: null
+      name: youtube
+      namespace: red-discord-bot

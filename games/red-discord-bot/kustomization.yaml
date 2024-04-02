@@ -5,3 +5,4 @@ resources:
   - redbot-claim0-persistentvolumeclaim.yaml
   - redbot-deployment.yaml
   - redbot-token-sealed.yaml
+  - youtube-sealed.yaml
