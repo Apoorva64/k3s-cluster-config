@@ -37,9 +37,14 @@ spec:
             secretKeyRef:
               key: token
               name: redbot-token
+        - name: YOUTUBE_API_KEY
+          valueFrom:
+            secretKeyRef:
+              key: youtube_api_key
+              name: redbot-youtube-api-key
         - name: TZ
           value: Europe/Paris
-        image: phasecorex/red-discordbot:full
+        image: codetheweb/muse:latest
         imagePullPolicy: ""
         name: redbot
         resources: {}
