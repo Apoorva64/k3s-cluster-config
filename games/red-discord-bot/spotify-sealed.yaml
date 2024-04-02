@@ -1,0 +1,15 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: spotify
+  namespace: red-discord-bot
+spec:
+  encryptedData:
+    token: AgBTmGRvzTUzbt/CWBxkdYnNjEUFMzJKTUdtUC0czw769ifIQQIZfBsDACcv8YOi+HyMcT32p0FS1CJDUl7sB0id+NMv/HxoREHPukbXm8hjPdPKuIjZODHG+QRR3f9iSe4UnGDkzXcDY4GQ7Y09SW2fbmZt8OdSqL8Nlk/Y3ODRv0GQBrz1dayzhBlT6zyXFs4mTzzRSj/TeVKQwmMuy0P6E0jYBKAayqNOKg+rECFI72khWdai42/rtwcYOzqB1O3ZH0+S9Rj2vcz1+8ecxsvS9+r+IdWbCDZoBG9GArtr/ruas2MSVtJTe1IU396UuSdBFTtYCn3FDSF0XlIXMzbh1K/jJjb8rVl4/1zY3AHpA+uQBU7KowpCz9jVBTmWQStFQ4Df56Sq46cj1zkxaP6yFyDKM+QrCmh+N4JBViU7YaVvSGkz0ls7NzaVTckPqGn+Lq7Krs9ErYwMp2Ivb8b4dsQimUWjN3r8Z29D3PsjI0mG08VHDJrP0D+0lghS+FkX2jMIw9hT/CmSWMsMb5Z5yvq+XEpw4Dact45l1CMnPJH97lBLCwTU/+1YdjutggZHEux81V38Cy4aFDZusJseDXCAlOSl7H5PmAcSB5HMGqm5ASSeiBaKfLIj1cR/hyGtaAZFC4fV0WexhDWioaSg5DNH6lsAE7IOctN7if6EN+vOAc6yW9Kg/dZU58s+11knftIPozU8XS7Sr2QJUuKqRzmlpfM1UzD/g4WFOt80pg==
+  template:
+    metadata:
+      creationTimestamp: null
+      name: spotify
+      namespace: red-discord-bot

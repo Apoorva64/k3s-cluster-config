@@ -6,3 +6,4 @@ resources:
   - redbot-deployment.yaml
   - redbot-token-sealed.yaml
   - youtube-sealed.yaml
+  - spotify-sealed.yaml
