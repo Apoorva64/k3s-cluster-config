@@ -39,7 +39,7 @@ spec:
               name: redbot-token
         - name: TZ
           value: Europe/Paris
-        image: phasecorex/red-discordbot:full-pylav
+        image: phasecorex/red-discordbot:full
         imagePullPolicy: ""
         name: redbot
         resources: {}
