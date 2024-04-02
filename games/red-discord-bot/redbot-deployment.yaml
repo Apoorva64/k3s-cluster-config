@@ -32,7 +32,7 @@ spec:
           value: "!"
         - name: PUID
           value: "1000"
-        - name: TOKEN
+        - name: DISCORD_TOKEN
           valueFrom:
             secretKeyRef:
               key: token
