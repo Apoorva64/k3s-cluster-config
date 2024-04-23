@@ -60,6 +60,7 @@ spec:
           release: kube-prometheus-stack
     limits_config:
       retention_period: 96h
+      allow_structured_metadata: false
   valuesFrom:
     - kind: Secret
       name: loki-s3-access
