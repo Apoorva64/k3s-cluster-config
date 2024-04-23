@@ -53,13 +53,6 @@ spec:
             index:
               prefix: loki_index_
               period: 24h
-      compactor:
-        compaction_interval: 10m
-        retention_enabled: true
-        retention_delete_delay: 2h
-        retention_delete_worker_count: 150
-        shared_store: aws
-
     deploymentMode: SimpleScalable
     monitoring:
       serviceMonitor:
