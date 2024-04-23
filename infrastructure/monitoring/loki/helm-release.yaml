@@ -44,7 +44,7 @@ spec:
         storage_config:
           aws:
             s3: "s3://loki-chunks"
-      schema_config:
+      schemaConfig:
         configs:
           - from: "2022-01-01"
             store: aws
