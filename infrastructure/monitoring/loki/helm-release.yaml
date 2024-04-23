@@ -49,6 +49,10 @@ spec:
           - from: "2022-01-01"
             store: aws
             object_store: aws
+            schema: v11
+            index:
+              prefix: loki_index_
+              period: 24h
       compactor:
         compaction_interval: 10m
         retention_enabled: true
