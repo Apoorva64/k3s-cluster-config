@@ -49,7 +49,7 @@ spec:
           - from: "2024-04-01"
             store: aws
             object_store: aws
-            schema: v11
+            schema: v13
             index:
               prefix: loki_index_
               period: 24h
