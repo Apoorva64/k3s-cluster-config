@@ -50,3 +50,6 @@ spec:
       embeddings:
         size: 8Gi
         storageClass: local-path
+      output:
+        size: 8Gi
+        storageClass: local-path
