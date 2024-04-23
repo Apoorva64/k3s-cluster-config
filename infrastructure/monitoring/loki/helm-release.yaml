@@ -34,7 +34,7 @@ spec:
         type: "s3"
         s3:
           region: eu-central-1
-          endpoint: "minio.storage.svc.cluster.local:9000"
+          endpoint: "minio.minio-main.svc.cluster.local:9000"
           insecure: true
           s3ForcePathStyle: true
         bucketNames:
