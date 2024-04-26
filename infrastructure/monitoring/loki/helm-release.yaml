@@ -46,12 +46,12 @@ spec:
             s3: "s3://loki-chunks"
       schemaConfig:
         configs:
-          - from: "2024-04-01"
-            store: aws
+          - from: 2021-07-01
+            store: boltdb-shipper
             object_store: aws
             schema: v11
             index:
-              prefix: loki_index_
+              prefix: index_
               period: 24h
     deploymentMode: SimpleScalable
     monitoring:
