@@ -51,4 +51,5 @@ spec:
       ## If tls is set to true, annotation ingress.kubernetes.io/secure-backends: "true" will automatically be set
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-prod
-        traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd, oauth2-proxy-oauth2-forward-auth@kubernetescrd
+        traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd, traefik-keycloak-middleware@kubernetescrd
+#        traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd, oauth2-proxy-oauth2-forward-auth@kubernetescrd
