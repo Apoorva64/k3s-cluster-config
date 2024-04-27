@@ -3,15 +3,15 @@ kind: ServiceMonitor
 metadata:
   annotations:
     meta.helm.sh/release-name: traefik
-    meta.helm.sh/release-namespace: kube-system
+    meta.helm.sh/release-namespace: traefik
   labels:
     app.kubernetes.io/component: metrics
-    app.kubernetes.io/instance: traefik-kube-system
+    app.kubernetes.io/instance: traefik-traefik
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: traefik
     helm.sh/chart: traefik-26.0.0
     helm.toolkit.fluxcd.io/name: traefik
-    helm.toolkit.fluxcd.io/namespace: kube-system
+    helm.toolkit.fluxcd.io/namespace: traefik
     name: traefik
     release: kube-prometheus-stack
   namespace: monitoring
@@ -25,9 +25,9 @@ spec:
   jobLabel: traefik
   namespaceSelector:
     matchNames:
-      - kube-system
+      - traefik
   selector:
     matchLabels:
       app.kubernetes.io/component: metrics
-      app.kubernetes.io/instance: traefik-kube-system
+      app.kubernetes.io/instance: traefik-traefik
       app.kubernetes.io/name: traefik

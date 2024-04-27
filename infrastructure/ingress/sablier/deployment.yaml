@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sablier-deployment
-  namespace: kube-system
+  namespace: traefik
   labels:
     app: sablier
 spec:
