@@ -10,3 +10,6 @@ spec:
       ClientIDEnv: "KEYCLOAK_CLIENT_ID"
       ClientSecretEnv: "KEYCLOAK_CLIENT_SECRET"
       KeycloakRealmEnv: "KEYCLOAK_REALM"
+      Scope: "openid"
+      TokenCookieName: "AUTH_TOKEN"
+      UseAuthHeader: false
