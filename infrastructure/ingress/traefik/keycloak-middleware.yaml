@@ -1,0 +1,12 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: keycloak-middleware
+  namespace: traefik
+spec:
+  plugin:
+    keycloakopenid:
+      KeycloakURLEnv: "KEYCLOAK_URL"
+      ClientIDEnv: "KEYCLOAK_CLIENT_ID"
+      ClientSecretEnv: "KEYCLOAK_CLIENT_SECRET"
+      KeycloakRealmEnv: "KEYCLOAK_REALM"

@@ -5,3 +5,4 @@ resources:
   - helm-release.yaml
   - service-monitor.yaml
   - metrics-svc.yaml
+  - keycloak-middleware.yaml

@@ -33,15 +33,15 @@ spec:
       image:
         repository: "rancher/mirrored-library-traefik"
         tag: "2.10.5"
-#      tolerations:
-#        - key: "CriticalAddonsOnly"
-#          operator: "Exists"
-#        - key: "node-role.kubernetes.io/control-plane"
-#          operator: "Exists"
-#          effect: "NoSchedule"
-#        - key: "node-role.kubernetes.io/master"
-#          operator: "Exists"
-#          effect: "NoSchedule"
+      #      tolerations:
+      #        - key: "CriticalAddonsOnly"
+      #          operator: "Exists"
+      #        - key: "node-role.kubernetes.io/control-plane"
+      #          operator: "Exists"
+      #          effect: "NoSchedule"
+      #        - key: "node-role.kubernetes.io/master"
+      #          operator: "Exists"
+      #          effect: "NoSchedule"
       service:
         ipFamilyPolicy: "PreferDualStack"
     metrics:
@@ -60,3 +60,18 @@ spec:
       keycloakopenid:
         moduleName: "github.com/Gwojda/keycloakopenid"
         version: "v0.1.35"
+    env:
+      - name: "KEYCLOAK_URL"
+        value: "keycloak.auth.apoorva64.com"
+      - name: "KEYCLOAK_REALM"
+        value: "lab"
+      - name: "KEYCLOAK_CLIENT_ID"
+        valueFrom:
+          secretKeyRef:
+            name: keycloak-auth
+            key: client-id
+      - name: "KEYCLOAK_CLIENT_SECRET"
+        valueFrom:
+          secretKeyRef:
+            name: keycloak-auth
+            key: client-secret
