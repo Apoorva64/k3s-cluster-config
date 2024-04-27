@@ -54,12 +54,13 @@ spec:
         addServicesLabels: true
         addRoutersLabels: true
     experimental:
-      sablier:
-        moduleName: "github.com/acouvreur/sablier"
-        version: "v1.6.0"
-      keycloakopenid:
-        moduleName: "github.com/Gwojda/keycloakopenid"
-        version: "v0.1.35"
+      plugins:
+        sablier:
+          moduleName: "github.com/acouvreur/sablier"
+          version: "v1.6.0"
+        keycloakopenid:
+          moduleName: "github.com/Gwojda/keycloakopenid"
+          version: "v0.1.35"
     env:
       - name: "KEYCLOAK_URL"
         value: "keycloak.auth.apoorva64.com"
