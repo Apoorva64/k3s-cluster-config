@@ -55,6 +55,7 @@ spec:
         addRoutersLabels: true
     experimental:
       plugins:
+        enabled: true
         sablier:
           moduleName: "github.com/acouvreur/sablier"
           version: "v1.6.0"
