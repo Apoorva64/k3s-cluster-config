@@ -1,0 +1,9 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: satellite-api-react-flight-tracker
+spec:
+  interval: 5m
+  url: https://github.com/Tsukoyachi/react-flight-tracker-satellite
+  ref:
+    branch: develop
