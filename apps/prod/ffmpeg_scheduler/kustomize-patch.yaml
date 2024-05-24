@@ -1,3 +1,0 @@
-- op: replace
-  path: /spec/sourceRef/name
-  value: prod-ffmpeg-scheduler
