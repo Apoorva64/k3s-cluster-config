@@ -4,3 +4,4 @@ metadata:
   name: satellite-api-react-flight-tracker
 spec:
   path: ./manifests/overlays/develop
+  targetNamespace: satellite-api-react-flight-tracker-dev
