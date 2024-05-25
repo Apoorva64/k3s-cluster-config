@@ -11,6 +11,7 @@ patches:
           - deployments
           - services
           - ingresses
+          - persistentvolumeclaims
     target:
       group: rbac.authorization.k8s.io
       version: v1
