@@ -12,6 +12,7 @@ patches:
           - services
           - ingresses
           - persistentvolumeclaims
+          - statefulsets
     target:
       group: rbac.authorization.k8s.io
       version: v1
