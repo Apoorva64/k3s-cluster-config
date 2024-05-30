@@ -4,3 +4,4 @@ resources:
   - namespace.yaml
   - helm-repository.yaml
   - helm-release-node-apoorva3.yaml
+  - helm-release-node-nino4.yaml
