@@ -9,18 +9,18 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 15777
-      nodePort: 15777
+    - port: 27012
+      nodePort: 27012
       protocol: UDP
       name: "query"
       targetPort: "query"
-    - port: 15000
-      nodePort: 15000
+    - port: 27010
+      nodePort: 27010
       protocol: UDP
       name: "beacon"
       targetPort: "beacon"
-    - port: 7777
-      nodePort: 7777
+    - port: 27011
+      nodePort: 27011
       protocol: UDP
       name: "game"
       targetPort: "game"

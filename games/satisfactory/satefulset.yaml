@@ -36,14 +36,20 @@ spec:
               value: "false"
             - name: STEAMBETA
               value: "false"
+            - name: SERVERBEACONPORT
+              value: "27010"
+            - name: SERVERGAMEPORT
+              value: "27011"
+            - name: SERVERQUERYPORT
+              value: "27012"
           ports:
-            - containerPort: 15777
+            - containerPort: 27012
               name: "query"
               protocol: UDP
-            - containerPort: 15000
+            - containerPort: 27010
               name: "beacon"
               protocol: UDP
-            - containerPort: 7777
+            - containerPort: 27011
               name: "game"
               protocol: UDP
           volumeMounts:
