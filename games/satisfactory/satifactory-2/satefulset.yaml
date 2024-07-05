@@ -1,0 +1,66 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: satisfactory2
+  namespace: satisfactory
+spec:
+  selector:
+    matchLabels:
+      app: satisfactory2
+  serviceName: "satisfactory2"
+  replicas: 1
+
+  template:
+
+    metadata:
+      labels:
+        app: satisfactory2
+    spec:
+      nodeSelector:
+        "kubernetes.io/hostname": "node-apoorva2"
+      automountServiceAccountToken: false
+      containers:
+        - name: satisfactory2
+          image: wolveix/satisfactory2-server:latest
+          env:
+            - name: DEBUG
+              value: "false"
+            - name: MAXPLAYERS
+              value: "8"
+            - name: PGID
+              value: "1000"
+            - name: PUID
+              value: "1000"
+            - name: SKIPUPDATE
+              value: "false"
+            - name: STEAMBETA
+              value: "false"
+            - name: SERVERBEACONPORT
+              value: "27013"
+            - name: SERVERGAMEPORT
+              value: "27014"
+            - name: SERVERQUERYPORT
+              value: "27015"
+          ports:
+            - containerPort: 27015
+              name: "query"
+              protocol: UDP
+            - containerPort: 27013
+              name: "beacon"
+              protocol: UDP
+            - containerPort: 27014
+              name: "game"
+              protocol: UDP
+          volumeMounts:
+            - name: satisfactory2-data
+              mountPath: /config
+  volumeClaimTemplates:
+    - metadata:
+        name: satisfactory2-data
+      spec:
+        storageClassName: local-path
+        accessModes: [ "ReadWriteOnce" ]
+        resources:
+          requests:
+            storage: 20Gi

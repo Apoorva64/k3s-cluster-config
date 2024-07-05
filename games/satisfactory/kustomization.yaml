@@ -4,3 +4,4 @@ resources:
   - namespace.yaml
   - service.yaml
   - satefulset.yaml
+  - satifactory-2

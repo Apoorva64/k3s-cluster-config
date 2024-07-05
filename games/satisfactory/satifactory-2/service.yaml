@@ -1,0 +1,28 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: satisfactory2
+  namespace: satisfactory
+  labels:
+    app: satisfactory2
+spec:
+  type: NodePort
+  ports:
+    - port: 27015
+      nodePort: 27015
+      protocol: UDP
+      name: "query"
+      targetPort: "query"
+    - port: 27013
+      nodePort: 27013
+      protocol: UDP
+      name: "beacon"
+      targetPort: "beacon"
+    - port: 27014
+      nodePort: 27014
+      protocol: UDP
+      name: "game"
+      targetPort: "game"
+  selector:
+    app: satisfactory2
