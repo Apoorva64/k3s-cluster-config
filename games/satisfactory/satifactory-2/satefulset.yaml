@@ -22,7 +22,7 @@ spec:
       automountServiceAccountToken: false
       containers:
         - name: satisfactory2
-          image: wolveix/satisfactory2-server:latest
+          image: wolveix/satisfactory-server:latest
           env:
             - name: DEBUG
               value: "false"
