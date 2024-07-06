@@ -33,7 +33,7 @@ spec:
             - name: PUID
               value: "1000"
             - name: SKIPUPDATE
-              value: "false"
+              value: "true"
             - name: STEAMBETA
               value: "false"
             - name: SERVERBEACONPORT
