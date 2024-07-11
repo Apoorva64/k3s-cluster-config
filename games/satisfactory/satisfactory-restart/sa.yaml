@@ -16,6 +16,6 @@ metadata:
 rules:
   - apiGroups: ["apps", "extensions"]
     resources: ["statefulsets"]
-    resourceNames: ["satifactory*"]
+    resourceNames: [""]
     verbs: ["get", "patch", "list", "watch"] # "list" and "watch" are only needed
     # if you want to use `rollout status`
