@@ -1,0 +1,14 @@
+# bind the role to the service account
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: statefulset-restart
+  namespace: satisfactory
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: statefulset-restart
+subjects:
+  - kind: ServiceAccount
+    name: statefulset-restart
+    namespace: satisfactory
