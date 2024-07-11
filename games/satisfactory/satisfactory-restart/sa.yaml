@@ -14,8 +14,9 @@ metadata:
   name: statefulset-restart
   namespace: satisfactory
 rules:
-  - apiGroups: ["apps", "extensions", "core"]
-    resources: ["statefulsets"]
-    resourceNames: [""]
-    verbs: ["get", "patch", "list", "watch"] # "list" and "watch" are only needed
-    # if you want to use `rollout status`
+  - apiGroups:
+      - ""
+      - "apps"
+      - "core"
+    resources: [ "statefulsets" ]
+    verbs: [ "*" ]
