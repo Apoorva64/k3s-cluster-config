@@ -5,7 +5,7 @@ metadata:
   namespace: satisfactory
 spec:
   concurrencyPolicy: Forbid
-  schedule: '0 0 * * *' # run every day at midnight
+  schedule: '0 4 * * *' # run every day at midnight
   jobTemplate:
     spec:
       backoffLimit: 2 # this has very low chance of failing, as all this does
