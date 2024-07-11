@@ -10,7 +10,6 @@ spec:
       app: satisfactory
   serviceName: "satisfactory"
   replicas: 1
-
   template:
 
     metadata:

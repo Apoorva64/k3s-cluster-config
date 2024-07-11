@@ -27,5 +27,6 @@ spec:
               # have `rollout restart`
               command:
                 - 'kubectl'
+                - 'rollout'
                 - 'restart'
                 - 'statefulset/satisfactory2'
