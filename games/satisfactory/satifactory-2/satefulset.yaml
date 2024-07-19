@@ -42,6 +42,8 @@ spec:
               value: "27014"
             - name: SERVERQUERYPORT
               value: "27015"
+            - name: AUTOPAUSE
+              value: "false"
           ports:
             - containerPort: 27015
               name: "query"
