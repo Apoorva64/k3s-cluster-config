@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - namespace.yaml
+  - ../../base/satellite-api-react-flight-tracker
+
+namespace: satellite-api-react-flight-tracker-prod
+patchesStrategicMerge:
+  # patch repository to reference to main branch
+  - repository-patch.yaml
+  # patch kustomize to reference to main manifests
+  - kustomize-patch.yaml
