@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: satellite-api-react-flight-tracker-prod
+  name: satellite-api-react-flight-tracker
 spec:
   ref:
     branch: main
