@@ -52,7 +52,7 @@ spec:
               name: "game"
               protocol: UDP
           volumeMounts:
-            - name: satisfactory-data
+            - name: satisfactory-data-3
               mountPath: /config
   volumeClaimTemplates:
     - metadata:
