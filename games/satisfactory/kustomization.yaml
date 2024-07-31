@@ -5,4 +5,3 @@ resources:
   - satisfactory-restart
   - service.yaml
   - satefulset.yaml
-  - satifactory-2

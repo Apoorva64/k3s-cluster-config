@@ -4,4 +4,3 @@ resources:
   - sa.yaml
   - role-binding.yaml
   - restart-server-1.yaml
-  - restart-server-2.yaml
