@@ -3,9 +3,9 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - helm-repository.yaml
-  - kube-ray
-  - raycluster
-  - gpu-raycluster
+#  - kube-ray
+#  - raycluster
+#  - gpu-raycluster
   - ollama
-  - open-webui
-  - stable-diffusion
+#  - open-webui
+#  - stable-diffusion
