@@ -7,6 +7,6 @@ resources:
   - minio-env-sealed.yaml
   - longhorn
   - db-operators
-  - redis
+#  - redis
   - nfs-provisioner
   - minio-main
