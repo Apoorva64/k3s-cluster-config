@@ -21,8 +21,7 @@ spec:
     image:
       repository: git.ozeliurs.com/ozeliurs/sonarqube
       tag: 10.6.0-enterprise
-      pullSecrets:
-      - name: gitea-pull-secrets
+
     ingress:
       ingressClassName: traefik
       enabled: true
