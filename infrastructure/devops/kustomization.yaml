@@ -3,10 +3,10 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - weave-gitops
-  - gitlab-runner
+#  - gitlab-runner
   - sonarqube
-  - jenkins
+#  - jenkins
   # - artifactory
-  - gitlab
-  - harbor
-  - github-actions
+#  - gitlab
+#  - harbor
+#  - github-actions
