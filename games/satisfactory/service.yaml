@@ -9,20 +9,15 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 27012
-      nodePort: 27012
-      protocol: UDP
-      name: "query"
-      targetPort: "query"
-    - port: 27010
-      nodePort: 27010
-      protocol: UDP
-      name: "beacon"
-      targetPort: "beacon"
     - port: 27011
       nodePort: 27011
       protocol: UDP
-      name: "game"
+      name: "game-udp"
+      targetPort: "game"
+    - port: 27011
+      nodePort: 27011
+      protocol: TCP
+      name: "game-tcp"
       targetPort: "game"
   selector:
     app: satisfactory

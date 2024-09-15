@@ -35,22 +35,15 @@ spec:
               value: "false"
             - name: STEAMBETA
               value: "false"
-            - name: SERVERBEACONPORT
-              value: "27010"
             - name: SERVERGAMEPORT
               value: "27011"
-            - name: SERVERQUERYPORT
-              value: "27012"
           ports:
-            - containerPort: 27012
-              name: "query"
-              protocol: UDP
-            - containerPort: 27010
-              name: "beacon"
-              protocol: UDP
             - containerPort: 27011
               name: "game"
               protocol: UDP
+            - containerPort: 27011
+              name: "game"
+              protocol: TCP
           volumeMounts:
             - name: satisfactory-data-3
               mountPath: /config
