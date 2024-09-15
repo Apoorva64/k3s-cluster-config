@@ -12,12 +12,12 @@ spec:
     - port: 27011
       nodePort: 27011
       protocol: UDP
-      name: "game-UDP"
-      targetPort: "game-UDP"
+      name: "gameudp"
+      targetPort: "gameudp"
     - port: 27011
       nodePort: 27011
       protocol: TCP
-      name: "game-TCP"
-      targetPort: "game-TCP"
+      name: "gametcp"
+      targetPort: "gametcp"
   selector:
     app: satisfactory

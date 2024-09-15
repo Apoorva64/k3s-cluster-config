@@ -39,10 +39,10 @@ spec:
               value: "27011"
           ports:
             - containerPort: 27011
-              name: "game-UDP"
+              name: "gameudp"
               protocol: UDP
             - containerPort: 27011
-              name: "game-TCP"
+              name: "gametcp"
               protocol: TCP
           volumeMounts:
             - name: satisfactory-data-3
