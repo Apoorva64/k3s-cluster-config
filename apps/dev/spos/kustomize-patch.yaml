@@ -3,5 +3,5 @@ kind: Kustomization
 metadata:
   name: spos
 spec:
-  path: ./manifest/overlays/develop
+  path: ./manifest/develop
   targetNamespace: spos-dev
