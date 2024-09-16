@@ -4,7 +4,7 @@ metadata:
   name: spos
 spec:
   interval: 5m
-  path: ./manifest/overlays/develop
+  path: ./manifest/develop
   prune: true
   serviceAccountName: flux-cd-base
   sourceRef:
