@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - ../../base/spos
+  - mongo-db
 
 namespace: spos-prod
 patchesStrategicMerge:
