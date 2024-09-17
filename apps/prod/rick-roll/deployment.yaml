@@ -15,7 +15,7 @@ spec:
         io.kompose.service: rick-roll
     spec:
       containers:
-        - image: ghcr.io/apoorva64/rick-roll-darknet:latest
+        - image: ghcr.io/apoorva64/rick-roll-darknet:master
           name: rick-roll
           ports:
             - containerPort: 80
