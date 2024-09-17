@@ -1,0 +1,12 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: spos-backend
+spec:
+  interval: 5m
+  path: ./manifests
+  prune: true
+  serviceAccountName: flux-cd-base
+  sourceRef:
+    kind: GitRepository
+    name: spos-backend

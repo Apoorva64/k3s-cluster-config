@@ -4,6 +4,7 @@ resources:
   - namespace.yaml
   - ../../base/spos
   - mongo-db
+  - backend
 
 namespace: spos-prod
 patchesStrategicMerge:
