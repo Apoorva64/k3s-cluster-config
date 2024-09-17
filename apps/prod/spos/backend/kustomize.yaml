@@ -5,6 +5,7 @@ metadata:
   namespace: spos-prod
 spec:
   interval: 5m
+  targetNamespace: spos-prod
   path: ./manifests
   prune: true
   serviceAccountName: flux-cd-base
