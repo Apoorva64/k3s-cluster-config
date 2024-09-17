@@ -5,5 +5,5 @@ resources:
   - cpu-raycluster
 #  - gpu-raycluster
   - ollama
-#  - open-webui
+  - open-webui
 #  - stable-diffusion
