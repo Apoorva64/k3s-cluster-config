@@ -18,6 +18,7 @@ spec:
     image:
       registry: docker.io
       repository: arm64v8/mongo
+      tag: 7.0.14
     auth:
       enabled: false
     persistence:
