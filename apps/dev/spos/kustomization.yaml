@@ -8,14 +8,3 @@ namespace: spos-dev
 patchesStrategicMerge:
   # patch kustomize to reference to develop manifests
   - kustomize-patch.yaml
-
-patches:
-  - target:
-      kind: Deployment
-    patch: |
-      - op: add
-        path: /spec/template/spec/dnsConfig
-        value:
-          options:
-            - name: ndots
-              value: "1"
