@@ -11,3 +11,18 @@ patchesStrategicMerge:
   # patch kustomize to reference to prod manifests
   - kustomize-patch.yaml
 
+# Place all deployments on amd64 nodes
+
+patches:
+  - target:
+      kind: Deployment
+    patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: backend
+      spec:
+        template:
+          spec:
+            nodeSelector:
+              beta.kubernetes.io/arch: amd64
