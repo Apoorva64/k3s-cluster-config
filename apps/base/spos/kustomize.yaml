@@ -10,3 +10,12 @@ spec:
   sourceRef:
     kind: GitRepository
     name: spos
+  patches:
+    # prefer amd64 nodes
+    - target:
+        kind: Deployment
+      patch: |-
+        - op: add
+          path: /spec/template/spec/nodeSelector
+          value:
+              kubernetes.io/arch: amd64

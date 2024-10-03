@@ -10,14 +10,3 @@ namespace: spos-prod
 patchesStrategicMerge:
   # patch kustomize to reference to prod manifests
   - kustomize-patch.yaml
-
-# Place all deployments on amd64 nodes
-
-patches:
-  - target:
-      kind: Deployment
-    patch: |-
-      - op: add
-        path: /spec/template/spec/nodeSelector
-        value:
-          kubernetes.io/arch: amd64
