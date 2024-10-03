@@ -13,11 +13,11 @@ spec:
     kind: GitRepository
     name: spos-backend
   patches:
-    # prefer amd64 nodes
+    # prefer node-apoorva node
     - target:
         kind: Deployment
       patch: |-
         - op: add
           path: /spec/template/spec/nodeSelector
           value:
-              kubernetes.io/arch: amd64
+            kubernetes.io/hostname: node-apoorva

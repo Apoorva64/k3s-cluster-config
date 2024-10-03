@@ -18,4 +18,4 @@ spec:
         - op: add
           path: /spec/template/spec/nodeSelector
           value:
-              kubernetes.io/arch: amd64
+            kubernetes.io/hostname: node-apoorva
