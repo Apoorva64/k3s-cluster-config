@@ -19,3 +19,5 @@ spec:
       enabled: false
     persistence:
       size: 1Gi
+    nodeSelector:
+      kubernetes.io/hostname: node-apoorva
