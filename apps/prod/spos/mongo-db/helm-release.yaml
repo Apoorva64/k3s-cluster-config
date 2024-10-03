@@ -20,4 +20,4 @@ spec:
     persistence:
       size: 1Gi
     nodeSelector:
-      kubernetes.io/hostname: node-apoorva3
+      kubernetes.io/hostname: node-nino4
