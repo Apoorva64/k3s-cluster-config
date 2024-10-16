@@ -65,6 +65,13 @@ spec:
             cpu: "400m"
       prometheus-pushgateway:
         enabled: false
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "200m"
+          limits:
+            memory: "400Mi"
+            cpu: "400m"
       server:
         resources:
           requests:
@@ -78,7 +85,18 @@ spec:
           web.enable-remote-write-receiver: null
         #  - secretName: chart-example-tls
         #    hosts:
-        #      - chart-example.loca
+        #      - chart-example.local
+
+
+      configmapReload:
+        prometheus:
+          resources:
+            requests:
+              memory: "100Mi"
+              cpu: "200m"
+            limits:
+              memory: "400Mi"
+              cpu: "400m"
     keycloak:
       enabled: false
     alert-management:
