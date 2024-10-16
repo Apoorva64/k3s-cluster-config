@@ -1,0 +1,2 @@
+resources:
+  - https://raw.githubusercontent.com/nekomeowww/ollama-operator/main/dist/install.yaml
