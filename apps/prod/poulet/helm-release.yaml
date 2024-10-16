@@ -40,6 +40,7 @@ spec:
         #    hosts:
         #      - chart-example.local
       alertmanager:
+        enabled: false
         resources:
           requests:
             memory: "100Mi"
@@ -48,6 +49,7 @@ spec:
             memory: "400Mi"
             cpu: "400m"
       kube-state-metrics:
+        enabled: false
         resources:
           requests:
             memory: "100Mi"
