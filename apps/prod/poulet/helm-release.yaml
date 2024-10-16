@@ -12,7 +12,6 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: poulet
-        namespace: artifactory
       interval: 12h
   values:
     grafana:
