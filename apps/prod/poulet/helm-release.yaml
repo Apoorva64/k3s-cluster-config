@@ -1,0 +1,53 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: poulet
+  namespace: poulet
+spec:
+  interval: 60m
+  chart:
+    spec:
+      chart: poulet
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: poulet
+        namespace: artifactory
+      interval: 12h
+  values:
+    grafana:
+      enabled: false
+      ingress:
+        enabled: true
+        hosts:
+          - grafana.al.apoorva64.com
+    # This is to override the chart name.
+    nameOverride: ""
+    fullnameOverride: ""
+    prometheus:
+      enabled: false
+      ingress:
+        enabled: true
+        className: ""
+        annotations: { }
+        # kubernetes.io/ingress.class: nginx
+        # kubernetes.io/tls-acme: "true"
+        hosts:
+          - host: prometheus.al.apoorva64.com
+            paths:
+              - path: /
+                pathType: ImplementationSpecific
+        tls: [ ]
+        #  - secretName: chart-example-tls
+        #    hosts:
+        #      - chart-example.local
+
+
+    keycloak:
+      enabled: false
+    alert-management:
+      enabled: false
+    mongodb:
+      enabled: false
+    patient-management:
+      enabled: false
