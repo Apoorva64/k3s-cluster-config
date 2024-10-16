@@ -82,7 +82,7 @@ spec:
             memory: "100Mi"
             cpu: "200m"
           limits:
-            memory: "1000Mi"
+            memory: "2000Mi"
             cpu: "200m"
         persistentVolume:
           size: 1Gi
