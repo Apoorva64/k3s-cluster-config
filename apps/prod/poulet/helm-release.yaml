@@ -39,8 +39,46 @@ spec:
         #  - secretName: chart-example-tls
         #    hosts:
         #      - chart-example.local
+      alertmanager:
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "200m"
+          limits:
+            memory: "400Mi"
+            cpu: "400m"
+      kube-state-metrics:
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "200m"
+          limits:
+            memory: "400Mi"
+            cpu: "400m"
+      prometheus-node-exporter:
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "200m"
+          limits:
+            memory: "400Mi"
+            cpu: "400m"
+      prometheus-pushgateway:
+        enabled: false
+      server:
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "200m"
+          limits:
+            memory: "400Mi"
+            cpu: "400m"
 
-
+        extraArgs:
+          web.enable-remote-write-receiver: null
+        #  - secretName: chart-example-tls
+        #    hosts:
+        #      - chart-example.loca
     keycloak:
       enabled: false
     alert-management:
