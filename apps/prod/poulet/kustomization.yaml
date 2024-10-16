@@ -6,3 +6,5 @@ resources:
   - rbac
   - helm-repository.yaml
   - helm-release.yaml
+  - basic-auth-middleware.yaml
+  - prometheus-basic-auth-sealed.yaml
