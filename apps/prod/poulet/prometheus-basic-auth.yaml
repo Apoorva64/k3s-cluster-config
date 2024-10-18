@@ -2,5 +2,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: prometheus-basic-auth
+  namespace: poulet
 data:
-  users: <redacted>
+  username: <redacted>
+  password: <redacted>
