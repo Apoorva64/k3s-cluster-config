@@ -36,10 +36,11 @@ spec:
             paths:
               - path: /
                 pathType: ImplementationSpecific
-        tls: [ ]
-        #  - secretName: chart-example-tls
-        #    hosts:
-        #      - chart-example.local
+        tls:
+          - secretName: prometheus-al-apoorva64-com-tls
+            hosts:
+              - prometheus.al.apoorva64.com
+
       alertmanager:
         enabled: false
         resources:
