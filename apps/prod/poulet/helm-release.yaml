@@ -85,7 +85,7 @@ spec:
             memory: "4Gi"
             cpu: "1000m"
         persistentVolume:
-          size: 1Gi
+          size: 5Gi
 
         extraArgs:
           web.enable-remote-write-receiver: null
