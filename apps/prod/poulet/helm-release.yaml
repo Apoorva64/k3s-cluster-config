@@ -121,6 +121,13 @@ spec:
         enabled: true
         hostname: keycloak.al.apoorva64.com
         tls: true
+        annotations:
+          kubernetes.io/ingress.class: traefik
+          cert-manager.io/cluster-issuer: letsencrypt-prod
+        extraPaths:
+          - hosts:
+              - keycloak.al.apoorva64.com
+            secretName: keycloak-al-apoorva64-com-tls
     alert-management:
       enabled: false
     mongodb:
