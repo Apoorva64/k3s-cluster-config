@@ -10,3 +10,4 @@ resources:
   - prometheus-basic-auth-sealed.yaml
   - keycloak-postgresql-secret-sealed.yaml
   - keycloak-secret-sealed.yaml
+  - keycloak-ingress.yaml
