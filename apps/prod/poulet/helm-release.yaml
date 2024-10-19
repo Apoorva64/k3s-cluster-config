@@ -106,6 +106,7 @@ spec:
               cpu: "400m"
     keycloak:
       enabled: true
+      proxy: edge
       auth:
         adminUser: admin
         existingSecret: keycloak-secret
@@ -119,6 +120,8 @@ spec:
             userPasswordKey: user-password
       ingress:
         enabled: false
+        hostname: keycloak.al.apoorva64.com
+
     alert-management:
       enabled: false
     mongodb:
