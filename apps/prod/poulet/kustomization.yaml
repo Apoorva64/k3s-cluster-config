@@ -8,3 +8,5 @@ resources:
   - helm-release.yaml
   - basic-auth-middleware.yaml
   - prometheus-basic-auth-sealed.yaml
+  - keycloak-postgresql-secret-sealed.yaml
+  - keycloak-secret-sealed.yaml

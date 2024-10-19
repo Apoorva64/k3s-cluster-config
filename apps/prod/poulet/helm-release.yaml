@@ -106,6 +106,13 @@ spec:
               cpu: "400m"
     keycloak:
       enabled: true
+      auth:
+        adminUser: admin
+        existingSecret: keycloak-secret
+        passwordSecretKey: password
+      postgresql:
+        auth:
+          existingSecret: keycloak-postgresql-secret
       ingress:
         enabled: true
         className: ""
