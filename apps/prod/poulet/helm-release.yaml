@@ -24,7 +24,7 @@ spec:
     nameOverride: ""
     fullnameOverride: ""
     prometheus:
-      enabled: false
+      enabled: true
       ingress:
         enabled: true
         annotations:
