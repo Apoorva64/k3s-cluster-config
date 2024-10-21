@@ -15,7 +15,7 @@ spec:
       interval: 12h
   values:
     grafana:
-      enabled: false
+      enabled: true
       replicas: 1
       extraSecretMounts:
         - name: auth-generic-oauth-secret-mount
