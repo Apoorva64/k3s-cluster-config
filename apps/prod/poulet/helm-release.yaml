@@ -106,7 +106,7 @@ spec:
               memory: "400Mi"
               cpu: "400m"
     keycloak:
-      enabled: false
+      enabled: true
       proxy: edge
       auth:
         adminUser: admin
