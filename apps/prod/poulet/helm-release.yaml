@@ -55,6 +55,31 @@ spec:
         limits:
           memory: "400Mi"
           cpu: "400m"
+      initChownData:
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "200m"
+          limits:
+            memory: "400Mi"
+            cpu: "400m"
+
+      sidecar:
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 50m
+            memory: 50Mi
+      imageRenderer:
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 50m
+            memory: 50Mi
       grafana.ini:
         server:
           root_url: https://grafana.al.apoorva64.com/
