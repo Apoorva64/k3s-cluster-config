@@ -186,7 +186,7 @@ spec:
     alert-management:
       enabled: false
     mongodb:
-      enabled: false
+      enabled: true
       auth:
         enabled: true
         existingSecret: mongo-db-secret
