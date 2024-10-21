@@ -13,5 +13,3 @@ resources:
   - keycloak-ingress.yaml
   - mongo-db-secret-sealed.yaml
   - grafana-oauth-secret-sealed.yaml
-  - grafana-helm-repository.yaml
-  - grafana-helm-release.yaml
