@@ -91,9 +91,6 @@ spec:
 
         extraArgs:
           web.enable-remote-write-receiver: null
-        #  - secretName: chart-example-tls
-        #    hosts:
-        #      - chart-example.local
 
 
       configmapReload:
@@ -126,6 +123,6 @@ spec:
     alert-management:
       enabled: false
     mongodb:
-      enabled: false
+      enabled: true
     patient-management:
       enabled: false

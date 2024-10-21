@@ -11,3 +11,4 @@ resources:
   - keycloak-postgresql-secret-sealed.yaml
   - keycloak-secret-sealed.yaml
   - keycloak-ingress.yaml
+  - mongo-db-secret-sealed.yaml
