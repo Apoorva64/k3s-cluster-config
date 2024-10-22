@@ -24,7 +24,7 @@ spec:
               fieldRef:
                   fieldPath: metadata.namespace
         - op: replace
-          path: /spec/template/spec/containers/0/env/value
+          path: /spec/template/spec/containers/0/env/0/value
           value: http://ollama-service.ollama.svc.cluster.local:8080
 
       target:
