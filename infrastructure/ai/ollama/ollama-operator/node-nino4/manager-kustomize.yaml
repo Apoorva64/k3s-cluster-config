@@ -13,32 +13,22 @@ spec:
     name: simple-ollama-operator
     namespace: flux-system
   patches:
+    # Add WATCH_NAMESPACE env var
+    # Replace OLLAMA_URL env var
     - patch: |-
-        apiVersion: apps/v1
-        kind: Deployment
-        metadata:
-          name: controller-manager
-          namespace: ollama-node-nino4
-        spec:
-          template:
-            spec:
-              containers:
-                - name: manager
-                  env:
-                    - name: WATCH_NAMESPACE
-                      valueFrom:
-                        fieldRef:
-                          fieldPath: metadata.namespace
-                    - name: POD_NAME
-                      valueFrom:
-                        fieldRef:
-                          fieldPath: metadata.name
-                    - name: OPERATOR_NAME
-                      value: "simple-ollama-operator"
-                    - name: OLLAMA_API_URL
-                      value: "http://ollama-api.ollama.svc.cluster.local:8080"
+        - op: add
+          path: /spec/template/spec/containers/0/env/-
+          value:
+            name: WATCH_NAMESPACE
+            valueFrom:
+              fieldRef:
+                  fieldPath: metadata.namespace
+        - op: add
+          path: /spec/template/spec/containers/0/env/-
+          value:
+            name: OLLAMA_URL
+            value: http://ollama-service.ollama.svc.cluster.local:8080
+
       target:
-        group: apps
         kind: Deployment
-        name: controller-manager
         namespace: ollama-node-nino4
