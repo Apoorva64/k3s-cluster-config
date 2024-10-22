@@ -1,5 +1,5 @@
 resources:
   - repository.yaml
   - crds-kustomize.yaml
-#  - node-apoorva3
-#  - node-nino4
+  - node-apoorva3
+  - node-nino4

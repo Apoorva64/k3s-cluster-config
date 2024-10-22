@@ -1,3 +1,2 @@
 resources:
   - namespace.yaml
-  - https://raw.githubusercontent.com/StartUpNationLabs/simple-ollama-operator/refs/heads/master/config/rbac/kustomization.yaml
