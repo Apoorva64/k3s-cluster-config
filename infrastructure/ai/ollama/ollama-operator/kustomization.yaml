@@ -1,4 +1,5 @@
 resources:
-  - https://raw.githubusercontent.com/StartUpNationLabs/simple-ollama-operator/refs/heads/master/config/crd/
+  - repository.yaml
+  - crds-kustomize.yaml
 #  - node-apoorva3
 #  - node-nino4
