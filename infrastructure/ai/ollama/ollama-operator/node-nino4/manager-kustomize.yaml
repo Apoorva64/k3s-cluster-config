@@ -17,7 +17,7 @@ spec:
         apiVersion: apps/v1
         kind: Deployment
         metadata:
-          name: manager
+          name: controller-manager
           namespace: ollama-node-nino4
         spec:
           template:
@@ -40,5 +40,5 @@ spec:
       target:
         group: apps
         kind: Deployment
-        name: manager
+        name: controller-manager
         namespace: ollama-node-nino4
