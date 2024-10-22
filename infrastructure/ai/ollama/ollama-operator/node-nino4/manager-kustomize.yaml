@@ -8,6 +8,7 @@ spec:
   path: ./config/manager
   prune: true
   targetNamespace: ollama-node-nino4
+  serviceAccountName: controller-manager
   sourceRef:
     kind: GitRepository
     name: simple-ollama-operator
