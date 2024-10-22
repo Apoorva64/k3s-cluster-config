@@ -1,0 +1,44 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: simple-ollama-operator-manager
+  namespace: ollama-node-nino4
+spec:
+  interval: 5m
+  path: ./config/manager
+  prune: true
+  targetNamespace: ollama-node-nino4
+  sourceRef:
+    kind: GitRepository
+    name: simple-ollama-operator
+    namespace: flux-system
+  patches:
+    - patch: |-
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: manager
+          namespace: ollama-node-nino4
+        spec:
+          template:
+            spec:
+              containers:
+                - name: manager
+                  env:
+                    - name: WATCH_NAMESPACE
+                      valueFrom:
+                        fieldRef:
+                          fieldPath: metadata.namespace
+                    - name: POD_NAME
+                      valueFrom:
+                        fieldRef:
+                          fieldPath: metadata.name
+                    - name: OPERATOR_NAME
+                      value: "simple-ollama-operator"
+                    - name: OLLAMA_API_URL
+                      value: "http://ollama-api.ollama.svc.cluster.local:8080"
+      target:
+        group: apps
+        kind: Deployment
+        name: manager
+        namespace: ollama-node-nino4

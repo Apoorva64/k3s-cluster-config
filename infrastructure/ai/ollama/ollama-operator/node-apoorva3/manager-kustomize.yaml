@@ -1,0 +1,14 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: simple-ollama-operator-manager
+  namespace: ollama-node-apoorva3
+spec:
+  interval: 5m
+  path: ./config/manager
+  prune: true
+  targetNamespace: ollama-node-apoorva3
+  sourceRef:
+    kind: GitRepository
+    name: simple-ollama-operator
+    namespace: flux-system
