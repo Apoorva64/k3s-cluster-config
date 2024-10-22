@@ -1,4 +1,4 @@
 resources:
-  - https://raw.githubusercontent.com/StartUpNationLabs/simple-ollama-operator/refs/heads/master/config/crd/
+  - https://raw.githubusercontent.com/StartUpNationLabs/simple-ollama-operator/refs/heads/master/config/crd/kustomization.yaml
   - node-apoorva3
   - node-nino4
