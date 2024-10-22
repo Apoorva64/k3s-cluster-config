@@ -1,3 +1,4 @@
 resources:
   - namespace.yaml
   - rbac-kustomize.yaml
+  - manager-kustomize.yaml
