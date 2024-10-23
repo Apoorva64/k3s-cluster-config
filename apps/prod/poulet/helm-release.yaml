@@ -259,6 +259,8 @@ spec:
           cpu: "400m"
         mongodb:
           existingSecret: mongo-db-secret
+          auth:
+            rootPassword: ""
         keycloak:
           authServerUrl: "https://keycloak.al.apoorva64.com/realms/poulet-realm"
         ingress:
