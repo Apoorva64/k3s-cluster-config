@@ -15,3 +15,6 @@ spec:
         kind: HelmRepository
         name: kali
       interval: 12h
+  values:
+    auth:
+      strategy: "anonymous"
