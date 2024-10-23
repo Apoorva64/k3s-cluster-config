@@ -20,4 +20,4 @@ spec:
       strategy: "anonymous"
     external_services:
       prometheus:
-        url: "kube-prometheus-stack-prometheus.monitoring.svc.cluster.local"
+        url: "http://kube-prometheus-stack-prometheus.monitoring.svc.cluster.local"
