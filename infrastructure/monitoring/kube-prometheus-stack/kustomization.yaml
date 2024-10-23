@@ -4,3 +4,4 @@ resources:
   - helm-repository.yaml
   - helm-release.yaml
   - auth-generic-oauth-secret-sealed.yaml
+  - istio-monitoring.yaml
