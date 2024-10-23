@@ -17,7 +17,11 @@ spec:
       interval: 12h
   values:
     auth:
-      strategy: "anonymous"
+      strategy: "openid"
+      openid:
+        client_id: "kiali-client"
+        disable_rbac: true
+        issuer_uri: "https://keycloak.auth.apoorva64.com/realms/lab/.well-known/openid-configuration"
     external_services:
       prometheus:
         url: "http://kube-prometheus-stack-prometheus.monitoring.svc.cluster.local:9090"
