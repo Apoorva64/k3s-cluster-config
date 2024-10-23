@@ -4,3 +4,4 @@ metadata:
   name: poulet
   labels:
     toolkit.fluxcd.io/tenant: sre-team
+    istio-injection: enabled
