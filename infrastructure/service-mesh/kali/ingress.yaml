@@ -9,7 +9,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
 spec:
   rules:
-    - host: kali.service-mesh.apoorva64.com
+    - host: kiali.service-mesh.apoorva64.com
       http:
         paths:
           - path: /
@@ -21,5 +21,5 @@ spec:
                   number: 9090
   tls:
     - hosts:
-        - kali.service-mesh.apoorva64.com
-      secretName: kali-service-tls
+        - kiali.service-mesh.apoorva64.com
+      secretName: kiali-service-tls
