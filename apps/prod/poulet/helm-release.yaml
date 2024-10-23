@@ -174,11 +174,11 @@ spec:
       server:
         resources:
           requests:
-            memory: "100Mi"
+            memory: "1Gi"
             cpu: "200m"
           limits:
-            memory: "4Gi"
-            cpu: "1000m"
+            memory: "8Gi"
+            cpu: "2000m"
         persistentVolume:
           storageClass: local-path
           size: 15Gi
