@@ -9,8 +9,8 @@ spec:
   interval: 60m
   chart:
     spec:
-      chart: istio
-      version: "1.0.0"
+      chart: base
+      version: "*"
       sourceRef:
         kind: HelmRepository
         name: istio
