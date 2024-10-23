@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: istio-base
+  namespace: istio-system
+  labels:
+    toolkit.fluxcd.io/tenant: sre-team
+spec:
+  interval: 60m
+  chart:
+    spec:
+      chart: base
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: istio
+      interval: 12h
