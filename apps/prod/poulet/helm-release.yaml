@@ -214,8 +214,6 @@ spec:
         enabled: false
         hostname: keycloak.al.apoorva64.com
 
-    alert-management:
-      enabled: false
     mongodb:
       enabled: true
       auth:
@@ -249,4 +247,32 @@ spec:
           - secretName: patient-management-tls
             hosts:
               - patient-management.al.apoorva64.com
+
+    alert-management:
+      enabled: true
+      resources:
+        requests:
+          memory: "100Mi"
+          cpu: "200m"
+        limits:
+          memory: "400Mi"
+          cpu: "400m"
+        mongodb:
+          existingSecret: mongo-db-secret
+        keycloak:
+          authServerUrl: "https://keycloak.al.apoorva64.com/realms/poulet-realm"
+        ingress:
+          enabled: true
+          annotations:
+            kubernetes.io/ingress.class: traefik
+            cert-manager.io/cluster-issuer: letsencrypt-prod
+          hosts:
+            - host: alert-management.al.apoorva64.com
+              paths:
+                - path: /
+                  pathType: ImplementationSpecific
+              tls:
+                - secretName: alert-management-tls
+                  hosts:
+                    - alert-management.al.apoorva64.com
 
