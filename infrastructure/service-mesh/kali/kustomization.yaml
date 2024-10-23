@@ -4,3 +4,4 @@ namespace: istio-system
 resources:
   - helm-repository.yaml
   - helm-release-server.yaml
+  - kiali-oidc-secret-sealed.yaml
