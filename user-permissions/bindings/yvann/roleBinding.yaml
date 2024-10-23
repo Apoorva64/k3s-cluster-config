@@ -12,5 +12,5 @@ subjects:
     name: yvann.ponce@gmail.com
     apiGroup: rbac.authorization.k8s.io
   - kind: User
-    name: appadooapoorva@gmail.com
+    name: apoorvaappadoo@gmail.com
     apiGroup: rbac.authorization.k8s.io
