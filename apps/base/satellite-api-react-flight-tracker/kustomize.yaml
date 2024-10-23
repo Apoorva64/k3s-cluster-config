@@ -10,3 +10,17 @@ spec:
   sourceRef:
     kind: GitRepository
     name: satellite-api-react-flight-tracker
+  patches:
+    - patch: |-
+        # set ressources of the first container to 100m CPU and 100Mi memory
+        - op: replace
+          path: /spec/template/spec/containers/0/resources
+          value:
+            limits:
+              cpu: 100m
+              memory: 100Mi
+            requests:
+              cpu: 100m
+              memory: 100Mi
+      target:
+        kind: Deployment
