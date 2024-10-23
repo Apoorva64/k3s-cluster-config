@@ -232,8 +232,7 @@ spec:
           memory: "400Mi"
           cpu: "400m"
       mongodb:
-        auth:
-          existingSecret: mongo-db-secret
+        existingSecret: mongo-db-secret
       ingress:
         enabled: true
         annotations:
