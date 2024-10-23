@@ -13,3 +13,10 @@ patches:
       kind: Kustomization
       name: react-flight-tracker
     path: kustomize-patch.yaml
+  - target:
+      kind: Namespace
+    patch: |-
+      - op: add
+        path: /metadata/labels
+        value:
+          istio-injection: enabled

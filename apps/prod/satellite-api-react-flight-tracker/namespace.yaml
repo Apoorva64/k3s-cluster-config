@@ -4,3 +4,4 @@ metadata:
   name: satellite-api-react-flight-tracker-prod
   labels:
     toolkit.fluxcd.io/tenant: sre-team
+    istio-injection: enabled
