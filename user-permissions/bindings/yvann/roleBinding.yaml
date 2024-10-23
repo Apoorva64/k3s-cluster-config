@@ -5,8 +5,8 @@ metadata:
   namespace: poulet
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: Role
-  name:  yvann-poulet
+  kind: ClusterRole
+  name:  admin
 subjects:
   - kind: User
     name: yvann.ponce@gmail.com
