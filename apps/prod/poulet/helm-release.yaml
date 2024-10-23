@@ -260,3 +260,19 @@ spec:
                 hosts:
                   - alert-management.al.apoorva64.com
 
+
+    analyse-haut-niveau-management:
+      enabled: true
+      resources:
+        requests:
+          memory: "100Mi"
+          cpu: "200m"
+        limits:
+          memory: "400Mi"
+          cpu: "400m"
+      mongodb:
+        existingSecret: mongo-db-secret
+      keycloak:
+        authServerUrl: "https://keycloak.al.apoorva64.com/realms/poulet-realm"
+    frontend:
+      enabled: false
