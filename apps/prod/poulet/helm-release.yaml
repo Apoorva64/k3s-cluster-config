@@ -259,8 +259,6 @@ spec:
               - secretName: alert-management-tls
                 hosts:
                   - alert-management.al.apoorva64.com
-
-
     analyse-haut-niveau-management:
       enabled: true
       resources:
