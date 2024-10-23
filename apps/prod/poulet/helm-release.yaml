@@ -25,23 +25,7 @@ spec:
           readOnly: true
 
 
-      datasources:
-        datasources.yaml:
-          apiVersion: 1
-          datasources:
-            - name: Prometheus
-              type: prometheus
-              url: http://poulet-prometheus-server
-              uid: prometheus
-              access: proxy
-              jsonData:
-                httpMethod: POST
-                manageAlerts: true
-                prometheusType: Prometheus
-                prometheusVersion: 2.44.0
-                cacheLevel: 'High'
-                disableRecordingRules: false
-                incrementalQueryOverlapWindow: 10m
+
       plugins:
         - grafana-piechart-panel
         - grafana-worldmap-panel
