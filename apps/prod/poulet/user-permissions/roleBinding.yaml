@@ -1,12 +1,12 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: yvann
+  name: user-permissions
   namespace: poulet
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name:  admin
+  name: admin
 subjects:
   - kind: User
     name: yvann.ponce@gmail.com

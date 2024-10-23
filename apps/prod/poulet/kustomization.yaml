@@ -13,3 +13,4 @@ resources:
   - keycloak-ingress.yaml
   - mongo-db-secret-sealed.yaml
   - grafana-oauth-secret-sealed.yaml
+  - user-permissions
