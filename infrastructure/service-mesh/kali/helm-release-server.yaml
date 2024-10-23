@@ -18,3 +18,6 @@ spec:
   values:
     auth:
       strategy: "anonymous"
+    external_services:
+      prometheus:
+        url: "kube-prometheus-stack-prometheus.monitoring.svc.cluster.local"
