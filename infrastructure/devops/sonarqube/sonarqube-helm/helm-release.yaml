@@ -43,5 +43,3 @@ spec:
       jdbcUsername: sonarqube
       jdbcSecretName: sonarqube-database-password
       jdbcSecretPasswordKey: password
-    nodeSelector:
-      kubernetes.io/arch: amd64
