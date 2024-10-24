@@ -203,6 +203,9 @@ spec:
       auth:
         enabled: true
         existingSecret: mongo-db-secret
+      nodeSelector:
+        beta.kubernetes.io/arch: amd64
+
 
     patient-management:
       enabled: true
