@@ -169,7 +169,9 @@ spec:
         retentionSize: "15GB"
         extraArgs:
           web.enable-remote-write-receiver: null
-
+        serverFiles:
+          prometheus.yml:
+            scrape_configs: [ ]
 
       configmapReload:
         prometheus:
