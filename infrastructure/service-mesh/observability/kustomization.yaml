@@ -3,6 +3,4 @@ kind: Kustomization
 namespace: observability
 resources:
   - namespace.yaml
-  - helm-repository.yaml
-  - helm-release.yaml
-  # - ingress.yaml
+  - jaeger
