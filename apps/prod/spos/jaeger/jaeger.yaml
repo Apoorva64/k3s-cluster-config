@@ -3,3 +3,12 @@ kind: Jaeger
 metadata:
   name: jaeger
   namespace: spos-prod
+spec:
+  strategy: allInOne
+  allInOne:
+    resources:
+      requests:
+        cpu: 200m
+        memory: 1Gi
+      limits:
+        memory: 4Gi
