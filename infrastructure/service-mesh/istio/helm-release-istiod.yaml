@@ -19,3 +19,10 @@ spec:
     global:
       proxy:
         tracer: zipkin
+    meshConfig:
+      extensionProviders: # The following content defines two example tracing providers.
+        - name: "localtrace"
+          zipkin:
+            service: "zipkin.istio-system.svc.cluster.local"
+            port: 9411
+            maxTagLength: 56
