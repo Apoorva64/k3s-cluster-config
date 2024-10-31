@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - istio
   - kali
-  - https://raw.githubusercontent.com/istio/istio/release-1.23/samples/addons/jaeger.yaml
+  - https://raw.githubusercontent.com/istio/istio/release-1.23/samples/addons/extras/zipkin.yaml
