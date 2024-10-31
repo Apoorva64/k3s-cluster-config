@@ -15,3 +15,7 @@ spec:
         kind: HelmRepository
         name: istio
       interval: 12h
+  values:
+    global:
+      proxy:
+        tracer: zipkin
