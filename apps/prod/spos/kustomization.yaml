@@ -5,6 +5,7 @@ resources:
   - ../../base/spos
   - mongo-db
   - backend
+  - jaeger
 
 namespace: spos-prod
 patchesStrategicMerge:
