@@ -3,4 +3,4 @@ kind: Kustomization
 namespace: observability
 resources:
   - namespace.yaml
-  - jaeger
+  - jaeger-operator
