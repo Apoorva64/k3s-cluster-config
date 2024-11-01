@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: jaeger-basic-auth
+  namespace: spos-prod
+type: kubernetes.io/basic-auth
+data:
+  username: <redacted>
+  password: <redacted>

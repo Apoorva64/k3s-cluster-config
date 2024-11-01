@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jaeger-ui-ingress
+  namespace: spos-prod
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    traefik.ingress.kubernetes.io/router.middlewares: spos-prod-jaeger-basic-auth@kubernetescrd
+spec:
+  rules:
+    - host: jaeger-ui.spos.polytech.apoorva64.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: jaeger-query
+                port:
+                  number: 16686
+  tls:
+    - hosts:
+        - jaeger-ui.spos.polytech.apoorva64.com
+      secretName: jaeger-ui-spos-prod-ingress-tls
