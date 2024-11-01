@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - jaeger.yaml
   - jaeger-basic-auth-sealed.yaml
-  - jaeger-basic-auth.yaml
   - ingress.yaml
+  - basic-auth-middleware.yaml
