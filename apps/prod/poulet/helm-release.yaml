@@ -132,7 +132,7 @@ spec:
               - prometheus.al.apoorva64.com
 
       alertmanager:
-        enabled: false
+        enabled: true
         resources:
           requests:
             memory: "100Mi"
