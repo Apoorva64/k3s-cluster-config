@@ -17,7 +17,7 @@ spec:
         app: satisfactory
     spec:
       nodeSelector:
-        "kubernetes.io/hostname": "node-apoorva3"
+        "kubernetes.io/hostname": "node-volcano2"
       automountServiceAccountToken: false
       containers:
         - name: satisfactory

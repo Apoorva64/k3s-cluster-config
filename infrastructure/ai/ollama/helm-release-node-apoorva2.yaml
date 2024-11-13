@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ollama-node-apoorva3
+  name: ollama-node-apoorva2
   namespace: ollama
   labels:
     toolkit.fluxcd.io/tenant: sre-team
@@ -17,13 +17,8 @@ spec:
         namespace: ollama
       interval: 12h
   values:
-#    resources:
-#      limits:
-#        memory: 8192Mi
-#        nvidia.com/gpu: 1
-#        cpu: 16000m
     nodeSelector:
-      nvidia.com/gpu.product: "NVIDIA-GeForce-GTX-1070-Ti"
+      kubernetes.io/hostname: node-apoorva2
 
     ollama:
       # If you want to use GPU, set it to true

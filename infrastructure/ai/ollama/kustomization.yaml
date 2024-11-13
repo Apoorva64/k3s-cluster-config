@@ -3,6 +3,5 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - helm-repository.yaml
-  - helm-release-node-apoorva3.yaml
-  - helm-release-node-nino4.yaml
+  - helm-release-node-apoorva2.yaml
   - ollama-operator
