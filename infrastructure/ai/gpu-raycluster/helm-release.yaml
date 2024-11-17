@@ -18,8 +18,8 @@ spec:
       interval: 12h
   values:
     image:
-      repository: rayproject/ray-ml
-      tag: 2.9.0-py39-cu118
+      repository: ghcr.io/startupnationlabs/rmbg-backend
+      tag: latest
       pullPolicy: IfNotPresent
     worker:
       runtimeClass: nvidia
@@ -28,7 +28,6 @@ spec:
       replicas: 1
       resources:
         limits:
-          nvidia.com/gpu: 1 # Required to use GPU.
           cpu: "4"
           memory: "12G"
       ports:
@@ -48,7 +47,6 @@ spec:
         kubernetes.io/arch: amd64
       resources:
         limits:
-          nvidia.com/gpu: 1 # Required to use GPU.
           cpu: "4"
           memory: "12G"
       ports:
