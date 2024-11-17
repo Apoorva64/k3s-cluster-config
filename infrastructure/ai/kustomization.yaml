@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - kube-ray
   - cpu-raycluster
-#  - gpu-raycluster
+  - gpu-raycluster
   - ollama
   - open-webui
 #  - stable-diffusion
