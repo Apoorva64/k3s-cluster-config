@@ -17,6 +17,7 @@ spec:
   strategy:
     type: Recreate
   template:
+
     metadata:
       annotations:
         kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert
@@ -25,6 +26,8 @@ spec:
       labels:
         io.kompose.service: redbot
     spec:
+      nodeSelector:
+        kubernetes.io/arch: amd64
       automountServiceAccountToken: false
       containers:
       - env:
