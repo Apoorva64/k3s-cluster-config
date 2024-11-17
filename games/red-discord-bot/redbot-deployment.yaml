@@ -42,12 +42,12 @@ spec:
         - name: SPOTIFY_CLIENT_SECRET
           valueFrom:
             secretKeyRef:
-              key: spotify
+              key: token
               name: spotify
         - name: YOUTUBE_API_KEY
           valueFrom:
             secretKeyRef:
-              key: youtube
+              key: token
               name: youtube
         - name: TZ
           value: Europe/Paris
