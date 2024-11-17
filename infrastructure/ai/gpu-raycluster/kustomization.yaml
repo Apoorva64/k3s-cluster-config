@@ -4,3 +4,4 @@ resources:
   - helm-release.yaml
   - ingress.yaml
   - dashboard-ingress.yaml
+  - ray-serve.yaml
