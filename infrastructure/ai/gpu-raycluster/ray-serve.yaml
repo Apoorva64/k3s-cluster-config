@@ -68,7 +68,7 @@ spec:
               downscale_delay_s: 600.0
               upscale_delay_s: 30.0
             ray_actor_options:
-              num_cpus: 4.0
+              num_cpus: 2.0
               num_gpus: 1.0
 
   rayClusterConfig:
@@ -92,7 +92,7 @@ spec:
               image: ghcr.io/startupnationlabs/rmbg-backend:sha-c90adb9ec376a7064902fcb7a291f61a379ec498
               resources:
                 limits:
-                  cpu: 2
+                  cpu: 4
                   memory: 4Gi
                 requests:
                   cpu: 2
@@ -132,7 +132,7 @@ spec:
                       command: ["/bin/sh","-c","ray stop"]
                 resources:
                   limits:
-                    cpu: "1"
+                    cpu: "4"
                     memory: "4Gi"
                   requests:
                     cpu: "500m"
