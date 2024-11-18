@@ -47,7 +47,10 @@ spec:
         import_path: main:app
         
         runtime_env:
-          working_dir: https://github.com/StartUpNationLabs/rmbg/raw/53089fbe3225a047d42f3dbb3464e0bf952c5ce2/apps/ray-serve/working_dir.zip
+          working_dir: https://github.com/StartUpNationLabs/rmbg/raw/477a4ec760a9764809d39936971b4b54b43af6eb/apps/ray-serve/working_dir.zip
+          pip:
+            - ./requirements.txt
+            
         
         deployments:
     
@@ -88,7 +91,7 @@ spec:
             kubernetes.io/arch: amd64
           containers:
             - name: ray-head
-              image: ghcr.io/startupnationlabs/rmbg-backend:latest
+              image: rayproject/ray-ml:2.39.0.deprecated-py310-gpu
               resources:
                 limits:
                   cpu: 2
@@ -124,7 +127,7 @@ spec:
               kubernetes.io/arch: amd64
             containers:
               - name: ray-worker # must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc'
-                image: ghcr.io/startupnationlabs/rmbg-backend:latest
+                image: rayproject/ray-ml:2.39.0.deprecated-py310-gpu
                 lifecycle:
                   preStop:
                     exec:
