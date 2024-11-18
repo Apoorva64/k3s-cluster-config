@@ -47,7 +47,7 @@ spec:
         import_path: main:app
         
         runtime_env:
-          working_dir: https://github.com/StartUpNationLabs/rmbg/raw/477a4ec760a9764809d39936971b4b54b43af6eb/apps/ray-serve/working_dir.zip
+          working_dir: https://github.com/StartUpNationLabs/rmbg/raw/ec52afb91c674be011cd0d5e146a37b01b20581d/apps/ray-serve/working_dir.zip
             
         
         deployments:
