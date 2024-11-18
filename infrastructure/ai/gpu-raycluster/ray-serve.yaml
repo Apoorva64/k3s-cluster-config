@@ -89,7 +89,7 @@ spec:
             kubernetes.io/arch: amd64
           containers:
             - name: ray-head
-              image: ghcr.io/startupnationlabs/rmbg-backend:sha-5fc5a5d34a4a079c2a2bb4774099e221f4e15891
+              image: ghcr.io/startupnationlabs/rmbg-backend:sha-c90adb9ec376a7064902fcb7a291f61a379ec498
               resources:
                 limits:
                   cpu: 2
@@ -125,7 +125,7 @@ spec:
               kubernetes.io/arch: amd64
             containers:
               - name: ray-worker # must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character (e.g. 'my-name',  or '123-abc'
-                image: ghcr.io/startupnationlabs/rmbg-backend:sha-5fc5a5d34a4a079c2a2bb4774099e221f4e15891
+                image: ghcr.io/startupnationlabs/rmbg-backend:sha-c90adb9ec376a7064902fcb7a291f61a379ec498
                 lifecycle:
                   preStop:
                     exec:
