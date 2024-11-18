@@ -93,7 +93,7 @@ spec:
               resources:
                 limits:
                   cpu: 4
-                  memory: 4Gi
+                  memory: 8Gi
                 requests:
                   cpu: 2
                   memory: 2Gi
@@ -110,7 +110,7 @@ spec:
       # the pod replicas in this group typed worker
       - replicas: 1
         minReplicas: 1
-        maxReplicas: 5
+        maxReplicas: 1
         # logical group name, for this called small-group, also can be functional
         groupName: small-group
         # The `rayStartParams` are used to configure the `ray start` command.
@@ -133,7 +133,7 @@ spec:
                 resources:
                   limits:
                     cpu: "4"
-                    memory: "4Gi"
+                    memory: "8Gi"
                   requests:
                     cpu: "500m"
                     memory: "2Gi"
