@@ -22,7 +22,7 @@ spec:
   jobLabel: app.kubernetes.io/name
   namespaceSelector:
     matchNames:
-    any: true
+      any: true
   selector:
     matchLabels:
       app.kubernetes.io/component: exporter
