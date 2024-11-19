@@ -193,6 +193,9 @@ spec:
           k8s-inner-network:
             gnetId: 20707
             revision: 2
+          kepler:
+            url: https://raw.githubusercontent.com/sustainable-computing-io/kepler/refs/heads/main/grafana-dashboards/Kepler-Exporter.json
+
           k8s-loadbalancer:
             url: 'https://raw.githubusercontent.com/rfmoz/grafana-dashboards/master/prometheus/haproxy-2-full.json'
         datacenter:
