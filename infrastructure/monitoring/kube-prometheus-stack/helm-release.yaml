@@ -91,15 +91,15 @@ spec:
           readOnly: true
 
 
-      additionalDataSources:
-        - name: loki
-          type: loki
-          url: http://loki-read.monitoring.svc.cluster.local:3100
-          jsonData:
-            tlsSkipVerify: true
-            httpHeaderName1: "X-Scope-OrgID"
-          secureJsonData:
-            httpHeaderValue1: "admins"
+      additionalDataSources: {}
+#        - name: loki
+#          type: loki
+#          url: http://loki-read.monitoring.svc.cluster.local:3100
+#          jsonData:
+#            tlsSkipVerify: true
+#            httpHeaderName1: "X-Scope-OrgID"
+#          secureJsonData:
+#            httpHeaderValue1: "admins"
       plugins:
         - grafana-piechart-panel
         - grafana-worldmap-panel
