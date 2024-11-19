@@ -1,9 +1,0 @@
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: GitRepository
-metadata:
-  name: spos
-spec:
-  interval: 5m
-  url: https://github.com/StartUpNationLabs/spos
-  ref:
-    branch: master

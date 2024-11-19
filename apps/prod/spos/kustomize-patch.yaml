@@ -1,7 +1,0 @@
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
-kind: Kustomization
-metadata:
-  name: spos
-spec:
-  path: ./manifest/main
-  targetNamespace: spos-prod

@@ -1,8 +1,0 @@
-apiVersion: traefik.io/v1alpha1
-kind: Middleware
-metadata:
-  name: jaeger-basic-auth
-  namespace: spos-prod
-spec:
-  basicAuth:
-    secret: jaeger-basic-auth

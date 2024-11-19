@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Secret
-metadata:
-  name: prometheus-basic-auth
-  namespace: poulet
-type: kubernetes.io/basic-auth
-data:
-  username: <redacted>
-  password: <redacted>
