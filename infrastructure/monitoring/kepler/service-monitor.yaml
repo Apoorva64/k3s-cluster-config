@@ -21,6 +21,7 @@ spec:
       scheme: http
   jobLabel: app.kubernetes.io/name
   namespaceSelector:
+    any: true
     matchNames:
       - monitoring
   selector:
