@@ -16,11 +16,11 @@ spec:
       interval: 48h
   values:
     defaultSettings:
-      backupTarget: "s3://k3s-longhorn-backup@us-east-1/"
+      backupTarget: "s3://backup-longhornp@us-east-1/"
       backupTargetCredentialSecret: "minio-secret"
     ingress:
       ## Set to true to enable ingress record generation
-      enabled: true
+      enabled: false
 
       ## Add ingressClassName to the Ingress
       ## Can replace the kubernetes.io/ingress.class annotation on v1.18+
