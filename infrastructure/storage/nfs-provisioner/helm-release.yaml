@@ -21,4 +21,4 @@ spec:
       server: 192.168.1.126
       path: /mnt/user/Home/apoorva
     nodeSelector:
-      kubernetes.io/hostname: node-apoorva2
+      beta.kubernetes.io/arch: amd64

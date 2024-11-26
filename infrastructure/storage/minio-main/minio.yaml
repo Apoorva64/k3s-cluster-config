@@ -8,18 +8,27 @@ spec:
   chart:
     spec:
       chart: minio
-      version: "14.8.5"
+      version: "13.8.4"
       sourceRef:
         kind: HelmRepository
         name: bitnami
         namespace: flux-system
       interval: 12h
   values:
-    replicas: 1
+    mode: distributed
+    replicas: 4
     persistence:
       storageClass: nfs-client
     nodeSelector:
       beta.kubernetes.io/arch: amd64
+    topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: DoNotSchedule
+        labelSelector:
+          matchLabels:
+            app.kubernetes.io/name: minio
+            app.kubernetes.io/instance: minio
     ingress:
       enabled: true
       className: traefik
