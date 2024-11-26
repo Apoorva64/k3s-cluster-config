@@ -4,3 +4,4 @@ resources:
   - repository.yaml
   - kustomize.yaml
   - rbac
+  - spacetrack-credentials-sealed.yaml
