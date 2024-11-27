@@ -166,139 +166,121 @@ spec:
  path: ./infrastructure/gpu
  prune: true
  wait: true
-# ---
-# apiVersion: kustomize.toolkit.fluxcd.io/v1
-# kind: Kustomization
-# metadata:
-#   name: logging
-#   namespace: flux-system
-# spec:
-#   dependsOn:
-#     - name: storage
-#   interval: 1h
-#   retryInterval: 1m
-#   timeout: 5m
-#   sourceRef:
-#     kind: GitRepository
-#     name: flux-system
-#   path: ./infrastructure/logging
-#   prune: true
-#   wait: true
-# ---
-# apiVersion: kustomize.toolkit.fluxcd.io/v1
-# kind: Kustomization
-# metadata:
-#   name: ai
-#   namespace: flux-system
-# spec:
-#   interval: 1h
-#   retryInterval: 1m
-#   timeout: 5m
-#   sourceRef:
-#     kind: GitRepository
-#     name: flux-system
-#   path: ./infrastructure/ai
-#   prune: true
-#   wait: true
-# ---
-# apiVersion: kustomize.toolkit.fluxcd.io/v1
-# kind: Kustomization
-# metadata:
-#   name: games
-#   namespace: flux-system
-# spec:
-#   interval: 1h
-#   retryInterval: 1m
-#   timeout: 5m
-#   sourceRef:
-#     kind: GitRepository
-#     name: flux-system
-#   path: ./games
-#   prune: true
-#   wait: true
-# ---
-# apiVersion: kustomize.toolkit.fluxcd.io/v1
-# kind: Kustomization
-# metadata:
-#   name: k3s-upgrade
-#   namespace: flux-system
-# spec:
-#   interval: 1h
-#   retryInterval: 1m
-#   timeout: 5m
-#   sourceRef:
-#     kind: GitRepository
-#     name: flux-system
-#   path: ./infrastructure/k3s-upgrade
-#   prune: true
-#   wait: true
-# ---
-# apiVersion: kustomize.toolkit.fluxcd.io/v1
-# kind: Kustomization
-# metadata:
-#   name: experiments
-#   namespace: flux-system
-# spec:
-#   interval: 1m
-#   retryInterval: 1m
-#   timeout: 5m
-#   sourceRef:
-#     kind: GitRepository
-#     name: flux-system
-#   path: ./experiments
-#   prune: true
-#   wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+ name: ai
+ namespace: flux-system
+spec:
+ interval: 1h
+ retryInterval: 1m
+ timeout: 5m
+ sourceRef:
+   kind: GitRepository
+   name: flux-system
+ path: ./infrastructure/ai
+ prune: true
+ wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+ name: games
+ namespace: flux-system
+spec:
+ interval: 1h
+ retryInterval: 1m
+ timeout: 5m
+ sourceRef:
+   kind: GitRepository
+   name: flux-system
+ path: ./games
+ prune: true
+ wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+ name: k3s-upgrade
+ namespace: flux-system
+spec:
+ interval: 1h
+ retryInterval: 1m
+ timeout: 5m
+ sourceRef:
+   kind: GitRepository
+   name: flux-system
+ path: ./infrastructure/k3s-upgrade
+ prune: true
+ wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+ name: experiments
+ namespace: flux-system
+spec:
+ interval: 1m
+ retryInterval: 1m
+ timeout: 5m
+ sourceRef:
+   kind: GitRepository
+   name: flux-system
+ path: ./experiments
+ prune: true
+ wait: true
 
 
 
-# ---
-# apiVersion: kustomize.toolkit.fluxcd.io/v1
-# kind: Kustomization
-# metadata:
-#   name: security
-#   namespace: flux-system
-# spec:
-#   interval: 1h
-#   retryInterval: 1m
-#   timeout: 5m
-#   sourceRef:
-#     kind: GitRepository
-#     name: flux-system
-#   path: ./infrastructure/security
-#   prune: true
-#   wait: true
-# ---
-# apiVersion: kustomize.toolkit.fluxcd.io/v1
-# kind: Kustomization
-# metadata:
-#   name: service-mesh
-#   namespace: flux-system
-# spec:
-#   interval: 1h
-#   retryInterval: 1m
-#   timeout: 5m
-#   sourceRef:
-#     kind: GitRepository
-#     name: flux-system
-#   path: ./infrastructure/service-mesh
-#   prune: true
-#   wait: true
-# ---
-# apiVersion: kustomize.toolkit.fluxcd.io/v1
-# kind: Kustomization
-# metadata:
-#   name: distributed-systems
-#   namespace: flux-system
-# spec:
-#   interval: 1h
-#   retryInterval: 1m
-#   timeout: 5m
-#   sourceRef:
-#     kind: GitRepository
-#     name: flux-system
-#   path: ./infrastructure/distributed-systems
-#   prune: true
-#   wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+ name: security
+ namespace: flux-system
+spec:
+ interval: 1h
+ retryInterval: 1m
+ timeout: 5m
+ sourceRef:
+   kind: GitRepository
+   name: flux-system
+ path: ./infrastructure/security
+ prune: true
+ wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+ name: service-mesh
+ namespace: flux-system
+spec:
+ interval: 1h
+ retryInterval: 1m
+ timeout: 5m
+ sourceRef:
+   kind: GitRepository
+   name: flux-system
+ path: ./infrastructure/service-mesh
+ prune: true
+ wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+ name: distributed-systems
+ namespace: flux-system
+spec:
+ interval: 1h
+ retryInterval: 1m
+ timeout: 5m
+ sourceRef:
+   kind: GitRepository
+   name: flux-system
+ path: ./infrastructure/distributed-systems
+ prune: true
+ wait: true
 #---
 #apiVersion: kustomize.toolkit.fluxcd.io/v1
 #kind: Kustomization
