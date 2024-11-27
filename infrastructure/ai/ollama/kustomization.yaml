@@ -5,3 +5,4 @@ resources:
   - helm-repository.yaml
   - helm-release-node-volcano1.yaml
   - ollama-operator
+  - helm-release-node-volcano2.yaml
