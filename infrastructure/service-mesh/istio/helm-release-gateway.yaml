@@ -1,0 +1,29 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: istio-gateway
+  namespace: istio-system
+  labels:
+    toolkit.fluxcd.io/tenant: sre-team
+spec:
+  interval: 60m
+  chart:
+    spec:
+      chart: gateway
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: istio
+      interval: 12h
+  values:
+    service:
+      type: NodePort
+      ports:
+        - name: http2
+          port: 28001
+          protocol: TCP
+          targetPort: 80
+        - name: https
+          port: 28002
+          protocol: TCP
+          targetPort: 443
