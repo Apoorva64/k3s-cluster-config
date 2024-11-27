@@ -6,6 +6,5 @@ resources:
   - helm-repository.yaml
   - helm-release-base.yaml
   - helm-release-istiod.yaml
-  - tracing.yaml
   - istio-monitoring.yaml
   - helm-release-gateway.yaml
