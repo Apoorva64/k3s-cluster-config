@@ -7,3 +7,4 @@ resources:
   - observability
   - knative
   - knative-serving
+  - knative-eventing
