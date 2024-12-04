@@ -8,3 +8,4 @@ resources:
   - knative
   - knative-serving
   - knative-eventing
+  - hello-world-knative.yaml
