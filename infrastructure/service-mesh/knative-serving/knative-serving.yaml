@@ -1,5 +1,15 @@
 apiVersion: operator.knative.dev/v1beta1
-kind: KnativeEventing
+kind: KnativeServing
 metadata:
-  name: knative-eventing
-  namespace: knative-eventing
+  name: knative-serving
+  namespace: knative-serving
+
+spec:
+  config:
+    istio:
+      local-gateways: |
+        - name: knative-local-gateway
+          namespace: knative-serving
+          service: knative-local-gateway.knative-serving.svc.cluster.local
+    domain:
+      "knative.apoorva64.com": ""
