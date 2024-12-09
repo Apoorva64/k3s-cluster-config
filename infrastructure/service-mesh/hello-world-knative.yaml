@@ -13,6 +13,3 @@ spec:
           env:
             - name: TARGET
               value: "World"
-  traffic:
-    - percent: 100
-      url: http://knative.apoorva64.com
