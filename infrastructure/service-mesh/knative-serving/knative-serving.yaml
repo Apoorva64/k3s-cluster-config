@@ -15,7 +15,7 @@ spec:
       "knative.apoorva64.com": ""
     network:
       autoTLS: Enabled
-      httpProtocol: Redirected
+      httpProtocol: Enabled
     certmanager:
       issuerRef: |
         kind: ClusterIssuer
