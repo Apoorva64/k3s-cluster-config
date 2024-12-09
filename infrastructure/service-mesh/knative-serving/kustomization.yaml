@@ -5,3 +5,4 @@ resources:
   - namespace.yaml
   - istio-gateway.yaml
   - lets-encrypt-istio-issuer.yaml
+  - istio-ingress-class.yaml
