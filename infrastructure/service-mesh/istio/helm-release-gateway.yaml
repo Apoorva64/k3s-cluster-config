@@ -23,7 +23,9 @@ spec:
           nodePort: 28001
           protocol: TCP
           targetPort: 80
+          port: 80
         - name: https
           nodePort: 28002
           protocol: TCP
           targetPort: 443
+          port: 443
