@@ -23,3 +23,6 @@ spec:
         protocol: HTTPS
       hosts:
         - "*"
+      tls:
+        mode: SIMPLE
+        credentialName: knative-serving/knative-serving-tls
