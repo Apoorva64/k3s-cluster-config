@@ -4,3 +4,4 @@ resources:
   - knative-serving.yaml
   - namespace.yaml
   - istio-gateway.yaml
+  - lets-encrypt-istio-issuer.yaml

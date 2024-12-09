@@ -16,3 +16,7 @@ spec:
     network:
       autoTLS: Enabled
       httpProtocol: Enabled
+    certmanager:
+      issuerRef: |
+        kind: ClusterIssuer
+        name: letsencrypt-istio-issuer
