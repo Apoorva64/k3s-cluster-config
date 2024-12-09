@@ -13,6 +13,6 @@ spec:
           service: knative-local-gateway.knative-serving.svc.cluster.local
     domain:
       "knative.apoorva64.com": ""
-    network:
+    network: |
       autoTLS: true
       httpProtocol: Enabled
