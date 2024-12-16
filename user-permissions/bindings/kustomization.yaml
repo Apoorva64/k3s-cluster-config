@@ -3,4 +3,3 @@ kind: Kustomization
 resources:
   - raphael-anjou.yaml
   - maxime.yaml
-  - yvan.yaml
