@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vcluster-platform
+  namespace: vcluster-platform
+  labels:
+    toolkit.fluxcd.io/tenant: sre-team
+spec:
+  interval: 60m
+  chart:
+    spec:
+      chart: vcluster-platform
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: loft
+        namespace: vcluster-platform
+      interval: 12h

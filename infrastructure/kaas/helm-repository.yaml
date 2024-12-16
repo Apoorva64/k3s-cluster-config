@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: loft
+  namespace: vcluster-platform
+  labels:
+    toolkit.fluxcd.io/tenant: sre-team
+spec:
+  interval: 60m0s
+  url: https://charts.loft.sh
