@@ -94,6 +94,6 @@ spec:
         additionalDataSources:
           - name: Prometheus
             type: prometheus
-            url: http://kube-prometheus-stack-prometheus.monitoring.svc.cluster.local
+            url: http://kube-prometheus-stack-prometheus.monitoring:9090
             access: proxy
             isDefault: true
