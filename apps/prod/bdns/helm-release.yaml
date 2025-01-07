@@ -60,13 +60,8 @@ spec:
         enabled: false
       nodeExporter:
         enabled: false
-      ## Flag to disable all the kubernetes component scrapers
-      ##
       kubernetesServiceMonitors:
         enabled: false
-
-      ## Component scraping the kube api server
-      ##
       kubeApiServer:
         enabled: false
       kubelet:
