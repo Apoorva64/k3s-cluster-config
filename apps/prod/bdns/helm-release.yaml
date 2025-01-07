@@ -87,3 +87,13 @@ spec:
         enabled: false
       prometheus:
         enabled: false
+
+      grafana:
+        enabled: true
+        defaultDashboardsEnabled: true
+        additionalDataSources:
+          - name: Prometheus
+            type: prometheus
+            url: http://kube-prometheus-stack-prometheus.monitoring.svc.cluster.local
+            access: proxy
+            isDefault: true
