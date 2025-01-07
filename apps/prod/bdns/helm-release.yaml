@@ -43,4 +43,35 @@ spec:
     eck-operator:
       enabled: false
     kube-prometheus-stack:
-      enabled: false
+      enabled: true
+      alertmanager:
+        enabled: false
+      nodeExporter:
+        enabled: false
+      ## Flag to disable all the kubernetes component scrapers
+      ##
+      kubernetesServiceMonitors:
+        enabled: false
+
+      ## Component scraping the kube api server
+      ##
+      kubeApiServer:
+        enabled: false
+      kubelet:
+        enabled: false
+      kubeControllerManager:
+        enabled: false
+      coreDns:
+        enabled: false
+      kubeEtcd:
+        enabled: false
+      kubeScheduler:
+        enabled: false
+      kubeProxy:
+        enabled: false
+      kubeStateMetrics:
+        enabled: false
+      prometheusOperator:
+        enabled: false
+      prometheus:
+        enabled: false
