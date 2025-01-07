@@ -9,7 +9,7 @@ spec:
   interval: 60m
   chart:
     spec:
-      chart: kserve-crd
+      chart: crd
       version: "0.14.1"
       sourceRef:
         kind: HelmRepository
