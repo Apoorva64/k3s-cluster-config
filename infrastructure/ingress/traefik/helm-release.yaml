@@ -55,25 +55,4 @@ spec:
         addRoutersLabels: true
     experimental:
       plugins:
-        enabled: true
-        sablier:
-          moduleName: "github.com/acouvreur/sablier"
-          version: "v1.6.0"
-        keycloakopenid:
-          moduleName: "github.com/Gwojda/keycloakopenid"
-          version: "v0.1.35"
-#    env:
-#      - name: "KEYCLOAK_URL"
-#        value: "keycloak.auth.apoorva64.com"
-#      - name: "KEYCLOAK_REALM"
-#        value: "lab"
-#      - name: "KEYCLOAK_CLIENT_ID"
-#        valueFrom:
-#          secretKeyRef:
-#            name: keycloak-auth
-#            key: client-id
-#      - name: "KEYCLOAK_CLIENT_SECRET"
-#        valueFrom:
-#          secretKeyRef:
-#            name: keycloak-auth
-#            key: client-secret
+        enabled: false
