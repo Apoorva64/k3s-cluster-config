@@ -9,8 +9,8 @@ spec:
   interval: 60m
   chart:
     spec:
-      chart: ''
-      version: "0.14.1"
+      chart: kserve
+      version: "*"
       sourceRef:
         kind: HelmRepository
         name: kserve-charts
