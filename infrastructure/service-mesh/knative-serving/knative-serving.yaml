@@ -16,6 +16,7 @@ spec:
     network:
       autoTLS: Enabled
       httpProtocol: Enabled
+      domainTemplate: "{{.Name}}.{{.Domain}}"
     certmanager:
       issuerRef: |
         kind: ClusterIssuer
