@@ -16,6 +16,3 @@ spec:
         name: kserve-charts
         namespace: kserve
       interval: 12h
-  values:
-    nodeSelector:
-      kubernetes.io/arch: amd64
