@@ -42,3 +42,5 @@ spec:
               - blacklist.polytech.apoorva64.com
     eck-operator:
       enabled: false
+    kube-prometheus-stack:
+      enabled: false
