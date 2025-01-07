@@ -40,3 +40,5 @@ spec:
           - secretName: blacklist-tls
             hosts:
               - blacklist.polytech.apoorva64.com
+    eck-operator:
+      enabled: false
