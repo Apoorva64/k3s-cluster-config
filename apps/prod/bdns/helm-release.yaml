@@ -96,7 +96,6 @@ spec:
             type: prometheus
             url: http://kube-prometheus-stack-prometheus.monitoring:9090
             access: proxy
-            isDefault: true
         plugins:
           - grafana-piechart-panel
           - grafana-worldmap-panel
