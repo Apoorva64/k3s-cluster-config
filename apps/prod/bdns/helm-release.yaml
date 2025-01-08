@@ -86,9 +86,9 @@ spec:
       grafana:
         enabled: true
         defaultDashboardsEnabled: true
-        additionalDataSources:
-          - name: Prometheus
-            type: prometheus
-            url: http://kube-prometheus-stack-prometheus.monitoring:9090
-            access: proxy
-            isDefault: true
+#        additionalDataSources:
+#          - name: Prometheus
+#            type: prometheus
+#            url: http://kube-prometheus-stack-prometheus.monitoring:9090
+#            access: proxy
+#            isDefault: true
