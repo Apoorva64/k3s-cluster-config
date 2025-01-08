@@ -36,28 +36,28 @@ spec:
       ingress:
         enabled: true
         hosts:
-          - host: bdns.al.polytech.apoorva64.com
+          - host: bdns.al.apoorva64.com
             paths:
               - path: /
                 pathType: Prefix
         tls:
           - secretName: bdns-tls
             hosts:
-              - bdns.al.polytech.apoorva64.com
+              - bdns.al.apoorva64.com
     blacklist_api:
       image:
         tag: 'sha-c9ae455'
       ingress:
         enabled: true
         hosts:
-          - host: blacklist.al.polytech.apoorva64.com
+          - host: blacklist.al.apoorva64.com
             paths:
               - path: /
                 pathType: Prefix
         tls:
           - secretName: blacklist-tls
             hosts:
-              - blacklist.al.polytech.apoorva64.com
+              - blacklist.al.apoorva64.com
     eck-operator:
       enabled: false
     kube-prometheus-stack:
@@ -106,10 +106,10 @@ spec:
         ingress:
           enabled: true
           hosts:
-            - grafana.al.polytech.apoorva64.com
+            - grafana.al.apoorva64.com
           tls:
             - secretName: grafana-tls
               hosts:
-                - grafana.al.polytech.apoorva64.com
+                - grafana.al.apoorva64.com
           path: /
           pathType: Prefix
