@@ -28,7 +28,11 @@ spec:
         name: bdns
         namespace: bdns
   values:
+
     bdns_api:
+      image:
+        tag: 'sha-c9ae455'
+
       ingress:
         enabled: true
         hosts:
@@ -41,6 +45,8 @@ spec:
             hosts:
               - bdns.polytech.apoorva64.com
     blacklist_api:
+      image:
+        tag: 'sha-c9ae455'
       ingress:
         enabled: true
         hosts:
