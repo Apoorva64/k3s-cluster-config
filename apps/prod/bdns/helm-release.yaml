@@ -36,28 +36,28 @@ spec:
       ingress:
         enabled: true
         hosts:
-          - host: bdns.polytech.apoorva64.com
+          - host: bdns.al.polytech.apoorva64.com
             paths:
               - path: /
                 pathType: Prefix
         tls:
           - secretName: bdns-tls
             hosts:
-              - bdns.polytech.apoorva64.com
+              - bdns.al.polytech.apoorva64.com
     blacklist_api:
       image:
         tag: 'sha-c9ae455'
       ingress:
         enabled: true
         hosts:
-          - host: blacklist.polytech.apoorva64.com
+          - host: blacklist.al.polytech.apoorva64.com
             paths:
               - path: /
                 pathType: Prefix
         tls:
           - secretName: blacklist-tls
             hosts:
-              - blacklist.polytech.apoorva64.com
+              - blacklist.al.polytech.apoorva64.com
     eck-operator:
       enabled: false
     kube-prometheus-stack:
@@ -103,3 +103,13 @@ spec:
             url: http://kube-prometheus-stack-prometheus.monitoring:9090
             access: proxy
             isDefault: true
+        ingress:
+          enabled: true
+          hosts:
+            - grafana.al.polytech.apoorva64.com
+          tls:
+            - secretName: grafana-tls
+              hosts:
+                - grafana.al.polytech.apoorva64.com
+          path: /
+          pathType: Prefix
