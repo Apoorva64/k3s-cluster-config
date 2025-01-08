@@ -4,3 +4,4 @@ resources:
   - repository.yaml
   - namespace.yaml
   - helm-release.yaml
+  - grafana-secret-sealed.yaml
