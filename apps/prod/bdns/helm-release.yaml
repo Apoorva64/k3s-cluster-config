@@ -97,6 +97,8 @@ spec:
 
       grafana:
         enabled: true
+        image:
+          tag: 10.4.14
         sidecar:
           datasources:
             enabled: true
