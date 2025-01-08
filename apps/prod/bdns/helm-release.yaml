@@ -55,7 +55,7 @@ spec:
     eck-operator:
       enabled: false
     kube-prometheus-stack:
-      enabled: true
+      enabled: false
       alertmanager:
         enabled: false
       nodeExporter:
@@ -85,7 +85,7 @@ spec:
 
       grafana:
         enabled: true
-        defaultDashboardsEnabled: true
+#        defaultDashboardsEnabled: true
 #        additionalDataSources:
 #          - name: Prometheus
 #            type: prometheus
