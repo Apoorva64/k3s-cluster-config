@@ -34,6 +34,9 @@ spec:
         tag: 'sha-c9ae455'
 
       ingress:
+        annotations:
+          kubernetes.io/ingress.class: traefik
+          cert-manager.io/cluster-issuer: letsencrypt-prod
         enabled: true
         hosts:
           - host: bdns.al.apoorva64.com
@@ -48,6 +51,9 @@ spec:
       image:
         tag: 'sha-c9ae455'
       ingress:
+        annotations:
+          kubernetes.io/ingress.class: traefik
+          cert-manager.io/cluster-issuer: letsencrypt-prod
         enabled: true
         hosts:
           - host: blacklist.al.apoorva64.com
@@ -108,6 +114,9 @@ spec:
             access: proxy
             isDefault: true
         ingress:
+          annotations:
+            kubernetes.io/ingress.class: traefik
+            cert-manager.io/cluster-issuer: letsencrypt-prod
           enabled: true
           hosts:
             - grafana.al.apoorva64.com
