@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: potatobank
+  namespace: potatobank
+spec:
+  template:
+    spec:
+      containers:
+        - image: ghcr.io/startupnationlabs/potatobank:latest
+          ports:
+            - containerPort: 8080
