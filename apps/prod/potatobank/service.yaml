@@ -5,6 +5,9 @@ metadata:
   namespace: potatobank
 spec:
   template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "1"
     spec:
       containers:
         - image: ghcr.io/startupnationlabs/potatobank:latest
