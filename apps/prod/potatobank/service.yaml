@@ -10,6 +10,6 @@ spec:
         autoscaling.knative.dev/minScale: "1"
     spec:
       containers:
-        - image: ghcr.io/startupnationlabs/potatobank:sha-778f3b2d67dd9a7bcedda6296f70be7ec88197c0
+        - image: ghcr.io/startupnationlabs/potatobank:sha-bc73fa02022b1069a035400654f2b980db37dc41
           ports:
             - containerPort: 8000
