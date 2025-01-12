@@ -49,6 +49,8 @@ spec:
             hosts:
               - bdns.al.apoorva64.com
     blacklist_api:
+      knative:
+        enabled: true
       image:
         tag: 'sha-c9ae455'
       ingress:
