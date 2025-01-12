@@ -9,4 +9,4 @@ resources:
   - db-operators
 #  - redis
   - nfs-provisioner
-  - minio-main
+#  - minio-main
