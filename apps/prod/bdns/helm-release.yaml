@@ -51,6 +51,7 @@ spec:
     blacklist_api:
       knative:
         enabled: true
+        maxScale: 5
       image:
         tag: 'sha-c9ae455'
       ingress:
