@@ -31,7 +31,7 @@ spec:
 
     bdns_api:
       image:
-        tag: 'sha-42ae294'
+        tag: 'sha-63d76b9'
 
       ingress:
         annotations:
