@@ -28,10 +28,9 @@ spec:
         name: bdns
         namespace: bdns
   values:
-
     bdns_api:
       image:
-        tag: 'sha-63d76b9'
+        tag: "sha-c5af269"
 
       ingress:
         annotations:
@@ -53,7 +52,7 @@ spec:
         enabled: true
         maxScale: 5
       image:
-        tag: 'sha-c9ae455'
+        tag: "sha-c9ae455"
       ingress:
         annotations:
           kubernetes.io/ingress.class: traefik
