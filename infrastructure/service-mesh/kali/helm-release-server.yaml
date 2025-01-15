@@ -16,6 +16,9 @@ spec:
         name: kali
       interval: 12h
   values:
+    deployment:
+      pod_annotations:
+        proxy.istio.io/config: '{ "holdApplicationUntilProxyStarts": true }'
     auth:
       strategy: "openid"
       openid:
