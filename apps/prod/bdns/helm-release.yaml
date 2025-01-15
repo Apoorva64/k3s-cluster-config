@@ -28,6 +28,9 @@ spec:
         name: bdns
         namespace: bdns
   values:
+    defaultRules:
+      enabled: false
+
     bdns_api:
       image:
         tag: "sha-c5af269"
