@@ -42,11 +42,11 @@ spec:
         targetMemoryUtilizationPercentage: 80
       resources:
         limits:
+          cpu: 1000m
+          memory: 400Mi
+        requests:
           cpu: 500m
           memory: 200Mi
-        requests:
-          cpu: 100m
-          memory: 50Mi
 
       ingress:
         annotations:
