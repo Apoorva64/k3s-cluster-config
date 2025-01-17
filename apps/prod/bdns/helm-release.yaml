@@ -127,6 +127,43 @@ spec:
           existingSecret: "bdns-grafana"
           userKey: admin-user
           passwordKey: admin-password
+        additionalDataSources:
+          - name: Prometheus
+            type: prometheus
+            url: http://kube-prometheus-stack-prometheus.monitoring:9090
+            access: proxy
+            isDefault: true
+          - uid: Elasticsearch
+            orgId: 1
+            name: Elasticsearch
+            type: elasticsearch
+            access: proxy
+            url: $__env{ELASTICSEARCH_HOSTS}:$__env{ELASTICSEARCH_PORT}
+            basicAuth: true
+            basicAuthUser: elastic
+            secureJsonData:
+              basicAuthPassword: $__env{ELASTICSEARCH_PASSWORD}
+            isDefault: false
+            jsonData:
+              index: bdns-*
+              timeField: "@timestamp"
+              tlsSkipVerify: true
+          - uid: Redis
+            orgId: 1
+            name: Redis
+            type: redis-datasource
+            access: proxy
+            url: $__env{REDIS_HOST}
+            isDefault: false
+            editable: true
+            jsonData:
+              client: standalone
+              poolSize: 5
+              timeout: 10
+              pingInterval: 0
+              pipelineWindow: 0
+            secureJsonData:
+              password: $__env{REDIS_PASSWORD}
         ingress:
           annotations:
             kubernetes.io/ingress.class: traefik
