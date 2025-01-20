@@ -33,7 +33,7 @@ spec:
 
     bdns_api:
       image:
-        tag: "sha-c112ffb"
+        tag: "sha-72509e0"
       autoscaling:
         enabled: true
         minReplicas: 1
