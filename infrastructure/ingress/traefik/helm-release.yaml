@@ -44,6 +44,22 @@ spec:
       #          effect: "NoSchedule"
       service:
         ipFamilyPolicy: "PreferDualStack"
+    ports:
+      web:
+        # enable Proxy Protocol
+        # https://docs.traefik.io/routing/entrypoints/#proxyprotocol
+        proxyProtocol:
+          trustedIPs:
+            - "129.151.229.226"
+            - "100.64.0.1"
+      websecure:
+        # enable Proxy Protocol
+        # https://docs.traefik.io/routing/entrypoints/#proxyprotocol
+        proxyProtocol:
+          trustedIPs:
+            - "129.151.229.226"
+            - "100.64.0.1"
+
     metrics:
       ## -- Prometheus is enabled by default.
       ## -- It can be disabled by setting "prometheus: null"
