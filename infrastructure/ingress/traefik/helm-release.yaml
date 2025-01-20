@@ -49,12 +49,16 @@ spec:
         # enable Proxy Protocol
         # https://docs.traefik.io/routing/entrypoints/#proxyprotocol
         proxyProtocol:
-          insecure: true
+          trustedIPs:
+            - "129.151.229.226"
+            - "100.64.0.1"
       websecure:
         # enable Proxy Protocol
         # https://docs.traefik.io/routing/entrypoints/#proxyprotocol
         proxyProtocol:
-          insecure: true
+          trustedIPs:
+            - "129.151.229.226"
+            - "100.64.0.1"
 
     metrics:
       ## -- Prometheus is enabled by default.
