@@ -54,6 +54,7 @@ spec:
             - "100.64.0.0/10"
             - "127.0.0.1/32"
             - "10.0.0.109"
+          insecure: true
       websecure:
         # enable Proxy Protocol
         # https://docs.traefik.io/routing/entrypoints/#proxyprotocol
@@ -63,6 +64,7 @@ spec:
             - "100.64.0.0/10"
             - "127.0.0.1/32"
             - "10.0.0.109"
+          insecure: true
 
     metrics:
       ## -- Prometheus is enabled by default.
