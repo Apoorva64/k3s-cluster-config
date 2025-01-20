@@ -50,10 +50,14 @@ spec:
         # https://docs.traefik.io/routing/entrypoints/#proxyprotocol
         proxyProtocol:
           insecure: true
+        forwardedHeaders:
+          insecure: true
       websecure:
         # enable Proxy Protocol
         # https://docs.traefik.io/routing/entrypoints/#proxyprotocol
         proxyProtocol:
+          insecure: true
+        forwardedHeaders:
           insecure: true
 
     metrics:
