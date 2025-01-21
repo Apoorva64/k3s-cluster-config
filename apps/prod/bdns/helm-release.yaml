@@ -67,7 +67,7 @@ spec:
         enabled: true
         maxScale: 5
       image:
-        tag: "sha-1524afd"
+        tag: "sha-45ce656"
       ingress:
         annotations:
           kubernetes.io/ingress.class: traefik
