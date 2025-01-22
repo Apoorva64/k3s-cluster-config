@@ -4,8 +4,6 @@ metadata:
   name: open-webui-deployment
   namespace: open-webui
 spec:
-  strategy:
-    type: Recreate
   replicas: 1
   selector:
     matchLabels:
