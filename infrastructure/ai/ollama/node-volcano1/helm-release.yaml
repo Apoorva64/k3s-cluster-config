@@ -27,7 +27,7 @@ spec:
         number: 1
     persistentVolume:
       enabled: true
-      storageClass: local-path
+      existingClaim: ollama-node-volcano1-pvc
   # use nvidia containerRuntime
   postRenderers:
     - kustomize:
