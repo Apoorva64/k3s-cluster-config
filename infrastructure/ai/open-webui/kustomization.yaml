@@ -7,3 +7,4 @@ resources:
   - webui-service.yaml
   - ingress.yaml
   - deployment.yaml
+  - postgres.yaml
