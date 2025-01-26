@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ollama-node-main-volcano2
+  name: ollama-node-apoorva2
   namespace: ollama
   labels:
     toolkit.fluxcd.io/tenant: sre-team
@@ -18,7 +18,7 @@ spec:
       interval: 12h
   values:
     nodeSelector:
-      kubernetes.io/hostname: node-volcano2
+      kubernetes.io/hostname: node-apoorva2
 
     ollama:
       # If you want to use GPU, set it to true
@@ -27,7 +27,7 @@ spec:
         number: 1
     persistentVolume:
       enabled: true
-      storageClass: local-path
+      existingClaim: ollama-node-apoorva2-pvc
   # use nvidia containerRuntime
   postRenderers:
     - kustomize:

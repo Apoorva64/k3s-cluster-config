@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ollama-node-volcano2-pvc
+  namespace: ollama
+  annotations:
+    volume.beta.kubernetes.io/storage-path: "/mnt/ollama"
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 64Gi
