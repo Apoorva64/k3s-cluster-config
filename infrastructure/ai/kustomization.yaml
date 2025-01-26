@@ -7,5 +7,5 @@ resources:
   - ollama
   - open-webui
   #  - stable-diffusion
-  - comfyui
+  # - comfyui
   - kserve
