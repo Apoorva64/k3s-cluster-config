@@ -19,4 +19,4 @@ spec:
         secretAccessKey:
           name: minio-creds
           key: ACCESS_SECRET_KEY
-      endpoint: "minio.ozeliurs.com"
+      endpointURL: "http://minio.ozeliurs.com:9000"
