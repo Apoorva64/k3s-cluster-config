@@ -26,8 +26,11 @@ spec:
               cpu: "4000m"
               memory: "4Gi"
           env:
-            - name: OLLAMA_BASE_URL
-              value: "http://ollama-node-main.ollama.svc.cluster.local:11434"
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: open-webui-db-app
+                  key: uri
           tty: true
           volumeMounts:
             - name: webui-volume
