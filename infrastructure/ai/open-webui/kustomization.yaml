@@ -8,3 +8,4 @@ resources:
   - ingress.yaml
   - deployment.yaml
   - postgres.yaml
+  - sealed-secret.yaml
