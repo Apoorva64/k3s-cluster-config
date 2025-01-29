@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: dask-kubernetes-operator
+  namespace: dask-operator
+spec:
+  interval: 60m
+  chart:
+    spec:
+      chart: dask-kubernetes-operator
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: dask-operator
+        namespace: dask-operator
+      interval: 24h
