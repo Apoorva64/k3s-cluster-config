@@ -8,6 +8,17 @@ spec:
   worker:
     replicas: 3
     spec:
+      ## do not put the workers on same node
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: dask.org/cluster-name
+                    operator: In
+                    values:
+                      - simple
+              topologyKey: "kubernetes.io/hostname"
       containers:
         - name: worker
           image: "ghcr.io/dask/dask:latest"
