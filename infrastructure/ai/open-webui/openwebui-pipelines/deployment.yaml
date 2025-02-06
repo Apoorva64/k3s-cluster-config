@@ -19,6 +19,10 @@ spec:
           ports:
             - containerPort: 9099
           env:
+            - name: OLLAMA_BASE_URL
+              value: http://ollama-node-volcano1.ollama.svc.cluster.local:11434
+            - name: PIPELINES_URLS
+              value: https://github.com/open-webui/pipelines/blob/main/examples/pipelines/providers/ollama_manifold_pipeline.py
             - name: PIPELINES_API_KEY
               valueFrom:
                 secretKeyRef:
