@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openwebui-pipelines-deployment
+  namespace: open-webui
+spec:
+  selector:
+    matchLabels:
+      app: pipelines
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: openwebui-pipelines
+    spec:
+      containers:
+        - name: openwebui-pipelines
+          image: ghcr.io/open-webui/pipelines:main
+          ports:
+            - containerPort: 9099
+          env:
+            - name: PIPELINES_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: openwebui-pipelines-secret
+                  key: PIPELINES_API_KEY
+          volumeMounts:
+            - name: openwebui-pipelines-volume
+              mountPath: /app/pipelines
+      volumes:
+        - name: openwebui-pipelines-volume
+          persistentVolumeClaim:
+            claimName: openwebui-pipelines-pvc
