@@ -3,16 +3,22 @@ kind: Kustomization
 namespace: open-webui
 resources:
   - namespace.yaml
+  - sealed-secret.yaml
 
   - openwebui/pvc.yaml
   - openwebui/service.yaml
   - openwebui/ingress.yaml
   - openwebui/deployment.yaml
 
-  - openwebui-db/postgres.yaml
-  - openwebui-db/sealed-secret.yaml
+  # - openwebui-db/postgres.yaml
 
   - openwebui-pipelines/service.yaml
   - openwebui-pipelines/deployment.yaml
   - openwebui-pipelines/pvc.yaml
   - openwebui-pipelines/sealed-secret.yaml
+
+  # - langfuse-db/postgres.yaml
+
+  - langfuse/helm-release.yaml
+  - langfuse/helm-repository.yaml
+  - sealed-secret.yaml

@@ -1,0 +1,38 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: langfuse
+  namespace: open-webui
+  labels:
+    toolkit.fluxcd.io/tenant: sre-team
+spec:
+  interval: 60m
+  chart:
+    spec:
+      chart: langfuse
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: langfuse
+        namespace: langfuse
+      interval: 12h
+  values:
+    langfuse:
+      telemetryEnabled: False
+
+      additionalEnv:
+        # S3 / MinIO
+        - name: "LANGFUSE_S3_EVENT_UPLOAD_ACCESS_KEY_ID"
+          valueFrom:
+            secretKeyRef:
+              name: langfuse-secret
+              key: LANGFUSE_S3_EVENT_UPLOAD_ACCESS_KEY_ID
+        - name: "LANGFUSE_S3_EVENT_UPLOAD_SECRET_ACCESS_KEY"
+          valueFrom:
+            secretKeyRef:
+              name: langfuse-secret
+              key: LANGFUSE_S3_EVENT_UPLOAD_SECRET_ACCESS_KEY
+        - name: "LANGFUSE_S3_EVENT_UPLOAD_ENDPOINT"
+          value: "http://minio.ozeliurs.com:9000"
+    minio:
+      deploy: false
