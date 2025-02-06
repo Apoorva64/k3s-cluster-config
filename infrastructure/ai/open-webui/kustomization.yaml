@@ -21,4 +21,4 @@ resources:
 
   - langfuse/helm-release.yaml
   - langfuse/helm-repository.yaml
-  - sealed-secret.yaml
+  - langfuse/sealed-secret.yaml

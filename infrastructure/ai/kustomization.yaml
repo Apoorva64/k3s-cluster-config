@@ -6,6 +6,6 @@ resources:
   #  - rmbg
   - ollama
   - open-webui
-  #  - stable-diffusion
+  # - stable-diffusion
   # - comfyui
   # - kserve
