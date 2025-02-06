@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: pipelines
+      app: openwebui-pipelines
   replicas: 1
   template:
     metadata:
