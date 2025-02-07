@@ -34,5 +34,7 @@ spec:
               key: ACCESS_SECRET_KEY
         - name: "LANGFUSE_S3_EVENT_UPLOAD_ENDPOINT"
           value: "http://minio.ozeliurs.com:9000"
+        - name: "LANGFUSE_S3_EVENT_UPLOAD_BUCKET"
+          value: "langfuse"
     minio:
       deploy: false
