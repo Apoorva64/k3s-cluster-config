@@ -21,6 +21,18 @@ spec:
       telemetryEnabled: False
 
       additionalEnv:
+        # REDIS
+        - name: "REDIS_CONNECTION_STRING"
+          value: "redis://default:changeme@langfuse-valkey-primary:6379/0"
+        # CLICKHOUSE
+        - name: "CLICKHOUSE_MIGRATION_URL"
+          value: "clickhouse://langfuse-clickhouse:9000"
+        - name: "CLICKHOUSE_URL"
+          value: "http://langfuse-clickhouse:8123"
+        - name: "CLICKHOUSE_USER"
+          value: "default"
+        - name: "CLICKHOUSE_PASSWORD"
+          value: "changeme"
         # S3 / MinIO
         - name: "LANGFUSE_S3_EVENT_UPLOAD_ACCESS_KEY_ID"
           valueFrom:
