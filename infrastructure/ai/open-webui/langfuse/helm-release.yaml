@@ -26,12 +26,12 @@ spec:
           valueFrom:
             secretKeyRef:
               name: langfuse-secret
-              key: LANGFUSE_S3_EVENT_UPLOAD_ACCESS_KEY_ID
+              key: ACCESS_KEY_ID
         - name: "LANGFUSE_S3_EVENT_UPLOAD_SECRET_ACCESS_KEY"
           valueFrom:
             secretKeyRef:
               name: langfuse-secret
-              key: LANGFUSE_S3_EVENT_UPLOAD_SECRET_ACCESS_KEY
+              key: ACCESS_SECRET_KEY
         - name: "LANGFUSE_S3_EVENT_UPLOAD_ENDPOINT"
           value: "http://minio.ozeliurs.com:9000"
     minio:
