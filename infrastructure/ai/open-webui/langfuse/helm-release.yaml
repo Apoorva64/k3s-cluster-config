@@ -17,6 +17,9 @@ spec:
         namespace: langfuse
       interval: 12h
   values:
+    image:
+      tag: 3.24
+
     langfuse:
       telemetryEnabled: False
 
