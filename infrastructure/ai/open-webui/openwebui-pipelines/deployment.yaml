@@ -19,15 +19,27 @@ spec:
           ports:
             - containerPort: 9099
           env:
-            - name: OLLAMA_BASE_URL
-              value: http://ollama-node-volcano1.ollama.svc.cluster.local:11434
-            - name: PIPELINES_URLS
-              value: https://github.com/open-webui/pipelines/blob/main/examples/pipelines/providers/ollama_manifold_pipeline.py
+            # General
             - name: PIPELINES_API_KEY
               valueFrom:
                 secretKeyRef:
                   name: openwebui-pipelines-secret
                   key: PIPELINES_API_KEY
+            - name: PIPELINES_URLS
+              value: https://github.com/open-webui/pipelines/blob/main/examples/filters/langfuse_filter_pipeline.py
+            # Langfuse Filter
+            - name: LANGFUSE_HOST
+              value: "http://langfuse-web.langfuse.svc.cluster.local:3000"
+            - name: LANGFUSE_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: openwebui-pipelines-secret
+                  key: SECRET_KEY
+            - name: LANGFUSE_PUBLIC_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: openwebui-pipelines-secret
+                  key: PUBLIC_KEY
           volumeMounts:
             - name: openwebui-pipelines-volume
               mountPath: /app/pipelines
