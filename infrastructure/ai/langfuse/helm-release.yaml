@@ -83,7 +83,9 @@ spec:
               key: password
     minio:
       deploy: false
-
+    clickhouse:
+      persistence:
+        storageClass: local-path
   postRenderers:
     - kustomize:
         patches:
