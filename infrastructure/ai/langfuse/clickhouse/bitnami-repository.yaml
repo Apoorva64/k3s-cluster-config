@@ -4,5 +4,6 @@ metadata:
   name: bitnami
   namespace: langfuse
 spec:
+  type: oci
   interval: 60m0s
-  url: https://charts.bitnami.com/bitnami
+  url: oci://registry-1.docker.io/bitnamicharts

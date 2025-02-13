@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: clickhouse
-      version: "*"
+      version: ">=4.0.0" # Specify a minimum version
       sourceRef:
         kind: HelmRepository
         name: bitnami
