@@ -6,3 +6,4 @@ resources:
   - namespace.yaml
   - sealed-secret.yaml
   - database
+  - clickhouse
