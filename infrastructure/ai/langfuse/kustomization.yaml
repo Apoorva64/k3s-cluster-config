@@ -1,9 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - clickhouse
+  - database
   - helm-release.yaml
   - helm-repository.yaml
   - namespace.yaml
   - sealed-secret.yaml
-  - database
-  - clickhouse
