@@ -18,6 +18,10 @@ spec:
     global:
       storageClass: local-path
 
+    service:
+      type: ClusterIP
+      name: langfuse-clickhouse
+
     auth:
       username: default
       password: changeme
