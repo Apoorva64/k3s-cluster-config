@@ -21,8 +21,16 @@ spec:
       defaultStorageClass: local-path
     image:
       tag: 3.24
+
     postgresql:
       deploy: false
+
+    minio:
+      deploy: false
+
+    clickhouse:
+      deploy: false
+
     langfuse:
       telemetryEnabled: False
 
@@ -36,9 +44,9 @@ spec:
         - name: "CLICKHOUSE_URL"
           value: "http://langfuse-clickhouse:8123"
         - name: "CLICKHOUSE_USER"
-          value: "default"
+          value: "default" # TODO: Change this to a secret
         - name: "CLICKHOUSE_PASSWORD"
-          value: "changeme"
+          value: "changeme" # TODO: Change this to a secret
         # S3 / MinIO
         - name: "LANGFUSE_S3_EVENT_UPLOAD_ACCESS_KEY_ID"
           valueFrom:
@@ -83,11 +91,7 @@ spec:
             secretKeyRef:
               name: langfuse-db-app
               key: password
-    minio:
-      deploy: false
-    clickhouse:
-      persistence:
-        storageClass: local-path
+
   postRenderers:
     - kustomize:
         patches:

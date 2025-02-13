@@ -1,0 +1,28 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: langfuse-clickhouse
+  namespace: langfuse
+spec:
+  interval: 60m
+  chart:
+    spec:
+      chart: clickhouse
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: langfuse
+      interval: 12h
+  values:
+    global:
+      storageClass: local-path
+
+    auth:
+      username: default
+      password: changeme
+
+    persistence:
+      enabled: true
+      storageClass: local-path
+      size: 10Gi
