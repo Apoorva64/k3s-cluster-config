@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: kokoro
+  namespace: kokoro
+spec:
+  interval: 5m0s
+  url: https://github.com/remsky/Kokoro-FastAPI
+  ref:
+    tag: v0.2.2

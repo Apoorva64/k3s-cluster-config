@@ -7,6 +7,7 @@ resources:
   - ollama
   - open-webui
   - langfuse
+  - kokoro
   # - stable-diffusion
   # - comfyui
   # - kserve

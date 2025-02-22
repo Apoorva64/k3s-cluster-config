@@ -1,0 +1,20 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: api
+  namespace: kokoro
+  labels:
+    toolkit.fluxcd.io/tenant: sre-team
+spec:
+  interval: 60m
+  chart:
+    spec:
+      chart: "./charts/kokoro-fastapi"
+      sourceRef:
+        kind: HelmRepository
+        name: kokoro
+        namespace: kokoro
+      interval: 12h
+  values:
+    nodeSelector:
+      nvidia,com/gpu.machine: ROG-Zephyrus-G14-GA401IV_GA401IV
