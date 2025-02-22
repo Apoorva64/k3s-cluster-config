@@ -20,7 +20,7 @@ spec:
       nvidia.com/gpu.machine: ROG-Zephyrus-G14-GA401IV_GA401IV
     kokoroTTS:
       repository: "ghcr.io/startupnationlabs/kokoro-fastapi-gpu"
-
+      resources: nil
   postRenderers:
     - kustomize:
         patches:
