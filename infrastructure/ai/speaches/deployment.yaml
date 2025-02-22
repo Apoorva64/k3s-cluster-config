@@ -37,6 +37,8 @@ spec:
             timeoutSeconds: 10
             failureThreshold: 3
       runtimeClassName: nvidia
+      nodeSelector:
+        nvidia.com/gpu.machine: ROG-Zephyrus-G14-GA401IV_GA401IV
 ---
 apiVersion: v1
 kind: Service
