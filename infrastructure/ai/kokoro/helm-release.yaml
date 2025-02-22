@@ -23,9 +23,9 @@ spec:
       tag: "auth"
       resources:
         limits:
-          nvidia.com/gpu: 0.1
+          nvidia.com/gpu: 0
         requests:
-          nvidia.com/gpu: 0.1
+          nvidia.com/gpu: 0
   postRenderers:
     - kustomize:
         patches:
