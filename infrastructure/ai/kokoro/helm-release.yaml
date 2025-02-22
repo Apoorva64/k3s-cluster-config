@@ -17,4 +17,4 @@ spec:
       interval: 12h
   values:
     nodeSelector:
-      nvidia,com/gpu.machine: ROG-Zephyrus-G14-GA401IV_GA401IV
+      nvidia.com/gpu.machine: ROG-Zephyrus-G14-GA401IV_GA401IV
