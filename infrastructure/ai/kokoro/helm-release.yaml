@@ -18,6 +18,9 @@ spec:
   values:
     nodeSelector:
       nvidia.com/gpu.machine: ROG-Zephyrus-G14-GA401IV_GA401IV
+    kokoroTTS:
+      repository: "ghcr.io/remsky/kokoro-fastapi-cpu"
+
   postRenderers:
     - kustomize:
         patches:
