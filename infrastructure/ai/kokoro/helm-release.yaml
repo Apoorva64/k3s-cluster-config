@@ -11,7 +11,7 @@ spec:
     spec:
       chart: "./charts/kokoro-fastapi"
       sourceRef:
-        kind: HelmRepository
+        kind: GitRepository
         name: kokoro
         namespace: kokoro
       interval: 12h
