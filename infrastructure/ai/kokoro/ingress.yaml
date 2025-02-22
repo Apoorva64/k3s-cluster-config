@@ -16,9 +16,9 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: weave-gitops
+                name: api-kokoro-fastapi-kokoro-tts-service
                 port:
-                  number: 9001
+                  number: 8880
   tls:
     - hosts:
         - kokoro.ai.apoorva64.com
