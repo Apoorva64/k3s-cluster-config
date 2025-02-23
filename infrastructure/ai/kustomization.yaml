@@ -6,7 +6,7 @@ resources:
   #  - rmbg
   - ollama
   - open-webui
-  - langfuse
+#  - langfuse
   - kokoro
   - speaches
   # - stable-diffusion
