@@ -25,6 +25,6 @@ metadata:
   namespace: react-flight-tracker
 spec:
   redirectRegex:
-    regex: "^(http://)(.*)"
+    regex: ".*"
     replacement: "https://react-flight-tracker.apoorva64.com/"
     permanent: true
