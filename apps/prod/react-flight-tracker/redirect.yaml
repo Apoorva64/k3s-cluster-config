@@ -1,21 +1,22 @@
-apiVersion: traefik.io/v1alpha1
-kind: IngressRoute
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
   name: redirect-rtf
   namespace: react-flight-tracker
+  annotations:
+    traefik.ingress.kubernetes.io/router.middlewares: react-flight-tracker-redirect-to-flight-tracker
 spec:
-  entryPoints:
-    - web
-  routes:
-    - match: Host(`rtf.apoorva64.com`)
-      kind: Rule
-      services:
-        - name: prod-react-flight-tracker
-          namespace: react-flight-tracker
-          kind: Service
-      middlewares:
-        - name: redirect-to-flight-tracker
-          namespace: react-flight-tracker
+  rules:
+    - host: rtf.apoorva64.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: noop
+                port:
+                  number: 80
 ---
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
