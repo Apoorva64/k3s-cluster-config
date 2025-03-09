@@ -4,7 +4,7 @@ metadata:
   name: redirect-rtf
   namespace: react-flight-tracker
   annotations:
-    traefik.ingress.kubernetes.io/router.middlewares: react-flight-tracker-prod-redirect-to-flight-tracker@kubernetescrd
+    traefik.ingress.kubernetes.io/router.middlewares: react-flight-tracker-redirect-to-flight-tracker
 spec:
   rules:
     - host: rtf.apoorva64.com
