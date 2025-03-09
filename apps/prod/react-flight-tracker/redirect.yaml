@@ -10,8 +10,9 @@ spec:
     - match: Host(`rtf.apoorva64.com`)
       kind: Rule
       services:
-        - name: noop
-          kind: TraefikService
+        - name: prod-react-flight-tracker
+          namespace: react-flight-tracker
+          kind: Service
       middlewares:
         - name: redirect-to-flight-tracker
           namespace: react-flight-tracker
