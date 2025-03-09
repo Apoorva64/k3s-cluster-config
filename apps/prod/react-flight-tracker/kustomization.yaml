@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: flux-system
 resources:
   - ../../base/react-flight-tracker
+  - redirect.yaml
 namePrefix: prod-
 patches:
   - target:
