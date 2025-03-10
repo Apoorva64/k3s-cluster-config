@@ -17,6 +17,16 @@ spec:
                 name: prod-react-flight-tracker
                 port:
                   number: 8080
+    - host: rft.apoorva64.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: prod-react-flight-tracker
+                port:
+                  number: 8080
 ---
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
