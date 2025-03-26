@@ -8,6 +8,17 @@ spec:
   storage:
     storageClass: local-path
     size: 5Gi
+  bootstrap:
+    pg_basebackup:
+      source: source-db
+  externalClusters:
+    - name: source-db
+      connectionParameters:
+        host: keycloak-postgres-ha-postgresql-ha-pgpool
+        user: postgres
+      password:
+        name: keycloak-postgres-ha-postgresql-ha-postgresql
+        key: password
 #  backup:
 #    barmanObjectStore:
 #      destinationPath: "s3://backup-cloudnative-pg/keycloak/"
