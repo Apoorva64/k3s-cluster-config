@@ -5,6 +5,7 @@ metadata:
   namespace: keycloak
 spec:
   instances: 3
+  imageName: ghcr.io/cloudnative-pg/postgresql:16.2
   storage:
     storageClass: local-path
     size: 5Gi
