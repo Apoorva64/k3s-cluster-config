@@ -15,7 +15,7 @@ spec:
   externalClusters:
     - name: source-db
       connectionParameters:
-        host: keycloak-postgres-ha-postgresql-ha-postgresql-headless
+        host: keycloak-postgres-ha-postgresql-ha-pgpool:5432
         user: postgres
       password:
         name: keycloak-postgres-ha-postgresql-ha-postgresql
