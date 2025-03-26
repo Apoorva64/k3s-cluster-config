@@ -5,3 +5,4 @@ resources:
   - postgres-ha
   - keycloak.yaml
   - ingress.yaml
+  - postgres.yaml
