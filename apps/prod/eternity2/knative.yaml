@@ -1,0 +1,49 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: grpc-server
+spec:
+  template:
+    spec:
+      containers:
+        - image: ghcr.io/startupnationlabs/eternity2/grpc-server:latest
+          name: grpc-server
+          resources:
+            limits:
+              cpu: "6"
+              memory: "2Gi"
+            requests:
+              cpu: "1"
+              memory: "512Mi"
+---
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: frontend
+spec:
+  template:
+    spec:
+      containers:
+        - image: ghcr.io/startupnationlabs/eternity2/frontend:latest
+          name: frontend
+          env:
+            - name: SERVER_BASE_URL
+              value: http://envoy.default.svc.cluster.local:50052
+          ports:
+            - containerPort: 80
+---
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: envoy
+spec:
+  template:
+    spec:
+      containers:
+        - image: ghcr.io/startupnationlabs/eternity2/envoy:latest
+          name: envoy
+          env:
+            - name: SOLVER_API
+              value: grpc-server.default.svc.cluster.local
+          ports:
+            - containerPort: 50052
