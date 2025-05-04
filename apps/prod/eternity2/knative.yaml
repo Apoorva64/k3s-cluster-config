@@ -51,7 +51,7 @@ spec:
         autoscaling.knative.dev/minScale: "1"
     spec:
       containers:
-        - image: ghcr.io/startupnationlabs/eternity2/envoy:latest
+        - image: ghcr.io/startupnationlabs/eternity2/envoy@sha256:faf9f62e4af5c9986092fad2bfc60ecb1f1b5a768f7dc99e355fe3fb1d38bcec
           name: envoy
           env:
             - name: SOLVER_API
