@@ -36,7 +36,7 @@ spec:
           name: frontend
           env:
             - name: SERVER_BASE_URL
-              value: https://eternity2-grpc.knative.apoorva64.com
+              value: https://envoy.knative.apoorva64.com
           ports:
             - containerPort: 80
 ---
@@ -55,6 +55,6 @@ spec:
           name: envoy
           env:
             - name: SOLVER_API
-              value: https://envoy.knative.apoorva64.com
+              value: https://eternity2-grpc.knative.apoorva64.com
           ports:
             - containerPort: 50052
