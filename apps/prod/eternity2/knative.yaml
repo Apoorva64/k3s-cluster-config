@@ -55,7 +55,7 @@ spec:
           name: envoy
           env:
             - name: SOLVER_API
-              value: eternity2-grpc
+              value: "eternity2-grpc"
             - name: SOLVER_API_PORT
               value: "80"
           ports:
