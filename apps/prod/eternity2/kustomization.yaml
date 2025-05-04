@@ -1,2 +1,5 @@
 resources:
   - knative.yaml
+  - namespace.yaml
+
+namespace: eternity2
