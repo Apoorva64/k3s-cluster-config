@@ -34,7 +34,7 @@ spec:
           name: frontend
           env:
             - name: SERVER_BASE_URL
-              value: https://eternity2-grpc.knative.apoorva64.com0
+              value: https://eternity2-grpc.knative.apoorva64.com
           ports:
             - containerPort: 80
 ---
