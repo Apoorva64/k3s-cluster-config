@@ -55,6 +55,6 @@ spec:
           name: envoy
           env:
             - name: SOLVER_API
-              value: http://eternity2-grpc
+              value: https://envoy.knative.apoorva64.com
           ports:
             - containerPort: 50052
