@@ -1,7 +1,7 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: grpc-server
+  name: eternity2-grpc
 spec:
   template:
     spec:
@@ -46,6 +46,6 @@ spec:
           name: envoy
           env:
             - name: SOLVER_API
-              value: https://grpc-server.knative.apoorva64.com
+              value: http://eternity2-grpc
           ports:
             - containerPort: 50052
