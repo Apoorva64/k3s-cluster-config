@@ -6,6 +6,9 @@ metadata:
     autoscaling.knative.dev/minScale: "1"
 spec:
   template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "1"
     spec:
       containers:
         - image: ghcr.io/startupnationlabs/eternity2/grpc-server:latest
@@ -24,10 +27,11 @@ apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   name: frontend
-  annotations:
-    autoscaling.knative.dev/minScale: "1"
 spec:
   template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "1"
     spec:
       containers:
         - image: ghcr.io/startupnationlabs/eternity2/frontend:latest
@@ -46,6 +50,9 @@ metadata:
     autoscaling.knative.dev/minScale: "1"
 spec:
   template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "1"
     spec:
       containers:
         - image: ghcr.io/startupnationlabs/eternity2/envoy:latest
