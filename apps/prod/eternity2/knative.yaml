@@ -2,8 +2,6 @@ apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   name: eternity2-grpc
-  annotations:
-    autoscaling.knative.dev/minScale: "1"
 spec:
   template:
     metadata:
@@ -46,8 +44,6 @@ apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   name: envoy
-  annotations:
-    autoscaling.knative.dev/minScale: "1"
 spec:
   template:
     metadata:
