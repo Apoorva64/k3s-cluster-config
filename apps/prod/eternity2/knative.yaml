@@ -46,6 +46,6 @@ spec:
           name: envoy
           env:
             - name: SOLVER_API
-              value: grpc-server.default.svc.cluster.local
+              value: https://grpc-server.knative.apoorva64.com
           ports:
             - containerPort: 50052
