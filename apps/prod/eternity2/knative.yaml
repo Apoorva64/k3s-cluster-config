@@ -2,6 +2,8 @@ apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   name: eternity2-grpc
+  annotations:
+    autoscaling.knative.dev/minScale: "1"
 spec:
   template:
     spec:
@@ -22,6 +24,8 @@ apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   name: frontend
+  annotations:
+    autoscaling.knative.dev/minScale: "1"
 spec:
   template:
     spec:
@@ -30,7 +34,7 @@ spec:
           name: frontend
           env:
             - name: SERVER_BASE_URL
-              value: http://envoy.default.svc.cluster.local:50052
+              value: https://eternity2-grpc.knative.apoorva64.com0
           ports:
             - containerPort: 80
 ---
@@ -38,6 +42,8 @@ apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   name: envoy
+  annotations:
+    autoscaling.knative.dev/minScale: "1"
 spec:
   template:
     spec:
