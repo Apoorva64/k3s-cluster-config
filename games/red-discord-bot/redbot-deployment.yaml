@@ -54,7 +54,7 @@ spec:
               name: youtube
         - name: TZ
           value: Europe/Paris
-        image: codetheweb/muse:latest
+        image: codetheweb/muse:2.11.1
         imagePullPolicy: ""
         name: redbot
         resources: {}
