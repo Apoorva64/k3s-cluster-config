@@ -32,7 +32,7 @@ spec:
         autoscaling.knative.dev/minScale: "1"
     spec:
       containers:
-        - image: ghcr.io/startupnationlabs/eternity2/frontend@sha256:06e64216bcccfe88cf9be4cd217a2ab2ed0c664053c2ac8f692f9a6cb46bfc13
+        - image: ghcr.io/startupnationlabs/eternity2/frontend@sha256:84abd14b229ae4929e7898a2e324b9945fe1079974e82c870ca70bdecfd5d6ac
           name: frontend
           env:
             - name: SERVER_BASE_URL
