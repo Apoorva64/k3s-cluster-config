@@ -19,5 +19,10 @@ spec:
       protocol: TCP
       name: "gametcp"
       targetPort: "gametcp"
+    - port: 27012
+      nodePort: 27012
+      protocol: TCP
+      name: "gametcpnew"
+      targetPort: "gametcpnew"
   selector:
     app: satisfactory
