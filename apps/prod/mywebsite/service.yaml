@@ -10,3 +10,8 @@ spec:
         - image: hugo971/mysite:1.0
           ports:
             - containerPort: 80
+              protocol: TCP
+          readinessProbe:
+            successThreshold: 1
+            tcpSocket:
+              port: 80
