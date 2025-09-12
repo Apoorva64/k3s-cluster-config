@@ -7,7 +7,7 @@ spec:
   template:
     spec:
       containers:
-        - image: hugo971/mysite:1.0
+        - image: hugo971/mysite:v2.0
           ports:
             - containerPort: 80
               protocol: TCP
