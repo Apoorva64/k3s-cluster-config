@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: mywebsite
+  namespace: mywebsite
+spec:
+  template:
+    spec:
+      containers:
+        - image: hugo971/mysite:1.0
+          ports:
+            - containerPort: 80
