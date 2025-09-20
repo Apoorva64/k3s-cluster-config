@@ -1,13 +1,13 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: hugodurand
-  namespace: hugodurand
+  name: emiliemasse
+  namespace: emiliemasse
 spec:
   template:
     spec:
       containers:
-        - image: hugo971/mysite:v3.0
+        - image: hugo971/emiliemasse:v1.0
           ports:
             - containerPort: 80
               protocol: TCP
