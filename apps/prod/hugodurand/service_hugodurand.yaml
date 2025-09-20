@@ -1,8 +1,8 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: mywebsite2
-  namespace: mywebsite
+  name: hugodurand
+  namespace: hugodurand
   labels:
     domain: hsa-development.com
 spec:
