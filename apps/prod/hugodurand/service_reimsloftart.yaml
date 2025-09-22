@@ -1,7 +1,7 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: emiliemasse
+  name: loft4art
   namespace: hugodurand
   labels:
     domain: hsa-development.com
@@ -9,7 +9,7 @@ spec:
   template:
     spec:
       containers:
-        - image: hugo971/emiliemasse:v1.0
+        - image: hugo971/loft4art:v1.0
           ports:
             - containerPort: 80
               protocol: TCP
