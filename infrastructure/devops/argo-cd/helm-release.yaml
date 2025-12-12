@@ -1,0 +1,30 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: argo-cd
+  namespace: devops-tools
+spec:
+  interval: 60m
+  chart:
+    spec:
+      chart: argo-cd
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: argo-helm
+        namespace: flux-system
+      interval: 12h
+  values:
+    server:
+      ingress:
+        enabled: true
+        ingressClassName: traefik
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-prod
+          traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
+        hosts:
+          - argocd.devops-tools.apoorva64.com
+        tls:
+          - secretName: argocd-tls
+            hosts:
+              - argocd.devops-tools.apoorva64.com
