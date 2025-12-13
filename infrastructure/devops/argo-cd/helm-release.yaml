@@ -17,14 +17,12 @@ spec:
   values:
     server:
       ingress:
-        enabled: true
-        ingressClassName: traefik
-        annotations:
-          cert-manager.io/cluster-issuer: letsencrypt-prod
-          traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
-        hosts:
-          - argocd.devops-tools.apoorva64.com
-        tls:
-          - secretName: argocd-tls
-            hosts:
+          enabled: true
+          ingressClassName: traefik
+          annotations:
+            cert-manager.io/cluster-issuer: letsencrypt-prod
+            traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
+          extraTls:
+            - hosts:
               - argocd.devops-tools.apoorva64.com
+              secretName: argocd-devops-tools-apoorva64-com-tls
