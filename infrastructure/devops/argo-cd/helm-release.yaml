@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: argo-cd
-  namespace: devops-tools
+  namespace: argocd
 spec:
   interval: 60m
   chart:
