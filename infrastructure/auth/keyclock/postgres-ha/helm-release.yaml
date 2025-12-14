@@ -17,10 +17,16 @@ spec:
   values:
     pgpool:
       replicaCount: 2
+      image:
+        registry: docker.io
+        repository: bitnamilegacy/pgpool
     persistence:
       storageClass: longhorn-single-replica
       size: 8Gi
     postgresql:
+      image:
+        registry: docker.io
+        repository: bitnamilegacy/postgresql-repmgr
       syncReplication: true
       syncReplicationMode: FIRST
       nodeSelector:
