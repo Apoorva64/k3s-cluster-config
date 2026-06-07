@@ -66,7 +66,7 @@ spec:
             - name: BASE_CAMP_WORKER_MAXNUM
               value: "20"
 
-          image: jammsen/palworld-dedicated-server:7c44003
+          image: jammsen/palworld-dedicated-server:0a28e47
           name: palworld-dedicated-server
           ports:
             - containerPort: 8211
