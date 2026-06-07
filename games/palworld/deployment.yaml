@@ -58,9 +58,13 @@ spec:
             - name: SERVER_NAME
               value: Apoorva Hosting Services - Palworld
             - name: SERVER_PASSWORD
-              value: ""
+              valueFrom:
+                secretKeyRef:
+                  key: adminPassword
+                  name: palworld-dedicated-server
+
             - name: PAL_SPAWN_NUM_RATE
-              value: "2"
+              value: "20"
             - name: PAL_EGG_DEFAULT_HATCHING_TIME
               value: "9"
             - name: BASE_CAMP_WORKER_MAXNUM
