@@ -17,18 +17,18 @@ spec:
         namespace: monitoring
       interval: 12h
   
-  postRenderers:
-    - kustomize:
-        patches:
-          - target:
-              kind: Deployment
-            patch: |
-              - op: add
-                path: /spec/template/spec/dnsConfig
-                value:
-                  options:
-                    - name: ndots
-                      value: "1"
+  # postRenderers:
+  #   - kustomize:
+  #       patches:
+  #         - target:
+  #             kind: Deployment
+  #           patch: |
+  #             - op: add
+  #               path: /spec/template/spec/dnsConfig
+  #               value:
+  #                 options:
+  #                   - name: ndots
+  #                     value: "1"
 
   values:
     alertmanager:
