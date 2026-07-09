@@ -171,29 +171,29 @@ spec:
               editable: true
               options:
                 path: /var/lib/grafana/dashboards/kubernetes
-      dashboards:
-        traefik:
-          traefik-dashboard:
-            gnetId: 17035
-            datasource: Prometheus
+      # dashboards:
+      #   traefik:
+      #     traefik-dashboard:
+      #       gnetId: 17035
+      #       datasource: Prometheus
 
-        kubernetes:
-          k8s-system-api-server:
-            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
-          k8s-system-coredns:
-            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-coredns.json
-          k8s-views-global:
-            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-global.json
-          k8s-views-namespaces:
-            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-namespaces.json
-          k8s-views-nodes:
-            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-nodes.json
-          k8s-views-pods:
-            url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
-          k8s-inner-network:
-            gnetId: 20707
-            revision: 2
-          kepler:
-            url: https://raw.githubusercontent.com/sustainable-computing-io/kepler/refs/heads/main/grafana-dashboards/Kepler-Exporter.json
-          k8s-loadbalancer:
-            url: 'https://raw.githubusercontent.com/rfmoz/grafana-dashboards/master/prometheus/haproxy-2-full.json'
+      #   kubernetes:
+      #     k8s-system-api-server:
+      #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
+      #     k8s-system-coredns:
+      #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-coredns.json
+      #     k8s-views-global:
+      #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-global.json
+      #     k8s-views-namespaces:
+      #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-namespaces.json
+      #     k8s-views-nodes:
+      #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-nodes.json
+      #     k8s-views-pods:
+      #       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
+      #     k8s-inner-network:
+      #       gnetId: 20707
+      #       revision: 2
+      #     kepler:
+      #       url: https://raw.githubusercontent.com/sustainable-computing-io/kepler/refs/heads/main/grafana-dashboards/Kepler-Exporter.json
+      #     k8s-loadbalancer:
+      #       url: 'https://raw.githubusercontent.com/rfmoz/grafana-dashboards/master/prometheus/haproxy-2-full.json'
