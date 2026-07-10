@@ -70,7 +70,7 @@ spec:
                   name: palworld-dedicated-server
 
             - name: PAL_SPAWN_NUM_RATE
-              value: "20"
+              value: "2"
             - name: PAL_EGG_DEFAULT_HATCHING_TIME
               value: "9"
             - name: BASE_CAMP_WORKER_MAXNUM
