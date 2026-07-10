@@ -88,10 +88,10 @@ spec:
           resources: {}
           volumeMounts:
             - mountPath: /palworld
-              name: palworld-dedicated-server-claim0
+              name: palworld-dedicated-server-claim-current
       restartPolicy: Always
       volumes:
-        - name: palworld-dedicated-server-claim0
+        - name: palworld-dedicated-server-claim-current
           persistentVolumeClaim:
-            claimName: palworld-dedicated-server-claim0
+            claimName: palworld-dedicated-server-claim-current
 status: {}
