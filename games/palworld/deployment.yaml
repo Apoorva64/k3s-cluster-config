@@ -55,6 +55,8 @@ spec:
               value: "8211"
             - name: RCON_ENABLED
               value: "true"
+            - name: COOP_PLAYER_MAX_NUM
+              value: "32"
             - name: RCON_PORT
               value: "25575"
             - name: SERVER_DESCRIPTION
